@@ -1,0 +1,30 @@
+{
+  "host": "ec2-example.eu-west-1.compute.amazonaws.com",
+  "user": "ec2-user",
+  "key": "~/.ssh/pocket-option-bot.pem",
+  "remote_path": "/home/ec2-user/pocket-option-bot",
+  
+  "telegram_api_id": "",
+  "telegram_api_hash": "",
+  "telegram_bot_token": "",
+  
+  "pocket_option_email": "",
+  "pocket_option_password": "",
+  
+  "deployment": {
+    "region": "eu-west-1",
+    "instance_type": "t3.micro",
+    "ami_id": "ami-0c55b159cbfafe1f0",
+    "security_group": "pocket-option-bot-sg",
+    "key_name": "pocket-option-bot"
+  },
+  
+  "bot_config": {
+    "trade_amount": 1,
+    "max_daily_trades": 20,
+    "max_daily_loss": 50,
+    "test_mode": true,
+    "log_level": "INFO",
+    "timezone": "Africa/Johannesburg"
+  }
+}

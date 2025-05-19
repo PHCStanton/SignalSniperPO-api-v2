@@ -1,0 +1,462 @@
+✅ Alternatives (What you can do):
+1. Use Telegram API with User Authorization
+
+    You can create a self-bot or userbot using the Telegram API (TDLib / Telethon / Pyrogram).
+
+    This way, your script (or bot-like program) logs in as you and can see everything you see (messages, channels, groups, contacts).
+
+    Warning: Self-bots go against Telegram's Terms of Service and can get your account banned if abused.
+
+    Popular Python Libraries:
+
+        Telethon (Python)
+
+        Pyrogram
+
+2. Forward Messages to the Bot Manually
+
+    You can forward important messages to your bot's chat.
+
+    The bot can then process those forwarded messages.
+
+3. Use Telegram Channel/Group for Monitoring
+
+    If you want the bot to monitor certain updates (news, alerts, etc.), you can add it to a group or channel.
+
+    The bot will see messages in those groups/channels.
+
+✅ Example Use Case: Userbot with Telethon
+
+from telethon import TelegramClient
+
+api_id = 'YOUR_API_ID'
+api_hash = 'YOUR_API_HASH'
+
+with TelegramClient('session_name', api_id, api_hash) as client:
+    async for message in client.iter_messages('me'):
+        print(message.sender_id, message.text)
+
+    This logs in as you and accesses your account's messages.
+
+    You'll need your own API keys from https://my.telegram.org.
+
+🚫 Important:
+
+    Bots (Bot API) = Safe, limited access.
+
+    Userbots (Telethon, Pyrogram) = Full access, but risky.
+
+    Using userbots violates Telegram's TOS if abused.
+
+✅ Safe Recommendation:
+
+    If you only need automation for groups, channels, or basic commands, stick with official bots.
+
+    For advanced personal account automation, proceed with userbot tools carefully, knowing the risks.
+
+Would you like me to show you step-by-step how to set up a personal userbot using Telethon (safe way)?
+Reply "Yes, show me how" if you'd like.
+You said:
+Yes, show me how
+ChatGPT said:
+
+Perfect. Here’s a step-by-step guide to set up a personal userbot using Telethon so you can access your own Telegram messages, channels, and chats (like a bot, but with your personal account).
+✅ Step 1: Get Telegram API Credentials
+
+    Go to: https://my.telegram.org
+
+    Log in with your Telegram phone number.
+
+    Click API Development Tools.
+
+    Fill in:
+
+        App title: (any name, e.g., "MyUserBot")
+
+        Short name: (any short identifier)
+
+    You will get:
+
+        API ID
+
+        API Hash
+
+    ⚠️ Keep these safe! They give full access to your account.
+
+✅ Step 2: Install Telethon
+
+On your system, open a terminal and run:
+
+pip install telethon
+
+✅ Step 3: Create the UserBot Script
+
+Here’s a simple Python script to log in and read your chats.
+
+from telethon import TelegramClient
+
+# Replace with your values
+api_id = 'YOUR_API_ID'
+api_hash = 'YOUR_API_HASH'
+
+# Session name will store your login session
+client = TelegramClient('my_userbot_session', api_id, api_hash)
+
+async def main():
+    # Print your own details
+    me = await client.get_me()
+    print(f"Logged in as {me.first_name} (ID: {me.id})")
+
+    # Example: print last 10 messages from 'Saved Messages'
+    print("\nLast 10 messages from Saved Messages:")
+    async for message in client.iter_messages('me', limit=10):
+        print(f"From {message.sender_id}: {message.text}")
+
+with client:
+    client.loop.run_until_complete(main())
+
+✅ Step 4: Run the Script
+
+In your terminal:
+
+python my_userbot_script.py
+
+    First run will ask for your phone number.
+
+    You'll receive a confirmation code via Telegram.
+
+    Enter it to authenticate.
+
+Once authenticated, it saves a session file (e.g., my_userbot_session.session), so you don’t have to log in again.
+✅ Step 5: Expand Usage (Examples)
+
+You can now:
+
+    Read personal chats.
+
+    Monitor specific groups/channels.
+
+    Send messages.
+
+    Forward messages.
+
+    Automate tasks.
+
+Example: Listen to new messages
+
+@client.on(events.NewMessage)
+async def handler(event):
+    sender = await event.get_sender()
+    print(f"New message from {sender.username}: {event.text}")
+
+client.run_until_disconnected()
+
+✅ Important Notes:
+✅ Pros	❌ Cons
+Full access to your account (like a human)	Violates Telegram's TOS if abused
+Automate personal tasks	Risk of account ban if used for spam/scraping
+No need to invite a bot to groups	Needs careful, ethical use
+Can listen to all chats, including private ones	Must secure API keys & session file
+✅ Optional: Run it on a Cloud Server (24/7)
+
+If you want it to run 24/7, you can deploy it on:
+
+    Render.com (Free Tier)
+
+    Replit (for small scripts)
+
+    VPS / DigitalOcean / Hetzner
+
+✅ Next Steps:
+
+Would you like me to give you:
+
+    A ready-to-use template for a Telegram personal notifier bot (e.g., notify you of certain keywords)?
+
+    Or a dashboard to control the userbot from a simple web page?
+
+Reply Notifier Bot, Dashboard, or Both 😊.
+You said:
+It's asking for a url in the setup? is it the url I create in when creating an instance?
+ChatGPT said:
+
+Got it! When you're registering the Telegram app on https://my.telegram.org under API Development Tools, it asks for:
+
+    App title – (any name, like "MyUserBot")
+
+    Short name – (a short identifier, like "userbot123")
+
+    URL – ← This is the one you’re asking about
+
+✅ What to put in the URL field?
+
+    This URL is just informational for Telegram (used for big apps, websites, etc.).
+
+    For personal userbots, you can put anything valid like:
+
+        https://example.com
+
+        Or even your personal/business website URL.
+
+        If you don't have a website, just use:
+
+            https://my.telegram.org
+
+            Or something like: https://t.me/yourusername
+
+    It won’t affect your bot. It's just a formality.
+
+✅ Summary:
+
+    URL is just metadata.
+
+    It doesn’t impact your userbot.
+
+    Use any valid URL.
+
+✅ Example:
+Field	Example Value
+App title	MyUserBot
+Short name	userbot123
+URL	https://example.com
+
+Once you complete this, Telegram will give you:
+
+    API ID
+
+    API Hash
+
+Then you can continue with the Telethon script.
+
+Do you want me to give you a ready-to-run notifier bot that alerts you when certain words appear in your chats?
+Reply Yes, notifier bot if you'd like.
+You said:
+Also do I select IOS as I'm using an iPhone or do I select Desktop if using desktop app, because I'm using both.
+ChatGPT said:
+
+Good question! Here’s how it works:
+✅ What to select for "Platform" (iOS, Android, Desktop)?
+
+When registering your Telegram API app (to get API ID & Hash), the platform does not restrict how you use the API.
+
+    The platform choice is just informational for Telegram.
+
+    It's mainly for app developers who are making Telegram-based apps.
+
+✅ Since you're making a userbot (script for personal automation):
+
+    It doesn't matter much.
+
+    You can safely choose:
+
+        Desktop (recommended) — since you're running the script on your PC/server.
+
+        iOS — if you prefer, but not required.
+
+✅ My Suggestion:
+Scenario	Choose
+You’re running scripts/bots on your PC (Telethon script)	Desktop ✅
+You’re building a mobile iOS app (Objective-C / Swift)	iOS
+You’re making an Android app	Android
+
+Since you’re using Telethon (Python script), choose Desktop.
+✅ TL;DR:
+
+    Select Desktop ✅ (even if you also use iPhone)
+
+    It won’t limit what you can access.
+
+    You’ll still be able to read your chats, groups, channels, etc.
+
+Do you want me to give you a ready-made Python notifier bot that watches your personal chats and alerts you when someone says certain words (e.g., "urgent", "meeting", etc.)?
+
+Reply Yes, notifier bot if you want it.
+You said:
+After filling in the information I get thias:
+FCM credentials  Update  
+
+Available MTProto servers
+
+Test configuration:
+
+149.154.167.40:443
+
+DC 2
+
+
+
+Public keys:
+
+-----BEGIN RSA PUBLIC KEY-----
+
+MIIBCgKCAQEAyMEdY1aR+sCR3ZSJrtztKTKqigvO/vBfqACJLZtS7QMgCGXJ6XIR
+
+yy7mx66W0/sOFa7/1mAZtEoIokDP3ShoqF4fVNb6XeqgQfaUHd8wJpDWHcR2OFwv
+
+plUUI1PLTktZ9uW2WE23b+ixNwJjJGwBDJPQEQFBE+vfmH0JP503wr5INS1poWg/
+
+j25sIWeYPHYeOrFp/eXaqhISP6G+q2IeTaWTXpwZj4LzXq5YOpk4bYEQ6mvRq7D1
+
+aHWfYmlEGepfaYR8Q0YqvvhYtMte3ITnuSJs171+GDqpdKcSwHnd6FudwGO4pcCO
+
+j4WcDuXc2CTHgH8gFTNhp/Y8/SpDOhvn9QIDAQAB
+
+-----END RSA PUBLIC KEY-----
+
+Production configuration:
+
+149.154.167.50:443
+
+DC 2
+
+
+
+Public keys:
+
+-----BEGIN RSA PUBLIC KEY-----
+
+MIIBCgKCAQEA6LszBcC1LGzyr992NzE0ieY+BSaOW622Aa9Bd4ZHLl+TuFQ4lo4g
+
+5nKaMBwK/BIb9xUfg0Q29/2mgIR6Zr9krM7HjuIcCzFvDtr+L0GQjae9H0pRB2OO
+
+62cECs5HKhT5DZ98K33vmWiLowc621dQuwKWSQKjWf50XYFw42h21P2KXUGyp2y/
+
++aEyZ+uVgLLQbRA1dEjSDZ2iGRy12Mk5gpYc397aYp438fsJoHIgJ2lgMv5h7WY9
+
+t6N/byY9Nw9p21Og3AoXSL2q/2IJ1WRUhebgAdGVMlV1fkuOQoEzR7EdpqtQD9Cs
+
+5+bfo3Nhmcyvk5ftB0WkJ9z6bNZ7yxrP8wIDAQAB
+
+-----END RSA PUBLIC KEY-----
+ChatGPT said:
+
+Perfect, that screen means you’ve successfully created the API credentials for your Telegram app. That info about MTProto servers & public keys is normal and for developers who want to build low-level Telegram apps.
+✅ What You Actually Need:
+
+From this screen or your app info, you should now have:
+
+    API ID (a number like 1234567)
+
+    API Hash (a long alphanumeric string like a1b2c3d4e5f6g7h8i9j0)
+
+✅ What to Do Next:
+
+Ignore the MTProto server details for now.
+Use this info to connect Telethon:
+
+    Copy your API ID and API Hash.
+
+    Open your terminal.
+
+    Use the Python script I showed earlier to log in.
+
+Example:
+
+api_id = 1234567  # <-- Your real API ID here
+api_hash = 'a1b2c3d4e5f6g7h8i9j0'  # <-- Your real API Hash here
+
+Run the script:
+
+python my_userbot_script.py
+
+First time:
+
+    It will ask for your phone number.
+
+    Telegram will send you a login code.
+
+    Enter the code.
+
+    ✅ After this, you’re connected as your personal account.
+
+✅ What just happened:
+
+    You’re not making a bot in BotFather.
+
+    You’re linking to your own user account (userbot).
+
+    Telethon will now be able to:
+
+        See your chats.
+
+        Read messages.
+
+        Send messages.
+
+        Automate tasks — as you.
+
+✅ Optional Next Step:
+
+Would you like me to give you:
+
+    A ready-to-use notifier bot script that watches your chats for keywords like "urgent" or "meeting" and alerts you?
+
+Reply with:
+➡️ Yes, notifier bot if you want the full code.elegram
+
+Awesome — here's a ready-to-use notifier bot script using Telethon. This script:
+
+    Connects to your personal Telegram account
+
+    Monitors all your chats (groups, private, etc.)
+
+    Alerts (prints/logs) when a keyword appears (e.g., "urgent", "meeting", etc.)
+
+✅ Step 1: Install Telethon (if not already)
+
+pip install telethon
+
+✅ Step 2: Save this script as notifier_bot.py
+
+from telethon import TelegramClient, events
+import asyncio
+
+# Replace with your actual API ID and Hash
+api_id = 1234567
+api_hash = 'your_api_hash_here'
+
+# Create the client and connect
+client = TelegramClient('notifier_session', api_id, api_hash)
+
+# List of keywords to watch for (case-insensitive)
+KEYWORDS = ['urgent', 'meeting', 'asap', 'important']
+
+@client.on(events.NewMessage)
+async def handler(event):
+    message_text = event.message.message.lower()
+    if any(keyword in message_text for keyword in KEYWORDS):
+        sender = await event.get_sender()
+        name = sender.username or sender.first_name or "Unknown"
+        print(f"\n🔔 Keyword found!")
+        print(f"From: {name}")
+        print(f"Chat: {event.chat.title if event.chat else 'Private Chat'}")
+        print(f"Message: {event.message.message}")
+
+async def main():
+    print("🔍 Notifier bot is running... Watching for keywords.")
+    await client.run_until_disconnected()
+
+if __name__ == '__main__':
+    with client:
+        client.loop.run_until_complete(main())
+
+✅ Step 3: Run it
+
+In terminal:
+
+python notifier_bot.py
+
+It will ask for your phone number and Telegram code the first time. After that, it will auto-login from the saved session file (notifier_session.session).
+✅ How it works:
+
+    It watches every incoming message.
+
+    If any word in KEYWORDS is found, it prints an alert.
+
+🛠️ You can customize:
+
+    Add your own keywords in the KEYWORDS list.
+
+    Send an alert message to another Telegram account.
+
+    Save logs to a file or trigger external notifications.

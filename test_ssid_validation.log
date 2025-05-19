@@ -1,0 +1,17 @@
+2025-05-18 04:26:11,890 - __main__ - INFO - Successfully imported PocketOption from pocketoptionapi.stable_api
+2025-05-18 04:26:11,890 - __main__ - INFO - Testing 2 SSID values...
+2025-05-18 04:26:11,890 - __main__ - INFO - Testing SSID(1)
+2025-05-18 04:26:11,890 - __main__ - INFO - Testing SSID(1): AvYUIW4MNV... (truncated for security)
+2025-05-18 04:26:11,890 - __main__ - INFO - Attempting to connect to Pocket Option API with SSID(1)...
+2025-05-18 04:26:14,512 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:26:14,912 - __main__ - INFO - SSID(1): Successfully connected to Pocket Option API
+2025-05-18 04:26:14,912 - __main__ - INFO - SSID(1): Checking account balance...
+2025-05-18 04:26:25,005 - __main__ - WARNING - SSID(1): Could not retrieve balance. SSID may be invalid or expired.
+2025-05-18 04:26:27,038 - __main__ - INFO - Testing SSID(2)
+2025-05-18 04:26:27,038 - __main__ - INFO - Testing SSID(2): A6pz6Vk19O... (truncated for security)
+2025-05-18 04:26:27,038 - __main__ - INFO - Attempting to connect to Pocket Option API with SSID(2)...
+2025-05-18 04:26:30,046 - __main__ - INFO - SSID(2): Successfully connected to Pocket Option API
+2025-05-18 04:26:30,046 - __main__ - INFO - SSID(2): Checking account balance...
+2025-05-18 04:26:33,846 - pocketoptionapi.ws.client - WARNING - Trying another server
+2025-05-18 04:26:35,829 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:26:40,121 - __main__ - WARNING - SSID(2): Could not retrieve balance. SSID may be invalid or expired.

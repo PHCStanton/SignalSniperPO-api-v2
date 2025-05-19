@@ -1,0 +1,347 @@
+2025-05-18 04:29:28,822 - tzlocal - DEBUG - Looking up time zone info from registry
+2025-05-18 04:29:28,822 - __main__ - INFO - Successfully imported PocketOption from pocketoptionapi.stable_api
+2025-05-18 04:29:28,837 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-18 04:29:28,837 - __main__ - INFO - Testing 2 SSID values...
+2025-05-18 04:29:28,837 - __main__ - INFO - Testing SSID(1)
+2025-05-18 04:29:28,837 - __main__ - INFO - Testing SSID(1) with PocketOption API: AvYUIW4MNV... (truncated for security)
+2025-05-18 04:29:28,837 - __main__ - INFO - Attempting to connect to Pocket Option API with SSID(1)...
+2025-05-18 04:29:28,837 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-18 04:29:28,884 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:28,925 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:28,925 - websockets.client - DEBUG - > Host: api-c.po.market
+2025-05-18 04:29:28,925 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:28,925 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:28,925 - websockets.client - DEBUG - > Sec-WebSocket-Key: Gs7MHO+tXInAkeRWNBsj9g==
+2025-05-18 04:29:28,933 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:28,933 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:28,934 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:29:29,324 - websockets.client - DEBUG - < HTTP/1.1 525 
+2025-05-18 04:29:29,328 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:29:28 GMT
+2025-05-18 04:29:29,334 - websockets.client - DEBUG - < Content-Type: text/plain; charset=UTF-8
+2025-05-18 04:29:29,340 - websockets.client - DEBUG - < Content-Length: 15
+2025-05-18 04:29:29,346 - websockets.client - DEBUG - < Connection: keep-alive
+2025-05-18 04:29:29,351 - websockets.client - DEBUG - < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=zeQzM%2Fs4T6V5qJd2tkxtNd7S1W7hjIcVcbvowDpVkDI6W0FIER%2BUgHnzfW1vMf34u5k3oqQwgS2VCexYYVky5ddjrjZwN50RPgqUM1YJjNIS3CNT2WeJucURcUNHdRmkwA%3D%3D"}],"group":"cf-nel","max_age":604800}
+2025-05-18 04:29:29,353 - websockets.client - DEBUG - < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2025-05-18 04:29:29,357 - websockets.client - DEBUG - < X-Frame-Options: SAMEORIGIN
+2025-05-18 04:29:29,360 - websockets.client - DEBUG - < Referrer-Policy: same-origin
+2025-05-18 04:29:29,366 - websockets.client - DEBUG - < Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+2025-05-18 04:29:29,369 - websockets.client - DEBUG - < Expires: Thu, 01 Jan 1970 00:00:01 GMT
+2025-05-18 04:29:29,373 - websockets.client - DEBUG - < Server: cloudflare
+2025-05-18 04:29:29,377 - websockets.client - DEBUG - < CF-RAY: 9417ed55ddb10de1-JNB
+2025-05-18 04:29:29,383 - websockets.client - DEBUG - < server-timing: cfL4;desc="?proto=TCP&rtt=5978&min_rtt=5860&rtt_var=2434&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2818&recv_bytes=922&delivery_rate=422969&cwnd=247&unsent_bytes=0&cid=5b2da968f1f46c36&ts=427&x=0"
+2025-05-18 04:29:29,387 - websockets.client - DEBUG - < [body] (15 bytes)
+2025-05-18 04:29:29,393 - websockets.client - DEBUG - > EOF
+2025-05-18 04:29:29,395 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:29:29,398 - pocketoptionapi.ws.client - ERROR - server rejected WebSocket connection: HTTP 525
+2025-05-18 04:29:29,406 - websockets.client - DEBUG - < EOF
+2025-05-18 04:29:29,408 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:29:29,581 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:30,411 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:30,413 - websockets.client - DEBUG - > Host: api-sc.po.market
+2025-05-18 04:29:30,413 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:30,415 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:30,415 - websockets.client - DEBUG - > Sec-WebSocket-Key: +GUE6yuzLRcF6oKbnQ+JCg==
+2025-05-18 04:29:30,415 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:30,415 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:30,415 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < Server: nginx/1.20.1
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:29:30 GMT
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:29:30,740 - websockets.client - DEBUG - < Sec-WebSocket-Accept: qzPjlCox4pirYjmA34JgdiG1C3k=
+2025-05-18 04:29:30,756 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:29:30,756 - websockets.client - DEBUG - < TEXT '0{"sid":"E7kVY3_aRJw3uwjs7Ikv","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:29:30,756 - pocketoptionapi.ws.client - DEBUG - 0{"sid":"E7kVY3_aRJw3uwjs7Ikv","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:29:30,760 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:29:31,089 - websockets.client - DEBUG - < TEXT '40{"sid":"4cXcyyOagjX3O3LZ7Ikw"}' [32 bytes]
+2025-05-18 04:29:31,091 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:29:31,091 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:31,091 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:31,091 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:29:31,091 - pocketoptionapi.ws.client - DEBUG - 40{"sid":"4cXcyyOagjX3O3LZ7Ikw"}
+2025-05-18 04:29:31,423 - websockets.client - DEBUG - < EOF
+2025-05-18 04:29:31,424 - websockets.client - DEBUG - > EOF
+2025-05-18 04:29:31,426 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:29:31,427 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:29:31,429 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:29:31,841 - __main__ - INFO - SSID(1): Successfully connected to Pocket Option API
+2025-05-18 04:29:31,841 - __main__ - INFO - SSID(1): Checking account balance...
+2025-05-18 04:29:50,766 - pocketoptionapi.ws.client - WARNING - Trying another server
+2025-05-18 04:29:50,786 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:50,809 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:50,809 - websockets.client - DEBUG - > Host: api-spb.po.market
+2025-05-18 04:29:50,811 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:50,811 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:50,811 - websockets.client - DEBUG - > Sec-WebSocket-Key: mp6xVlPJeDmJDCTHqqfxQA==
+2025-05-18 04:29:50,811 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:50,811 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:50,814 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:29:51 GMT
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < Sec-WebSocket-Accept: 3kcbU/EpP9B7D5KMqPZW8lI3rc0=
+2025-05-18 04:29:51,700 - websockets.client - DEBUG - < cf-cache-status: DYNAMIC
+2025-05-18 04:29:51,706 - websockets.client - DEBUG - < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ifPm5bx1%2FBlKpPrD%2FE79tv%2BECjgcqB%2BGR0M2klCohq9XIElLKMCnmtDbpxaVw1SgeUpL5Mb316GSgm7TmqCIhoCxLKFQMqmTNGepSFD6AmvP8%2F4oglNbpvZXd70yPMc%2Fk9Sf"}],"group":"cf-nel","max_age":604800}
+2025-05-18 04:29:51,707 - websockets.client - DEBUG - < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2025-05-18 04:29:51,707 - websockets.client - DEBUG - < Server: cloudflare
+2025-05-18 04:29:51,709 - websockets.client - DEBUG - < CF-RAY: 9417edde9a5a73a2-JNB
+2025-05-18 04:29:51,709 - websockets.client - DEBUG - < server-timing: cfL4;desc="?proto=TCP&rtt=6914&min_rtt=6625&rtt_var=3063&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2819&recv_bytes=924&delivery_rate=322183&cwnd=233&unsent_bytes=0&cid=cc238acfdd02a35a&ts=902&x=0"
+2025-05-18 04:29:51,710 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:29:51,711 - websockets.client - DEBUG - < TEXT '0{"sid":"STIOtOzdNyRoJ0bZx9p4","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:29:51,712 - pocketoptionapi.ws.client - DEBUG - 0{"sid":"STIOtOzdNyRoJ0bZx9p4","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:29:51,713 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:29:51,931 - websockets.client - DEBUG - < TEXT '40{"sid":"JkTXOCTeftbHjl20x9p7"}' [32 bytes]
+2025-05-18 04:29:51,931 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:29:51,931 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:51,931 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:51,931 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:29:51,939 - pocketoptionapi.ws.client - DEBUG - 40{"sid":"JkTXOCTeftbHjl20x9p7"}
+2025-05-18 04:29:52,073 - __main__ - WARNING - SSID(1): Could not retrieve balance. SSID may be invalid or expired.
+2025-05-18 04:29:52,073 - __main__ - INFO - SSID(1): API test failed, trying direct WebSocket connections
+2025-05-18 04:29:52,073 - __main__ - INFO - SSID(1): Testing server 1/3: wss://api-in.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:52,081 - __main__ - INFO - Testing SSID(1) directly with WebSockets on wss://api-in.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:52,102 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:52,116 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:52,117 - websockets.client - DEBUG - > Host: api-in.po.market
+2025-05-18 04:29:52,117 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:52,118 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:52,118 - websockets.client - DEBUG - > Sec-WebSocket-Key: Sf6yNNqs7q4Arq5jsaZRgQ==
+2025-05-18 04:29:52,118 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:52,119 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:52,119 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:29:52,156 - websockets.client - DEBUG - < EOF
+2025-05-18 04:29:52,157 - websockets.client - DEBUG - > EOF
+2025-05-18 04:29:52,158 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:29:52,159 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:29:52,160 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:29:52,974 - websockets.client - DEBUG - < HTTP/1.1 404 NOT FOUND
+2025-05-18 04:29:52,974 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:29:52 GMT
+2025-05-18 04:29:52,974 - websockets.client - DEBUG - < Content-Type: text/html; charset=utf-8
+2025-05-18 04:29:52,981 - websockets.client - DEBUG - < Transfer-Encoding: chunked
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < Connection: keep-alive
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < cf-cache-status: DYNAMIC
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=3d%2F2Dc98sh76ycJ%2FBGCIAuqKagUcfftdZzDE1D7UHAgGMWdMhS0W%2FfAqR0EnO0eb6jhfdIyKyMryTEaVhjMyUx1bEohYxHymSf2eAmI7BzFp0DZsCnNztvjQJwJYRE1%2BdtE%3D"}],"group":"cf-nel","max_age":604800}
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < Server: cloudflare
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < CF-RAY: 9417ede6be7773d4-JNB
+2025-05-18 04:29:52,983 - websockets.client - DEBUG - < server-timing: cfL4;desc="?proto=TCP&rtt=6260&min_rtt=5576&rtt_var=2579&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2818&recv_bytes=923&delivery_rate=516499&cwnd=232&unsent_bytes=0&cid=d0d449ea554dcf9e&ts=864&x=0"
+2025-05-18 04:29:52,987 - websockets.client - DEBUG - < [body] (207 bytes)
+2025-05-18 04:29:52,988 - websockets.client - DEBUG - > EOF
+2025-05-18 04:29:52,989 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:29:52,991 - __main__ - ERROR - Error testing SSID(1) on wss://api-in.po.market/socket.io/?EIO=4&transport=websocket: server rejected WebSocket connection: HTTP 404
+2025-05-18 04:29:52,992 - websockets.client - DEBUG - < EOF
+2025-05-18 04:29:52,993 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:29:54,000 - __main__ - INFO - SSID(1): Testing server 2/3: wss://api-us4.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:54,000 - __main__ - INFO - Testing SSID(1) directly with WebSockets on wss://api-us4.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:54,274 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Host: api-us4.po.market
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Sec-WebSocket-Key: UoAPOY2LMVCCFKfhPCHk/g==
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:55,116 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:55,122 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:29:55,440 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:29:55,440 - websockets.client - DEBUG - < Server: nginx/1.20.1
+2025-05-18 04:29:55,447 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:29:54 GMT
+2025-05-18 04:29:55,447 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:29:55,447 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:29:55,448 - websockets.client - DEBUG - < Sec-WebSocket-Accept: XbH2hkrkEB/fdoG6Ez8bxifLtOM=
+2025-05-18 04:29:55,448 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:29:55,448 - websockets.client - DEBUG - < TEXT '0{"sid":"xv9QeMoGyiNwLH2P7Mri","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:29:55,448 - __main__ - INFO - SSID(1): Successfully connected to wss://api-us4.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:55,448 - __main__ - DEBUG - SSID(1): Received: 0{"sid":"xv9QeMoGyiNwLH2P7Mri","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:29:55,448 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:29:55,448 - __main__ - DEBUG - SSID(1): Sent: 40
+2025-05-18 04:29:55,774 - websockets.client - DEBUG - < TEXT '40{"sid":"qnmOtYMJRoV3l0iT7Mrj"}' [32 bytes]
+2025-05-18 04:29:55,774 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:29:55,774 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:55,774 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:29:55,774 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:29:55,774 - __main__ - DEBUG - SSID(1): Received: 40{"sid":"qnmOtYMJRoV3l0iT7Mrj"}
+2025-05-18 04:29:56,099 - websockets.client - DEBUG - < EOF
+2025-05-18 04:29:56,099 - websockets.client - DEBUG - > EOF
+2025-05-18 04:29:56,099 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:29:56,099 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:29:56,108 - __main__ - ERROR - Error testing SSID(1) on wss://api-us4.po.market/socket.io/?EIO=4&transport=websocket: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:29:57,116 - __main__ - INFO - SSID(1): Testing server 3/3: wss://api-hk.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:57,116 - __main__ - INFO - Testing SSID(1) directly with WebSockets on wss://api-hk.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:29:57,135 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:29:57,145 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:29:57,145 - websockets.client - DEBUG - > Host: api-hk.po.market
+2025-05-18 04:29:57,146 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:29:57,146 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:29:57,146 - websockets.client - DEBUG - > Sec-WebSocket-Key: UEHunkjv3naFdIdRBG1pdg==
+2025-05-18 04:29:57,147 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:29:57,147 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:29:57,148 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:07,126 - __main__ - ERROR - Error testing SSID(1) on wss://api-hk.po.market/socket.io/?EIO=4&transport=websocket: timed out during opening handshake
+2025-05-18 04:30:07,126 - websockets.client - DEBUG - > EOF
+2025-05-18 04:30:07,126 - websockets.client - DEBUG - < EOF
+2025-05-18 04:30:07,126 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:30:10,140 - __main__ - INFO - Testing SSID(2)
+2025-05-18 04:30:10,140 - __main__ - INFO - Testing SSID(2) with PocketOption API: A6pz6Vk19O... (truncated for security)
+2025-05-18 04:30:10,140 - __main__ - INFO - Attempting to connect to Pocket Option API with SSID(2)...
+2025-05-18 04:30:10,140 - asyncio - DEBUG - Using proactor: IocpProactor
+2025-05-18 04:30:10,369 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:10,799 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:10,799 - websockets.client - DEBUG - > Host: api-eu.po.market
+2025-05-18 04:30:10,799 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:10,805 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:10,807 - websockets.client - DEBUG - > Sec-WebSocket-Key: XC1thePVe2rTmVRTKeRuPw==
+2025-05-18 04:30:10,807 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:10,807 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:10,807 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:11,181 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:30:11,181 - websockets.client - DEBUG - < Server: nginx/1.24.0
+2025-05-18 04:30:11,181 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:30:10 GMT
+2025-05-18 04:30:11,181 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:30:11,181 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:30:11,188 - websockets.client - DEBUG - < Sec-WebSocket-Accept: d+W4iERzGTZyXpHeTjWXVL5MSjY=
+2025-05-18 04:30:11,189 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:30:11,190 - websockets.client - DEBUG - < TEXT '0{"sid":"zIxPiAZOMJBG519jloCV","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:30:11,190 - pocketoptionapi.ws.client - DEBUG - 0{"sid":"zIxPiAZOMJBG519jloCV","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:30:11,194 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:30:11,382 - websockets.client - DEBUG - < TEXT '40{"sid":"Bwyae9Lpj1vaYRELloCW"}' [32 bytes]
+2025-05-18 04:30:11,382 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:30:11,382 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:11,382 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:11,382 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:30:11,388 - pocketoptionapi.ws.client - DEBUG - 40{"sid":"Bwyae9Lpj1vaYRELloCW"}
+2025-05-18 04:30:11,574 - websockets.client - DEBUG - < EOF
+2025-05-18 04:30:11,574 - websockets.client - DEBUG - > EOF
+2025-05-18 04:30:11,580 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:30:11,581 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:30:11,582 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:30:11,715 - pocketoptionapi.ws.client - WARNING - Trying another server
+2025-05-18 04:30:11,907 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:12,332 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:12,332 - websockets.client - DEBUG - > Host: demo-api-eu.po.market
+2025-05-18 04:30:12,338 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:12,338 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:12,340 - websockets.client - DEBUG - > Sec-WebSocket-Key: 0GefoM0uoUNBA2Nu+dIgzg==
+2025-05-18 04:30:12,340 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:12,340 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:12,340 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:12,572 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < Server: nginx/1.24.0
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:30:12 GMT
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < Sec-WebSocket-Accept: sjM52lTFX6VA1SH9VcCPDfjSi2o=
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - < TEXT '0{"sid":"ki20uNpTK6CCakD2Tu_D","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:30:12,573 - pocketoptionapi.ws.client - DEBUG - 0{"sid":"ki20uNpTK6CCakD2Tu_D","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:30:12,573 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:30:12,788 - websockets.client - DEBUG - < TEXT '40{"sid":"EdJ7plEug4Kou275Tu_E"}' [32 bytes]
+2025-05-18 04:30:12,790 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:30:12,790 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:12,790 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:12,790 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:30:12,790 - pocketoptionapi.ws.client - DEBUG - 40{"sid":"EdJ7plEug4Kou275Tu_E"}
+2025-05-18 04:30:12,990 - websockets.client - DEBUG - < EOF
+2025-05-18 04:30:12,990 - websockets.client - DEBUG - > EOF
+2025-05-18 04:30:12,990 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:30:12,990 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:30:12,990 - root - WARNING - Error occurred: received 1005 (no status received [internal]); then sent 1005 (no status received [internal])
+2025-05-18 04:30:13,140 - __main__ - INFO - SSID(2): Successfully connected to Pocket Option API
+2025-05-18 04:30:13,140 - __main__ - INFO - SSID(2): Checking account balance...
+2025-05-18 04:30:31,198 - pocketoptionapi.ws.client - WARNING - Trying another server
+2025-05-18 04:30:31,314 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:31,326 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:31,327 - websockets.client - DEBUG - > Host: api-fr2.po.market
+2025-05-18 04:30:31,327 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:31,327 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:31,328 - websockets.client - DEBUG - > Sec-WebSocket-Key: nH4NWLW8P0OM4gEGSZhlzw==
+2025-05-18 04:30:31,329 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:31,329 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:31,330 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < HTTP/1.1 521 
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:30:31 GMT
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Content-Type: text/plain; charset=UTF-8
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Content-Length: 15
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Connection: keep-alive
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ItxJgRbiAqrQUO0uBQBujqXdzhRhuex3%2FMRMGenMuscw9dBecebbqkB4HFliujr1jGnqvEnrmUxR3elInmmDvJGQSxHrh0C4d5yXcZ1K7461x8LnrI8Q6mOBz63fDFgqcxj0"}],"group":"cf-nel","max_age":604800}
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < X-Frame-Options: SAMEORIGIN
+2025-05-18 04:30:31,556 - websockets.client - DEBUG - < Referrer-Policy: same-origin
+2025-05-18 04:30:31,563 - websockets.client - DEBUG - < Cache-Control: private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+2025-05-18 04:30:31,564 - websockets.client - DEBUG - < Expires: Thu, 01 Jan 1970 00:00:01 GMT
+2025-05-18 04:30:31,564 - websockets.client - DEBUG - < Server: cloudflare
+2025-05-18 04:30:31,564 - websockets.client - DEBUG - < CF-RAY: 9417eedbdfa2bc14-JNB
+2025-05-18 04:30:31,567 - websockets.client - DEBUG - < server-timing: cfL4;desc="?proto=TCP&rtt=5231&min_rtt=5000&rtt_var=2040&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2817&recv_bytes=924&delivery_rate=576000&cwnd=251&unsent_bytes=0&cid=0e658f42483271e7&ts=233&x=0"
+2025-05-18 04:30:31,568 - websockets.client - DEBUG - < [body] (15 bytes)
+2025-05-18 04:30:31,568 - websockets.client - DEBUG - > EOF
+2025-05-18 04:30:31,570 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:30:31,573 - pocketoptionapi.ws.client - ERROR - server rejected WebSocket connection: HTTP 521
+2025-05-18 04:30:31,574 - websockets.client - DEBUG - < EOF
+2025-05-18 04:30:31,574 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:30:31,764 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:32,590 - pocketoptionapi.ws.client - WARNING - Trying another server
+2025-05-18 04:30:32,604 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:32,604 - websockets.client - DEBUG - > Host: api-us4.po.market
+2025-05-18 04:30:32,605 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:32,606 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:32,606 - websockets.client - DEBUG - > Sec-WebSocket-Key: gP/TuIzVwIu0AnBtM8K5vw==
+2025-05-18 04:30:32,607 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:32,608 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:32,610 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:32,610 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:32,619 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:32,620 - websockets.client - DEBUG - > Host: api-l.po.market
+2025-05-18 04:30:32,620 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:32,621 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:32,621 - websockets.client - DEBUG - > Sec-WebSocket-Key: VhOYLAni8venm2ft7QJMdw==
+2025-05-18 04:30:32,622 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:32,622 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:32,622 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < HTTP/1.1 101 Switching Protocols
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < Server: nginx/1.20.1
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:30:32 GMT
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < Connection: upgrade
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < Upgrade: websocket
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - < Sec-WebSocket-Accept: szjYdNrh7Q73beKg7xxz7imgzAc=
+2025-05-18 04:30:32,939 - websockets.client - DEBUG - = connection is OPEN
+2025-05-18 04:30:32,946 - websockets.client - DEBUG - < TEXT '0{"sid":"0e8jCVyZPed2Z6Gx7A8q","upgrades":[],"p...0,"maxPayload":1000000}' [107 bytes]
+2025-05-18 04:30:32,948 - pocketoptionapi.ws.client - DEBUG - 0{"sid":"0e8jCVyZPed2Z6Gx7A8q","upgrades":[],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}
+2025-05-18 04:30:32,948 - websockets.client - DEBUG - > TEXT '40' [2 bytes]
+2025-05-18 04:30:33,190 - websockets.client - DEBUG - < HTTP/1.1 200 OK
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < Date: Sun, 18 May 2025 02:30:32 GMT
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < Content-Type: text/html; charset=UTF-8
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < Transfer-Encoding: chunked
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < Connection: keep-alive
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < X-Powered-By: PHP/8.3.19
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < cf-cache-status: DYNAMIC
+2025-05-18 04:30:33,191 - websockets.client - DEBUG - < Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=psaRKQHDXs7Jm0KCDJaxkggRWBqnnuH8SQ%2FzSBxpTDQ5NxBnGE%2FXK15heKaOVm3bXlircyR9BuvTjstmoO5sx%2Bktn2lj1RVbiIxYkZ54ZrrSbhUXzpeKyMzvWeuo2RnXXQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+2025-05-18 04:30:33,196 - websockets.client - DEBUG - < NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+2025-05-18 04:30:33,196 - websockets.client - DEBUG - < Server: cloudflare
+2025-05-18 04:30:33,198 - websockets.client - DEBUG - < CF-RAY: 9417eee3ee948a59-JNB
+2025-05-18 04:30:33,198 - websockets.client - DEBUG - < server-timing: cfL4;desc="?proto=TCP&rtt=5992&min_rtt=5340&rtt_var=2468&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2818&recv_bytes=922&delivery_rate=539325&cwnd=251&unsent_bytes=0&cid=da2db3683de004a1&ts=573&x=0"
+2025-05-18 04:30:33,200 - websockets.client - DEBUG - > EOF
+2025-05-18 04:30:33,201 - websockets.client - DEBUG - x closing TCP connection
+2025-05-18 04:30:33,203 - pocketoptionapi.ws.client - ERROR - server rejected WebSocket connection: HTTP 200
+2025-05-18 04:30:33,208 - websockets.client - DEBUG - < EOF
+2025-05-18 04:30:33,210 - websockets.client - DEBUG - = connection is CLOSED
+2025-05-18 04:30:33,226 - websockets.client - DEBUG - = connection is CONNECTING
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > GET /socket.io/?EIO=4&transport=websocket HTTP/1.1
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Host: api-fr.po.market
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Upgrade: websocket
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Connection: Upgrade
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Sec-WebSocket-Key: k7WG+6qAXmJYEtyKHxHNbw==
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Sec-WebSocket-Version: 13
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+2025-05-18 04:30:33,239 - websockets.client - DEBUG - > User-Agent: Python/3.11 websockets/15.0.1
+2025-05-18 04:30:33,322 - websockets.client - DEBUG - < TEXT '40{"sid":"P_fSM1NkwgpXHMHd7A8t"}' [32 bytes]
+2025-05-18 04:30:33,323 - websockets.client - DEBUG - < TEXT '41' [2 bytes]
+2025-05-18 04:30:33,323 - websockets.client - DEBUG - < CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:33,323 - websockets.client - DEBUG - > CLOSE 1005 (no status received [internal]) [0 bytes]
+2025-05-18 04:30:33,323 - websockets.client - DEBUG - = connection is CLOSING
+2025-05-18 04:30:33,323 - pocketoptionapi.ws.client - DEBUG - 40{"sid":"P_fSM1NkwgpXHMHd7A8t"}
+2025-05-18 04:30:33,334 - __main__ - WARNING - SSID(2): Could not retrieve balance. SSID may be invalid or expired.
+2025-05-18 04:30:33,335 - __main__ - INFO - SSID(2): API test failed, trying direct WebSocket connections
+2025-05-18 04:30:33,336 - __main__ - INFO - SSID(2): Testing server 1/3: wss://api-fr2.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:30:33,336 - __main__ - INFO - Testing SSID(2) directly with WebSockets on wss://api-fr2.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-18 04:30:33,342 - __main__ - ERROR - Error during tests: Event loop stopped before Future completed.

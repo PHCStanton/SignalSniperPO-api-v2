@@ -1,0 +1,56 @@
+{
+  "trade_amount": 1,
+  "max_daily_trades": 20,
+  "max_daily_loss": 50,
+  "min_seconds_before_timer": 5,
+  "test_mode": true,
+  "test_mode_win_rate": 0.6,
+  "stats_interval": 3600,
+  "timezone": "Africa/Johannesburg",
+  "log_level": "INFO",
+  
+  "risk_management": {
+    "enabled": true,
+    "max_consecutive_losses": 3,
+    "max_trades_per_asset": 5,
+    "max_trades_per_hour": 10,
+    "recovery_mode": {
+      "enabled": false,
+      "increase_amount_after_loss": false,
+      "increase_factor": 2.0,
+      "max_recovery_attempts": 3
+    }
+  },
+  
+  "notifications": {
+    "enabled": false,
+    "telegram": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": "",
+      "notify_on_signal": true,
+      "notify_on_trade": true,
+      "notify_on_result": true,
+      "notify_on_error": true,
+      "daily_report": true
+    },
+    "email": {
+      "enabled": false,
+      "smtp_server": "",
+      "smtp_port": 587,
+      "username": "",
+      "password": "",
+      "from_email": "",
+      "to_email": "",
+      "daily_report": true
+    }
+  },
+  
+  "advanced": {
+    "reconnect_attempts": 3,
+    "reconnect_delay": 5,
+    "websocket_ping_interval": 30,
+    "signal_buffer_size": 100,
+    "trade_history_days": 30
+  }
+}

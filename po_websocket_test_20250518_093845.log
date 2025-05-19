@@ -1,0 +1,26 @@
+2025-05-18 09:38:45,768 - DEBUG - --- request header ---
+2025-05-18 09:38:45,771 - DEBUG - GET /socket.io/?EIO=3&transport=websocket HTTP/1.1
+Upgrade: websocket
+Host: po.trade
+Origin: https://po.trade
+Sec-WebSocket-Key: hrYtcQuK1kZEs40yiXMVlg==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+Cookie: SSID=bde3d74bbc70c9e768874d0e3ec00fb4
+
+
+2025-05-18 09:38:45,771 - DEBUG - -----------------------
+2025-05-18 09:38:45,771 - DEBUG - --- response header ---
+2025-05-18 09:38:46,010 - DEBUG - HTTP/1.1 302 Found
+2025-05-18 09:38:46,010 - DEBUG - Server: QRATOR
+2025-05-18 09:38:46,010 - DEBUG - Date: Sun, 18 May 2025 07:38:45 GMT
+2025-05-18 09:38:46,010 - DEBUG - Content-Type: text/html; charset=UTF-8
+2025-05-18 09:38:46,019 - DEBUG - Transfer-Encoding: chunked
+2025-05-18 09:38:46,021 - DEBUG - Connection: keep-alive
+2025-05-18 09:38:46,022 - DEBUG - Keep-Alive: timeout=15
+2025-05-18 09:38:46,025 - DEBUG - X-Powered-By: PHP/8.3.8
+2025-05-18 09:38:46,028 - DEBUG - Set-Cookie: lang=en; expires=Wed, 09 Oct 2080 15:17:30 GMT; Max-Age=1748158725; path=/; domain=.po.trade; secure
+2025-05-18 09:38:46,030 - DEBUG - Location: https://po.trade/en/socket.io/?EIO=3&transport=websocket
+2025-05-18 09:38:46,032 - DEBUG - Server-Id: web5
+2025-05-18 09:38:46,033 - DEBUG - -----------------------
+2025-05-18 09:38:46,092 - ERROR - scheme https is invalid - goodbye

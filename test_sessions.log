@@ -1,0 +1,33 @@
+2025-05-17 23:45:16,925 - __main__ - INFO - Using API ID: 28529262
+2025-05-17 23:45:16,925 - __main__ - INFO - Using API Hash: 6e3dd...alda5
+2025-05-17 23:45:16,925 - __main__ - INFO - Found 4 session files: fresh_session.session, new_session_name.session, pocket_option_userbot.session, test_session.session
+2025-05-17 23:45:16,925 - __main__ - INFO - Testing session: fresh_session
+2025-05-17 23:45:16,940 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:17,130 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:17,928 - __main__ - INFO - Session fresh_session is not authorized
+2025-05-17 23:45:17,929 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:17,930 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:17,939 - __main__ - INFO - Testing session: new_session_name
+2025-05-17 23:45:17,945 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:18,136 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:19,046 - __main__ - INFO - Session new_session_name is not authorized
+2025-05-17 23:45:19,048 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:19,051 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:19,068 - __main__ - INFO - Testing session: pocket_option_userbot
+2025-05-17 23:45:19,073 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:19,262 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:20,081 - __main__ - INFO - Session pocket_option_userbot is not authorized
+2025-05-17 23:45:20,083 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-17 23:45:20,085 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-17 23:45:20,103 - __main__ - INFO - Testing session: test_session
+2025-05-17 23:45:20,110 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-17 23:45:20,298 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-17 23:45:21,485 - __main__ - INFO - Session test_session is valid. Logged in as: Pieter Stanton (@piet43)
+2025-05-17 23:45:21,486 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-17 23:45:21,487 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-17 23:45:21,494 - __main__ - INFO - 
+Found 1 valid session(s):
+2025-05-17 23:45:21,495 - __main__ - INFO -   - test_session: Pieter Stanton (@piet43)
+2025-05-17 23:45:21,495 - __main__ - INFO - 
+The default session 'pocket_option_userbot' is not valid
+2025-05-17 23:45:21,496 - __main__ - INFO - Consider using 'test_session' instead by updating telegram_config.json

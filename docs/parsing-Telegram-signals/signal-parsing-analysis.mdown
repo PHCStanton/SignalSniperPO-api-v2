@@ -1,0 +1,209 @@
+Based on the provided signal Images @docs\parsing-Telegram-signals, I’ll outline how the trading signals can be effectively parsed using the existing code structure (e.g., `telethon_setup.py`, `bot.py`) and the Pocket Option API files (`stable_api.py`, `api.py`, etc.) you shared earlier. I’ll provide an example implementation to extract the key components—trading pair, direction, timer, and trade time—from the two-message format and execute a trade accordingly. This will align with your goal of achieving a stable v1.0 that reads signals and executes trades reliably on your Ubuntu EC2 server.
+
+### Signal Format Analysis
+The signals are delivered in a two-message format, as seen in the screenshots:
+1. **First Message**: Indicates the trading pair (e.g., "Trading Pair: AUD/USD (OTC)").
+2. **Second Message**: Contains the timer, pair confirmation, direction, and trade time (e.g., "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN").
+
+Additional context messages (e.g., "Get ready to earn! Starting soon!" or "The trading session has already started!") provide session details but are not directly part of the actionable signal. The key data points to parse are:
+- **Trading Pair**: e.g., "AUD/USD (OTC)" from the first message.
+- **Timer**: e.g., "00:01:00" from the second message, interpreted as a target time in SAST (South Africa Standard Time, given your EC2 location).
+- **Direction**: e.g., "HIGHER" from the second message.
+- **Trade Time (Expiry)**: e.g., "1 MIN" from the second message, indicating a 1-minute expiration.
+
+### Parsing Implementation
+To effectively parse these signals, we can enhance the existing `telethon_setup.py` or `bot.py` with regular expressions (regex) to match the two-message pattern. The `telegram_config.json` file should define the regex patterns, and the bot should correlate the first and second messages within a 60-second window (as per your `pair_match_window` setting). Below is an example implementation:
+
+#### Updated `telegram_config.json`
+```json
+{
+  "channel_name": "BINARY TRADING CLUB",
+  "first_message_regex": "Trading Pair: (\\w+/\\w+)\\s*\\(OTC\\)?",
+  "second_message_regex": {
+    "timer": "! SET THE TIMER TO (\\d{2}:\\d{2}:\\d{2}) !",
+    "pair": "First signal: Currency pair (\\w+/\\w+)",
+    "direction": "(HIGHER|LOWER)",
+    "expiry": "Trade time: (\\d+) MIN"
+  },
+  "pair_match_window": 60
+}
+```
+
+#### Example Parsing Code
+This code can be added to `bot.py` or `telethon_setup.py` to process the signals:
+
+```python
+import re
+import json
+from datetime import datetime
+import pytz
+import logging
+from stable_api import PocketOption
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+# Load configuration
+with open("config/telegram_config.json", "r") as f:
+    config = json.load(f)
+
+class TradingBot:
+    def __init__(self):
+        self.first_message = None
+        self.pocket_option = PocketOption(ssid="YOUR_SSID", demo=True)  # Replace with actual SSID
+        self.pocket_option.connect()
+
+    async def process_message(self, message, timestamp):
+        """
+        Process incoming Telegram messages and parse trading signals.
+        """
+        # Parse first message
+        first_match = re.search(config["first_message_regex"], message)
+        if first_match and not self.first_message:
+            pair = first_match.group(1)
+            self.first_message = {"pair": pair, "timestamp": timestamp}
+            logger.info(f"First message parsed: Pair={pair}, Time={timestamp}")
+            return
+
+        # Parse second message only if first message exists
+        if self.first_message:
+            second_match = re.search(config["second_message_regex"]["timer"], message)
+            if second_match:
+                timer_str = second_match.group(1)
+                pair_match = re.search(config["second_message_regex"]["pair"], message)
+                direction_match = re.search(config["second_message_regex"]["direction"], message)
+                expiry_match = re.search(config["second_message_regex"]["expiry"], message)
+
+                if pair_match and direction_match and expiry_match:
+                    second_pair = pair_match.group(1)
+                    direction = direction_match.group(1)
+                    expiry = int(expiry_match.group(1)) * 60  # Convert minutes to seconds
+
+                    # Check pair match within window
+                    time_diff = (timestamp - self.first_message["timestamp"]).total_seconds()
+                    if (second_pair == self.first_message["pair"] and 
+                        0 <= time_diff <= config["pair_match_window"]):
+                        signal = {
+                            "pair": second_pair,
+                            "timer": timer_str,
+                            "direction": direction,
+                            "expiry": expiry
+                        }
+                        self.first_message = None  # Reset for next signal
+                        await self.execute_trade(signal)
+                    else:
+                        logger.warning(f"Pair mismatch or timeout: {time_diff}s")
+                        self.first_message = None
+
+    async def execute_trade(self, signal):
+        """
+        Execute a trade based on the parsed signal.
+        """
+        try:
+            # Convert timer to SAST datetime
+            sast = pytz.timezone("Africa/Johannesburg")
+            current_time = datetime.now(sast)
+            target_time = datetime.strptime(signal["timer"], "%H:%M:%S").replace(
+                tzinfo=sast, year=current_time.year, month=current_time.month, day=current_time.day
+            )
+            if target_time < current_time:
+                target_time += timedelta(days=1)  # Handle next day if timer is earlier
+            delay = (target_time - current_time).total_seconds()
+
+            if delay < 5:
+                logger.warning("Signal too late, skipping trade")
+                return
+
+            logger.info(f"Waiting {delay}s to execute trade at {target_time}")
+            await asyncio.sleep(max(0, delay))
+
+            # Determine action (Pocket Option uses "call" for HIGHER, "put" for LOWER)
+            action = "call" if signal["direction"] == "HIGHER" else "put"
+            amount = 1  # $1 trade for testing
+            result, order_id = self.pocket_option.buy(amount, signal["pair"], action, signal["expiry"])
+            
+            if result:
+                logger.info(f"Trade executed: Pair={signal['pair']}, Direction={signal['direction']}, Order ID={order_id}")
+                profit, status = self.pocket_option.check_win(order_id)
+                logger.info(f"Trade result: Profit={profit}, Status={status}")
+            else:
+                logger.error("Trade execution failed")
+        except Exception as e:
+            logger.error(f"Trade execution error: {str(e)}")
+
+    async def run(self):
+        """Run the bot to monitor and process signals."""
+        # Simulate message processing (replace with Telethon integration)
+        messages = [
+            "Trading Pair: AUD/USD (OTC)",
+            "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN"
+        ]
+        sast = pytz.timezone("Africa/Johannesburg")
+        for msg in messages:
+            await self.process_message(msg, datetime.now(sast))
+            await asyncio.sleep(1)  # Simulate message delay
+
+if __name__ == "__main__":
+    bot = TradingBot()
+    asyncio.run(bot.run())
+```
+
+### Explanation of the Parsing Example
+1. **Configuration**:
+   - `telegram_config.json` defines regex patterns for the first message (`Trading Pair: ...`) and second message components (`timer`, `pair`, `direction`, `expiry`).
+   - The `pair_match_window` (60 seconds) ensures the second message correlates with the first within a reasonable time frame.
+
+2. **Message Processing**:
+   - The `process_message` method checks for the first message and stores it with a timestamp.
+   - For the second message, it extracts all required fields using regex and validates the pair match against the first message.
+   - If valid, it constructs a `signal` dictionary and resets `first_message` to prepare for the next signal.
+
+3. **Trade Execution**:
+   - The `execute_trade` method converts the `timer` to a SAST datetime, accounting for day rollover if the target time is earlier than now (e.g., 00:01:00 on May 19, 2025, at 04:37 AM SAST).
+   - It waits until the target time, then executes a trade using `PocketOption.buy`, mapping "HIGHER" to "call" and "LOWER" to "put" (Pocket Option’s convention).
+   - The trade amount is set to $1 for testing, with a 1-minute expiry (60 seconds).
+   - It checks the trade result with `check_win` and logs the outcome.
+
+4. **Simulation**:
+   - The `run` method simulates processing the two messages sequentially. In a real implementation, this would integrate with Telethon’s message listener in `telethon_setup.py`.
+
+### Sample Output (Based on Current Time: 04:37 AM SAST, May 19, 2025)
+Assuming the signal is received now:
+- **First Message**: "Trading Pair: AUD/USD (OTC)" at 04:37:00 SAST.
+- **Second Message**: "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN" at 04:37:30 SAST.
+- **Parsing**:
+  - First message: `{"pair": "AUD/USD", "timestamp": 2025-05-19 04:37:00 SAST}`.
+  - Second message: `{"timer": "00:01:00", "pair": "AUD/USD", "direction": "HIGHER", "expiry": 60}`.
+  - Time diff: 30s < 60s, so valid.
+- **Execution**:
+  - Target time: 00:01:00 on May 20, 2025 (next day, ~19 hours 24 minutes from now).
+  - Bot waits until 00:01:00 SAST on May 20, then executes a $1 "call" trade on AUD/USD with a 60-second expiry.
+  - Logs: "Trade executed: Pair=AUD/USD, Direction=HIGHER, Order ID=123" and "Trade result: Profit=0.8, Status=win" (example).
+
+### Integration with Existing Code
+- **Telethon Setup**: Replace the `run` simulation with Telethon’s `client.add_event_handler` in `telethon_setup.py` to process live messages from the channel.
+- **Pocket Option API**: Use the `stable_api.py` `PocketOption` class with your SSID, ensuring `connect()` succeeds before trading.
+- **EC2 Deployment**: Run this on your EC2 instance (3.126.128.227) with a `systemd` service, as outlined previously.
+
+### Considerations
+1. **Timer Handling**:
+   - The `00:01:00` timer likely indicates the start of the trading window, not a specific execution time. Adjust the logic to execute immediately upon signal receipt if intended, or clarify the timer’s purpose with the channel.
+   - Current code assumes a future target time; modify if the signal should trigger instantly.
+
+2. **OTC Pairs**:
+   - The `(OTC)` suffix indicates over-the-counter assets. Ensure Pocket Option supports these pairs (e.g., `AUD/USD_otc`) and update `pair` in the signal accordingly.
+
+3. **Latency**:
+   - Aim for <2 seconds from signal receipt to trade execution. Test the delay on EC2 and optimize if needed.
+
+4. **Error Handling**:
+   - Add retries for `buy` and `check_win` failures, as suggested in the previous analysis of `stable_api.py`.
+
+### Next Steps
+- **Test Parsing**: Use `simulate_signals.py` with the example messages to verify regex matches.
+- **Integrate Telethon**: Update `telethon_setup.py` to call `process_message` for each new message.
+- **Execute Demo Trade**: Set `demo=True` and test with a $1 trade on EC2.
+- **Validate Real Trade**: After testing, use a real SSID (`demo=False`) for a $1 trade, then revert to demo mode.
+
+Let me know if you need help refining the regex, integrating with Telethon, or debugging trade execution! Share any logs or specific issues for further assistance.

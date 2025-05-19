@@ -1,0 +1,140 @@
+Awesome — let’s now tie everything together into a **complete mini-bot script** that:
+
+1. ✅ Listens to Telegram for trade messages (mocked for now)
+2. ✅ Parses Simon’s signal using your `parse_trade_signal()` function
+3. ✅ Connects to Pocket Option’s WebSocket using your `SSID`
+4. ✅ Sends a live trade based on the parsed signal
+
+---
+
+## 🧩 Mini Bot Workflow (Overview)
+
+```
+Telegram Signal ➝ parse_trade_signal() ➝ connect_ws() ➝ execute_trade_ws()
+```
+
+---
+
+## 🐍 Full Example: Pocket Option Trading Bot (Prototype)
+
+```python
+import websocket
+import json
+import re
+import threading
+import time
+
+# ✅ Replace with your actual SSID
+SSID = "YOUR_ACTUAL_SSID_HERE"
+
+# --- 🔍 Parse Telegram Signal ---
+def parse_trade_signal(message: str) -> dict:
+    direction_map = {"higher": "call", "lower": "put"}
+    pair_match = re.search(r'(Trading Pair:|Trade signal:)\s*([A-Z]{3}/[A-Z]{3})', message)
+    direction_match = re.search(r'\b(HIGHER|LOWER)\b', message, re.IGNORECASE)
+    timer_match = re.search(r'TIMER TO\s*(\d{2}:\d{2}:\d{2})', message)
+    duration_match = re.search(r'Trade time:\s*(\d+)\s*MIN', message)
+
+    pair = pair_match.group(2) if pair_match else None
+    signal_direction = direction_match.group(1).lower() if direction_match else None
+    trade_direction = direction_map.get(signal_direction) if signal_direction else None
+    timer = timer_match.group(1) if timer_match else None
+    trade_duration = int(duration_match.group(1)) if duration_match else None
+
+    if not all([pair, trade_direction, trade_duration]):
+        print("⚠️ Incomplete signal. Skipping.")
+        return None
+
+    return {
+        "pair": pair,
+        "direction": trade_direction,
+        "signal_word": signal_direction,
+        "timer": timer,
+        "duration": trade_duration
+    }
+
+# --- 🛠️ Send Trade Command ---
+def execute_trade_ws(ws, signal_data, amount=1):
+    asset = signal_data['pair'].replace('/', '').replace(' ', '')
+    payload = {
+        "type": "open_trade",
+        "payload": {
+            "asset": asset,
+            "amount": amount,
+            "direction": signal_data["direction"],
+            "expiration": signal_data["duration"] * 60
+        }
+    }
+    try:
+        ws.send(json.dumps(payload))
+        print(f"🚀 Trade sent: {payload}")
+    except Exception as e:
+        print(f"❌ Failed to send trade: {e}")
+
+# --- 🔌 WebSocket Setup ---
+def connect_ws_and_trade(signal_data):
+    def on_open(ws):
+        print("🔌 Connected to Pocket Option WebSocket")
+
+    def on_message(ws, message):
+        if message.startswith("40"):
+            print("💬 Auth event accepted. Sending signal...")
+            execute_trade_ws(ws, signal_data, amount=5)
+        elif "unauthorized" in message.lower():
+            print("❌ SSID is invalid or expired.")
+        else:
+            print(f"📨 {message}")
+
+    def on_error(ws, error):
+        print(f"❌ Error: {error}")
+
+    def on_close(ws, code, reason):
+        print(f"🔌 WebSocket closed: {code} {reason}")
+
+    ws = websocket.WebSocketApp(
+        "wss://po.trade/socket.io/?EIO=3&transport=websocket",
+        on_open=on_open,
+        on_message=on_message,
+        on_error=on_error,
+        on_close=on_close,
+        header=[f"Cookie: SSID={SSID}"]
+    )
+
+    thread = threading.Thread(target=ws.run_forever)
+    thread.start()
+
+# --- 🧪 Simulated Incoming Message (Replace with Telegram later) ---
+simulated_telegram_message = """
+🔴Trading Pair: EUR/USD (OTC)
+❗️SET THE TIMER TO 00:01:00❗️
+HIGHER ⬆️
+Trade time: 1 MIN
+"""
+
+# --- 🧠 Parse and Trade ---
+signal = parse_trade_signal(simulated_telegram_message)
+if signal:
+    connect_ws_and_trade(signal)
+```
+
+---
+
+## ✅ What This Script Does
+
+| Step | Action                                              |
+| ---- | --------------------------------------------------- |
+| 1    | Parses a mock signal from Simon                     |
+| 2    | Connects to Pocket Option WebSocket using your SSID |
+| 3    | Sends a trade (e.g., `EURUSD`, 1 min, `call`)       |
+| 4    | Logs responses and handles errors                   |
+
+---
+
+## 🚀 What to Do Next
+
+* Replace the **simulated message** with messages from **your real Telegram bot listener**.
+* Replace `amount=5` with your preferred trade amount.
+* Ensure `SSID` is current (or auto-refresh it in future versions).
+* Optionally: add retry logic, win/loss tracking, or queue management.
+
+---
