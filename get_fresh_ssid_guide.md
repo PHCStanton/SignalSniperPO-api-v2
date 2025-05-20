@@ -6,13 +6,23 @@ This guide provides detailed instructions on how to extract a valid SSID from yo
 
 The SSID (Session ID) is a temporary authentication token that Pocket Option uses to maintain your login session. These tokens typically expire after a certain period (usually a few hours to a few days), which is why previously saved SSIDs may no longer work.
 
+## Important Update: WebSocket SSID Format
+
+**Note:** The PocketOptionAPI-v2 library requires the SSID in WebSocket message format, not the cookie format. The correct format looks like:
+
+```
+42["auth",{"session":"your_session_string_here","isDemo":1,"uid":12345678,"platform":2}]
+```
+
+We've created a new tool `extract_websocket_ssid.py` to help you extract the SSID in the correct format.
+
 ## Step-by-Step Instructions
 
-### Method 1: Using Browser Developer Tools (Recommended)
+### Method 1: Using the WebSocket SSID Extractor (Recommended)
 
 1. **Open your web browser** (Chrome, Firefox, Edge, etc.)
 
-2. **Navigate to Pocket Option**: Go to https://pocketoption.com/en/login/
+2. **Navigate to Pocket Option**: Go to https://pocketoption.com/en/login/ or https://po.trade/
 
 3. **Log in to your account** using your email/username and password
 
@@ -21,48 +31,62 @@ The SSID (Session ID) is a temporary authentication token that Pocket Option use
    - In Firefox: Press F12 or right-click and select "Inspect Element"
    - In Edge: Press F12 or right-click and select "Inspect"
 
-5. **Navigate to the Application/Storage tab**:
-   - In Chrome: Click on the "Application" tab in the developer tools
-   - In Firefox: Click on the "Storage" tab
-   - In Edge: Click on the "Application" tab
+5. **Navigate to the Network tab**:
+   - Click on the "Network" tab in the developer tools
+   - Filter for "WS" to show only WebSocket connections
 
-6. **Find the Cookies section**:
-   - In Chrome: Expand "Cookies" in the left sidebar, then click on "https://pocketoption.com"
-   - In Firefox: Expand "Cookies" and click on "pocketoption.com"
-   - In Edge: Expand "Cookies" and click on "https://pocketoption.com"
+6. **Find the WebSocket connection**:
+   - Look for a connection to "socket.io" or similar
+   - Click on it to see the messages
 
-7. **Find the SSID cookie**:
-   - Look for a cookie named "ssid" in the list
-   - The value will be a string like "A9B0cjxtNGQ1fFmxL"
+7. **Find the authentication message**:
+   - In the messages list, look for a message that starts with `42["auth",` or contains "session"
+   - This message is sent when you first connect and contains your authentication details
 
-8. **Copy the SSID value**:
-   - Double-click on the value to select it
-   - Right-click and select "Copy" or press Ctrl+C
+8. **Copy the entire message**:
+   - Select and copy the complete message including the `42["auth",` prefix
 
-9. **Test the SSID**:
-   - Run the `test_ssid_direct.py` script
-   - Paste the copied SSID when prompted
-   - Select "n" when asked if using a demo account (unless you are using a demo account)
+9. **Run the WebSocket SSID Extractor**:
+   ```bash
+   python extract_websocket_ssid.py
+   ```
 
-### Method 2: Using Browser Extensions
+10. **Paste the WebSocket message** when prompted
 
-If you find the developer tools method difficult, you can use a cookie manager extension:
+11. **Follow the prompts** to save the SSID to a file and/or update your configuration
 
-1. **Install a cookie manager extension**:
-   - For Chrome: "EditThisCookie" or "Cookie-Editor"
-   - For Firefox: "Cookie Quick Manager" or "Cookie-Editor"
-   - For Edge: "Cookie-Editor"
+### Method 2: Manual WebSocket Message Extraction
 
-2. **Navigate to Pocket Option**: Go to https://pocketoption.com and log in
+If you prefer to manually extract the SSID:
 
-3. **Open the cookie manager extension**:
-   - Click on the extension icon in your browser toolbar
+1. Follow steps 1-8 from Method 1 to find and copy the WebSocket authentication message
 
-4. **Find and copy the SSID cookie**:
-   - Look for the "ssid" cookie
-   - Copy its value
+2. Make sure the message is in the correct format:
+   ```
+   42["auth",{"session":"your_session_string_here","isDemo":1,"uid":12345678,"platform":2}]
+   ```
 
-5. **Test the SSID** using the `test_ssid_direct.py` script
+3. Update your `config/pocket_option_config.json` file with this SSID
+
+4. Test the SSID using the `test_ssid_direct.py` script:
+   ```bash
+   python test_ssid_direct.py
+   ```
+
+### Method 3: Using Browser Cookies (Not Recommended)
+
+**Note:** This method is no longer recommended as the cookie SSID format is different from the WebSocket SSID format required by the API.
+
+1. **Open Developer Tools** and navigate to the Application/Storage tab
+
+2. **Find the Cookies section** for pocketoption.com
+
+3. **Find the SSID cookie** and copy its value
+
+4. **Convert the cookie SSID to WebSocket format** using the WebSocket SSID Extractor:
+   ```bash
+   python extract_websocket_ssid.py --message "your_cookie_ssid_here"
+   ```
 
 ## Important Notes
 

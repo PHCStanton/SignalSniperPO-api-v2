@@ -1,0 +1,277 @@
+2025-05-20 02:32:24,985 - __main__ - INFO - Test mode enabled via command line argument
+2025-05-20 02:32:25,027 - __main__ - INFO - Database initialized successfully
+2025-05-20 02:32:25,028 - __main__ - INFO - Initializing Telegram client...
+2025-05-20 02:32:25,046 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-20 02:32:25,236 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-20 02:32:26,471 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-20 02:32:26,471 - __main__ - INFO - Already authenticated using existing session
+2025-05-20 02:32:26,663 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-20 02:32:26,674 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-20 02:32:26,870 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-20 02:32:26,871 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-20 02:32:26,871 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-20 02:32:26,871 - __main__ - INFO - Account balance: None
+2025-05-20 02:32:26,871 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-20 02:32:26,871 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 02:32:26,877 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-20 02:40:43,704 - self_bot - INFO - Database initialized successfully
+2025-05-20 02:40:43,704 - self_bot - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-20 02:40:43,705 - self_bot - INFO - Successfully connected to Pocket Option API
+2025-05-20 02:40:43,707 - self_bot - INFO - Account balance: None
+2025-05-20 02:40:43,718 - self_bot - DEBUG - Signal saved to database with ID: 1
+2025-05-20 02:40:43,720 - self_bot - INFO - Scheduling trade execution for EUR/USD HIGHER at 02:41:43 (59.28 seconds from now)
+2025-05-20 02:41:43,016 - self_bot - DEBUG - Trade saved to database with ID: 1
+2025-05-20 02:41:43,016 - self_bot - INFO - Executing trade: EURUSD CALL 10 (expiry: 60s)
+2025-05-20 02:41:43,017 - self_bot - INFO - Test mode enabled. Simulating trade execution.
+2025-05-20 02:41:43,023 - self_bot - DEBUG - Trade saved to database with ID: 2
+2025-05-20 02:41:43,024 - self_bot - INFO - Waiting 60 seconds for simulated trade test_1747701703 to complete...
+2025-05-20 02:42:45,042 - self_bot - DEBUG - Trade saved to database with ID: 3
+2025-05-20 02:42:45,042 - self_bot - INFO - Simulated trade test_1747701703 completed: LOSE (Profit: -10)
+2025-05-20 02:43:43,030 - self_bot - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:02:59
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 1
+  Winning Trades: 0
+  Losing Trades: 1
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: -10.00
+==============================
+
+2025-05-20 02:47:26,487 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-20 03:02:26,879 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:30:01
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 06:03:57,675 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 3:31:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 06:03:57,889 - telethon.network.connection.connection - WARNING - Server closed the connection: [WinError 64] The specified network name is no longer available
+2025-05-20 06:03:57,920 - telethon.network.mtprotosender - INFO - Connection closed while receiving data: [WinError 64] The specified network name is no longer available
+2025-05-20 06:03:57,923 - telethon.network.mtprotosender - INFO - Closing current connection to begin reconnect...
+2025-05-20 06:03:57,929 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-20 06:03:57,934 - telethon.network.connection.connection - INFO - <class 'ConnectionResetError'> during disconnect: [WinError 64] The specified network name is no longer available
+2025-05-20 06:03:58,128 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-20 06:03:58,547 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-20 06:33:57,693 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 4:01:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 07:03:57,699 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 4:31:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 07:33:57,694 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 5:01:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 08:03:57,703 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 5:31:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 08:33:57,715 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 6:01:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 08:49:00,916 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-20 09:03:57,718 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 6:31:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 09:33:57,731 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 7:01:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 10:03:57,736 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 7:31:32
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+

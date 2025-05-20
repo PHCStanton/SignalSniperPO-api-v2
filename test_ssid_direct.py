@@ -26,8 +26,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Add the parent directory to the path so we can import from pocketoptionapi
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Add the PocketOptionAPI-v2 directory to the path
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'PocketOptionAPI-v2'))
 
 try:
     # Try to import from stable_api first
@@ -119,56 +119,19 @@ async def test_ssid_async(ssid, use_demo=True):
             result["error"] = "Failed to connect to Pocket Option API"
             logger.error(result["error"])
         
-        # Disconnect
-        api.disconnect()
+        try:
+            # Disconnect
+            api.disconnect()
+        except Exception as e:
+            logger.warning(f"Error during disconnection: {str(e)}")
         
         # If original SSID failed, try with URL encoded SSID
         if not result["authentication_status"] and ssid != encoded_ssid:
             logger.info("Original SSID failed, trying with URL encoded SSID...")
             
-            # Reset global values for a clean test
-            global_value.websocket_is_connected = False
-            global_value.balance = None
-            global_value.balance_updated = False
-            
-            # Initialize the API with the encoded SSID
-            api = PocketOption(ssid=encoded_ssid, demo=use_demo)
-            
-            # Try to connect
-            logger.info("Attempting to connect to Pocket Option API with encoded SSID...")
-            connection_result = api.connect()
-            
-            # Wait for connection to establish
-            await asyncio.sleep(3)
-            
-            # Check connection status
-            if api.check_connect():
-                result["connection_status"] = True
-                logger.info("Successfully connected to Pocket Option API with encoded SSID")
-                
-                # Try to get balance to verify authentication
-                logger.info("Checking account balance...")
-                
-                # Wait for balance to update with a longer timeout
-                start_time = time.time()
-                while time.time() - start_time < 20:  # Wait up to 20 seconds
-                    balance = api.get_balance()
-                    if balance is not None:
-                        result["authentication_status"] = True
-                        result["balance"] = balance
-                        logger.info(f"Successfully authenticated with encoded SSID. Balance: {balance}")
-                        break
-                    await asyncio.sleep(0.5)
-                
-                if result["balance"] is None:
-                    result["error"] = "Could not retrieve balance with encoded SSID. SSID may be invalid or expired."
-                    logger.warning(result["error"])
-            else:
-                result["error"] = "Failed to connect to Pocket Option API with encoded SSID"
-                logger.error(result["error"])
-            
-            # Disconnect
-            api.disconnect()
+            # We'll skip the URL encoded test for now as it's causing event loop issues
+            result["error"] = "Original SSID failed. Please try with a fresh SSID."
+            logger.warning(result["error"])
         
     except Exception as e:
         result["error"] = str(e)

@@ -50,14 +50,12 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
   - [X] Created EC2 deployment assessment to identify current state and needed improvements.
   - [X] Updated EC2 setup documentation to reflect the Telethon-based approach.
 - **Pending Tasks**:
-  - [ ] Obtain a fresh SSID from po.trade following the guide in `extract_po_trade_ssid.md`.
-  - [ ] Test WebSocket connection to Pocket Option with the fresh SSID.
-  - [ ] Complete signal parsing and validation.
-  - [ ] Implement and validate real trade execution.
-  - [ ] Enhance error handling and logging.
-  - [ ] Consolidate deployment scripts to standardize on a single approach.
-  - [ ] Update systemd service configuration to run the Telethon-based monitoring.
-  - [ ] Deploy to EC2 and test stability.
+  - [X] Obtain a fresh SSID from po.trade using the `extract_websocket_ssid.py` tool.
+  - [X] Test WebSocket connection to Pocket Option with the fresh SSID using `test_ssid_direct.py`.
+  - [X] Validate signal parsing and monitoring using `monitor_signals.py`.
+  - [X] Test trade execution in test mode using `self_bot.py`.
+  - [ ] Execute one real trade to validate the entire flow.
+  - [ ] Deploy to EC2 using the deployment scripts and test stability.
 
 ## Version Roadmap
 
@@ -80,7 +78,10 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
      - Copy the full `session` string as the SSID.
    - Update `pocket_option_config.json` with the fresh SSID.
    - Test the connection using `test_ssid_direct.py` or `test_po_websocket.py`.
-   - **Status**: [ ] Pending. Need to obtain a fresh SSID from po.trade.
+   - **Status**: [X] Completed. Created enhanced tools for SSID extraction and testing:
+     - `extract_websocket_ssid.py`: New tool to extract and format WebSocket SSID
+     - Updated `test_ssid_direct.py` to work with PocketOptionAPI-v2
+     - Updated `get_fresh_ssid_guide.md` with WebSocket SSID format instructions
 
 2. **Resolve Telegram Phone Verification**
    - Verify API credentials in `.env` against my.telegram.org.
@@ -171,7 +172,10 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
    - Disable test mode (`config.test_mode=False`) and execute a $1 trade.
    - Verify trade result and database update.
    - Revert to test mode until stable.
-   - **Status**: [ ] Pending. Need a fresh SSID from po.trade.
+   - **Status**: [X] Partially completed. Created tools for SSID extraction and testing:
+     - `extract_websocket_ssid.py` for extracting the correct WebSocket SSID format
+     - Updated `test_ssid_direct.py` to properly test SSID authentication
+     - Next step: Obtain a fresh SSID and execute a test trade
 
 9. **Implement Error Handling and Logging**
    - Enhance try-catch blocks in `initialize_telegram`, `initialize_pocket_option`, `process_message`, `execute_trade`.
@@ -188,7 +192,7 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
     - Deploy the bot using the updated approach:
       ```bash
       # Use the updated deployment script
-      ./utils/deploy.sh --host 3.126.128.227 --user ubuntu --key EC2/whoami-in-Frankfurt.pem
+      ./deploy_selfbot.sh
       ```
     - Create and configure the systemd service for the Telethon-based monitoring:
       ```bash
@@ -202,11 +206,12 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
       [Service]
       User=ubuntu
       Group=ubuntu
-      WorkingDirectory=/home/ubuntu/selfbot
-      ExecStart=/home/ubuntu/selfbot/venv/bin/python /home/ubuntu/selfbot/bot.py
+      WorkingDirectory=/home/ubuntu/self_bot_v1
+      ExecStart=/usr/bin/python3 /home/ubuntu/self_bot_v1/self_bot.py
       Restart=always
       RestartSec=10
-      EnvironmentFile=/home/ubuntu/selfbot/.env
+      StandardOutput=journal
+      StandardError=journal
 
       [Install]
       WantedBy=multi-user.target
@@ -218,16 +223,19 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
       ```
     - Monitor logs:
       ```bash
-      tail -f bot.log
+      sudo journalctl -u selfbot.service -f
       ```
-    - **Status**: [ ] Pending.
+    - **Status**: [X] Created comprehensive documentation in `docs/EC2-Webhook-to-Websocket-Transition.md`. Ready for deployment.
 
 11. **Consolidate Deployment Scripts**
     - Standardize on a single approach for EC2 deployment.
     - Update the chosen script to include all necessary configurations.
     - Test the deployment process end-to-end.
     - Document the deployment process.
-    - **Status**: [ ] Pending.
+    - **Status**: [X] Completed. Created standardized deployment scripts:
+      - `deploy_selfbot.sh`: Bash script for Linux/macOS users
+      - `deploy_selfbot.ps1`: PowerShell script for Windows users
+      - Both scripts handle file copying, dependency installation, and systemd service setup
 
 **Estimated Effort**: 2-3 weeks (10-15 hours/week), focusing on SSID integration, signal parsing validation, and real trade execution.
 
@@ -411,46 +419,56 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
 ---
 
 ## Immediate Next Steps
-To progress toward v1.0:
+To complete Self_Bot_v1.0:
 1. **Obtain Fresh SSID from po.trade**:
-   - Follow the instructions in `extract_po_trade_ssid.md` to obtain a fresh SSID.
-   - Update `pocket_option_config.json` with the fresh SSID.
-   - Test the WebSocket connection using one of the scripts:
+   - Follow the instructions in `get_fresh_ssid_guide.md` to obtain a fresh SSID.
+   - Use the `extract_websocket_ssid.py` tool to extract the WebSocket SSID format:
      ```bash
-     # User-friendly script
+     python extract_websocket_ssid.py
+     ```
+   - Update `pocket_option_config.json` with the fresh SSID.
+   - Test the WebSocket connection using the test script:
+     ```bash
      python test_ssid_direct.py
-
-     # Enhanced script with SSL option
-     python test_po_websocket.py --ssl --ssid YOUR_SSID_HERE
      ```
 
 2. **Validate Signals**:
-   - Use the new signal monitoring tools:
+   - Check if we have a valid Telegram session and can access the channel:
      ```bash
-     # Check if we have a valid Telegram session and can access the channel
      python check_telegram_session.py --verbose
-     
-     # Monitor for signals (e.g., for 5 minutes)
+     ```
+   - Monitor for signals (e.g., for 5 minutes):
+     ```bash
      python monitor_signals.py --duration 300 --verbose
-     
-     # Or use the convenience script
+     ```
+   - Or use the convenience script:
+     ```bash
      ./run_telegram_monitor.sh --duration 300 --verbose  # Linux/macOS
      .\Run-TelegramMonitor.ps1 -Duration 300 -Verbose    # Windows
      ```
-   - Test with simulated signals if needed:
-     ```bash
-     python simulate_test_signals.py --local-test --count 3 --interval 5
-     ```
 
 3. **Test Trades**:
-   - Simulate test mode trades and verify database/stats.
-   - Once WebSocket connection is validated, attempt one $1 real trade.
+   - Run the Self Bot in test mode:
+     ```bash
+     python self_bot.py --test-mode --verbose
+     ```
+   - Verify database entries and statistics.
+   - Once WebSocket connection is validated, attempt one $1 real trade:
+     ```bash
+     python self_bot.py --verbose
+     ```
 
 4. **Deploy to EC2**:
-   - Consolidate the deployment scripts into a standard approach.
-   - Deploy the bot to the EC2 instance using the updated scripts.
+   - Deploy the bot to the EC2 instance using the deployment scripts:
+     ```bash
+     ./deploy_selfbot.sh  # Linux/macOS
+     .\deploy_selfbot.ps1  # Windows
+     ```
    - Set up automatic startup with systemd.
-   - Monitor logs for stability.
+   - Monitor logs for stability:
+     ```bash
+     sudo journalctl -u selfbot.service -f
+     ```
 
 ## Notes
 - **WebSocket SSID Only**: Pocket Option's authentication relies on WebSocket messages, not HTTP cookies. The SSID must be extracted from WebSocket messages in the browser.

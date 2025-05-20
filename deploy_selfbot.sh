@@ -1,186 +1,174 @@
 #!/bin/bash
-# Self Bot v1.0 Deployment Script for EC2
-# This script deploys the Self Bot to an EC2 instance using the Telethon user account approach
+# deploy_selfbot.sh - Deploy Self Bot v1.0 to EC2 instance
+#
+# This script deploys the Self Bot v1.0 to an EC2 instance.
+# It copies all necessary files, installs dependencies, and sets up
+# the systemd service for automatic startup.
 
-# Default values
-USERNAME="ubuntu"
-REMOTE_DIR="~/selfbot"
-INCLUDE_SESSION_FILES=false
+# Configuration
+EC2_KEY="EC2/whoami-in-Frankfurt.pem"
+EC2_USER="ubuntu"
+EC2_HOST="3.126.128.227"
+REMOTE_DIR="/home/ubuntu/self_bot_v1"
 
-# Function to display usage information
-usage() {
-    echo "Usage: $0 -h HOST_IP -k KEY_PATH [-u USERNAME] [-d REMOTE_DIR] [-s]"
-    echo "  -h HOST_IP        EC2 instance IP address"
-    echo "  -k KEY_PATH       Path to SSH private key file (.pem)"
-    echo "  -u USERNAME       SSH username (default: ubuntu)"
-    echo "  -d REMOTE_DIR     Remote directory (default: ~/selfbot)"
-    echo "  -s                Include session files"
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Print header
+print_header() {
+    echo -e "\n${BLUE}=========================================================================${NC}"
+    echo -e "${BLUE} $1${NC}"
+    echo -e "${BLUE}=========================================================================${NC}"
+}
+
+# Check if key file exists
+if [ ! -f "$EC2_KEY" ]; then
+    echo -e "${RED}Error: EC2 key file not found: $EC2_KEY${NC}"
+    exit 1
+fi
+
+# Fix permissions on key file
+chmod 400 "$EC2_KEY"
+
+# Check SSH connection
+print_header "Checking SSH connection to EC2 instance"
+ssh -i "$EC2_KEY" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" "echo -e '${GREEN}SSH connection successful${NC}'" || {
+    echo -e "${RED}Error: Failed to connect to EC2 instance${NC}"
     exit 1
 }
 
-# Parse command line arguments
-while getopts "h:k:u:d:s" opt; do
-    case $opt in
-        h) HOST_IP="$OPTARG" ;;
-        k) KEY_PATH="$OPTARG" ;;
-        u) USERNAME="$OPTARG" ;;
-        d) REMOTE_DIR="$OPTARG" ;;
-        s) INCLUDE_SESSION_FILES=true ;;
-        *) usage ;;
-    esac
-done
+# Create remote directory
+print_header "Creating remote directory"
+ssh -i "$EC2_KEY" "$EC2_USER@$EC2_HOST" "mkdir -p $REMOTE_DIR"
+echo -e "${GREEN}Remote directory created: $REMOTE_DIR${NC}"
 
-# Check required arguments
-if [ -z "$HOST_IP" ] || [ -z "$KEY_PATH" ]; then
-    echo "Error: Missing required arguments."
-    usage
-fi
-
-# Validate key file
-if [ ! -f "$KEY_PATH" ]; then
-    echo "Error: SSH key file not found at: $KEY_PATH"
-    exit 1
-fi
-
-# Set proper permissions for key file (required for SSH)
-chmod 400 "$KEY_PATH"
-
-# Required files to deploy
-REQUIRED_FILES=(
-    "bot.py"
-    "run_bot.py"
-    "monitor_signals.py"
-    "check_telegram_session.py"
-    "simulate_test_signals.py"
-    ".env"
+# Copy files to EC2 instance
+print_header "Copying files to EC2 instance"
+# Create a list of files to copy
+FILES_TO_COPY=(
+    "self_bot.py"
     "requirements.txt"
-    "test_po_websocket.py"
-    "test_ssid_direct.py"
-    "extract_po_trade_ssid.md"
-    "get_fresh_ssid_guide.md"
-    "run_telegram_monitor.sh"
+    "install_dependencies.py"
+    "config/bot_config.json"
+    "config/telegram_config.json"
+    "config/pocket_option_config.json"
 )
 
-REQUIRED_DIRS=(
-    "config"
-    "pocketoptionapi"
-    "utils"
-)
+# Create directories on remote
+ssh -i "$EC2_KEY" "$EC2_USER@$EC2_HOST" "mkdir -p $REMOTE_DIR/config"
 
-# Check if required files exist
-for file in "${REQUIRED_FILES[@]}"; do
-    if [ ! -f "$file" ]; then
-        echo "Warning: Required file not found: $file"
-    fi
+# Copy each file
+for file in "${FILES_TO_COPY[@]}"; do
+    echo -e "${YELLOW}Copying $file...${NC}"
+    scp -i "$EC2_KEY" "$file" "$EC2_USER@$EC2_HOST:$REMOTE_DIR/$file" || {
+        echo -e "${RED}Error: Failed to copy $file${NC}"
+        exit 1
+    }
 done
 
-# Check if required directories exist
-for dir in "${REQUIRED_DIRS[@]}"; do
-    if [ ! -d "$dir" ]; then
-        echo "Warning: Required directory not found: $dir"
-    fi
-done
-
-# Create temporary directory for deployment
-TEMP_DIR=$(mktemp -d)
-echo "Created temporary directory: $TEMP_DIR"
-
-# Function to clean up temporary directory
-cleanup() {
-    echo "Cleaning up temporary directory..."
-    rm -rf "$TEMP_DIR"
+# Copy PocketOptionAPI-v2 directory
+print_header "Copying PocketOptionAPI-v2 directory"
+scp -i "$EC2_KEY" -r "PocketOptionAPI-v2" "$EC2_USER@$EC2_HOST:$REMOTE_DIR/" || {
+    echo -e "${RED}Error: Failed to copy PocketOptionAPI-v2 directory${NC}"
+    exit 1
 }
-trap cleanup EXIT
+echo -e "${GREEN}PocketOptionAPI-v2 directory copied successfully${NC}"
 
-# Copy required files and directories
-for file in "${REQUIRED_FILES[@]}"; do
-    if [ -f "$file" ]; then
-        cp "$file" "$TEMP_DIR/"
-    fi
-done
-
-for dir in "${REQUIRED_DIRS[@]}"; do
-    if [ -d "$dir" ]; then
-        cp -r "$dir" "$TEMP_DIR/"
-    fi
-done
-
-# Session files
-if [ "$INCLUDE_SESSION_FILES" = true ]; then
-    for session_file in *.session; do
-        if [ -f "$session_file" ]; then
-            cp "$session_file" "$TEMP_DIR/"
-        fi
-    done
-fi
+# Install dependencies on EC2 instance
+print_header "Installing dependencies on EC2 instance"
+ssh -i "$EC2_KEY" "$EC2_USER@$EC2_HOST" "cd $REMOTE_DIR && python3 install_dependencies.py" || {
+    echo -e "${RED}Error: Failed to install dependencies${NC}"
+    exit 1
+}
 
 # Create systemd service file
-cat > "$TEMP_DIR/selfbot.service" << EOL
+print_header "Creating systemd service file"
+SERVICE_FILE="self_bot.service"
+cat > "$SERVICE_FILE" << EOF
 [Unit]
-Description=Self Bot Trading Service
+Description=Self Bot v1.0 for Pocket Option Trading
 After=network.target
 
 [Service]
+Type=simple
 User=ubuntu
-Group=ubuntu
-WorkingDirectory=/home/ubuntu/selfbot
-ExecStart=/home/ubuntu/selfbot/venv/bin/python /home/ubuntu/selfbot/bot.py
-Restart=always
+WorkingDirectory=$REMOTE_DIR
+ExecStart=/usr/bin/python3 $REMOTE_DIR/self_bot.py
+Restart=on-failure
 RestartSec=10
-EnvironmentFile=/home/ubuntu/selfbot/.env
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
-EOL
+EOF
 
-# Create setup script
-cat > "$TEMP_DIR/setup.sh" << EOL
+# Copy service file to EC2 instance
+scp -i "$EC2_KEY" "$SERVICE_FILE" "$EC2_USER@$EC2_HOST:/tmp/$SERVICE_FILE" || {
+    echo -e "${RED}Error: Failed to copy service file${NC}"
+    exit 1
+}
+
+# Install service file
+ssh -i "$EC2_KEY" "$EC2_USER@$EC2_HOST" "sudo mv /tmp/$SERVICE_FILE /etc/systemd/system/$SERVICE_FILE && sudo systemctl daemon-reload" || {
+    echo -e "${RED}Error: Failed to install service file${NC}"
+    exit 1
+}
+echo -e "${GREEN}Systemd service file created and installed${NC}"
+
+# Clean up local service file
+rm "$SERVICE_FILE"
+
+# Create run script
+print_header "Creating run script"
+RUN_SCRIPT="run_self_bot.sh"
+cat > "$RUN_SCRIPT" << EOF
 #!/bin/bash
-# Self Bot v1.0 Setup Script
+# run_self_bot.sh - Run Self Bot v1.0
+cd $REMOTE_DIR
+python3 self_bot.py \$@
+EOF
 
-# Update and install dependencies
-sudo apt update
-sudo apt install -y python3 python3-pip git ufw python3-venv
+# Copy run script to EC2 instance
+scp -i "$EC2_KEY" "$RUN_SCRIPT" "$EC2_USER@$EC2_HOST:$REMOTE_DIR/$RUN_SCRIPT" || {
+    echo -e "${RED}Error: Failed to copy run script${NC}"
+    exit 1
+}
 
-# Create and activate virtual environment
-python3 -m venv venv
-source venv/bin/activate
+# Make run script executable
+ssh -i "$EC2_KEY" "$EC2_USER@$EC2_HOST" "chmod +x $REMOTE_DIR/$RUN_SCRIPT" || {
+    echo -e "${RED}Error: Failed to make run script executable${NC}"
+    exit 1
+}
+echo -e "${GREEN}Run script created and made executable${NC}"
 
-# Install requirements
-pip install -r requirements.txt
+# Clean up local run script
+rm "$RUN_SCRIPT"
 
-# Set up systemd service
-sudo cp selfbot.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable selfbot.service
-
-echo "Self Bot setup completed. You can now start the service with:"
-echo "sudo systemctl start selfbot.service"
-EOL
-
-# Make setup script executable
-chmod +x "$TEMP_DIR/setup.sh"
-
-# SSH options
-SSH_OPTIONS="-i \"$KEY_PATH\" -o StrictHostKeyChecking=no"
-
-# Create remote directory if it doesn't exist
-echo "Creating remote directory: $REMOTE_DIR"
-ssh $SSH_OPTIONS $USERNAME@$HOST_IP "mkdir -p $REMOTE_DIR"
-
-# Transfer files
-echo "Transferring files to EC2 instance..."
-scp $SSH_OPTIONS -r "$TEMP_DIR/"* "$USERNAME@$HOST_IP:$REMOTE_DIR/"
-
-# Make setup script executable (again, just to be sure)
-ssh $SSH_OPTIONS $USERNAME@$HOST_IP "chmod +x $REMOTE_DIR/setup.sh"
-
-# Run setup script
-echo "Running setup script..."
-ssh $SSH_OPTIONS $USERNAME@$HOST_IP "cd $REMOTE_DIR && ./setup.sh"
-
-echo "Deployment completed successfully!"
-echo "Remote directory: $REMOTE_DIR"
-echo "To start the service: ssh $SSH_OPTIONS $USERNAME@$HOST_IP 'sudo systemctl start selfbot.service'"
-echo "To check service status: ssh $SSH_OPTIONS $USERNAME@$HOST_IP 'sudo systemctl status selfbot.service'"
-echo "To view logs: ssh $SSH_OPTIONS $USERNAME@$HOST_IP 'sudo journalctl -u selfbot.service -f'"
+# Print instructions
+print_header "Deployment completed successfully"
+echo -e "${GREEN}Self Bot v1.0 has been deployed to the EC2 instance.${NC}"
+echo -e "${YELLOW}To start the bot manually:${NC}"
+echo -e "  ssh -i $EC2_KEY $EC2_USER@$EC2_HOST"
+echo -e "  cd $REMOTE_DIR"
+echo -e "  ./run_self_bot.sh"
+echo -e ""
+echo -e "${YELLOW}To start the bot as a service:${NC}"
+echo -e "  ssh -i $EC2_KEY $EC2_USER@$EC2_HOST"
+echo -e "  sudo systemctl start $SERVICE_FILE"
+echo -e ""
+echo -e "${YELLOW}To enable the bot to start automatically on boot:${NC}"
+echo -e "  ssh -i $EC2_KEY $EC2_USER@$EC2_HOST"
+echo -e "  sudo systemctl enable $SERVICE_FILE"
+echo -e ""
+echo -e "${YELLOW}To check the bot's status:${NC}"
+echo -e "  ssh -i $EC2_KEY $EC2_USER@$EC2_HOST"
+echo -e "  sudo systemctl status $SERVICE_FILE"
+echo -e ""
+echo -e "${YELLOW}To view the bot's logs:${NC}"
+echo -e "  ssh -i $EC2_KEY $EC2_USER@$EC2_HOST"
+echo -e "  sudo journalctl -u $SERVICE_FILE -f"

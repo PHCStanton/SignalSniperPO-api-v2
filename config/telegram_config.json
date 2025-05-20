@@ -1,15 +1,16 @@
 {
-  "channel_name": "BINARY TRADING CLUB",
-  "first_message_regex": "Trading Pair: (\\w+/\\w+)(?:\\s*\\(OTC\\))?",
-  "second_message_regex": {
-    "timer": "SET THE TIMER TO (\\d{2}:\\d{2}:\\d{2})",
-    "pair": "Currency pair (\\w+/\\w+)",
-    "direction": "(HIGHER|LOWER)",
-    "expiry": "Trade time: (\\d+) MIN"
-  },
-  "pair_match_window": 60,
-  "channel_id": -1002412213735,
-  "api_id": 28529262,
-  "api_hash": "6e3dde953198895cddbd7396631a1da5",
-  "session_name": "pocket_option_userbot"
+    "api_id": 28529262,
+    "api_hash": "6e3dde953198895cddbd7396631a1da5",
+    "session_name": "pocket_option_userbot",
+    "channel_name": "BINARY TRADING CLUB",
+    "channel_id": -1002412213735,
+    "log_all_messages": true,
+    "pair_match_window": 60,
+    "first_message_regex": "Trading Pair: (\\w+/\\w+)(?:\\s*\\(OTC\\))?",
+    "second_message_regex": {
+        "timer": "SET THE TIMER TO (\\d{2}:\\d{2}:\\d{2})",
+        "pair": "Currency pair (\\w+/\\w+)",
+        "direction": "(HIGHER|LOWER)",
+        "expiry": "Trade time: (\\d+) MIN"
+    }
 }

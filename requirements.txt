@@ -1,13 +1,25 @@
-telethon>=1.24.0
-websockets>=10.3
-websocket-client>=1.3.2
-asyncio>=3.4.3
-aiohttp>=3.8.1
-python-dotenv>=0.20.0
-pytz>=2022.1
-requests>=2.28.0
-matplotlib>=3.5.1
-numpy>=1.22.3
-pandas>=1.4.2
-tabulate>=0.8.9
-cryptography>=37.0.0
+# Core dependencies
+telethon>=1.28.5
+python-dotenv>=1.0.0
+pytz>=2023.3
+argparse>=1.4.0
+
+# Database
+sqlite3>=3.35.0
+
+# Pocket Option API dependencies
+websocket-client>=1.6.1
+requests>=2.31.0
+python-dateutil>=2.8.2
+tzlocal>=5.1
+websockets>=12.0
+pandas>=2.0.3
+colorama>=0.4.6
+
+# For EC2 deployment
+paramiko>=3.3.1
+boto3>=1.28.0
+
+# For testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.1

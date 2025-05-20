@@ -1,4 +1,21 @@
 {
-  "ssid": "a:4:{s:10:\"session_id\";s:32:\"bde3d74bbc70c9e768874d0e3ec00fb4\";s:10:\"ip_address\";s:12:\"169.0.228.13\";s:10:\"user_agent\";s:111:\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\";s:13:\"last_activity\";i:1747546565;}dbad27acafe64d44d2a0ee59fe9380e1",
-  "is_demo": true
+    "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"feec5dec2be7aa0509db7d69f44526cd\\\";s:10:\\\"ip_address\\\";s:12:\\\"169.0.58.139\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1747694548;}6af24ff0b98f515b4f7118a3a86a3216\",\"isDemo\":0,\"uid\":101002476,\"platform\":2}]",
+    "is_demo": false,
+    "min_payout": 80,
+    "preferred_assets": [
+        "EURUSD",
+        "GBPUSD",
+        "USDJPY",
+        "AUDUSD",
+        "USDCAD",
+        "NZDUSD",
+        "USDCHF",
+        "EURJPY",
+        "GBPJPY",
+        "EURGBP"
+    ],
+    "otc_preferred": true,
+    "connection_timeout": 30,
+    "reconnect_attempts": 5,
+    "reconnect_delay": 5
 }
