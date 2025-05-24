@@ -133,6 +133,9 @@ async def test_ssid_async(ssid, use_demo=True):
             result["error"] = "Original SSID failed. Please try with a fresh SSID."
             logger.warning(result["error"])
         
+    except asyncio.CancelledError:
+        result["error"] = "Operation was cancelled"
+        logger.warning("SSID test was cancelled")
     except Exception as e:
         result["error"] = str(e)
         logger.error(f"Error testing SSID: {str(e)}")
@@ -150,18 +153,30 @@ def test_ssid(ssid, use_demo=True):
     Returns:
         dict: Test results
     """
-    # Create a new event loop
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-    
     try:
-        # Run the async test
-        result = loop.run_until_complete(test_ssid_async(ssid, use_demo))
-    finally:
-        # Clean up the event loop
-        loop.close()
-        
-    return result
+        # Use asyncio.run() for better event loop management
+        result = asyncio.run(test_ssid_async(ssid, use_demo))
+        return result
+    except asyncio.CancelledError:
+        logger.warning("SSID test was cancelled")
+        return {
+            "ssid": ssid,
+            "ssid_display": ssid[:10] + "..." if len(ssid) > 10 else ssid,
+            "connection_status": False,
+            "authentication_status": False,
+            "balance": None,
+            "error": "Operation was cancelled"
+        }
+    except Exception as e:
+        logger.error(f"Error in test_ssid: {str(e)}")
+        return {
+            "ssid": ssid,
+            "ssid_display": ssid[:10] + "..." if len(ssid) > 10 else ssid,
+            "connection_status": False,
+            "authentication_status": False,
+            "balance": None,
+            "error": str(e)
+        }
 
 def update_config(valid_ssid):
     """

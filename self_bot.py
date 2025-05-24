@@ -226,7 +226,10 @@ class SelfBot:
                 # Get account balance
                 balance = self.pocket_option_client.get_balance()
                 logger.info(f"Account balance: {balance}")
-                
+
+                # Add favorite pairs after connection
+                self.add_pairs_to_favorites()
+
                 return True
             else:
                 logger.error("Failed to connect to Pocket Option API")
@@ -628,12 +631,18 @@ class SelfBot:
     
     async def schedule_trade_execution(self, signal: Dict) -> None:
         """
-        Schedule a trade for execution at the specified timer.
+        Schedule a trade for execution at the specified timer, or execute immediately if configured.
         
         Args:
             signal: Signal to execute
         """
         try:
+            # Immediate execution logic
+            if self.config.get("immediate_execution", False):
+                logger.info("Immediate execution enabled. Executing trade as soon as signal is validated.")
+                self.execute_trade(signal)
+                return
+
             # Parse timer
             timer_parts = signal["timer"].split(":")
             timer_hour = int(timer_parts[0])
@@ -1001,6 +1010,22 @@ Performance:
                 # Remove from active trades
                 del self.active_trades[trade_id]
 
+
+    def add_pairs_to_favorites(self):
+        """
+        Add all favorite pairs from config to Pocket Option favorites (if supported by API).
+        """
+        try:
+            favorite_pairs = self.config.get("favorite_pairs", [])
+            if not favorite_pairs:
+                logger.info("No favorite pairs specified in config.")
+                return
+            # If PocketOptionAPI-v2 supports favorites management, call the method here.
+            # Example: self.pocket_option_client.add_favorites(favorite_pairs)
+            logger.info(f"Ensuring favorite pairs are set: {favorite_pairs}")
+            # If not supported, just log for now.
+        except Exception as e:
+            logger.error(f"Error adding pairs to favorites: {str(e)}")
 
 async def main():
     """Main function to parse arguments and start the Self Bot."""

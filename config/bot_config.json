@@ -12,5 +12,19 @@
         "risk_percentage": 2.0,
         "max_risk_percentage": 10.0,
         "max_consecutive_losses": 3
-    }
+    },
+    "favorite_pairs": [
+        "AUD/USD",
+        "AUD/NZD",
+        "AUD/CHF",
+        "AUD/CAD",
+        "EUR/USD",
+        "EUR/NZD",
+        "EUR/CHF",
+        "EUR/RUB",
+        "EUR/HUF",
+        "EUR/TRY"
+    ],
+    "immediate_execution": true,
+    "default_timeframe": 1
 }
