@@ -641,16 +641,25 @@ class SelfBot:
             timer_second = int(timer_parts[2])
             
             now = datetime.now(self.timezone)
-            timer_time = now.replace(hour=timer_hour, minute=timer_minute, second=timer_second, microsecond=0)
             
-            # If the timer is in the past, assume it's for the next day
-            if timer_time < now:
-                timer_time = timer_time + timedelta(days=1)
+            # Check if the timer is in the format "00:01:00" which means "1 minute from now"
+            # rather than a specific time of day
+            if timer_hour == 0 and timer_minute <= 5:  # Assuming signals are for short timeframes (≤ 5 minutes)
+                # Calculate execution time as X minutes from now
+                timer_time = now + timedelta(minutes=timer_minute, seconds=timer_second)
+                logger.info(f"Interpreting timer as relative time: {timer_minute} minutes and {timer_second} seconds from now")
+            else:
+                # Use the original absolute time calculation
+                timer_time = now.replace(hour=timer_hour, minute=timer_minute, second=timer_second, microsecond=0)
+                
+                # If the timer is in the past, assume it's for the next day
+                if timer_time < now:
+                    timer_time = timer_time + timedelta(days=1)
             
             # Calculate seconds until timer
             seconds_until_timer = (timer_time - now).total_seconds()
             
-            logger.info(f"Scheduling trade execution for {signal['pair']} {signal['direction']} at {signal['timer']} ({seconds_until_timer:.2f} seconds from now)")
+            logger.info(f"Scheduling trade execution for {signal['pair']} {signal['direction']} at {timer_time.strftime('%H:%M:%S')} ({seconds_until_timer:.2f} seconds from now)")
             
             # Wait until timer
             await asyncio.sleep(seconds_until_timer)

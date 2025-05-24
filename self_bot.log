@@ -275,3 +275,582 @@ Performance:
   Total Profit: 0.00
 ==============================
 
+2025-05-20 23:00:36,277 - __main__ - INFO - Database initialized successfully
+2025-05-20 23:00:36,277 - __main__ - INFO - Initializing Telegram client...
+2025-05-20 23:00:36,281 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-20 23:00:36,472 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-20 23:00:37,700 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-20 23:00:37,700 - __main__ - INFO - Already authenticated using existing session
+2025-05-20 23:00:37,904 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-20 23:00:37,905 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-20 23:00:38,107 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-20 23:00:38,108 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-20 23:00:38,110 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-20 23:00:38,111 - __main__ - INFO - Account balance: None
+2025-05-20 23:00:38,111 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-20 23:00:38,113 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-20 23:00:38,114 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-20 23:01:25,450 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:01:40,586 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-05-20 23:01:50,850 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-05-20 23:01:50,852 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-20T23:01:50.851064+02:00'}
+2025-05-20 23:01:50,862 - __main__ - INFO - Scheduling trade execution for AUD/CHF LOWER at 00:01:00 (3549.14 seconds from now)
+2025-05-20 23:03:00,209 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:03:07,963 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-20 23:03:20,010 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-20 23:03:20,012 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-20T23:03:20.012270+02:00'}
+2025-05-20 23:03:20,028 - __main__ - INFO - Scheduling trade execution for AUD/CAD HIGHER at 00:01:00 (3459.97 seconds from now)
+2025-05-20 23:04:42,177 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:05:02,457 - __main__ - INFO - Parsed first message: Trading pair = EUR/TRY
+2025-05-20 23:05:13,935 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'EUR/TRY', 'direction': 'LOWER', 'expiry': 1}
+2025-05-20 23:05:13,935 - __main__ - INFO - Complete signal detected: {'pair': 'EUR/TRY', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-20T23:05:13.935346+02:00'}
+2025-05-20 23:05:13,949 - __main__ - INFO - Scheduling trade execution for EUR/TRY LOWER at 00:01:00 (3346.05 seconds from now)
+2025-05-20 23:06:48,279 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:07:11,343 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-05-20 23:07:22,727 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/NZD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-20 23:07:22,730 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/NZD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-20T23:07:22.729476+02:00'}
+2025-05-20 23:07:22,769 - __main__ - INFO - Scheduling trade execution for AUD/NZD LOWER at 00:01:00 (3217.23 seconds from now)
+2025-05-20 23:08:27,668 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:08:42,585 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-20 23:08:51,283 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-20 23:08:51,284 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-20T23:08:51.284624+02:00'}
+2025-05-20 23:08:51,298 - __main__ - INFO - Scheduling trade execution for AUD/CAD LOWER at 00:01:00 (3128.70 seconds from now)
+2025-05-20 23:09:58,718 - __main__ - INFO - Message from Unknown: Signal result: +$644
+2025-05-20 23:24:07,139 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-20 23:24:07,142 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-20 23:24:07,153 - __main__ - INFO - Bot stopped
+2025-05-21 00:40:11,360 - __main__ - INFO - Database initialized successfully
+2025-05-21 00:40:11,360 - __main__ - INFO - Initializing Telegram client...
+2025-05-21 00:40:11,371 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-21 00:40:11,561 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-21 00:40:12,782 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-21 00:40:12,783 - __main__ - INFO - Already authenticated using existing session
+2025-05-21 00:40:12,985 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-21 00:40:12,985 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-21 00:40:13,189 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-21 00:40:13,191 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-21 00:40:13,193 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-21 00:40:13,193 - __main__ - INFO - Account balance: None
+2025-05-21 00:40:13,193 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-21 00:40:13,193 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 00:40:13,193 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-21 00:43:15,612 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-21 00:43:15,614 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-21 00:43:15,629 - __main__ - INFO - Bot stopped
+2025-05-21 01:34:39,008 - __main__ - INFO - Database initialized successfully
+2025-05-21 01:34:39,008 - __main__ - INFO - Initializing Telegram client...
+2025-05-21 01:34:39,021 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-21 01:34:39,210 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-21 01:34:40,439 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-21 01:34:40,440 - __main__ - INFO - Already authenticated using existing session
+2025-05-21 01:34:40,640 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-21 01:34:40,644 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-21 01:34:40,843 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-21 01:34:40,843 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-21 01:34:40,853 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-21 01:34:40,853 - __main__ - INFO - Account balance: None
+2025-05-21 01:34:40,857 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-21 01:34:40,860 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 01:34:40,863 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-21 01:36:23,338 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-21 01:36:23,338 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-21 01:36:23,365 - __main__ - INFO - Bot stopped
+2025-05-21 01:38:43,080 - __main__ - INFO - Database initialized successfully
+2025-05-21 01:38:43,080 - __main__ - INFO - Initializing Telegram client...
+2025-05-21 01:38:43,080 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-21 01:38:43,268 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-21 01:38:44,773 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-21 01:38:44,774 - __main__ - INFO - Already authenticated using existing session
+2025-05-21 01:38:44,981 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-21 01:38:44,981 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-21 01:38:45,182 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-21 01:38:45,183 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-21 01:38:45,184 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-21 01:38:45,188 - __main__ - INFO - Account balance: None
+2025-05-21 01:38:45,188 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-21 01:38:45,188 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:02
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 01:38:45,193 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-21 01:46:16,422 - __main__ - INFO - Database initialized successfully
+2025-05-21 01:46:16,422 - __main__ - INFO - Initializing Telegram client...
+2025-05-21 01:46:16,422 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-21 01:46:16,621 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-21 01:46:17,826 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-21 01:46:17,831 - __main__ - INFO - Already authenticated using existing session
+2025-05-21 01:46:18,030 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-21 01:46:18,030 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-21 01:46:18,226 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-21 01:46:18,229 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-21 01:46:18,230 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-21 01:46:18,230 - __main__ - INFO - Account balance: None
+2025-05-21 01:46:18,230 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-21 01:46:18,230 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 01:46:18,230 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-21 01:47:25,855 - self_bot - INFO - Database initialized successfully
+2025-05-21 01:47:25,855 - self_bot - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-21 01:47:25,855 - self_bot - INFO - Successfully connected to Pocket Option API
+2025-05-21 01:47:25,855 - self_bot - INFO - Account balance: None
+2025-05-21 01:47:25,867 - self_bot - DEBUG - Signal saved to database with ID: 7
+2025-05-21 01:47:25,868 - self_bot - INFO - Scheduling trade execution for EUR/USD HIGHER at 01:48:25 (59.13 seconds from now)
+2025-05-21 01:48:25,008 - self_bot - DEBUG - Trade saved to database with ID: 4
+2025-05-21 01:48:25,008 - self_bot - INFO - Executing trade: EURUSD CALL 10 (expiry: 60s)
+2025-05-21 01:48:25,008 - self_bot - INFO - Test mode enabled. Simulating trade execution.
+2025-05-21 01:48:25,019 - self_bot - DEBUG - Trade saved to database with ID: 5
+2025-05-21 01:48:25,020 - self_bot - INFO - Waiting 60 seconds for simulated trade test_1747784905 to complete...
+2025-05-21 01:49:27,032 - self_bot - DEBUG - Trade saved to database with ID: 6
+2025-05-21 01:49:27,032 - self_bot - INFO - Simulated trade test_1747784905 completed: LOSE (Profit: -10)
+2025-05-21 01:50:25,032 - self_bot - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:02:59
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 1
+  Winning Trades: 0
+  Losing Trades: 1
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: -10.00
+==============================
+
+2025-05-21 01:53:44,795 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-21 02:01:23,515 - telethon.client.updates - WARNING - Cannot get difference since the account is likely misusing the session: database is locked
+2025-05-21 02:01:23,516 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-21 02:01:23,516 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-21 02:01:23,516 - telethon.client.telegrambaseclient - ERROR - Unhandled exception from keepalive_handle after cancelling <class '_asyncio.Task'> (<Task finished name='Task-8' coro=<UpdateMethods._keepalive_loop() done, defined at C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\updates.py:481> exception=OperationalError('database is locked')>)
+Traceback (most recent call last):
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\helpers.py", line 176, in _cancel
+    await task
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\updates.py", line 517, in _keepalive_loop
+    self._save_states_and_entities()
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\telegrambaseclient.py", line 694, in _save_states_and_entities
+    self.session.process_entities(types.contacts.ResolvedPeer(None, [e._as_input_peer() for e in entities], []))
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\sessions\sqlite.py", line 301, in process_entities
+    c.executemany(
+sqlite3.OperationalError: database is locked
+2025-05-21 02:01:29,152 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<TelegramBaseClient._disconnect_coro() done, defined at C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\telegrambaseclient.py:707> exception=OperationalError('database is locked')>
+Traceback (most recent call last):
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\telegrambaseclient.py", line 737, in _disconnect_coro
+    self._save_states_and_entities()
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\telegrambaseclient.py", line 694, in _save_states_and_entities
+    self.session.process_entities(types.contacts.ResolvedPeer(None, [e._as_input_peer() for e in entities], []))
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\sessions\sqlite.py", line 301, in process_entities
+    c.executemany(
+sqlite3.OperationalError: database is locked
+2025-05-21 02:08:45,193 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:30:02
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 02:08:45,314 - telethon.client.updates - INFO - Got difference for channel 2105588394 updates
+2025-05-21 02:16:18,239 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:30:01
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 02:38:45,203 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 1:00:02
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 02:46:18,244 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 1:00:01
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 02:53:46,047 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-21 03:08:45,218 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 1:30:02
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-21 03:16:18,245 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 1:30:01
+Current Balance: 130.2
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 19:44:24,764 - self_bot - INFO - Database initialized successfully
+2025-05-23 19:44:24,772 - self_bot - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-23 19:44:24,773 - self_bot - INFO - Successfully connected to Pocket Option API
+2025-05-23 19:44:24,774 - self_bot - INFO - Account balance: None
+2025-05-23 19:44:24,784 - self_bot - DEBUG - Signal saved to database with ID: 8
+2025-05-23 19:44:24,786 - self_bot - INFO - Scheduling trade execution for EUR/USD HIGHER at 19:45:24 (59.21 seconds from now)
+2025-05-23 19:45:24,012 - self_bot - DEBUG - Trade saved to database with ID: 7
+2025-05-23 19:45:24,012 - self_bot - INFO - Executing trade: EURUSD CALL 1 (expiry: 60s)
+2025-05-23 19:45:24,012 - self_bot - INFO - Test mode enabled. Simulating trade execution.
+2025-05-23 19:45:24,020 - self_bot - DEBUG - Trade saved to database with ID: 8
+2025-05-23 19:45:24,021 - self_bot - INFO - Waiting 60 seconds for simulated trade test_1748022324 to complete...
+2025-05-23 19:46:26,037 - self_bot - DEBUG - Trade saved to database with ID: 9
+2025-05-23 19:46:26,037 - self_bot - INFO - Simulated trade test_1748022324 completed: WIN (Profit: 0.8)
+2025-05-23 19:47:24,027 - self_bot - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:02:59
+Current Balance: 158.29
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 1
+  Winning Trades: 1
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 100.00%
+  Total Profit: 0.80
+==============================
+
+2025-05-23 19:47:24,509 - self_bot - INFO - Database initialized successfully
+2025-05-23 19:47:24,514 - self_bot - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-23 19:47:24,515 - self_bot - INFO - Successfully connected to Pocket Option API
+2025-05-23 19:47:24,517 - self_bot - INFO - Account balance: None
+2025-05-23 19:47:24,529 - self_bot - DEBUG - Signal saved to database with ID: 9
+2025-05-23 19:47:24,530 - self_bot - INFO - Scheduling trade execution for EUR/USD HIGHER at 19:48:24 (59.47 seconds from now)
+2025-05-23 19:48:24,015 - self_bot - DEBUG - Trade saved to database with ID: 10
+2025-05-23 19:48:24,015 - self_bot - INFO - Executing trade: EURUSD CALL 1 (expiry: 60s)
+2025-05-23 19:48:24,024 - self_bot - ERROR - Error executing trade: Cannot run the event loop while another loop is running
+2025-05-23 19:48:24,028 - self_bot - DEBUG - Trade saved to database with ID: 11
+2025-05-23 19:50:24,033 - self_bot - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:02:59
+Current Balance: 158.29
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 1
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 20:04:36,719 - __main__ - INFO - Database initialized successfully
+2025-05-23 20:04:36,719 - __main__ - INFO - Initializing Telegram client...
+2025-05-23 20:04:36,722 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-23 20:04:36,908 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-23 20:04:38,122 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-23 20:04:38,124 - __main__ - INFO - Already authenticated using existing session
+2025-05-23 20:04:38,320 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-23 20:04:38,321 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-23 20:04:38,516 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-23 20:04:38,516 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-23 20:04:38,518 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-23 20:04:38,520 - __main__ - INFO - Account balance: None
+2025-05-23 20:04:38,520 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-23 20:04:38,520 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 20:04:38,522 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-23 20:19:38,195 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 20:34:38,525 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:30:01
+Current Balance: 158.29
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 20:57:57,227 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 21:03:43,600 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-23 21:03:43,600 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-23 21:03:43,620 - __main__ - INFO - Bot stopped
+2025-05-23 22:29:19,734 - __main__ - INFO - Database initialized successfully
+2025-05-23 22:29:19,735 - __main__ - INFO - Initializing Telegram client...
+2025-05-23 22:29:19,738 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-23 22:29:19,928 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-23 22:29:21,144 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-23 22:29:21,144 - __main__ - INFO - Already authenticated using existing session
+2025-05-23 22:29:21,339 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-23 22:29:21,339 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-23 22:29:21,540 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-23 22:29:21,541 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-23 22:29:21,546 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-23 22:29:21,547 - __main__ - INFO - Account balance: None
+2025-05-23 22:29:21,550 - __main__ - INFO - Message handler set up for channel ID: -1002412213735
+2025-05-23 22:29:21,553 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 22:29:21,555 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-23 22:42:25,978 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 22:59:21,574 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:30:01
+Current Balance: 158.29
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-23 23:02:49,147 - __main__ - INFO - Parsed first message: Trading pair = EUR/NZD
+2025-05-23 23:02:56,039 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 23:02:57,273 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'EUR/NZD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-23 23:02:57,273 - __main__ - INFO - Complete signal detected: {'pair': 'EUR/NZD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-23T23:02:57.273585+02:00'}
+2025-05-23 23:02:57,284 - __main__ - INFO - Interpreting timer as relative time: 1 minutes and 0 seconds from now
+2025-05-23 23:02:57,286 - __main__ - INFO - Scheduling trade execution for EUR/NZD HIGHER at 23:03:57 (60.00 seconds from now)
+2025-05-23 23:03:56,111 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 23:03:57,305 - __main__ - INFO - Executing trade: EURNZD CALL 1 (expiry: 60s)
+2025-05-23 23:03:57,307 - __main__ - ERROR - Error executing trade: Cannot run the event loop while another loop is running
+2025-05-23 23:04:05,901 - __main__ - INFO - Message from Unknown: Signal result: +$0
+2025-05-23 23:04:21,810 - __main__ - INFO - Parsed first message: Trading pair = EUR/JPY
+2025-05-23 23:04:35,542 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'EUR/JPY', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-23 23:04:35,543 - __main__ - INFO - Complete signal detected: {'pair': 'EUR/JPY', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-23T23:04:35.543466+02:00'}
+2025-05-23 23:04:35,563 - __main__ - INFO - Interpreting timer as relative time: 1 minutes and 0 seconds from now
+2025-05-23 23:04:35,564 - __main__ - INFO - Scheduling trade execution for EUR/JPY HIGHER at 23:05:35 (60.00 seconds from now)
+2025-05-23 23:04:56,091 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-23 23:05:35,589 - __main__ - INFO - Executing trade: EURJPY CALL 1 (expiry: 60s)

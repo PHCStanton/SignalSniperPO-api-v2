@@ -1,21 +1,21 @@
 {
-    "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"feec5dec2be7aa0509db7d69f44526cd\\\";s:10:\\\"ip_address\\\";s:12:\\\"169.0.58.139\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1747694548;}6af24ff0b98f515b4f7118a3a86a3216\",\"isDemo\":0,\"uid\":101002476,\"platform\":2}]",
-    "is_demo": false,
-    "min_payout": 80,
-    "preferred_assets": [
-        "EURUSD",
-        "GBPUSD",
-        "USDJPY",
-        "AUDUSD",
-        "USDCAD",
-        "NZDUSD",
-        "USDCHF",
-        "EURJPY",
-        "GBPJPY",
-        "EURGBP"
-    ],
-    "otc_preferred": true,
-    "connection_timeout": 30,
-    "reconnect_attempts": 5,
-    "reconnect_delay": 5
+  "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"47dea4096ef5700dd2bbbed6e04da33c\\\";s:10:\\\"ip_address\\\";s:12:\\\"169.0.58.139\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1748031465;}6c7198b6c631fd579781fbf2d4945da9\",\"isDemo\":0,\"uid\":101002476,\"platform\":9,\"isFastHistory\":false}]",
+  "is_demo": false,
+  "min_payout": 80,
+  "preferred_assets": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY",
+    "AUDUSD",
+    "USDCAD",
+    "NZDUSD",
+    "USDCHF",
+    "EURJPY",
+    "GBPJPY",
+    "EURGBP"
+  ],
+  "otc_preferred": true,
+  "connection_timeout": 30,
+  "reconnect_attempts": 5,
+  "reconnect_delay": 5
 }

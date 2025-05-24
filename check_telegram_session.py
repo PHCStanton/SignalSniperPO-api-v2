@@ -163,6 +163,7 @@ async def main():
     parser.add_argument('--api-hash', type=str, help='Telegram API hash')
     parser.add_argument('--session', type=str, default='pocket_option_userbot', help='Session name to check')
     parser.add_argument('--config', type=str, default='config/telegram_config.json', help='Path to Telegram configuration file')
+    parser.add_argument('--channel-name', type=str, help='Name of the Telegram channel to check (overrides config)')
     parser.add_argument('--verbose', action='store_true', help='Enable verbose logging')
     
     args = parser.parse_args()
@@ -209,16 +210,37 @@ async def main():
         print(f"\n✅ Session {session_name} is valid")
         print(f"Logged in as: {user_info}")
         
-        # Check channel access
-        channel_id = config.get('channel_id')
-        channel_name = config.get('channel_name', 'BINARY TRADING CLUB')
-        
-        if await check_channel_access(api_id, api_hash, session_name, channel_id, channel_name):
-            print(f"\n✅ Can access channel: {channel_name}")
-            print("\nReady to monitor signals!")
+        # If --channel-name is provided, search for that channel and print its ID
+        if args.channel_name:
+            print(f"\nSearching for channel: {args.channel_name}")
+            from telethon import TelegramClient
+            client = TelegramClient(session_name, api_id, api_hash)
+            await client.connect()
+            found = False
+            async for dialog in client.iter_dialogs():
+                if dialog.name == args.channel_name:
+                    print(f"\n✅ Found channel '{args.channel_name}' with ID: {dialog.id}")
+                    found = True
+                    # Validate access
+                    if isinstance(dialog.entity, Channel):
+                        print(f"Channel access validated for '{args.channel_name}'.")
+                    else:
+                        print(f"Entity found is not a Channel.")
+                    break
+            if not found:
+                print(f"\n❌ Channel '{args.channel_name}' not found in your dialogs.")
+            await client.disconnect()
         else:
-            print(f"\n❌ Cannot access channel: {channel_name}")
-            print("\nPlease ensure your Telegram account is a member of this channel.")
+            # Check channel access using config values
+            channel_id = config.get('channel_id')
+            channel_name = config.get('channel_name', 'BINARY TRADING CLUB')
+            
+            if await check_channel_access(api_id, api_hash, session_name, channel_id, channel_name):
+                print(f"\n✅ Can access channel: {channel_name}")
+                print("\nReady to monitor signals!")
+            else:
+                print(f"\n❌ Cannot access channel: {channel_name}")
+                print("\nPlease ensure your Telegram account is a member of this channel.")
     else:
         print(f"\n❌ Session {session_name} is not valid")
         print("\nYou need to create a new session using telethon_setup.py or test_telegram_api.py.")

@@ -4,9 +4,6 @@ python-dotenv>=1.0.0
 pytz>=2023.3
 argparse>=1.4.0
 
-# Database
-sqlite3>=3.35.0
-
 # Pocket Option API dependencies
 websocket-client>=1.6.1
 requests>=2.31.0

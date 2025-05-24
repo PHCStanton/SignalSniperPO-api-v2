@@ -1,0 +1,394 @@
+A 1-minute binary options trading strategy for EUR/USD on Pocket Option, using the indicators specified in the attached document `1Min-EURUSD-Basic.txt`. The bot already has a foundational codebase with the Pocket Option WebSocket API and SSID implemented, and it’s deployed on an EC2 instance for latency optimization, as per the revised `Dev_Plan_Start.md`. I’ll leverage the specified indicators, define trading rules based on common practices for these indicators, and ensure the code integrates with the existing setup for efficient trade execution on a 1-minute timeframe.
+
+---
+
+### Step 1: Analyze the Indicators and Define the Strategy
+
+The document lists the following indicators with their settings:
+
+| **Indicator**         | **Settings**                 | **Purpose**                                                                 |
+|-----------------------|------------------------------|-----------------------------------------------------------------------------|
+| SuperTrend            | ATR Period: 7, Multiplier: 2 | Identifies trend direction; acts as a trailing stop for trend confirmation. |
+| Bollinger Bands       | Deviation: 2, Period: 10     | Measures volatility; signals potential reversals at band extremes.          |
+| EMA1                  | Period: 20                   | Tracks longer-term trend direction (slower moving average).                 |
+| EMA2                  | Period: 5                    | Tracks short-term trend direction (faster moving average).                  |
+| Donchian Channel      | Period: 10                   | Identifies breakout levels based on recent highs and lows.                  |
+| CCI                   | +100, -100                   | Detects overbought (>100) or oversold (<-100) conditions.                   |
+| RSI                   | 70 (high), 30 (low)          | Signals overbought (>70) or oversold (<30) conditions.                      |
+
+#### **Strategy Design**
+Based on research and common practices for these indicators in binary options trading (e.g., [Binary Options Trading Strategy](https://tradingstrategyguides.com/binary-options-trading-strategy/) and [1-minute Binary Options Strategy](https://www.binaryoptions.net/my-1-minute-60-second-binary-options-strategy-1418-itm)), I’ll design a **trend-following and reversal confirmation strategy** for 1-minute trades:
+
+1. **Trend Confirmation** (SuperTrend, EMA1, EMA2):
+   - SuperTrend indicates the overall trend (buy if above price, sell if below).
+   - EMA crossover (EMA2 > EMA1 for bullish, EMA2 < EMA1 for bearish) confirms short-term trend alignment with the longer-term trend.
+
+2. **Breakout Confirmation** (Donchian Channel):
+   - Price breaking above the Donchian Channel upper band signals a potential bullish breakout.
+   - Price breaking below the lower band signals a potential bearish breakout.
+
+3. **Volatility and Reversal Check** (Bollinger Bands, CCI, RSI):
+   - Bollinger Bands: Price touching or breaking the upper band (bullish) or lower band (bearish) indicates momentum.
+   - CCI: Values above +100 (overbought) or below -100 (oversold) help confirm momentum or warn of reversals.
+   - RSI: Values above 70 (overbought) or below 30 (oversold) act as additional confirmation or a filter to avoid overextended trades.
+
+#### **Trading Rules**
+- **Buy (Call Option)**:
+  - SuperTrend is below price (bullish trend).
+  - EMA2 crosses above EMA1 (bullish crossover).
+  - Price breaks above the Donchian Channel upper band.
+  - Price touches or breaks the Bollinger Bands upper band.
+  - CCI > +100 (bullish momentum).
+  - RSI < 70 (not overbought, to avoid false signals).
+
+- **Sell (Put Option)**:
+  - SuperTrend is above price (bearish trend).
+  - EMA2 crosses below EMA1 (bearish crossover).
+  - Price breaks below the Donchian Channel lower band.
+  - Price touches or breaks the Bollinger Bands lower band.
+  - CCI < -100 (bearish momentum).
+  - RSI > 30 (not oversold, to avoid false signals).
+
+- **Expiry**: 60 seconds (1-minute trade).
+- **Asset**: EUR/USD (as specified).
+- **Trading Hours**: 8:00 AM to 12:00 PM SAST (high liquidity, per previous risk management recommendations).
+
+#### **Risk Management**
+- **Position Sizing**: 1% of account balance per trade.
+- **Daily Loss Limit**: Stop trading if daily losses reach 5% of the account balance.
+- **Consecutive Losses**: Pause after 3 consecutive losses.
+- **Trade Filters**: Avoid trading during high-impact news events; restrict to high-liquidity hours.
+
+---
+
+### Step 2: Implement the Functional Code
+
+I’ll write a Python script that integrates with the existing Pocket Option WebSocket API setup, calculates the specified indicators, applies the trading rules, and executes trades. The code will use `asyncio` for efficiency, as the bot is already deployed on an EC2 instance for low latency. I’ll also include risk management and logging as per the development plan.
+
+#### **Dependencies**
+- `numpy` and `pandas` for indicator calculations.
+- `asyncio` for asynchronous processing.
+- `websocket` (assumed for Pocket Option API, as a placeholder; replace with actual API implementation).
+- `logging` for trade and error logging.
+- SQLite (via `sqlite3`) for storing trade logs, as specified in the development plan.
+
+#### **Code**
+
+```python
+import asyncio
+import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
+import logging
+import sqlite3
+from typing import List, Tuple
+import websocket  # Placeholder for Pocket Option API
+
+# Configure logging
+logging.basicConfig(filename='trading_bot.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Initialize SQLite database for trade logging
+conn = sqlite3.connect('trades.db')
+cursor = conn.cursor()
+cursor.execute('''CREATE TABLE IF NOT EXISTS trades
+                 (timestamp TEXT, asset TEXT, direction TEXT, amount REAL, outcome TEXT, profit REAL)''')
+conn.commit()
+
+class OneMinuteStrategy:
+    def __init__(self, account_balance: float, asset: str = "EUR/USD"):
+        self.account_balance = account_balance
+        self.asset = asset
+        self.risk_per_trade = 0.01  # 1% of balance per trade
+        self.max_daily_loss = 0.05  # 5% daily loss limit
+        self.daily_loss = 0.0
+        self.consecutive_losses = 0
+        self.candles: List[Tuple[float, float, float, float]] = []  # [open, high, low, close]
+        self.rsi_values: List[float] = []
+        self.cci_values: List[float] = []
+        self.ema1_values: List[float] = []  # EMA 20
+        self.ema2_values: List[float] = []  # EMA 5
+        self.bollinger_upper: List[float] = []
+        self.bollinger_lower: List[float] = []
+        self.donchian_upper: List[float] = []
+        self.donchian_lower: List[float] = []
+        self.supertrend_values: List[float] = []
+        self.last_trade_time = None
+
+    def calculate_rsi(self, closes: List[float], period: int = 14) -> float:
+        if len(closes) < period + 1:
+            return None
+        gains = []
+        losses = []
+        for i in range(1, len(closes)):
+            diff = closes[i] - closes[i-1]
+            if diff > 0:
+                gains.append(diff)
+                losses.append(0)
+            else:
+                gains.append(0)
+                losses.append(abs(diff))
+        avg_gain = np.mean(gains[-period:]) if gains else 0
+        avg_loss = np.mean(losses[-period:]) if losses else 0
+        rs = avg_gain / avg_loss if avg_loss != 0 else float('inf')
+        return 100 - (100 / (1 + rs))
+
+    def calculate_cci(self, highs: List[float], lows: List[float], closes: List[float], period: int = 14) -> float:
+        if len(closes) < period:
+            return None
+        typical_prices = [(h + l + c) / 3 for h, l, c in zip(highs[-period:], lows[-period:], closes[-period:])]
+        tp_mean = np.mean(typical_prices)
+        mean_deviation = np.mean([abs(tp - tp_mean) for tp in typical_prices])
+        if mean_deviation == 0:
+            return 0
+        return (typical_prices[-1] - tp_mean) / (0.015 * mean_deviation)
+
+    def calculate_ema(self, prices: List[float], period: int) -> float:
+        if len(prices) < period:
+            return None
+        k = 2 / (period + 1)
+        ema = prices[0]
+        for price in prices[1:]:
+            ema = price * k + ema * (1 - k)
+        return ema
+
+    def calculate_bollinger_bands(self, closes: List[float], period: int = 10, deviation: float = 2) -> Tuple[float, float]:
+        if len(closes) < period:
+            return None, None
+        sma = np.mean(closes[-period:])
+        std = np.std(closes[-period:])
+        upper = sma + deviation * std
+        lower = sma - deviation * std
+        return upper, lower
+
+    def calculate_donchian_channel(self, highs: List[float], lows: List[float], period: int = 10) -> Tuple[float, float]:
+        if len(highs) < period:
+            return None, None
+        upper = max(highs[-period:])
+        lower = min(lows[-period:])
+        return upper, lower
+
+    def calculate_supertrend(self, highs: List[float], lows: List[float], closes: List[float], atr_period: int = 7, multiplier: float = 2) -> float:
+        if len(closes) < atr_period:
+            return None
+        # Simplified ATR calculation
+        trs = [max(highs[i] - lows[i], abs(highs[i] - closes[i-1]), abs(lows[i] - closes[i-1])) for i in range(1, len(highs))]
+        atr = np.mean(trs[-atr_period:])
+        basic_upper = (highs[-1] + lows[-1]) / 2 + multiplier * atr
+        basic_lower = (highs[-1] + lows[-1]) / 2 - multiplier * atr
+        if len(self.supertrend_values) == 0:
+            return basic_lower if closes[-1] > basic_lower else basic_upper
+        prev_supertrend = self.supertrend_values[-1]
+        if closes[-2] > prev_supertrend:
+            return max(basic_lower, prev_supertrend)
+        else:
+            return min(basic_upper, prev_supertrend)
+
+    def add_candle(self, open_price: float, high: float, low: float, close: float):
+        self.candles.append((open_price, high, low, close))
+        if len(self.candles) > 50:
+            self.candles.pop(0)
+
+        closes = [candle[3] for candle in self.candles]
+        highs = [candle[1] for candle in self.candles]
+        lows = [candle[2] for candle in self.candles]
+
+        # Calculate RSI
+        rsi = self.calculate_rsi(closes)
+        if rsi is not None:
+            self.rsi_values.append(rsi)
+            if len(self.rsi_values) > 50:
+                self.rsi_values.pop(0)
+
+        # Calculate CCI
+        cci = self.calculate_cci(highs, lows, closes)
+        if cci is not None:
+            self.cci_values.append(cci)
+            if len(self.cci_values) > 50:
+                self.cci_values.pop(0)
+
+        # Calculate EMAs
+        ema1 = self.calculate_ema(closes, 20)
+        if ema1 is not None:
+            self.ema1_values.append(ema1)
+            if len(self.ema1_values) > 50:
+                self.ema1_values.pop(0)
+
+        ema2 = self.calculate_ema(closes, 5)
+        if ema2 is not None:
+            self.ema2_values.append(ema2)
+            if len(self.ema2_values) > 50:
+                self.ema2_values.pop(0)
+
+        # Calculate Bollinger Bands
+        upper, lower = self.calculate_bollinger_bands(closes)
+        if upper is not None:
+            self.bollinger_upper.append(upper)
+            self.bollinger_lower.append(lower)
+            if len(self.bollinger_upper) > 50:
+                self.bollinger_upper.pop(0)
+                self.bollinger_lower.pop(0)
+
+        # Calculate Donchian Channel
+        dc_upper, dc_lower = self.calculate_donchian_channel(highs, lows)
+        if dc_upper is not None:
+            self.donchian_upper.append(dc_upper)
+            self.donchian_lower.append(dc_lower)
+            if len(self.donchian_upper) > 50:
+                self.donchian_upper.pop(0)
+                self.donchian_lower.pop(0)
+
+        # Calculate SuperTrend
+        supertrend = self.calculate_supertrend(highs, lows, closes)
+        if supertrend is not None:
+            self.supertrend_values.append(supertrend)
+            if len(self.supertrend_values) > 50:
+                self.supertrend_values.pop(0)
+
+    async def execute_trade(self, direction: str, expiry: str = "60s"):
+        global conn, cursor
+        trade_amount = self.account_balance * self.risk_per_trade
+        if self.daily_loss >= self.account_balance * self.max_daily_loss or self.consecutive_losses >= 3:
+            logging.warning("Trading paused: Loss limit reached or too many consecutive losses.")
+            return
+        current_time = datetime.now()
+        if self.last_trade_time and (current_time - self.last_trade_time).total_seconds() < 60:
+            return
+        if not (8 <= current_time.hour <= 12):  # Trade only during high-liquidity hours
+            return
+
+        # Placeholder for Pocket Option API call (assumes WebSocket API is implemented)
+        logging.info(f"Placing trade: {self.asset}, {direction}, Amount: {trade_amount}, Expiry: {expiry}")
+        self.last_trade_time = current_time
+
+        # Simulate trade outcome (replace with actual API response)
+        trade_success = True  # Placeholder; replace with API result
+        profit = trade_amount * 0.85 if trade_success else -trade_amount  # Assume 85% payout
+        if not trade_success:
+            self.consecutive_losses += 1
+            self.daily_loss += trade_amount
+        else:
+            self.consecutive_losses = 0
+
+        # Log trade to SQLite
+        timestamp = current_time.strftime('%Y-%m-%d %H:%M:%S')
+        cursor.execute("INSERT INTO trades (timestamp, asset, direction, amount, outcome, profit) VALUES (?, ?, ?, ?, ?, ?)",
+                       (timestamp, self.asset, direction, trade_amount, "Win" if trade_success else "Loss", profit))
+        conn.commit()
+
+    async def run(self):
+        while True:
+            # Simulate fetching new candle data (replace with Pocket Option WebSocket API data feed)
+            new_candle = (1.1000, 1.1005, 1.0995, 1.1002)  # Example: open, high, low, close
+            self.add_candle(*new_candle)
+
+            # Check if enough data is available
+            if (len(self.candles) < 50 or len(self.rsi_values) < 2 or len(self.cci_values) < 1 or
+                len(self.ema1_values) < 2 or len(self.ema2_values) < 2 or len(self.bollinger_upper) < 1 or
+                len(self.donchian_upper) < 1 or len(self.supertrend_values) < 1):
+                await asyncio.sleep(60)
+                continue
+
+            latest_close = self.candles[-1][3]
+            latest_high = self.candles[-1][1]
+            latest_low = self.candles[-1][2]
+
+            # Buy (Call) Signal
+            if (self.supertrend_values[-1] < latest_close and  # Bullish trend
+                self.ema2_values[-1] > self.ema1_values[-1] and self.ema2_values[-2] <= self.ema1_values[-2] and  # EMA crossover
+                latest_high > self.donchian_upper[-1] and  # Donchian breakout
+                latest_high >= self.bollinger_upper[-1] and  # Bollinger upper band touch
+                self.cci_values[-1] > 100 and  # Bullish momentum
+                self.rsi_values[-1] < 70):  # Not overbought
+                await self.execute_trade("CALL")
+
+            # Sell (Put) Signal
+            elif (self.supertrend_values[-1] > latest_close and  # Bearish trend
+                  self.ema2_values[-1] < self.ema1_values[-1] and self.ema2_values[-2] >= self.ema1_values[-2] and  # EMA crossover
+                  latest_low < self.donchian_lower[-1] and  # Donchian breakout
+                  latest_low <= self.bollinger_lower[-1] and  # Bollinger lower band touch
+                  self.cci_values[-1] < -100 and  # Bearish momentum
+                  self.rsi_values[-1] > 30):  # Not oversold
+                await self.execute_trade("PUT")
+
+            await asyncio.sleep(60)  # Wait for the next 1-minute candle
+
+async def main():
+    strategy = OneMinuteStrategy(account_balance=10000)
+    await strategy.run()
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        conn.close()
+        logging.info("Bot stopped by user.")
+```
+
+---
+
+### Step 3: Explanation of the Code
+
+#### **Structure**
+- **Class `OneMinuteStrategy`**: Manages the trading logic, indicator calculations, and trade execution.
+- **Indicator Calculations**:
+  - `calculate_rsi`: Computes the 14-period RSI (default period for simplicity; can be adjusted).
+  - `calculate_cci`: Calculates the Commodity Channel Index with thresholds at +100 and -100.
+  - `calculate_ema`: Computes Exponential Moving Averages for periods 5 and 20.
+  - `calculate_bollinger_bands`: Calculates Bollinger Bands with a 10-period and 2-deviation setting.
+  - `calculate_donchian_channel`: Computes the Donchian Channel with a 10-period setting.
+  - `calculate_supertrend`: Implements a simplified SuperTrend using ATR (7-period, multiplier 2).
+- **Trade Execution**:
+  - `execute_trade`: Places trades via the Pocket Option WebSocket API (placeholder), applies risk management, and logs trades to SQLite.
+- **Main Loop**:
+  - `run`: Continuously fetches new candles, calculates indicators, checks trading conditions, and executes trades.
+
+#### **Integration with Existing Setup**
+- **Pocket Option WebSocket API**: The code assumes the WebSocket API is already implemented for fetching 1-minute candle data and placing trades. Replace the placeholder in `execute_trade` with the actual API call.
+- **EC2 Instance**: The bot is deployed on an EC2 instance, ensuring low-latency execution (<100ms), as per the development plan.
+- **Logging and Storage**: Trades are logged to a SQLite database (`trades.db`) and a log file (`trading_bot.log`), aligning with the monitoring requirements in the development plan.
+
+#### **Risk Management**
+- Limits trade size to 1% of the account balance.
+- Stops trading if daily losses reach 5% of the balance.
+- Pauses after 3 consecutive losses.
+- Restricts trading to 8:00 AM - 12:00 PM SAST to avoid low-liquidity periods.
+
+#### **Efficiency**
+- Uses `asyncio` for asynchronous processing, ensuring the bot can handle data fetching, indicator calculations, and trade execution concurrently.
+- Stores only the last 50 candles to minimize memory usage.
+- Leverages the EC2 instance for low-latency execution, as confirmed by `check_latency.py` in the development plan.
+
+#### **Testing and Validation**
+- Replace the placeholder candle data (`new_candle`) with real-time data from the Pocket Option WebSocket API.
+- Use `simulate_signals.py` from the development plan to backtest the strategy with historical data.
+- Test live with small trade amounts to validate execution speed and accuracy.
+
+---
+
+### Step 4: Additional Notes and Recommendations
+
+1. **Indicator Optimization**:
+   - The RSI period isn’t specified in the document; I used a default of 14. Adjust to 9 or 7 if more sensitivity is needed for 1-minute trades.
+   - The SuperTrend calculation is simplified; consider integrating a more robust implementation if the Pocket Option API provides ATR directly.
+
+2. **News Filter**:
+   - Add a news filter to pause trading during high-impact events (e.g., using an economic calendar API). This aligns with the risk management strategy to avoid volatile periods.
+
+3. **Time Zone Handling**:
+   - The current time is 11:10 AM SAST on May 20, 2025. The bot restricts trading to 8:00 AM - 12:00 PM SAST, so it’s currently active. Ensure the bot’s clock is synchronized with the server time for accurate candle timing.
+
+4. **Backtesting**:
+   - Backtest the strategy using historical 1-minute EUR/USD data to evaluate its win rate and profitability. Adjust indicator parameters (e.g., Bollinger Bands period, RSI thresholds) based on results.
+
+5. **Scalability**:
+   - Extend the bot to trade multiple assets by running separate instances of `OneMinuteStrategy` for each asset, leveraging `asyncio` for parallel processing.
+
+6. **Error Handling**:
+   - Add retry logic for WebSocket API failures, as specified in the development plan (Phase 2).
+   - Implement a circuit breaker to pause trading during repeated failures.
+
+---
+
+### Conclusion
+This code implements a 1-minute binary options trading strategy for EUR/USD on Pocket Option, using the specified indicators (SuperTrend, Bollinger Bands, EMAs, Donchian Channel, CCI, RSI). It integrates with the existing WebSocket API and EC2 deployment, applies strict risk management, and ensures efficient execution with `asyncio`. The strategy combines trend-following (SuperTrend, EMAs), breakout (Donchian Channel), and momentum/reversal (Bollinger Bands, CCI, RSI) signals for robust trade decisions. Test thoroughly with historical data and small live trades before scaling up.

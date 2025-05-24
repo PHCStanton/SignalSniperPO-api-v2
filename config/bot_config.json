@@ -1,11 +1,11 @@
 {
     "timezone": "Africa/Johannesburg",
-    "trade_amount": 10,
+    "trade_amount": 1,
     "max_daily_trades": 20,
     "max_daily_loss": 100,
     "min_seconds_before_timer": 5,
     "stats_interval": 1800,
-    "test_mode": true,
+    "test_mode": false,
     "test_mode_win_rate": 0.6,
     "risk_management": {
         "strategy": "fixed",

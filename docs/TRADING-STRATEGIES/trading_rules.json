@@ -1,0 +1,85 @@
+{
+  "strategy_name": "1Min-EURUSD-Basic",
+  "asset": "EUR/USD",
+  "timeframe": "1 minute",
+  "trading_hours": {
+    "start": "08:00",
+    "end": "12:00",
+    "timezone": "SAST"
+  },
+  "indicators": {
+    "SuperTrend": {
+      "atr_period": 7,
+      "multiplier": 2,
+      "purpose": "trend direction and trailing stop"
+    },
+    "BollingerBands": {
+      "period": 10,
+      "deviation": 2,
+      "purpose": "volatility measurement and reversal signals"
+    },
+    "EMA": {
+      "slow": {
+        "period": 20,
+        "purpose": "longer-term trend direction"
+      },
+      "fast": {
+        "period": 5,
+        "purpose": "short-term trend direction"
+      }
+    },
+    "DonchianChannel": {
+      "period": 10,
+      "purpose": "breakout levels identification"
+    },
+    "CCI": {
+      "overbought": 100,
+      "oversold": -100,
+      "purpose": "momentum measurement"
+    },
+    "RSI": {
+      "overbought": 70,
+      "oversold": 30,
+      "purpose": "overbought/oversold conditions"
+    }
+  },
+  "entry_rules": {
+    "call_option": {
+      "conditions": [
+        "SuperTrend below price (bullish trend)",
+        "EMA5 crosses above EMA20 (bullish crossover)",
+        "Price breaks above Donchian Channel upper band",
+        "Price touches or breaks Bollinger Bands upper band",
+        "CCI > +100 (bullish momentum)",
+        "RSI < 70 (not overbought)"
+      ],
+      "logic": "ALL conditions must be met"
+    },
+    "put_option": {
+      "conditions": [
+        "SuperTrend above price (bearish trend)",
+        "EMA5 crosses below EMA20 (bearish crossover)",
+        "Price breaks below Donchian Channel lower band",
+        "Price touches or breaks Bollinger Bands lower band",
+        "CCI < -100 (bearish momentum)",
+        "RSI > 30 (not oversold)"
+      ],
+      "logic": "ALL conditions must be met"
+    }
+  },
+  "risk_management": {
+    "position_size": "1% of account balance per trade",
+    "daily_loss_limit": "5% of account balance",
+    "consecutive_losses_limit": 3,
+    "trade_filters": [
+      "Avoid trading during high-impact news events",
+      "Trade only during specified trading hours",
+      "Pause after reaching daily loss limit",
+      "Pause after consecutive losses limit reached"
+    ]
+  },
+  "trade_parameters": {
+    "expiry": "60 seconds",
+    "minimum_time_between_trades": "60 seconds"
+  }
+}
