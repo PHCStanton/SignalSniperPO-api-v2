@@ -1,0 +1,108 @@
+PS C:\www\Pocket-Option-API\PocketOptionAPI> python self_bot.py --verbose
+2025-05-25 15:47:33,747 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 15:47:33,747 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 15:47:33,945 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 15:47:35,171 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 15:47:35,171 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 15:47:35,359 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 15:47:35,359 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 15:47:35.368685 :[DEBUG]: Modo Demo: False
+2025-05-25 15:47:35,369 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 15:47:35.371830 :[DEBUG]: wss://api-eu.po.market/socket.io/?EIO=4&transport=websocket
+2025-05-25 15:47:37.201219 :[DEBUG]: CONNECTED SUCCESSFUL
+2025-05-25 15:47:37.201219 :[DEBUG]: Websocket client connected.
+2025-05-25 15:47:37,371 - __main__ - INFO - Account balance: 154.1
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add AUD/USD to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add AUD/NZD to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add AUD/CHF to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add AUD/CAD to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add EUR/USD to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add EUR/NZD to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add EUR/CHF to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add EUR/RUB to favorites: 'PocketOption' object has no attribute 'subscribe'
+e 'subscribe'
+2025-05-25 15:47:37,371 - __main__ - DEBUG - Could not add EUR/TRY to favorites: 'PocketOption' object has no attribute 'subscribe'
+2025-05-25 15:47:37,380 - __main__ - INFO - Database initialized successfully
+2025-05-25 15:47:37,382 - __main__ - INFO - ✅ Self Bot v1.0 initialized successfully
+2025-05-25 15:47:37,382 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-05-25 15:47:37,383 - __main__ - INFO - Bot is now monitoring for signals...
+2025-05-25 15:47:37,384 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-25 15:47:37,581 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-25 15:47:37,581 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-05-25 15:47:37,581 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-05-25 15:47:46.800444 :[DEBUG]: CONNECTED SUCCESSFUL
+2025-05-25 15:47:46.800444 :[DEBUG]: Websocket client connected.
+2025-05-25 15:48:53,861 - telethon.client.updates - INFO - Got difference for channel 2412213735 updates
+2025-05-25 15:51:08.353443 :[DEBUG]: CONNECTED SUCCESSFUL
+2025-05-25 15:51:08.354547 :[DEBUG]: Websocket client connected.
+2025-05-25 15:51:31,565 - __main__ - INFO - 📨 Received message: ?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-05-25 15:52:23,106 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 16:00:16.907557 :[DEBUG]: CONNECTED SUCCESSFUL
+2025-05-25 16:00:16.907557 :[DEBUG]: Websocket client connected.
+2025-05-25 16:00:56,402 - __main__ - INFO - Shutting down Self Bot...
+2025-05-25 16:00:56,402 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-05-25 16:00:56,402 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-05-25 16:00:56,402 - telethon.client.telegrambaseclient - ERROR - Unhandled exception from keepalive_handle after cancelling <class '_asyncio.Task'> (<Task finished name='Task-8' coro=<UpdateMethods._keepalive_loop() done, defined at C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\updates.py:481> exception=OperationalError('database is locked')>)
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\base_events.py", line 1898, in _run_once
+    event_list = self._selector.select(timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 444, in select
+    self._poll(timeout)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\asyncio\windows_events.py", line 825, in _poll
+    status = _overlapped.GetQueuedCompletionStatus(self._iocp, ms)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\self_bot.py", line 896, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\helpers.py", line 176, in _cancel
+    await task
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\updates.py", line 517, in _keepalive_loop
+    self._save_states_and_entities()
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\telegrambaseclient.py", line 694, in _save_states_and_entities
+    self.session.process_entities(types.contacts.ResolvedPeer(None, [e._as_input_peer() for e in entities], []))
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\sessions\sqlite.py", line 301, in process_entities        
+    c.executemany(
+sqlite3.OperationalError: database is locked
+2025-05-25 16:01:02,134 - __main__ - ERROR - Error in monitoring loop: database is locked
+PS C:\www\Pocket-Option-API\PocketOptionAPI> python self_bot.py --verbose
+2025-05-25 16:01:52,595 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 16:01:52,614 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 16:01:52,809 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 16:01:58,264 - __main__ - ERROR - Error initializing Telegram client: database is locked
+2025-05-25 16:01:58,266 - __main__ - ERROR - Failed to initialize Telegram client. Exiting...
+PS C:\www\Pocket-Option-API\PocketOptionAPI> python monitor_signals.py --duration 300 --verbose
+Telegram Signal Monitor
+----------------------
+This script monitors the BINARY TRADING CLUB Telegram channel for trading signals
+and logs them without executing any trades.
+
+2025-05-25 16:04:48,108 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 16:04:48,108 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 16:04:48,289 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 16:04:53,874 - __main__ - ERROR - Error initializing Telegram client: database is locked
+2025-05-25 16:04:53,874 - __main__ - ERROR - Failed to initialize Telegram client
+2025-05-25 16:04:53,874 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-05-25 16:04:53,874 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+Error running monitor: database is locked
+PS C:\www\Pocket-Option-API\PocketOptionAPI> 

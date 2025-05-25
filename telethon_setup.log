@@ -85,3 +85,9 @@
 2025-05-18 09:06:12,948 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
 2025-05-18 09:06:12,948 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
 2025-05-18 09:06:12,965 - __main__ - INFO - Telegram client disconnected
+2025-05-25 22:47:21,439 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 22:47:21,632 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 22:47:27,212 - __main__ - ERROR - Authentication failed: database is locked
+2025-05-25 22:47:27,212 - __main__ - ERROR - Failed to initialize Telegram client
+2025-05-25 22:47:27,212 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-05-25 22:47:27,212 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
