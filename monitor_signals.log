@@ -100,3 +100,18 @@
 2025-05-24 15:04:39,240 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
 2025-05-24 15:04:39,243 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
 2025-05-24 15:04:39,275 - __main__ - INFO - Monitor stopped
+2025-05-25 11:31:04,037 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 11:31:04,037 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 11:31:04,240 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 11:31:05,592 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 11:31:05,592 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 11:31:05,896 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 11:31:05,896 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 11:31:06,146 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 11:31:06,147 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 11:31:06,148 - __main__ - INFO - Signal monitor is running. Press Ctrl+C to stop.
+2025-05-25 11:31:06,149 - __main__ - INFO - Monitor will run for 300 seconds
+2025-05-25 11:33:20,688 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 11:33:34,508 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-05-25 11:33:34,512 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-05-25 11:33:34,521 - __main__ - INFO - Monitor stopped

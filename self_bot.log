@@ -854,3 +854,367 @@ Performance:
 2025-05-23 23:04:35,564 - __main__ - INFO - Scheduling trade execution for EUR/JPY HIGHER at 23:05:35 (60.00 seconds from now)
 2025-05-23 23:04:56,091 - telethon.client.updates - INFO - Got difference for account updates
 2025-05-23 23:05:35,589 - __main__ - INFO - Executing trade: EURJPY CALL 1 (expiry: 60s)
+2025-05-25 01:33:04,371 - __main__ - INFO - Test mode enabled via command line argument
+2025-05-25 01:33:04,371 - __main__ - INFO - Database initialized successfully
+2025-05-25 01:33:04,386 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 01:33:04,392 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-25 01:33:04,583 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-25 01:33:05,999 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 01:33:05,999 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 01:33:06,316 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 01:33:06,316 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 01:33:06,643 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 01:33:06,643 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 01:33:06,644 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 01:33:06,644 - __main__ - INFO - Account balance: None
+2025-05-25 01:33:06,644 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 01:33:06,644 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 01:33:06,646 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 01:33:06,646 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 01:33:06,650 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:02
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 01:33:06,650 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 01:34:00,763 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 01:34:15,837 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 01:34:16,675 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 01:34:16,676 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T01:34:16.676814+02:00'}
+2025-05-25 01:34:16,691 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 01:34:16,725 - __main__ - INFO - Executing trade: AUDUSD CALL 1 (expiry: 60s)
+2025-05-25 01:34:16,725 - __main__ - INFO - Test mode enabled. Simulating trade execution.
+2025-05-25 01:34:16,743 - __main__ - INFO - Waiting 60 seconds for simulated trade test_1748129656 to complete...
+2025-05-25 01:35:15,829 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 01:35:18,754 - __main__ - INFO - Simulated trade test_1748129656 completed: LOSE (Profit: -1)
+2025-05-25 01:36:24,505 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-25 01:36:24,508 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-25 01:36:24,528 - __main__ - INFO - Bot stopped
+2025-05-25 01:36:55,024 - __main__ - INFO - Database initialized successfully
+2025-05-25 01:36:55,024 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 01:36:55,032 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-25 01:36:55,221 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-25 01:36:56,511 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 01:36:56,512 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 01:36:56,730 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 01:36:56,730 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 01:36:56,933 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 01:36:56,934 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 01:36:56,936 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 01:36:56,937 - __main__ - INFO - Account balance: None
+2025-05-25 01:36:56,938 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 01:36:56,939 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 01:36:56,941 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 01:36:56,941 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 01:36:56,941 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 01:36:56,941 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 01:37:20,383 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 01:37:38,552 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 01:37:38,553 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T01:37:38.553454+02:00'}
+2025-05-25 01:37:38,564 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 01:37:38,573 - __main__ - INFO - Executing trade: AUDUSD CALL 1 (expiry: 60s)
+2025-05-25 01:37:38,576 - __main__ - ERROR - Error executing trade: Cannot run the event loop while another loop is running
+2025-05-25 01:37:45,816 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 01:38:45,888 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 01:38:46,060 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-25 01:38:58,188 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 01:38:58,188 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T01:38:58.188513+02:00'}
+2025-05-25 01:38:58,196 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 01:38:58,202 - __main__ - INFO - Executing trade: AUDCAD CALL 1 (expiry: 60s)
+2025-05-25 02:00:45,404 - __main__ - INFO - Database initialized successfully
+2025-05-25 02:00:45,405 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 02:00:45,418 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-25 02:00:45,616 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-25 02:00:47,045 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 02:00:47,045 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 02:00:47,246 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 02:00:47,246 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 02:00:47,443 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 02:00:47,444 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 02:00:47,448 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 02:00:47,450 - __main__ - INFO - Account balance: None
+2025-05-25 02:00:47,451 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 02:00:47,452 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 02:00:47,452 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 02:00:47,453 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 02:00:47,453 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:02
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 02:00:47,454 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 02:01:28,191 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 02:01:48,018 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:01:48,021 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:01:48.021102+02:00'}
+2025-05-25 02:01:48,035 - __main__ - DEBUG - Signal saved to database with ID: 15
+2025-05-25 02:01:48,037 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:01:48,046 - __main__ - DEBUG - Trade saved to database with ID: 21
+2025-05-25 02:01:48,047 - __main__ - INFO - Executing trade: AUDUSD CALL 1 (expiry: 60s)
+2025-05-25 02:01:48,050 - __main__ - ERROR - Error executing trade: Cannot run the event loop while another loop is running
+2025-05-25 02:01:48,062 - __main__ - DEBUG - Trade saved to database with ID: 22
+2025-05-25 02:01:54,539 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:02:47,247 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-25 02:02:54,612 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:03:05,325 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:03:05,326 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:03:05.325162+02:00'}
+2025-05-25 02:03:05,334 - __main__ - DEBUG - Signal saved to database with ID: 16
+2025-05-25 02:03:05,335 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:03:05,343 - __main__ - DEBUG - Trade saved to database with ID: 23
+2025-05-25 02:03:05,345 - __main__ - INFO - Executing trade: AUDCAD CALL 1 (expiry: 60s)
+2025-05-25 02:03:47,950 - __main__ - INFO - Database initialized successfully
+2025-05-25 02:03:47,951 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 02:03:47,958 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-25 02:03:48,153 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-25 02:03:53,604 - __main__ - ERROR - Error initializing Telegram client: database is locked
+2025-05-25 02:03:53,604 - __main__ - ERROR - Failed to initialize Telegram client
+2025-05-25 02:03:53,604 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-25 02:03:53,610 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-25 02:04:34,606 - __main__ - INFO - Database initialized successfully
+2025-05-25 02:04:34,606 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 02:04:34,670 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-25 02:04:36,544 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-25 02:05:05,047 - telethon.client.users - INFO - Phone migrated to 4
+2025-05-25 02:05:05,235 - telethon.client.telegrambaseclient - INFO - Reconnecting to new data center 4
+2025-05-25 02:05:05,460 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-25 02:05:05,463 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-25 02:05:05,463 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 02:05:07,537 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 02:05:47,501 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 02:05:47,502 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 02:05:47,742 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 02:05:47,742 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 02:05:48,170 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 02:05:48,170 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 02:05:48,172 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 02:05:48,172 - __main__ - INFO - Account balance: None
+2025-05-25 02:05:48,173 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 02:05:48,173 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 02:05:48,173 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 02:05:48,174 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 02:05:48,175 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:01:13
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 02:05:48,177 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 02:06:24,608 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:06:36,377 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 02:06:58,885 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:06:58,886 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:06:58.886033+02:00'}
+2025-05-25 02:06:58,906 - __main__ - DEBUG - Signal saved to database with ID: 17
+2025-05-25 02:06:58,908 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:06:58,927 - __main__ - DEBUG - Trade saved to database with ID: 24
+2025-05-25 02:06:58,928 - __main__ - INFO - Executing trade: AUDUSD CALL 1 (expiry: 60s)
+2025-05-25 02:06:58,929 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:06:58,931 - __main__ - ERROR - Error executing trade: Cannot run the event loop while another loop is running
+2025-05-25 02:06:58,942 - __main__ - DEBUG - Trade saved to database with ID: 25
+2025-05-25 02:07:24,710 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:07:39,818 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-25 02:07:50,891 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:07:50,891 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:07:50.891183+02:00'}
+2025-05-25 02:07:50,900 - __main__ - DEBUG - Signal saved to database with ID: 18
+2025-05-25 02:07:50,900 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:07:50,911 - __main__ - DEBUG - Trade saved to database with ID: 26
+2025-05-25 02:07:50,912 - __main__ - INFO - Executing trade: AUDCAD CALL 1 (expiry: 60s)
+2025-05-25 02:07:50,912 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:13:45,452 - __main__ - INFO - Database initialized successfully
+2025-05-25 02:13:45,453 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 02:13:45,474 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 02:13:45,661 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 02:13:46,866 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 02:13:46,866 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 02:13:47,067 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 02:13:47,068 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 02:13:47,271 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 02:13:47,272 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 02:13:47,274 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 02:13:47,274 - __main__ - INFO - Account balance: None
+2025-05-25 02:13:47,274 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 02:13:47,280 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 02:13:47,281 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 02:13:47,282 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 02:13:47,283 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 02:13:47,285 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 02:14:56,835 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 02:15:09,862 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:15:09,862 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:15:09.862775+02:00'}
+2025-05-25 02:15:09,874 - __main__ - DEBUG - Signal saved to database with ID: 19
+2025-05-25 02:15:09,875 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:15:09,885 - __main__ - DEBUG - Trade saved to database with ID: 27
+2025-05-25 02:15:09,886 - __main__ - INFO - Executing trade: AUDUSD CALL 1 (expiry: 60s)
+2025-05-25 02:15:09,886 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:15:14,920 - __main__ - ERROR - Error saving trade to database: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 13796 and this is thread id 19292.
+2025-05-25 02:15:34,285 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:15:50,245 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-25 02:15:59,219 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:15:59,220 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:15:59.220020+02:00'}
+2025-05-25 02:15:59,235 - __main__ - DEBUG - Signal saved to database with ID: 20
+2025-05-25 02:15:59,236 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:15:59,245 - __main__ - DEBUG - Trade saved to database with ID: 28
+2025-05-25 02:15:59,246 - __main__ - INFO - Executing trade: AUDCAD CALL 1 (expiry: 60s)
+2025-05-25 02:15:59,246 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:16:04,289 - __main__ - ERROR - Error saving trade to database: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 13796 and this is thread id 19168.
+2025-05-25 02:16:34,274 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:19:04,269 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:20:04,337 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:21:04,269 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:27:18,133 - __main__ - INFO - Database initialized successfully
+2025-05-25 02:27:18,133 - __main__ - INFO - Initializing Telegram client...
+2025-05-25 02:27:18,141 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-05-25 02:27:18,333 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-05-25 02:27:19,559 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-25 02:27:19,561 - __main__ - INFO - Already authenticated using existing session
+2025-05-25 02:27:19,767 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-25 02:27:19,769 - __main__ - INFO - Accessing channel: SignalTest
+2025-05-25 02:27:19,972 - __main__ - INFO - Accessed channel by ID: SignalTest
+2025-05-25 02:27:19,972 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-25 02:27:19,975 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-25 02:27:19,975 - __main__ - INFO - Account balance: None
+2025-05-25 02:27:19,975 - __main__ - INFO - Setting up favorite pairs for immediate trading: ['AUD/USD', 'AUD/NZD', 'AUD/CHF', 'AUD/CAD', 'EUR/USD', 'EUR/NZD', 'EUR/CHF', 'EUR/RUB', 'EUR/HUF', 'EUR/TRY']
+2025-05-25 02:27:19,975 - __main__ - INFO - Pocket Option format pairs: ['AUDUSD', 'AUDNZD', 'AUDCHF', 'AUDCAD', 'EURUSD', 'EURNZD', 'EURCHF', 'EURRUB', 'EURHUF', 'EURTRY']
+2025-05-25 02:27:19,980 - __main__ - INFO - Favorite pairs configured for immediate execution
+2025-05-25 02:27:19,981 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-25 02:27:19,983 - __main__ - INFO - 
+=== Self Bot v1.0 Statistics ===
+Runtime: 0:00:01
+Current Balance: None
+
+Signals:
+  Total Signals: 0
+  Valid Signals: 0
+
+Trades:
+  Executed Trades: 0
+  Winning Trades: 0
+  Losing Trades: 0
+  Error Trades: 0
+  
+Performance:
+  Win Rate: 0.00%
+  Total Profit: 0.00
+==============================
+
+2025-05-25 02:27:19,984 - __main__ - INFO - Self Bot is running. Press Ctrl+C to stop.
+2025-05-25 02:27:41,303 - telethon.client.updates - INFO - Got difference for channel 2322984519 updates
+2025-05-25 02:28:03,503 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-25 02:28:25,998 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:28:26,000 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:28:26.000412+02:00'}
+2025-05-25 02:28:26,011 - __main__ - DEBUG - Signal saved to database with ID: 21
+2025-05-25 02:28:26,012 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:28:26,013 - __main__ - INFO - Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-05-25 02:28:26,025 - __main__ - DEBUG - Trade saved to database with ID: 29
+2025-05-25 02:28:26,027 - __main__ - INFO - Executing trade: AUDUSD_otc CALL 1 (expiry: 60s)
+2025-05-25 02:28:26,028 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:28:26,362 - __main__ - ERROR - Error saving trade to database: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 20392 and this is thread id 10964.
+2025-05-25 02:28:27,869 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:29:28,364 - __main__ - ERROR - Error checking real trade result: 'tuple' object has no attribute 'get'
+2025-05-25 02:29:37,552 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-25 02:30:09,875 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-25 02:30:09,876 - __main__ - INFO - Complete signal detected: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-25T02:30:09.876064+02:00'}
+2025-05-25 02:30:09,885 - __main__ - DEBUG - Signal saved to database with ID: 22
+2025-05-25 02:30:09,886 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:30:09,886 - __main__ - INFO - Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-05-25 02:30:09,897 - __main__ - DEBUG - Trade saved to database with ID: 30
+2025-05-25 02:30:09,897 - __main__ - INFO - Executing trade: AUDCAD_otc CALL 1 (expiry: 60s)
+2025-05-25 02:30:09,900 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:30:10,215 - __main__ - ERROR - Error saving trade to database: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 20392 and this is thread id 4348.
+2025-05-25 02:30:27,824 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:31:12,218 - __main__ - ERROR - Error checking real trade result: 'tuple' object has no attribute 'get'
+2025-05-25 02:34:38,184 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-05-25 02:35:25,544 - __main__ - INFO - Parsed second message: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-25 02:35:25,546 - __main__ - INFO - Complete signal detected: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-25T02:35:25.545873+02:00'}
+2025-05-25 02:35:25,560 - __main__ - DEBUG - Signal saved to database with ID: 23
+2025-05-25 02:35:25,561 - __main__ - INFO - Immediate execution enabled. Executing trade as soon as signal is validated.
+2025-05-25 02:35:25,562 - __main__ - INFO - Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-05-25 02:35:25,574 - __main__ - DEBUG - Trade saved to database with ID: 31
+2025-05-25 02:35:25,575 - __main__ - INFO - Executing trade: EURUSD_otc PUT 1 (expiry: 60s)
+2025-05-25 02:35:25,577 - __main__ - INFO - REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-25 02:35:25,887 - __main__ - ERROR - Error saving trade to database: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 20392 and this is thread id 13820.
+2025-05-25 02:35:27,830 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-25 02:36:27,889 - __main__ - ERROR - Error checking real trade result: 'tuple' object has no attribute 'get'
+2025-05-25 02:38:29,528 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-05-25 02:38:29,530 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-05-25 02:38:29,533 - __main__ - INFO - Bot stopped

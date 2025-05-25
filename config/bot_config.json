@@ -26,5 +26,18 @@
         "EUR/TRY"
     ],
     "immediate_execution": true,
-    "default_timeframe": 1
+    "default_timeframe": 1,
+    "use_otc_by_default": true,
+    "otc_pairs": [
+        "AUDUSD",
+        "AUDNZD", 
+        "AUDCHF",
+        "AUDCAD",
+        "EURUSD",
+        "EURNZD",
+        "EURCHF",
+        "EURRUB",
+        "EURHUF",
+        "EURTRY"
+    ]
 }
