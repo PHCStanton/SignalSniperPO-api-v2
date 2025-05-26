@@ -1,31 +1,28 @@
 #!/usr/bin/env python3
 """
-self_bot.py - FINAL WORKING Self Bot v1.0 for Pocket Option Trading
+self_bot.py - FINAL WORKING Self Bot v1.5 for Pocket Option Trading
 
-This script implements the Self Bot v1.0 that monitors Telegram channels for trading signals
+This script implements the Self Bot v1.5 that monitors Telegram channels for trading signals
 and executes trades on Pocket Option using the websocket SSID authentication method.
 
-FINAL FIXES APPLIED:
-- Added threading for trade execution to avoid event loop conflicts
-- Enhanced Unicode logging support
-- Added single message signal parsing
-- Real trading mode enabled
-- Complete exception handling
-- OTC pairs support
+CHANGES IN v1.5:
+- Replaced SQLite database with JSON file storage to eliminate locking issues
+- Added interactive percentage-based amount calculator for trading
+- Enhanced session management for better tracking and control
 """
-
 import os
 import sys
 import json
 import asyncio
 import logging
 import argparse
-import sqlite3
 import pytz
 import re
 import signal
 import threading
 import time
+import tempfile
+import shutil
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple, Any, Union
 import dotenv
@@ -68,20 +65,193 @@ SECOND_MESSAGE_PAIR_PATTERN = r"Currency pair ([A-Z]{3}/[A-Z]{3})"
 SECOND_MESSAGE_DIRECTION_PATTERN = r"(HIGHER|LOWER)"
 SECOND_MESSAGE_EXPIRY_PATTERN = r"Trade time: (\d+) MIN"
 
+class JSONStorageManager:
+    """Manages thread-safe JSON file operations for storing signals and trades."""
+    def __init__(self, data_dir: str = "data", max_records: int = 1000, backup_enabled: bool = True):
+        self.data_dir = data_dir
+        self.signals_file = os.path.join(data_dir, "signals_history.json")
+        self.trades_file = os.path.join(data_dir, "trades_history.json")
+        self.session_file = os.path.join(data_dir, "session_data.json")
+        self.max_records = max_records
+        self.backup_enabled = backup_enabled
+        
+        # Create data directory if it doesn't exist
+        os.makedirs(data_dir, exist_ok=True)
+        
+        # Initialize empty files if they don't exist
+        for file_path in [self.signals_file, self.trades_file]:
+            if not os.path.exists(file_path):
+                with open(file_path, 'w') as f:
+                    json.dump([], f)
+        
+        if not os.path.exists(self.session_file):
+            with open(self.session_file, 'w') as f:
+                json.dump({}, f)
+    
+    def _create_backup(self, file_path: str) -> None:
+        """Create a backup of the specified file if backup is enabled."""
+        if self.backup_enabled and os.path.exists(file_path):
+            backup_file = file_path + ".backup"
+            shutil.copy2(file_path, backup_file)
+            logger.debug(f"Created backup: {backup_file}")
+    
+    def _load_json(self, file_path: str) -> List[Dict]:
+        """Load JSON data from file with error handling."""
+        try:
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
+        except Exception as e:
+            logger.error(f"Error loading JSON from {file_path}: {str(e)}")
+            backup_file = file_path + ".backup"
+            if os.path.exists(backup_file):
+                logger.info(f"Restoring from backup: {backup_file}")
+                return self._load_json(backup_file)
+            return []
+    
+    def _save_json(self, file_path: str, data: List[Dict]) -> bool:
+        """Save JSON data to file with thread safety and atomic operations."""
+        try:
+            # Create backup before writing
+            self._create_backup(file_path)
+            
+            # Write to temporary file first for atomic operation
+            temp_file = tempfile.NamedTemporaryFile(mode='w', delete=False, dir=self.data_dir)
+            json.dump(data, temp_file, indent=2)
+            temp_file.close()
+            
+            # Replace original file with temporary file
+            shutil.move(temp_file.name, file_path)
+            return True
+        except Exception as e:
+            logger.error(f"Error saving JSON to {file_path}: {str(e)}")
+            return False
+    
+    def _cleanup_old_records(self, data: List[Dict]) -> List[Dict]:
+        """Remove old records if exceeding max_records limit."""
+        if len(data) > self.max_records:
+            return data[-self.max_records:]
+        return data
+    
+    def save_signal(self, signal: Dict) -> bool:
+        """Save a signal to JSON storage."""
+        signals = self._load_json(self.signals_file)
+        signals.append(signal)
+        signals = self._cleanup_old_records(signals)
+        logger.debug(f"Saving signal with ID: {signal.get('id')}")
+        return self._save_json(self.signals_file, signals)
+    
+    def save_trade(self, trade: Dict) -> bool:
+        """Save a trade to JSON storage."""
+        trades = self._load_json(self.trades_file)
+        trades.append(trade)
+        trades = self._cleanup_old_records(trades)
+        logger.debug(f"Saving trade with ID: {trade.get('id')}")
+        return self._save_json(self.trades_file, trades)
+    
+    def save_session_data(self, session_data: Dict) -> bool:
+        """Save session data to JSON storage."""
+        return self._save_json(self.session_file, session_data)
+    
+    def load_session_data(self) -> Dict:
+        """Load session data from JSON storage."""
+        try:
+            with open(self.session_file, 'r') as f:
+                data = json.load(f)
+                return data if isinstance(data, dict) else {}
+        except Exception as e:
+            logger.error(f"Error loading session data: {str(e)}")
+            return {}
+
+class AmountCalculator:
+    """Handles interactive calculation of trading amount based on balance percentage."""
+    def __init__(self, config: Dict, pocket_option_client: Any):
+        self.config = config.get("amount_calculator", {})
+        self.enabled = self.config.get("enabled", True)
+        self.default_percentage = self.config.get("default_percentage", 10)
+        self.min_percentage = self.config.get("min_percentage", 1)
+        self.max_percentage = self.config.get("max_percentage", 50)
+        self.require_confirmation = self.config.get("require_confirmation", True)
+        self.pocket_option_client = pocket_option_client
+    
+    def get_balance(self, retries: int = 3) -> Optional[float]:
+        """Fetch current balance from Pocket Option with retry mechanism."""
+        for attempt in range(retries):
+            try:
+                balance = self.pocket_option_client.get_balance()
+                if balance is not None:
+                    return float(balance)
+                time.sleep(1)
+            except Exception as e:
+                logger.debug(f"Balance retrieval attempt {attempt + 1} failed: {str(e)}")
+                time.sleep(1)
+        logger.error("Failed to retrieve balance after multiple attempts")
+        return None
+    
+    def calculate_amount(self, balance: float, percentage: float) -> float:
+        """Calculate trading amount based on balance and percentage."""
+        return round((balance * percentage) / 100, 2)
+    
+    def setup_trading_amount(self) -> Optional[float]:
+        """Interactively setup trading amount for the session."""
+        if not self.enabled:
+            logger.info("Amount calculator disabled, using default trade amount")
+            return None
+        
+        balance = self.get_balance()
+        if balance is None:
+            logger.error("Could not fetch balance, using default trade amount")
+            return None
+        
+        logger.info(f"💰 Current Balance: ${balance:.2f}")
+        
+        while True:
+            default_text = f"{self.default_percentage}%"
+            percentage_input = input(f"📊 Choose percentage to trade [{default_text}]: ").strip()
+            
+            if percentage_input == "":
+                percentage = self.default_percentage
+                break
+            
+            try:
+                percentage = float(percentage_input.replace('%', ''))
+                if self.min_percentage <= percentage <= self.max_percentage:
+                    break
+                else:
+                    logger.warning(f"Percentage must be between {self.min_percentage}% and {self.max_percentage}%")
+            except ValueError:
+                logger.warning("Invalid input. Please enter a valid percentage (e.g., 15 or 15%)")
+        
+        amount = self.calculate_amount(balance, percentage)
+        logger.info(f"💵 Calculated Amount: ${amount:.2f}")
+        
+        if self.require_confirmation:
+            while True:
+                confirm = input(f"❓ Confirm this amount for the session? (y/n): ").strip().lower()
+                if confirm in ['y', 'n']:
+                    if confirm == 'n':
+                        logger.info("Amount not confirmed, using default trade amount")
+                        return None
+                    break
+                logger.warning("Please enter 'y' for yes or 'n' for no")
+        
+        logger.info(f"✅ Trading amount set to ${amount:.2f} for this session")
+        return amount
+
 class SelfBot:
     def __init__(
         self,
         config_file: str = "config/bot_config.json",
         telegram_config_file: str = "config/telegram_config.json",
         pocket_option_config_file: str = "config/pocket_option_config.json",
-        db_file: str = "data/trades.db",
+        data_dir: str = "data",
         verbose: bool = False
     ):
         """Initialize the Self Bot."""
         self.config_file = config_file
         self.telegram_config_file = telegram_config_file
         self.pocket_option_config_file = pocket_option_config_file
-        self.db_file = db_file
+        self.data_dir = data_dir
         self.verbose = verbose
         
         # Set logging level
@@ -106,8 +276,30 @@ class SelfBot:
         self.pending_signals = []
         self.active_trades = {}
         
-        # Database connection
-        self.db_conn = None
+        # JSON storage
+        json_config = self.config.get("json_storage", {})
+        self.storage = JSONStorageManager(
+            data_dir=data_dir,
+            max_records=json_config.get("max_records", 1000),
+            backup_enabled=json_config.get("backup_enabled", True)
+        )
+        
+        # Amount calculator
+        self.amount_calculator = None
+        self.session_amount = None
+        
+        # Session data
+        self.session_id = f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        self.session_data = {
+            "session_id": self.session_id,
+            "start_time": datetime.now().isoformat(),
+            "balance_start": 0.0,
+            "trades_count": 0,
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "profit_loss": 0.0
+        }
         
         # Timezone
         self.timezone = pytz.timezone(self.config.get("timezone", "Africa/Johannesburg"))
@@ -210,9 +402,14 @@ class SelfBot:
                         time.sleep(1)
                 
                 logger.info(f"Account balance: {balance}")
+                self.session_data["balance_start"] = balance if balance is not None else 0.0
+                self.storage.save_session_data(self.session_data)
                 
                 # Add favorite pairs after connection
                 self.add_pairs_to_favorites()
+                
+                # Initialize amount calculator
+                self.amount_calculator = AmountCalculator(self.config, self.pocket_option_client)
                 
                 return True
             else:
@@ -246,54 +443,26 @@ class SelfBot:
         except Exception as e:
             logger.error(f"Error adding pairs to favorites: {str(e)}")
     
-    def initialize_database(self) -> bool:
-        """Initialize the SQLite database with improved connection handling."""
+    def initialize_json_storage(self) -> bool:
+        """Initialize JSON storage for signals and trades."""
         try:
-            # Create directory if it doesn't exist
-            os.makedirs(os.path.dirname(self.db_file), exist_ok=True)
-            
-            # Connect to database with timeout to prevent locking issues
-            self.db_conn = sqlite3.connect(self.db_file, timeout=10)
-            cursor = self.db_conn.cursor()
-            
-            # Create tables if they don't exist
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS signals (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    timestamp TEXT NOT NULL,
-                    asset TEXT NOT NULL,
-                    direction TEXT NOT NULL,
-                    expiry INTEGER NOT NULL,
-                    timer TEXT NOT NULL,
-                    is_valid BOOLEAN NOT NULL,
-                    validation_message TEXT
-                )
-            ''')
-            
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS trades (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    signal_id INTEGER NOT NULL,
-                    timestamp TEXT NOT NULL,
-                    asset TEXT NOT NULL,
-                    direction TEXT NOT NULL,
-                    expiry INTEGER NOT NULL,
-                    amount REAL NOT NULL,
-                    trade_id TEXT,
-                    status TEXT NOT NULL,
-                    result TEXT,
-                    profit REAL,
-                    error_message TEXT,
-                    FOREIGN KEY (signal_id) REFERENCES signals (id)
-                )
-            ''')
-            
-            self.db_conn.commit()
-            logger.info("Database initialized successfully")
+            # Storage is already initialized in constructor
+            logger.info("JSON storage initialized successfully")
             return True
         except Exception as e:
-            logger.error(f"Error initializing database: {str(e)}")
+            logger.error(f"Error initializing JSON storage: {str(e)}")
             return False
+    
+    def setup_session_amount(self) -> bool:
+        """Setup the trading amount for the current session using the amount calculator."""
+        if self.amount_calculator:
+            amount = self.amount_calculator.setup_trading_amount()
+            if amount is not None:
+                self.session_amount = amount
+                self.session_data["session_amount"] = amount
+                self.storage.save_session_data(self.session_data)
+                return True
+        return False
     
     async def access_channel(self):
         """Access a Telegram channel that the user is already a member of."""
@@ -459,7 +628,9 @@ class SelfBot:
                     "timer": signal["timer"],
                     "direction": signal["direction"],
                     "expiry": signal["expiry"],
-                    "timestamp": datetime.now(self.timezone).isoformat()
+                    "timestamp": datetime.now(self.timezone).isoformat(),
+                    "id": f"signal_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{len(self.pending_signals) + 1:03d}",
+                    "session_id": self.session_id
                 }
                 
                 logger.info(f"🎯 COMPLETE SIGNAL DETECTED: {complete_signal}")
@@ -474,10 +645,8 @@ class SelfBot:
                     self.stats["valid_signals"] += 1
                     self.pending_signals.append(complete_signal)
                     
-                    # Save signal to database
-                    signal_id = self.save_signal_to_db(complete_signal)
-                    if signal_id:
-                        complete_signal["id"] = signal_id
+                    # Save signal to JSON storage
+                    self.storage.save_signal(complete_signal)
                     
                     # Execute trade immediately using threading to avoid event loop conflict
                     logger.info("🚀 EXECUTING TRADE IMMEDIATELY")
@@ -486,8 +655,8 @@ class SelfBot:
                     trade_thread.start()
                 else:
                     logger.warning(f"❌ Invalid signal: {validation_message}")
-                    # Save invalid signal to database
-                    self.save_signal_to_db(complete_signal)
+                    # Save invalid signal to JSON storage
+                    self.storage.save_signal(complete_signal)
                 return
             
             # Fallback to two-message format
@@ -515,7 +684,9 @@ class SelfBot:
                                 "timer": signal["timer"],
                                 "direction": signal["direction"],
                                 "expiry": signal["expiry"],
-                                "timestamp": datetime.now(self.timezone).isoformat()
+                                "timestamp": datetime.now(self.timezone).isoformat(),
+                                "id": f"signal_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{len(self.pending_signals) + 1:03d}",
+                                "session_id": self.session_id
                             }
                             
                             logger.info(f"🎯 COMPLETE SIGNAL DETECTED (Two-message): {complete_signal}")
@@ -530,10 +701,8 @@ class SelfBot:
                                 self.stats["valid_signals"] += 1
                                 self.pending_signals.append(complete_signal)
                                 
-                                # Save signal to database
-                                signal_id = self.save_signal_to_db(complete_signal)
-                                if signal_id:
-                                    complete_signal["id"] = signal_id
+                                # Save signal to JSON storage
+                                self.storage.save_signal(complete_signal)
                                 
                                 # Execute trade immediately using threading
                                 logger.info("🚀 EXECUTING TRADE IMMEDIATELY")
@@ -542,8 +711,8 @@ class SelfBot:
                                 trade_thread.start()
                             else:
                                 logger.warning(f"❌ Invalid signal: {validation_message}")
-                                # Save invalid signal to database
-                                self.save_signal_to_db(complete_signal)
+                                # Save invalid signal to JSON storage
+                                self.storage.save_signal(complete_signal)
                             
                             # Reset tracking
                             self.last_first_message = None
@@ -562,7 +731,7 @@ class SelfBot:
             else:
                 return False, "Pocket Option client not initialized"
                 
-            trade_amount = self.config.get("trade_amount", 1)
+            trade_amount = self.session_amount if self.session_amount is not None else self.config.get("trade_amount", 1)
             
             if balance is None:
                 return False, "Could not retrieve account balance"
@@ -586,94 +755,6 @@ class SelfBot:
             logger.error(f"Error validating signal: {str(e)}")
             return False, f"Error validating signal: {str(e)}"
     
-    def save_signal_to_db(self, signal: Dict) -> Optional[int]:
-        """Save a signal to the database with retry mechanism for locked database."""
-        if not self.db_conn:
-            logger.error("Database not initialized")
-            return None
-        
-        max_retries = 5
-        for attempt in range(max_retries):
-            try:
-                cursor = self.db_conn.cursor()
-                
-                # Insert signal
-                cursor.execute('''
-                    INSERT INTO signals (
-                        timestamp, asset, direction, expiry, timer, is_valid, validation_message
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?)
-                ''', (
-                    signal["timestamp"],
-                    signal["pair"],
-                    signal["direction"],
-                    signal["expiry"],
-                    signal["timer"],
-                    signal.get("is_valid", True),
-                    signal.get("validation_message", "")
-                ))
-                
-                self.db_conn.commit()
-                signal_id = cursor.lastrowid
-                logger.debug(f"Signal saved to database with ID: {signal_id}")
-                return signal_id
-            except sqlite3.OperationalError as e:
-                if "database is locked" in str(e).lower() and attempt < max_retries - 1:
-                    logger.warning(f"Database locked, retrying ({attempt+1}/{max_retries})...")
-                    time.sleep(1)  # Wait before retrying
-                    continue
-                else:
-                    logger.error(f"Error saving signal to database: {str(e)}")
-                    return None
-            except Exception as e:
-                logger.error(f"Error saving signal to database: {str(e)}")
-                return None
-    
-    def save_trade_to_db(self, trade: Dict) -> Optional[int]:
-        """Save a trade to the database with retry mechanism for locked database."""
-        if not self.db_conn:
-            logger.error("Database not initialized")
-            return None
-        
-        max_retries = 5
-        for attempt in range(max_retries):
-            try:
-                cursor = self.db_conn.cursor()
-                
-                # Insert trade
-                cursor.execute('''
-                    INSERT INTO trades (
-                        signal_id, timestamp, asset, direction, expiry, amount, trade_id, status, result, profit, error_message
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                ''', (
-                    trade.get("signal_id"),
-                    trade["timestamp"],
-                    trade["asset"],
-                    trade["direction"],
-                    trade["expiry"],
-                    trade["amount"],
-                    trade.get("trade_id", ""),
-                    trade["status"],
-                    trade.get("result", ""),
-                    trade.get("profit", 0.0),
-                    trade.get("error_message", "")
-                ))
-                
-                self.db_conn.commit()
-                trade_id = cursor.lastrowid
-                logger.debug(f"Trade saved to database with ID: {trade_id}")
-                return trade_id
-            except sqlite3.OperationalError as e:
-                if "database is locked" in str(e).lower() and attempt < max_retries - 1:
-                    logger.warning(f"Database locked, retrying ({attempt+1}/{max_retries})...")
-                    time.sleep(1)  # Wait before retrying
-                    continue
-                else:
-                    logger.error(f"Error saving trade to database: {str(e)}")
-                    return None
-            except Exception as e:
-                logger.error(f"Error saving trade to database: {str(e)}")
-                return None
-    
     def execute_trade_threaded(self, signal: Dict) -> None:
         """Execute a trade in a separate thread to avoid event loop conflicts."""
         try:
@@ -693,7 +774,7 @@ class SelfBot:
             
             direction = "call" if signal["direction"] == "HIGHER" else "put"
             expiry = signal["expiry"] * 60  # Convert to seconds
-            amount = self.config.get("trade_amount", 1)
+            amount = self.session_amount if self.session_amount is not None else self.config.get("trade_amount", 1)
             
             # Create trade record
             trade = {
@@ -703,11 +784,18 @@ class SelfBot:
                 "direction": direction,
                 "expiry": expiry,
                 "amount": amount,
-                "status": "executing"
+                "status": "executing",
+                "id": f"trade_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.session_data['trades_count'] + 1:03d}",
+                "session_id": self.session_id,
+                "balance_before": self.pocket_option_client.get_balance() if self.pocket_option_client else 0.0
             }
             
-            # Save trade to database
-            trade_db_id = self.save_trade_to_db(trade)
+            # Save trade to JSON storage
+            self.storage.save_trade(trade)
+            
+            # Update session data
+            self.session_data["trades_count"] += 1
+            self.storage.save_session_data(self.session_data)
             
             # Execute trade
             logger.info(f"🚀 EXECUTING TRADE: {asset} {direction.upper()} ${amount} (expiry: {expiry}s)")
@@ -722,8 +810,8 @@ class SelfBot:
                 trade["trade_id"] = trade_id
                 trade["status"] = "executed"
                 
-                # Update trade in database
-                self.save_trade_to_db(trade)
+                # Update trade in JSON storage
+                self.storage.save_trade(trade)
                 
                 # Add to active trades
                 self.active_trades[trade_id] = trade
@@ -753,8 +841,8 @@ class SelfBot:
                             
                             logger.info(f"✅ REAL TRADE EXECUTED: {asset} {direction.upper()} ${amount} - Trade ID: {trade_id}")
                             
-                            # Update trade in database
-                            self.save_trade_to_db(trade)
+                            # Update trade in JSON storage
+                            self.storage.save_trade(trade)
                             
                             # Add to active trades
                             self.active_trades[trade_id] = trade
@@ -772,8 +860,8 @@ class SelfBot:
                             trade["status"] = "failed"
                             trade["error_message"] = f"Failed to execute trade: {result}"
                             
-                            # Update trade in database
-                            self.save_trade_to_db(trade)
+                            # Update trade in JSON storage
+                            self.storage.save_trade(trade)
                             
                             # Increment error trades counter
                             self.stats["error_trades"] += 1
@@ -781,13 +869,13 @@ class SelfBot:
                         logger.error("❌ Pocket Option client not initialized")
                         trade["status"] = "error"
                         trade["error_message"] = "Pocket Option client not initialized"
-                        self.save_trade_to_db(trade)
+                        self.storage.save_trade(trade)
                         self.stats["error_trades"] += 1
                 except Exception as e:
                     logger.error(f"❌ Error executing real trade: {str(e)}")
                     trade["status"] = "error"
                     trade["error_message"] = str(e)
-                    self.save_trade_to_db(trade)
+                    self.storage.save_trade(trade)
                     self.stats["error_trades"] += 1
             
         except Exception as e:
@@ -807,6 +895,9 @@ class SelfBot:
                     # Check trade result
                     result = self.pocket_option_client.check_win(trade_id)
                     
+                    balance_after = self.pocket_option_client.get_balance()
+                    trade["balance_after"] = balance_after if balance_after is not None else trade.get("balance_before", 0.0)
+                    
                     if result is not None:
                         if result > 0:
                             # Winning trade
@@ -815,6 +906,8 @@ class SelfBot:
                             trade["profit"] = result
                             self.stats["winning_trades"] += 1
                             self.stats["total_profit"] += result
+                            self.session_data["wins"] += 1
+                            self.session_data["profit_loss"] += result
                         elif result < 0:
                             # Losing trade
                             logger.info(f"❌ LOSING TRADE: {trade_id} - Loss: ${result}")
@@ -822,14 +915,20 @@ class SelfBot:
                             trade["profit"] = result
                             self.stats["losing_trades"] += 1
                             self.stats["total_profit"] += result
+                            self.session_data["losses"] += 1
+                            self.session_data["profit_loss"] += result
                         else:
                             # Draw
                             logger.info(f"⚖️ DRAW TRADE: {trade_id} - No profit/loss")
                             trade["result"] = "draw"
                             trade["profit"] = 0.0
+                            self.session_data["draws"] += 1
                         
-                        # Update trade in database
-                        self.save_trade_to_db(trade)
+                        # Update trade in JSON storage
+                        self.storage.save_trade(trade)
+                        
+                        # Update session data
+                        self.storage.save_session_data(self.session_data)
                         
                         # Log current stats
                         logger.info(f"📊 TRADING STATS: Total Profit: ${self.stats['total_profit']:.2f} | Wins: {self.stats['winning_trades']} | Losses: {self.stats['losing_trades']} | Total Trades: {self.stats['executed_trades']}")
@@ -837,12 +936,12 @@ class SelfBot:
                         logger.warning(f"⚠️ Could not retrieve trade result for {trade_id}")
                         trade["result"] = "unknown"
                         trade["error_message"] = "Could not retrieve trade result"
-                        self.save_trade_to_db(trade)
+                        self.storage.save_trade(trade)
                 except Exception as e:
                     logger.error(f"Error checking trade result: {str(e)}")
                     trade["result"] = "error"
                     trade["error_message"] = str(e)
-                    self.save_trade_to_db(trade)
+                    self.storage.save_trade(trade)
             else:
                 logger.error(f"Trade {trade_id} not found or client not initialized")
         except Exception as e:
@@ -879,7 +978,7 @@ class SelfBot:
 
 def parse_arguments():
     """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description="Pocket Option Self Bot v1.0")
+    parser = argparse.ArgumentParser(description="Pocket Option Self Bot v1.5")
     parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     return parser.parse_args()
 
@@ -901,12 +1000,15 @@ async def main():
         logger.error("Failed to initialize Pocket Option client. Exiting...")
         sys.exit(1)
     
-    database_initialized = bot.initialize_database()
-    if not database_initialized:
-        logger.error("Failed to initialize database. Exiting...")
+    json_storage_initialized = bot.initialize_json_storage()
+    if not json_storage_initialized:
+        logger.error("Failed to initialize JSON storage. Exiting...")
         sys.exit(1)
     
-    logger.info("✅ Self Bot v1.0 initialized successfully")
+    # Setup trading amount for the session
+    bot.setup_session_amount()
+    
+    logger.info("✅ Self Bot v1.5 initialized successfully")
     logger.info("💰 REAL TRADING MODE ENABLED")
     logger.info("Bot is now monitoring for signals...")
     
@@ -917,18 +1019,9 @@ if __name__ == "__main__":
     # Handle Ctrl+C gracefully with proper cleanup
     def signal_handler(sig, frame):
         logger.info("Shutting down Self Bot...")
-        # Ensure database connection is closed to prevent locks
-        bot_instance = globals().get('bot')
-        if bot_instance and bot_instance.db_conn:
-            try:
-                bot_instance.db_conn.close()
-                logger.info("Database connection closed successfully.")
-            except Exception as e:
-                logger.error(f"Error closing database connection: {str(e)}")
         sys.exit(0)
     
     signal.signal(signal.SIGINT, signal_handler)
     
-    # Run the bot with global bot instance for signal handler
-    bot = None
+    # Run the bot
     asyncio.run(main())

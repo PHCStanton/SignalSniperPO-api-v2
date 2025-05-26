@@ -2051,3 +2051,57 @@ R...
 2025-05-25 23:21:49,784 - telethon.client.updates - INFO - Got difference for channel 1662586438 updates
 2025-05-25 23:51:50,250 - telethon.client.updates - INFO - Got difference for channel 1662586438 updates
 2025-05-26 01:36:52,279 - telethon.client.updates - INFO - Got difference for channel 1662586438 updates
+2025-05-26 03:04:55,797 - __main__ - INFO - Initializing Telegram client...
+2025-05-26 03:04:55,872 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-26 03:04:57,664 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-26 03:05:26,326 - telethon.client.users - INFO - Phone migrated to 4
+2025-05-26 03:05:26,626 - telethon.client.telegrambaseclient - INFO - Reconnecting to new data center 4
+2025-05-26 03:05:26,918 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-26 03:05:26,918 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-26 03:05:26,918 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-26 03:05:28,884 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-26 03:05:41,264 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-26 03:05:41,266 - __main__ - INFO - Already authenticated using existing session
+2025-05-26 03:05:41,494 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-26 03:05:41,494 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-26 03:05:41,496 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-26 03:05:43,498 - __main__ - INFO - Account balance: 157.31
+2025-05-26 03:05:43,499 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-26 03:05:43,503 - __main__ - INFO - Database initialized successfully
+2025-05-26 03:05:43,504 - __main__ - INFO - ✅ Self Bot v1.0 initialized successfully
+2025-05-26 03:05:43,505 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-05-26 03:05:43,506 - __main__ - INFO - Bot is now monitoring for signals...
+2025-05-26 03:05:43,507 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-26 03:05:43,933 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-26 03:05:43,934 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-05-26 03:05:43,935 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-05-26 03:08:43,174 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-26 03:12:23,537 - __main__ - INFO - Shutting down Self Bot...
+2025-05-26 03:12:23,537 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-26 03:12:23,537 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-26 10:43:41,558 - __main__ - INFO - Initializing Telegram client...
+2025-05-26 10:43:41,574 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-26 10:43:41,770 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-26 10:43:42,997 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-26 10:43:42,997 - __main__ - INFO - Already authenticated using existing session
+2025-05-26 10:43:43,197 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-26 10:43:43,199 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-26 10:43:43,201 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-26 10:43:45,203 - __main__ - INFO - Account balance: 158.23
+2025-05-26 10:43:45,208 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-26 10:43:45,241 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-26 10:43:45,241 - __main__ - INFO - JSON storage initialized successfully
+2025-05-26 10:43:45,241 - __main__ - INFO - 💰 Current Balance: $158.23
+2025-05-26 10:44:08,027 - __main__ - INFO - 💵 Calculated Amount: $23.73
+2025-05-26 10:44:20,631 - __main__ - INFO - ✅ Trading amount set to $23.73 for this session
+2025-05-26 10:44:20,631 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-26 10:44:20,678 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-05-26 10:44:20,679 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-05-26 10:44:20,679 - __main__ - INFO - Bot is now monitoring for signals...
+2025-05-26 10:44:20,682 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-26 10:44:20,871 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-26 10:44:20,871 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-05-26 10:44:20,871 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-05-26 10:47:13,843 - __main__ - INFO - Shutting down Self Bot...
+2025-05-26 10:47:13,843 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-26 10:47:13,843 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!

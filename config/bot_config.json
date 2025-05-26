@@ -39,5 +39,17 @@
         "EURRUB",
         "EURHUF",
         "EURTRY"
-    ]
+    ],
+    "amount_calculator": {
+        "enabled": true,
+        "default_percentage": 10,
+        "min_percentage": 1,
+        "max_percentage": 50,
+        "require_confirmation": true
+    },
+    "json_storage": {
+        "max_records": 1000,
+        "backup_enabled": true,
+        "auto_cleanup": true
+    }
 }
