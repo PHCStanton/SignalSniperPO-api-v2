@@ -1,11 +1,11 @@
 {
-  "session_id": "session_20250526_224855",
-  "start_time": "2025-05-26T22:48:55.282281",
-  "balance_start": 196.32,
-  "trades_count": 2,
+  "session_id": "session_20250527_085426",
+  "start_time": "2025-05-27T08:54:26.634390",
+  "balance_start": 0.0,
+  "trades_count": 0,
   "wins": 0,
   "losses": 0,
   "draws": 0,
   "profit_loss": 0.0,
-  "session_amount": 19.63
+  "session_amount": 1.56
 }

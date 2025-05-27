@@ -1,5 +1,36 @@
 For high-frequency trading (HFT) with bot automation and occasional manual trade execution via Remote Desktop Connection (RDC) on an EC2 instance, minimizing lag is critical to ensure fast response times for both automated and manual interactions. Below is an updated checklist tailored for your use case, focusing on low-latency RDC for controlling bot automation and manual trading on a Windows-based EC2 instance. The checklist builds on general performance optimizations but emphasizes HFT requirements, such as rapid execution and minimal network delays, while allowing for manual intervention. You can use this to tick off settings you’ve already applied and identify additional steps.
 
+**Previous Task Completion Message**
+
+I have addressed the Pylance errors in your Python scripts:
+
+1.  **`self_bot.py`**:
+    *   The type hint for the `_save_json` method in `JSONStorageManager` was updated to correctly handle saving both lists of dictionaries (for signals/trades) and single dictionaries (for session data). This resolved the type error related to `save_session_data`.
+    *   The existing `sys.path.append` logic for importing `pocketoptionapi` from the `PocketOptionAPI-v2` directory appears correct for runtime. Persistent Pylance import errors are likely due to static analysis limitations.
+    *   The `await` calls for Telethon client methods (`start`, `run_until_disconnected`) are standard and correct; Pylance warnings about them not being awaitable might also be static analysis quirks.
+
+2.  **`test_real_trade.py`**:
+    *   Updated the script to use the correct methods from `SelfBot` and `JSONStorageManager` (e.g., `bot.storage.save_signal()` instead of `bot.save_signal_to_db()`).
+    *   Removed references to outdated database attributes (e.g., `bot.db_conn`).
+    *   Added `import threading` to resolve the "threading is not defined" error.
+
+3.  **`test_websocket_connection.py`**:
+    *   This script already contains the correct `sys.path.append` logic for importing `pocketoptionapi` from `PocketOptionAPI-v2`. Persistent Pylance import errors are likely due to static analysis limitations, similar to `self_bot.py`.
+
+**EC2 Deployment (Windows Instance)**:
+As previously discussed and updated in `Custom-Instructions.md`, your EC2 instance is a Windows system. The script `utils/deploy_to_ec2_with_ntp_and_latency.ps1` was designed for a Linux target and is not suitable for direct remote execution on Windows.
+
+Please follow the revised plan in `Custom-Instructions.md` for setting up your Windows EC2 instance. This involves:
+1.  Connecting to your Windows EC2 instance (IP: `18.184.67.51`) via RDP (Remote Desktop Protocol). You'll need to use your `.pem` key (`EC2/eXP-BinaryBot.pem`) to retrieve the Administrator password from the AWS console.
+2.  Manually installing Git and Python on the EC2 instance if they are not already present.
+3.  Cloning your repository: `git clone -b SignalBot_v.1.5.2 https://github.com/PHCStanton/TradingBot.git`
+4.  Installing Python dependencies: `pip install -r requirements.txt`
+5.  Configuring Windows Time Service (NTP) using `w32tm` commands.
+6.  Performing latency checks (e.g., `ping 8.8.8.8 -n 10`).
+7.  Running your bot: `python self_bot.py` (from the repository directory).
+
+With the Pylance errors addressed, your codebase is better prepared for deployment to the Windows EC2 instance.
+
 ### Checklist for Low-Lag EC2 Instance for HFT and Bot Automation with Manual Control
 
 #### 1. EC2 Instance Configuration

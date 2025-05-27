@@ -1,0 +1,46 @@
+2025-05-27 08:38:27,498 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-27 08:38:29,607 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-27 08:49:58,092 - telethon.network.mtprotosender - INFO - System clock is wrong, set time offset to 1s
+2025-05-27 08:49:58,096 - telethon.network.mtprotosender - INFO - System clock is wrong, set time offset to 1s
+2025-05-27 08:49:58,150 - telethon.client.users - INFO - Phone migrated to 4
+2025-05-27 08:49:59,266 - telethon.client.telegrambaseclient - INFO - Reconnecting to new data center 4
+2025-05-27 08:49:59,475 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-27 08:49:59,477 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-27 08:49:59,479 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-27 08:50:01,484 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-27 08:50:19,486 - __main__ - INFO - Authenticated using existing session
+2025-05-27 08:50:19,486 - __main__ - INFO - Searching for channel: signalTest
+2025-05-27 08:50:20,402 - __main__ - WARNING - Channel not found: signalTest
+2025-05-27 08:50:20,404 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-27 08:50:20,405 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-27 08:50:20,412 - __main__ - INFO - Telegram client disconnected
+2025-05-27 08:52:29,051 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-27 08:52:29,243 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-27 08:52:30,484 - __main__ - INFO - Authenticated using existing session
+2025-05-27 08:52:30,485 - __main__ - INFO - Searching for channel: SignalTest
+2025-05-27 08:52:31,109 - __main__ - INFO - Configuration saved to config/telegram_config.json
+2025-05-27 08:52:31,110 - __main__ - INFO - Found channel: SignalTest (ID: -1002322984519, Username: None)
+2025-05-27 08:52:31,111 - __main__ - INFO - Retrieving 1 recent messages from channel
+2025-05-27 08:52:31,338 - __main__ - INFO - Retrieved 1 messages
+2025-05-27 08:52:31,338 - __main__ - INFO - Connectivity test successful
+2025-05-27 08:53:11,012 - __main__ - INFO - Message handler set up for channel ID: -1002322984519
+2025-05-27 08:53:11,013 - __main__ - INFO - Starting signal monitor for 60 seconds
+2025-05-27 08:53:11,014 - __main__ - INFO - Press Ctrl+C to stop
+2025-05-27 08:53:11,014 - __main__ - INFO - Retrieving 5 recent messages from channel
+2025-05-27 08:53:11,031 - telethon.client.updates - ERROR - Unhandled exception on message_handler
+Traceback (most recent call last):
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\.venv\Lib\site-packages\telethon\client\updates.py", line 570, in _dispatch_update
+    await callback(event)
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\utils\telethon_setup.py", line 382, in message_handler
+    await self.process_message(event.message)
+  File "C:\www\Pocket-Option-API\PocketOptionAPI\utils\telethon_setup.py", line 334, in process_message
+    if self.config["monitoring"]["log_all_messages"]:
+       ~~~~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'monitoring'
+2025-05-27 08:53:11,227 - __main__ - INFO - Retrieved 5 messages
+2025-05-27 08:53:11,247 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-27 08:53:32,993 - __main__ - INFO - Signal monitor stopped
+2025-05-27 08:53:32,994 - __main__ - INFO - No signals detected
+2025-05-27 08:53:32,995 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-27 08:53:32,997 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-27 08:53:33,013 - __main__ - INFO - Telegram client disconnected

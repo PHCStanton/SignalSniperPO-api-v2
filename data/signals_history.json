@@ -119,5 +119,16 @@
     "session_id": "session_20250526_224855",
     "is_valid": true,
     "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-27T08:59:03.176968+02:00",
+    "id": "signal_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
   }
 ]

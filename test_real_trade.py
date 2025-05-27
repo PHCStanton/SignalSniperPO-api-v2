@@ -11,6 +11,7 @@ import sys
 import json
 import asyncio
 import logging
+import threading # <--- Add this import
 from datetime import datetime, timedelta
 import pytz
 
@@ -30,10 +31,10 @@ async def test_real_trade_execution():
     # Ensure test mode is disabled for real trading
     bot.config["test_mode"] = False
     
-    # Initialize database
-    if not bot.initialize_database():
-        print("Failed to initialize database")
-        return
+    # Initialize JSON storage (already done in SelfBot.__init__)
+    # if not bot.initialize_json_storage():  # Or simply rely on __init__
+    #     print("Failed to initialize JSON storage")
+    #     return
     
     # Initialize Pocket Option client
     if not bot.initialize_pocket_option():
@@ -49,38 +50,83 @@ async def test_real_trade_execution():
     timer = timer_time.strftime("%H:%M:%S")
     
     # Create a test signal
+    signal_id = f"test_signal_{datetime.now().strftime('%Y%m%d%H%M%S')}"
     signal = {
+        "id": signal_id, # Ensure signal has an ID
         "pair": "EUR/USD",
-        "timer": timer,
+        "timer": timer, # This timer is for scheduling, actual execution is immediate in this test
         "direction": "HIGHER",
-        "expiry": 1,
+        "expiry": 1, # 1 minute
         "timestamp": datetime.now(timezone).isoformat(),
-        "is_valid": True,
-        "validation_message": "Signal is valid"
+        "is_valid": True, # Assume valid for test
+        "validation_message": "Signal is valid for test",
+        "session_id": bot.session_id # Include session_id
     }
     
     print(f"Created real trade signal: {signal}")
     
-    # Save signal to database
-    signal_id = bot.save_signal_to_db(signal)
-    if signal_id:
-        signal["id"] = signal_id
-        print(f"Signal saved to database with ID: {signal_id}")
+    # Save signal using JSONStorageManager
+    if bot.storage.save_signal(signal):
+        print(f"Signal saved to JSON storage with ID: {signal['id']}")
+    else:
+        print(f"Failed to save signal with ID: {signal['id']}")
+        return
+
+    # Setup session amount if not already done (SelfBot usually does this in main flow)
+    if bot.session_amount is None:
+        if not bot.setup_session_amount(): # This is interactive
+            print("Failed to setup session amount or user cancelled. Using default from config if any, or $1.")
+            bot.session_amount = bot.config.get("trade_amount", 1)
+
+
+    # Execute trade directly (it runs in a thread)
+    # Note: The original 'timer' in the signal was for scheduling.
+    # Here, we are directly invoking execution.
+    # The `execute_trade_threaded` will handle the logic.
+    print(f"Executing real trade for signal ID: {signal['id']}")
+    # bot.execute_trade_threaded(signal) # This is how SelfBot calls it internally
     
-    # Schedule trade execution
-    print(f"Scheduling real trade execution for {signal['timer']} (about 1 minute from now)")
-    await bot.schedule_trade_execution(signal)
+    # For a direct test, we might need to ensure the bot's state is ready
+    # (e.g., pocket_option_client is connected and balance checked).
+    # The execute_trade_threaded method itself is not async.
+    # It spawns another thread for checking results.
     
-    # Wait for trade to complete (expiry + buffer)
-    print(f"Waiting for trade to complete (about {signal['expiry'] + 1} minutes)...")
-    await asyncio.sleep((signal['expiry'] + 1) * 60)
+    # Simulate the part of process_message that calls execute_trade_threaded
+    # This ensures the trade is added to active_trades and stats are updated.
+    if signal["is_valid"]:
+        bot.stats["valid_signals"] += 1 # Manually update as process_message would
+        # bot.pending_signals.append(signal) # Not strictly needed for this direct test
+        
+        # Execute trade using threading to avoid event loop conflict
+        print("🚀 EXECUTING TRADE (Test Script Invocation)")
+        trade_thread = threading.Thread(target=bot.execute_trade_threaded, args=(signal,))
+        trade_thread.daemon = True
+        trade_thread.start()
+        trade_thread.join(timeout=10) # Wait briefly for the trade to be placed
+    else:
+        print("Signal marked invalid, not executing.")
+        return
+
+    # Wait for trade to complete (expiry + buffer for result checking thread)
+    # The result checking thread inside execute_trade_threaded will sleep for expiry + 5 seconds
+    wait_time_seconds = (signal['expiry'] * 60) + 15 # Add more buffer
+    print(f"Waiting for trade to complete and result to be checked (about {wait_time_seconds / 60:.1f} minutes)...")
+    await asyncio.sleep(wait_time_seconds)
     
-    # Print final stats
-    await bot.print_stats()
+    # Print final stats from bot.stats or bot.session_data
+    print("\n--- Final Stats ---")
+    print(f"Session ID: {bot.session_data.get('session_id')}")
+    print(f"Start Time: {bot.session_data.get('start_time')}")
+    print(f"Initial Balance: ${bot.session_data.get('balance_start', 0.0):.2f}")
+    print(f"Session Amount: ${bot.session_data.get('session_amount', bot.config.get('trade_amount',1)):.2f}")
+    print(f"Total Trades Executed in Session: {bot.session_data.get('trades_count', 0)}")
+    print(f"Wins: {bot.session_data.get('wins', 0)}")
+    print(f"Losses: {bot.session_data.get('losses', 0)}")
+    print(f"Draws: {bot.session_data.get('draws', 0)}")
+    print(f"Total Profit/Loss: ${bot.session_data.get('profit_loss', 0.0):.2f}")
+    print("--------------------")
     
-    # Close database connection
-    if bot.db_conn:
-        bot.db_conn.close()
+    # No database connection to close
     
     print("Real trade test completed")
 

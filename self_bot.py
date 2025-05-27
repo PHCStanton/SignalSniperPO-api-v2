@@ -109,8 +109,8 @@ class JSONStorageManager:
                 return self._load_json(backup_file)
             return []
     
-    def _save_json(self, file_path: str, data: List[Dict]) -> bool:
-        """Save JSON data to file with thread safety and atomic operations."""
+    def _save_json(self, file_path: str, data: Union[List[Dict[Any, Any]], Dict[Any, Any]]) -> bool:
+        """Save JSON data (list or dict) to file with thread safety and atomic operations."""
         try:
             # Create backup before writing
             self._create_backup(file_path)

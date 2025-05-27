@@ -449,5 +449,46 @@
     "balance_after": 157.06,
     "result": "error",
     "error_message": "'>' not supported between instances of 'tuple' and 'int'"
+  },
+  {
+    "signal_id": "signal_20250527_085903_001",
+    "timestamp": "2025-05-27T08:59:03.240531+02:00",
+    "asset": "EURUSD_otc",
+    "direction": "put",
+    "expiry": 60,
+    "amount": 1.56,
+    "status": "executing",
+    "id": "trade_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "balance_before": 156.06
+  },
+  {
+    "signal_id": "signal_20250527_085903_001",
+    "timestamp": "2025-05-27T08:59:03.240531+02:00",
+    "asset": "EURUSD_otc",
+    "direction": "put",
+    "expiry": 60,
+    "amount": 1.56,
+    "status": "executed",
+    "id": "trade_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "balance_before": 156.06,
+    "trade_id": "2eacfc6d-b744-41b3-84c5-3c7aadf85123"
+  },
+  {
+    "signal_id": "signal_20250527_085903_001",
+    "timestamp": "2025-05-27T08:59:03.240531+02:00",
+    "asset": "EURUSD_otc",
+    "direction": "put",
+    "expiry": 60,
+    "amount": 1.56,
+    "status": "executed",
+    "id": "trade_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "balance_before": 156.06,
+    "trade_id": "2eacfc6d-b744-41b3-84c5-3c7aadf85123",
+    "balance_after": 157.26,
+    "result": "error",
+    "error_message": "'>' not supported between instances of 'tuple' and 'int'"
   }
 ]

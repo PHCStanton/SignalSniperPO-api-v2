@@ -433,5 +433,46 @@
     "session_id": "session_20250526_224855",
     "balance_before": 176.69,
     "trade_id": "a6dae5e8-53d1-4a7a-a9c5-bf1bfbd42225"
+  },
+  {
+    "signal_id": "signal_20250526_230212_002",
+    "timestamp": "2025-05-26T23:02:12.712012+02:00",
+    "asset": "AUDCHF_otc",
+    "direction": "call",
+    "expiry": 60,
+    "amount": 19.63,
+    "status": "executed",
+    "id": "trade_20250526_230212_002",
+    "session_id": "session_20250526_224855",
+    "balance_before": 176.69,
+    "trade_id": "a6dae5e8-53d1-4a7a-a9c5-bf1bfbd42225",
+    "balance_after": 157.06,
+    "result": "error",
+    "error_message": "'>' not supported between instances of 'tuple' and 'int'"
+  },
+  {
+    "signal_id": "signal_20250527_085903_001",
+    "timestamp": "2025-05-27T08:59:03.240531+02:00",
+    "asset": "EURUSD_otc",
+    "direction": "put",
+    "expiry": 60,
+    "amount": 1.56,
+    "status": "executing",
+    "id": "trade_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "balance_before": 156.06
+  },
+  {
+    "signal_id": "signal_20250527_085903_001",
+    "timestamp": "2025-05-27T08:59:03.240531+02:00",
+    "asset": "EURUSD_otc",
+    "direction": "put",
+    "expiry": 60,
+    "amount": 1.56,
+    "status": "executed",
+    "id": "trade_20250527_085903_001",
+    "session_id": "session_20250527_085426",
+    "balance_before": 156.06,
+    "trade_id": "2eacfc6d-b744-41b3-84c5-3c7aadf85123"
   }
 ]
