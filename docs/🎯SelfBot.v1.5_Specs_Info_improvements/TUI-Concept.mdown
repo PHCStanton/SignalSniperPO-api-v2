@@ -1,0 +1,78 @@
+For a TUI (Text User Interface) design for SelfBot, the interface should focus on clarity, real-time feedback, and actionable controls, while exposing the bot’s core functionalities and status. Here are the key considerations and a suggested layout:
+
+---
+
+## **TUI Design Considerations for SelfBot**
+
+### **1. Real-Time Status & Monitoring**
+- **Connection Status:** Show Telegram and Pocket Option connection states (connected/disconnected, errors).
+- **Current Session Info:** Display session start time, current balance, trading mode (demo/real), and active configuration.
+- **Live Signal Feed:** Stream incoming signals, parsed details, and trade execution status in real time.
+
+### **2. Trade & Signal Dashboard**
+- **Recent Signals Table:** List of the latest signals (pair, direction, expiry, time, validity).
+- **Trade History Table:** Recent trades with status (executed, win/loss/draw, profit/loss, timestamp).
+- **Session Statistics:** Wins, losses, draws, total profit/loss, trades count, daily limits.
+
+### **3. Controls & Actions**
+- **Start/Stop Monitoring:** Toggle bot activity.
+- **Manual Trade Trigger:** Optionally allow manual trade execution for a parsed signal.
+- **Amount Calculator:** Interactive prompt to set/change trade amount or percentage.
+- **Config Reload:** Reload configuration files without restarting the bot.
+
+### **4. Alerts & Notifications**
+- **Error/Warning Panel:** Display connection issues, failed trades, or parsing errors.
+- **Critical Alerts:** Highlight when daily limits are reached or on major failures.
+
+### **5. Configuration & Settings**
+- **View/Edit Config:** Quick access to current config values (read-only or editable).
+- **Switch Trading Mode:** Toggle between demo and real trading.
+- **Favorite Pairs:** Show and manage favorite trading pairs.
+
+### **6. Help & Logs**
+- **Help Menu:** Key commands, usage tips, and legend for status indicators.
+- **Log Viewer:** Scrollable panel for recent log messages.
+
+---
+
+## **Suggested TUI Layout (ASCII/Box Drawing)**
+
+```plaintext
+┌───────────────────────────── SelfBot v1.5 ─────────────────────────────┐
+│ Telegram: [Connected]   PocketOption: [Connected]   Mode: [REAL]      │
+│ Session: 2025-05-26 11:45   Balance: $1,234.56   Amount: 10% ($123.45)│
+├───────────────────────────────────────────────────────────────────────┤
+│ [Live Signal Feed]                                                   │
+│ 11:46:01 | EUR/USD | HIGHER | 1min | VALID | Trade Executed           │
+│ 11:47:15 | GBP/USD | LOWER  | 5min | INVALID | Insufficient Balance   │
+├─────────────┬─────────────┬─────────────┬─────────────┬───────────────┤
+│  Recent Trades            │  Session Stats             │  Alerts      │
+│  Pair   | Result | P/L    │  Wins: 3  Losses: 1       │  [!] Max loss│
+│  EUR/USD| WIN    | +$9.20 │  Draws: 0  Trades: 4      │  [ ] Conn OK │
+│  GBP/USD| LOSS   | -$10.0 │  Profit: +$17.40          │              │
+├─────────────┴─────────────┴─────────────┴─────────────┴───────────────┤
+│ [F1] Help  [F2] Start/Stop  [F3] Set Amount  [F4] Reload Config      │
+│ [F5] Manual Trade  [F6] View Logs  [F7] Switch Mode  [F8] Quit       │
+└───────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## **TUI Design Principles**
+- **Color Coding:** Use colors for status (green=ok, red=error, yellow=warning).
+- **Keyboard Shortcuts:** Fast access to key actions (start/stop, set amount, view logs).
+- **Responsiveness:** Panels update in real time as signals/trades occur.
+- **Minimal Input:** Most actions via function keys or single keystrokes.
+- **Accessibility:** Clear text, high contrast, and logical navigation.
+
+---
+
+## **Optional Advanced Features**
+- **Filter/Sort:** Filter signals/trades by pair, result, or time.
+- **Export Data:** Save session stats or trade history to file.
+- **Theme Support:** Light/dark mode for terminal preferences.
+
+---
+
+**Summary:**  
+A well-designed TUI for SelfBot should provide a real-time, at-a-glance overview of trading activity, actionable controls, and clear feedback on system health and trading performance. The layout above balances monitoring, control, and usability for both novice and advanced users.

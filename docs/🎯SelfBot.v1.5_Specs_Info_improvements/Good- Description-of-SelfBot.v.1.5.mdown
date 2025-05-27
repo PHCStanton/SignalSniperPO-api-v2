@@ -1,0 +1,108 @@
+Here is a comprehensive, user-manual and advertising-ready summary of the SelfBot (v1.5) for Pocket Option, based on the main executable and the official overview documentation. This can be used for user onboarding, product pages, or marketing collateral.
+
+---
+
+# SelfBot v1.5 for Pocket Option  
+**Automated Trading. Real-Time Execution. Telegram Signal Integration.**
+
+## What is SelfBot?
+
+SelfBot v1.5 is an advanced, fully automated trading bot designed for Pocket Option. It seamlessly monitors Telegram channels for trading signals and executes trades on your behalf, using secure websocket authentication. Built for both novice and professional traders, SelfBot brings speed, precision, and risk management to your trading workflow.
+
+---
+
+## Key Features & Functionalities
+
+### 1. **Real-Time Telegram Signal Monitoring**
+- Connects to your Telegram account using secure authentication.
+- Monitors specified channels for trading signals 24/7.
+- Supports both single-message and two-message signal formats.
+- Advanced signal parsing with robust regex patterns.
+
+### 2. **Automated Trade Execution**
+- Instantly executes trades on Pocket Option as soon as a valid signal is detected.
+- Uses websocket SSID authentication for fast, reliable API access.
+- Supports both demo and real trading modes.
+- Handles both regular and OTC currency pairs.
+
+### 3. **Smart Risk & Money Management**
+- Interactive, percentage-based amount calculator for dynamic position sizing.
+- Configurable daily trade and loss limits.
+- Validates account balance before every trade.
+- Tracks wins, losses, draws, and profit/loss in real time.
+
+### 4. **Comprehensive Trade & Signal Logging**
+- All signals and trades are stored in robust JSON files (no database locking issues).
+- Automatic backup and recovery for all trading data.
+- Session management for tracking trading performance over time.
+
+### 5. **User-Friendly & Configurable**
+- Simple configuration via JSON files for bot, Telegram, and Pocket Option settings.
+- Verbose logging and real-time status updates.
+- Graceful shutdown and error handling.
+
+---
+
+## Technical Specifications
+
+- **Language:** Python 3.7+
+- **Telegram Integration:** Telethon library (user account mode)
+- **Pocket Option API:** Custom WebSocket API (PocketOptionAPI-v2)
+- **Data Storage:** JSON files with backup and atomic write operations
+- **Session Management:** Tracks session stats, balances, and trade history
+- **Threading:** Multi-threaded for non-blocking trade execution and result checking
+- **Timezone Support:** Configurable (default: Africa/Johannesburg)
+- **Logging:** File and console logging with Unicode support
+
+---
+
+## Required Files & Dependencies
+
+- `self_bot.py` (main executable)
+- `config/bot_config.json` (bot settings)
+- `config/telegram_config.json` (Telegram API credentials & channel info)
+- `config/pocket_option_config.json` (Pocket Option SSID & trading settings)
+- `PocketOptionAPI-v2/` (API implementation)
+- `data/` (stores signals_history.json, trades_history.json, session_data.json)
+- Python packages: `telethon`, `pytz`, `dotenv`, and standard libraries
+
+---
+
+## How It Works
+
+1. **Setup:**  
+   Configure your API keys, SSID, and channel info in the config files.
+
+2. **Start the Bot:**  
+   Run `python self_bot.py` and authenticate your Telegram account.
+
+3. **Monitor & Trade:**  
+   The bot listens for signals, parses them, validates risk, and executes trades automatically.
+
+4. **Track Performance:**  
+   All trades and signals are logged. Session stats and trade outcomes are available for review.
+
+---
+
+## Why Choose SelfBot?
+
+- **Lightning Fast:** Trades are executed the moment a signal is detected.
+- **Safe & Reliable:** Built-in risk management and session tracking.
+- **No Missed Opportunities:** 24/7 monitoring of your favorite Telegram channels.
+- **Easy to Use:** Simple setup, clear logs, and robust error handling.
+- **Customizable:** Adaptable to your trading style and risk profile.
+
+---
+
+## Areas for Future Improvement
+
+- Automatic reconnection and health monitoring for all connections
+- Fuzzy matching and multi-language support for signal parsing
+- Advanced risk management (drawdown protection, volatility filters)
+- Real-time dashboard and alerting system
+- Secure credential storage and compliance features
+
+---
+
+**SelfBot v1.5** — Your personal trading assistant for Pocket Option.  
+Automate your trading. Maximize your edge.

@@ -108,16 +108,5 @@
     "session_id": "session_20250526_224855",
     "is_valid": true,
     "validation_message": "Signal is valid"
-  },
-  {
-    "pair": "AUD/CHF",
-    "timer": "00:01:00",
-    "direction": "HIGHER",
-    "expiry": 1,
-    "timestamp": "2025-05-26T23:02:12.638252+02:00",
-    "id": "signal_20250526_230212_002",
-    "session_id": "session_20250526_224855",
-    "is_valid": true,
-    "validation_message": "Signal is valid"
   }
 ]

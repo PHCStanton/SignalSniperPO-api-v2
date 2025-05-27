@@ -433,21 +433,5 @@
     "session_id": "session_20250526_224855",
     "balance_before": 176.69,
     "trade_id": "a6dae5e8-53d1-4a7a-a9c5-bf1bfbd42225"
-  },
-  {
-    "signal_id": "signal_20250526_230212_002",
-    "timestamp": "2025-05-26T23:02:12.712012+02:00",
-    "asset": "AUDCHF_otc",
-    "direction": "call",
-    "expiry": 60,
-    "amount": 19.63,
-    "status": "executed",
-    "id": "trade_20250526_230212_002",
-    "session_id": "session_20250526_224855",
-    "balance_before": 176.69,
-    "trade_id": "a6dae5e8-53d1-4a7a-a9c5-bf1bfbd42225",
-    "balance_after": 157.06,
-    "result": "error",
-    "error_message": "'>' not supported between instances of 'tuple' and 'int'"
   }
 ]
