@@ -1,2 +1,30 @@
+__pycache__/
 *.pyc
 __pycache__/
+venv/
+*.log
+*.session*
+*.backup
+*.journal
+logs/
+# Python virtual environment
+venv/
+# Log files
+*.log
+# Session and backup files
+*.session
+*.session*
+*.backup
+*.journal
+# SQLite DB files
+*.db
+# OS generated files
+Thumbs.db
+.DS_Store
+# VS Code settings
+.vscode/
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Other temp files
+temp_ssid.txt
+ssid.txt
