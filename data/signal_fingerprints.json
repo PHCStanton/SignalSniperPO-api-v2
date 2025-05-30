@@ -1,0 +1,44 @@
+[
+  {
+    "fingerprint": "97306a2713cc8e30",
+    "timestamp": "2025-05-29T21:00:52.607710",
+    "signal_id": "signal_20250529_210052_001",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "35308e3033a91791",
+    "timestamp": "2025-05-29T21:02:36.253858",
+    "signal_id": "signal_20250529_210236_002",
+    "pair": "EUR/NZD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "a352ed32477e9dd8",
+    "timestamp": "2025-05-29T21:04:15.068038",
+    "signal_id": "signal_20250529_210415_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "b818e863f86330d3",
+    "timestamp": "2025-05-29T21:05:52.153563",
+    "signal_id": "signal_20250529_210552_004",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "96b164d7d521150a",
+    "timestamp": "2025-05-29T21:07:59.238517",
+    "signal_id": "signal_20250529_210759_005",
+    "pair": "EUR/RUB",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "2e5ca8724857b609",
+    "timestamp": "2025-05-29T21:09:51.214107",
+    "signal_id": "signal_20250529_210951_006",
+    "pair": "EUR/NZD",
+    "direction": "LOWER"
+  }
+]

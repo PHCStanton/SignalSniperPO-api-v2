@@ -292,15 +292,5 @@
     "signal_executed": "2025-05-29T21:07:59.430844",
     "execution_delay_ms": 172.494,
     "trade_id": "trade_20250529_210759_005"
-  },
-  {
-    "signal_id": "signal_20250529_210951_006",
-    "currency_pair": "EUR/NZD",
-    "signal_received": "2025-05-29T21:09:51.236894",
-    "session_id": "session_20250529_225035",
-    "status": "trade_executed",
-    "signal_executed": "2025-05-29T21:09:51.312219",
-    "execution_delay_ms": 75.325,
-    "trade_id": "trade_20250529_210951_006"
   }
 ]

@@ -361,5 +361,137 @@
     "session_id": "session_20250528_135930",
     "is_valid": true,
     "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-28T23:12:05.741669+02:00",
+    "id": "signal_20250528_211205_006",
+    "session_id": "session_20250528_204818",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:00:20.354124+02:00",
+    "id": "signal_20250529_140020_001",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "CAD/JPY",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:02:02.710499+02:00",
+    "id": "signal_20250529_140202_002",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "CHF/JPY",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:03:40.671972+02:00",
+    "id": "signal_20250529_140340_003",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:05:22.968032+02:00",
+    "id": "signal_20250529_140522_004",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:07:10.336130+02:00",
+    "id": "signal_20250529_140710_005",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "CHF/JPY",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T16:08:50.742739+02:00",
+    "id": "signal_20250529_140850_006",
+    "session_id": "session_20250529_134938",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T23:00:52.607710+02:00",
+    "id": "signal_20250529_210052_001",
+    "session_id": "session_20250529_225035",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/NZD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T23:02:36.253858+02:00",
+    "id": "signal_20250529_210236_002",
+    "session_id": "session_20250529_225035",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/GBP",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T23:04:15.068038+02:00",
+    "id": "signal_20250529_210415_003",
+    "session_id": "session_20250529_225035",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T23:05:52.153563+02:00",
+    "id": "signal_20250529_210552_004",
+    "session_id": "session_20250529_225035",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/RUB",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-05-29T23:07:59.238517+02:00",
+    "id": "signal_20250529_210759_005",
+    "session_id": "session_20250529_225035",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
   }
 ]

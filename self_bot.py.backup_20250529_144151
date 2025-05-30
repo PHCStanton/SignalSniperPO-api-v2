@@ -293,25 +293,22 @@ class SelfBot:
             max_records=json_config.get("max_records", 1000)
         )
         
-        # Session manager for singleton pattern and session recovery
-        self.session_manager = SessionManager(
-            data_dir=data_dir,
-            timezone=self.config.get("timezone", "Africa/Johannesburg")
-        )
-        
-        # Signal deduplicator for preventing duplicate signal processing
-        self.signal_deduplicator = SignalDeduplicator(
-            data_dir=data_dir,
-            max_fingerprints=json_config.get("max_fingerprints", 1000)
-        )
-        
         # Amount calculator
         self.amount_calculator = None
         self.session_amount = None
         
-        # Session data - will be managed by SessionManager
-        self.session_id = None
-        self.session_data = {}
+        # Session data
+        self.session_id = f"session_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+        self.session_data = {
+            "session_id": self.session_id,
+            "start_time": datetime.now().isoformat(),
+            "balance_start": 0.0,
+            "trades_count": 0,
+            "wins": 0,
+            "losses": 0,
+            "draws": 0,
+            "profit_loss": 0.0
+        }
         
         # Timezone
         self.timezone = pytz.timezone(self.config.get("timezone", "Africa/Johannesburg"))
@@ -647,11 +644,6 @@ class SelfBot:
                 
                 logger.info(f"🎯 COMPLETE SIGNAL DETECTED: {complete_signal}")
                 self.stats["total_signals"] += 1
-                
-                # Check for duplicate signals
-                if self.check_signal_duplicate(complete_signal):
-                    logger.warning("❌ Duplicate signal ignored")
-                    return
                 
                 # Validate signal
                 valid, validation_message = self.validate_signal(complete_signal)
@@ -1050,119 +1042,6 @@ class SelfBot:
             return
 
 
-    def initialize_session_management(self) -> bool:
-        """Initialize session management with singleton pattern and recovery."""
-        try:
-            # Check if we can start a new session
-            can_start, message = self.session_manager.can_start_new_session()
-            if not can_start:
-                logger.error(f"Cannot start new session: {message}")
-                return False
-            
-            # Get initial balance for session
-            initial_balance = 0.0
-            if self.pocket_option_client:
-                try:
-                    balance = self.pocket_option_client.get_balance()
-                    if balance is not None:
-                        initial_balance = float(balance)
-                except Exception as e:
-                    logger.warning(f"Could not get initial balance: {str(e)}")
-            
-            # Start new session
-            session_info = self.session_manager.start_new_session(initial_balance)
-            if session_info:
-                self.session_id = session_info.session_id
-                self.session_data = {
-                    "session_id": session_info.session_id,
-                    "start_time": session_info.start_time,
-                    "balance_start": session_info.balance_start,
-                    "trades_count": session_info.trades_count,
-                    "wins": session_info.wins,
-                    "losses": session_info.losses,
-                    "draws": session_info.draws,
-                    "profit_loss": session_info.profit_loss
-                }
-                logger.info(f"✅ Session management initialized: {self.session_id}")
-                return True
-            else:
-                logger.error("Failed to start new session")
-                return False
-        except Exception as e:
-            logger.error(f"Error initializing session management: {str(e)}")
-            return False
-    
-    def update_session_stats(self, **kwargs) -> None:
-        """Update session statistics."""
-        try:
-            if self.session_manager:
-                self.session_manager.update_session(**kwargs)
-                
-                # Update local session data
-                current_session = self.session_manager.get_current_session()
-                if current_session:
-                    self.session_data.update({
-                        "trades_count": current_session.trades_count,
-                        "wins": current_session.wins,
-                        "losses": current_session.losses,
-                        "draws": current_session.draws,
-                        "profit_loss": current_session.profit_loss
-                    })
-        except Exception as e:
-            logger.error(f"Error updating session stats: {str(e)}")
-    
-    def check_signal_duplicate(self, signal_data: Dict) -> bool:
-        """Check if signal is a duplicate using the signal deduplicator."""
-        try:
-            is_duplicate, message = self.signal_deduplicator.is_duplicate_signal(signal_data)
-            if is_duplicate:
-                logger.warning(f"🔄 DUPLICATE SIGNAL DETECTED: {message}")
-                return True
-            
-            # Register the signal to prevent future duplicates
-            self.signal_deduplicator.register_signal(signal_data)
-            return False
-        except Exception as e:
-            logger.error(f"Error checking signal duplicate: {str(e)}")
-            return False
-    
-    def get_session_statistics(self) -> Dict:
-        """Get comprehensive session statistics."""
-        try:
-            session_stats = self.session_manager.get_session_stats() if self.session_manager else {}
-            fingerprint_stats = self.signal_deduplicator.get_fingerprint_stats() if self.signal_deduplicator else {}
-            timestamp_stats = self.get_timestamp_performance_stats()
-            
-            return {
-                "session": session_stats,
-                "fingerprints": fingerprint_stats,
-                "timestamps": timestamp_stats,
-                "trading_stats": self.stats
-            }
-        except Exception as e:
-            logger.error(f"Error getting session statistics: {str(e)}")
-            return {"error": str(e)}
-    
-    def cleanup_session(self) -> None:
-        """Clean up session data and end current session."""
-        try:
-            if self.session_manager:
-                # Get final balance
-                final_balance = None
-                if self.pocket_option_client:
-                    try:
-                        final_balance = self.pocket_option_client.get_balance()
-                        if final_balance is not None:
-                            final_balance = float(final_balance)
-                    except Exception as e:
-                        logger.warning(f"Could not get final balance: {str(e)}")
-                
-                # End session
-                self.session_manager.end_session(final_balance)
-                logger.info("✅ Session cleanup completed")
-        except Exception as e:
-            logger.error(f"Error during session cleanup: {str(e)}")
-
     def get_timestamp_performance_stats(self) -> Dict:
         """Get timestamp performance statistics."""
         try:
@@ -1208,12 +1087,6 @@ async def main():
         logger.error("Failed to initialize JSON storage. Exiting...")
         sys.exit(1)
     
-    # Initialize session management
-    session_management_initialized = bot.initialize_session_management()
-    if not session_management_initialized:
-        logger.error("Failed to initialize session management. Exiting...")
-        sys.exit(1)
-    
     # Setup trading amount for the session
     bot.setup_session_amount()
     
@@ -1228,8 +1101,6 @@ if __name__ == "__main__":
     # Handle Ctrl+C gracefully with proper cleanup
     def signal_handler(sig, frame):
         logger.info("Shutting down Self Bot...")
-        if "bot" in locals():
-            bot.cleanup_session()
         sys.exit(0)
     
     signal.signal(signal.SIGINT, signal_handler)
