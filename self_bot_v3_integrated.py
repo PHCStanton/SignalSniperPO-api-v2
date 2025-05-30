@@ -1238,6 +1238,11 @@ if __name__ == "__main__":
     def signal_handler(sig, frame):
         logger.info("Shutting down Self Bot...")
         if "bot" in locals():
+            try:
+                if hasattr(bot, "timestamp_recorder") and hasattr(bot.timestamp_recorder, "flush_buffer"):
+                    bot.timestamp_recorder.flush_buffer()
+            except Exception as e:
+                logger.error(f"Error flushing timestamp buffer on shutdown: {str(e)}")
             bot.cleanup_session()
         sys.exit(0)
     

@@ -1,0 +1,182 @@
+[
+  {
+    "signal_received": "2025-05-26T12:10:38.711504+02:00",
+    "signal_executed": "2025-05-26T12:10:38.752193+02:00",
+    "execution_delay_ms": 40.689
+  },
+  {
+    "signal_received": "2025-05-26T12:15:04.927338+02:00",
+    "signal_executed": "2025-05-26T12:15:05.023576+02:00",
+    "execution_delay_ms": 96.238
+  },
+  {
+    "signal_received": "2025-05-26T13:42:59.623634+02:00",
+    "signal_executed": "2025-05-26T13:42:59.671758+02:00",
+    "execution_delay_ms": 48.124
+  },
+  {
+    "signal_received": "2025-05-26T16:02:54.130047+02:00",
+    "signal_executed": "2025-05-26T16:02:54.196936+02:00",
+    "execution_delay_ms": 66.889
+  },
+  {
+    "signal_received": "2025-05-26T16:04:54.579825+02:00",
+    "signal_executed": "2025-05-26T16:04:54.633912+02:00",
+    "execution_delay_ms": 54.087
+  },
+  {
+    "signal_received": "2025-05-26T16:06:29.894304+02:00",
+    "signal_executed": "2025-05-26T16:06:29.969022+02:00",
+    "execution_delay_ms": 74.718
+  },
+  {
+    "signal_received": "2025-05-26T16:08:23.368841+02:00",
+    "signal_executed": "2025-05-26T16:08:23.428937+02:00",
+    "execution_delay_ms": 60.096
+  },
+  {
+    "signal_received": "2025-05-26T16:09:59.841533+02:00",
+    "signal_executed": "2025-05-26T16:09:59.897995+02:00",
+    "execution_delay_ms": 56.462
+  },
+  {
+    "signal_received": "2025-05-26T16:11:42.771629+02:00",
+    "signal_executed": "2025-05-26T16:11:42.827731+02:00",
+    "execution_delay_ms": 56.102
+  },
+  {
+    "signal_received": "2025-05-26T23:00:33.850801+02:00",
+    "signal_executed": "2025-05-26T23:00:33.891374+02:00",
+    "execution_delay_ms": 40.573
+  },
+  {
+    "signal_received": "2025-05-26T23:02:12.638252+02:00",
+    "signal_executed": "2025-05-26T23:02:12.712012+02:00",
+    "execution_delay_ms": 73.76
+  },
+  {
+    "signal_received": "2025-05-27T08:59:03.176968+02:00",
+    "signal_executed": "2025-05-27T08:59:03.240531+02:00",
+    "execution_delay_ms": 63.563
+  },
+  {
+    "signal_received": "2025-05-27T23:00:33.676767+02:00",
+    "signal_executed": "2025-05-27T23:00:33.798958+02:00",
+    "execution_delay_ms": 122.191
+  },
+  {
+    "signal_received": "2025-05-27T23:02:04.863769+02:00",
+    "signal_executed": "2025-05-27T23:02:04.971644+02:00",
+    "execution_delay_ms": 107.875
+  },
+  {
+    "signal_received": "2025-05-27T23:03:45.645222+02:00",
+    "signal_executed": "2025-05-27T23:03:45.722368+02:00",
+    "execution_delay_ms": 77.146
+  },
+  {
+    "signal_received": "2025-05-27T23:05:16.520705+02:00",
+    "signal_executed": "2025-05-27T23:05:16.594292+02:00",
+    "execution_delay_ms": 73.587
+  },
+  {
+    "signal_received": "2025-05-29T12:32:13.431308",
+    "signal_executed": "2025-05-29T12:32:13.574993",
+    "execution_delay_ms": 143.685
+  },
+  {
+    "signal_received": "2025-05-29T12:32:13.625906",
+    "signal_executed": "2025-05-29T12:32:13.691610",
+    "execution_delay_ms": 65.704
+  },
+  {
+    "signal_received": "2025-05-29T12:32:13.742979",
+    "signal_executed": "2025-05-29T12:32:13.796148",
+    "execution_delay_ms": 53.169
+  },
+  {
+    "signal_received": "2025-05-29T12:32:13.945119",
+    "signal_executed": "2025-05-29T12:32:14.002345",
+    "execution_delay_ms": 57.226
+  },
+  {
+    "signal_received": "2025-05-29T14:00:20.354124",
+    "signal_executed": "2025-05-29T14:00:20.576276",
+    "execution_delay_ms": 222.152
+  },
+  {
+    "signal_received": "2025-05-29T14:02:02.710499",
+    "signal_executed": "2025-05-29T14:02:03.133472",
+    "execution_delay_ms": 422.973
+  },
+  {
+    "signal_received": "2025-05-29T14:03:40.671972",
+    "signal_executed": "2025-05-29T14:03:40.956891",
+    "execution_delay_ms": 284.919
+  },
+  {
+    "signal_received": "2025-05-29T14:05:22.969034",
+    "signal_executed": "2025-05-29T14:05:23.331231",
+    "execution_delay_ms": 362.197
+  },
+  {
+    "signal_received": "2025-05-29T14:07:10.336130",
+    "signal_executed": "2025-05-29T14:07:10.584905",
+    "execution_delay_ms": 248.775
+  },
+  {
+    "signal_received": "2025-05-29T14:08:50.742739",
+    "signal_executed": "2025-05-29T14:08:51.017515",
+    "execution_delay_ms": 274.776
+  },
+  {
+    "signal_received": "2025-05-29T21:00:52.607710",
+    "signal_executed": "2025-05-29T21:00:52.787409",
+    "execution_delay_ms": 179.699
+  },
+  {
+    "signal_received": "2025-05-29T21:02:36.302127",
+    "signal_executed": "2025-05-29T21:02:36.663775",
+    "execution_delay_ms": 361.648
+  },
+  {
+    "signal_received": "2025-05-29T21:04:15.089209",
+    "signal_executed": "2025-05-29T21:04:15.212367",
+    "execution_delay_ms": 123.158
+  },
+  {
+    "signal_received": "2025-05-29T21:05:52.156622",
+    "signal_executed": "2025-05-29T21:05:52.367594",
+    "execution_delay_ms": 210.972
+  },
+  {
+    "signal_received": "2025-05-29T21:07:59.258350",
+    "signal_executed": "2025-05-29T21:07:59.430844",
+    "execution_delay_ms": 172.494
+  },
+  {
+    "signal_received": "2025-05-29T21:09:51.236894",
+    "signal_executed": "2025-05-29T21:09:51.312219",
+    "execution_delay_ms": 75.325
+  },
+  {
+    "signal_received": "2025-05-30T16:01:09.188670",
+    "signal_executed": "2025-05-30T16:01:09.262592",
+    "execution_delay_ms": 73.922
+  },
+  {
+    "signal_received": "2025-05-30T16:02:41.280194",
+    "signal_executed": "2025-05-30T16:02:41.335440",
+    "execution_delay_ms": 55.246
+  },
+  {
+    "signal_received": "2025-05-30T16:04:10.885476",
+    "signal_executed": "2025-05-30T16:04:10.954038",
+    "execution_delay_ms": 68.562
+  },
+  {
+    "signal_received": "2025-05-30T16:05:43.710469",
+    "signal_executed": "2025-05-30T16:05:43.784261",
+    "execution_delay_ms": 73.792
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"09fe77a0ae78b1cad0b0f39fdcd860e1\\\";s:10:\\\"ip_address\\\";s:12:\\\"169.0.58.139\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1748595569;}cf3adf2d4ba652d639fc10f3b8cf643b\",\"isDemo\":0,\"uid\":101002476,\"platform\":9,\"isFastHistory\":true}]",
+  "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"6988010bd987dd871a933b9be5c75596\\\";s:10:\\\"ip_address\\\";s:12:\\\"18.184.46.88\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1748612779;}2fce9eb7df8e9ef601b1de67aa4e4c8d\",\"isDemo\":0,\"uid\":101002476,\"platform\":2,\"isFastHistory\":true}]",
   "is_demo": false,
   "min_payout": 80,
   "preferred_assets": [

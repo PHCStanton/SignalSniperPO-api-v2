@@ -18,17 +18,19 @@ import logging
 logger = logging.getLogger(__name__)
 
 class TimestampRecorder:
-    """Handles robust timestamp recording with backup mechanisms."""
-    
-    def __init__(self, data_dir: str = "data", max_records: int = 1000):
+    """Handles robust timestamp recording with backup mechanisms and buffered writes for low latency."""
+
+    def __init__(self, data_dir: str = "data", max_records: int = 1000, buffer_size: int = 10):
         self.data_dir = data_dir
         self.timestamps_file = os.path.join(data_dir, "timestamps.json")
         self.backup_file = os.path.join(data_dir, "timestamps_backup.json")
         self.max_records = max_records
-        
+        self.buffer_size = buffer_size
+        self._buffered_records = []
+
         # Create data directory if it doesn't exist
         os.makedirs(data_dir, exist_ok=True)
-        
+
         # Initialize empty file if it doesn't exist
         if not os.path.exists(self.timestamps_file):
             with open(self.timestamps_file, 'w') as f:
@@ -72,22 +74,32 @@ class TimestampRecorder:
         return timestamp_record
     
     def save_timestamp_record(self, timestamp_record: Dict) -> bool:
-        """Save timestamp record with backup system."""
+        """Buffer timestamp record and flush to disk when buffer is full."""
+        try:
+            self._buffered_records.append(timestamp_record)
+            if len(self._buffered_records) >= self.buffer_size:
+                self.flush_buffer()
+            return True
+        except Exception as e:
+            logger.error(f"Error buffering timestamp record: {str(e)}")
+            # Try backup save
+            return self._save_backup_timestamp(timestamp_record)
+
+    def flush_buffer(self):
+        """Flush buffered timestamp records to disk."""
+        if not self._buffered_records:
+            return
         try:
             # Load existing timestamps
             timestamps = self._load_timestamps()
-            timestamps.append(timestamp_record)
-            
+            timestamps.extend(self._buffered_records)
             # Cleanup old records
             timestamps = self._cleanup_old_records(timestamps)
-            
             # Save with atomic operation
-            return self._save_timestamps_atomic(timestamps)
-            
+            self._save_timestamps_atomic(timestamps)
+            self._buffered_records = []
         except Exception as e:
-            logger.error(f"Error saving timestamp record: {str(e)}")
-            # Try backup save
-            return self._save_backup_timestamp(timestamp_record)
+            logger.error(f"Error flushing timestamp buffer: {str(e)}")
     
     def _load_timestamps(self) -> List[Dict]:
         """Load timestamps from file with error handling."""
