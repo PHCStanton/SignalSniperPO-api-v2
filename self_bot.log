@@ -1543,3 +1543,186 @@ Trade time: 1 MIN...
 2025-05-30 04:04:06,209 - __main__ - INFO - JSON storage initialized successfully
 2025-05-30 04:04:06,210 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
 2025-05-30 04:04:06,211 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:10:58,941 - session_manager - INFO - Found recovery data for session: session_20250529_225035
+2025-05-30 11:10:58,941 - session_manager - INFO - Attempting session recovery...
+2025-05-30 11:10:58,941 - session_manager - INFO - Session recovered successfully: session_20250529_225035
+2025-05-30 11:10:58,941 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:10:58,974 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:10:58,975 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:10:59,099 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-05-30 11:11:01,542 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-05-30 11:11:21,606 - telethon.client.users - INFO - Phone migrated to 4
+2025-05-30 11:11:21,806 - telethon.client.telegrambaseclient - INFO - Reconnecting to new data center 4
+2025-05-30 11:11:22,010 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-05-30 11:11:22,010 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-05-30 11:11:22,010 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:11:24,001 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:12:08,991 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:12:08,991 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:12:09,229 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:12:09,229 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:12:09,229 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:12:11,232 - __main__ - INFO - Account balance: 109.5
+2025-05-30 11:12:11,262 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:12:11,275 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:12:11,276 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:12:11,276 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
+2025-05-30 11:12:11,276 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:14:02,086 - session_manager - INFO - Found recovery data for session: session_20250529_225035
+2025-05-30 11:14:02,086 - session_manager - INFO - Attempting session recovery...
+2025-05-30 11:14:02,086 - session_manager - INFO - Session recovered successfully: session_20250529_225035
+2025-05-30 11:14:02,086 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:14:02,086 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:14:02,086 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:14:02,155 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:14:02,342 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:14:03,611 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:14:03,611 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:14:03,854 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:14:03,854 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:14:03,854 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:14:05,859 - __main__ - INFO - Account balance: 109.5
+2025-05-30 11:14:05,869 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:14:05,884 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:14:05,884 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:14:05,885 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
+2025-05-30 11:14:05,886 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:50:46,200 - session_manager - INFO - Found recovery data for session: session_20250529_225035
+2025-05-30 11:50:46,200 - session_manager - INFO - Attempting session recovery...
+2025-05-30 11:50:46,208 - session_manager - INFO - Session recovered successfully: session_20250529_225035
+2025-05-30 11:50:46,208 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:50:46,208 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:50:46,212 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:50:46,384 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:50:46,592 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:50:47,839 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:50:47,841 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:50:48,043 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:50:48,044 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:50:48,047 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:50:51,049 - __main__ - INFO - Account balance: None
+2025-05-30 11:50:51,064 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:50:51,112 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:50:51,113 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:50:51,113 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
+2025-05-30 11:50:51,113 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:51:33,014 - session_manager - INFO - Found recovery data for session: session_20250529_225035
+2025-05-30 11:51:33,014 - session_manager - INFO - Attempting session recovery...
+2025-05-30 11:51:33,014 - session_manager - INFO - Session recovered successfully: session_20250529_225035
+2025-05-30 11:51:33,030 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:51:33,030 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:51:33,030 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:51:33,090 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:51:33,294 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:51:34,506 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:51:34,507 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:51:34,707 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:51:34,708 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:51:34,710 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:51:36,712 - __main__ - INFO - Account balance: 109.5
+2025-05-30 11:51:36,720 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:51:36,742 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:51:36,743 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:51:36,744 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
+2025-05-30 11:51:36,745 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:52:13,184 - session_manager - INFO - Found recovery data for session: session_20250529_225035
+2025-05-30 11:52:13,187 - session_manager - INFO - Attempting session recovery...
+2025-05-30 11:52:13,191 - session_manager - INFO - Session recovered successfully: session_20250529_225035
+2025-05-30 11:52:13,192 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:52:13,196 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:52:13,197 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:52:13,361 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:52:13,552 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:52:14,775 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:52:14,776 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:52:14,976 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:52:14,978 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:52:14,984 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:52:16,987 - __main__ - INFO - Account balance: 109.5
+2025-05-30 11:52:16,998 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:52:17,017 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:52:17,020 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:52:17,022 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250529_225035
+2025-05-30 11:52:17,023 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 11:52:54,148 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 11:52:54,150 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 11:52:54,152 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 11:52:54,268 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:52:54,465 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:52:55,748 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 11:52:55,750 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 11:52:55,981 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:52:55,983 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 11:52:55,989 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 11:52:58,993 - __main__ - INFO - Account balance: None
+2025-05-30 11:52:59,001 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 11:52:59,033 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 11:52:59,039 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 11:52:59,089 - session_manager - INFO - New session started: session_20250530_115259
+2025-05-30 11:52:59,091 - __main__ - INFO - ✅ Session management initialized: session_20250530_115259
+2025-05-30 11:53:02,097 - __main__ - ERROR - Failed to retrieve balance after multiple attempts
+2025-05-30 11:53:02,097 - __main__ - ERROR - Could not fetch balance, using default trade amount
+2025-05-30 11:53:02,098 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-05-30 11:53:02,099 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-05-30 11:53:02,100 - __main__ - INFO - Bot is now monitoring for signals...
+2025-05-30 11:53:02,100 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-05-30 11:53:02,347 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-05-30 11:53:02,347 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-05-30 11:53:02,348 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-05-30 11:54:17,979 - __main__ - INFO - Shutting down Self Bot...
+2025-05-30 11:54:17,983 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-30 11:54:17,983 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-30 12:57:11,564 - session_manager - INFO - Found recovery data for session: session_20250530_115259
+2025-05-30 12:57:11,566 - session_manager - INFO - Attempting session recovery...
+2025-05-30 12:57:11,570 - session_manager - INFO - Session recovered successfully: session_20250530_115259
+2025-05-30 12:57:11,572 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 12:57:11,606 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 12:57:11,608 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 12:57:11,759 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 12:57:12,951 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 12:57:14,222 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 12:57:14,223 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 12:57:14,425 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 12:57:14,426 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 12:57:14,427 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 12:57:17,429 - __main__ - INFO - Account balance: None
+2025-05-30 12:57:17,487 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 12:57:17,512 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 12:57:17,514 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 12:57:17,515 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250530_115259
+2025-05-30 12:57:17,516 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 13:00:24,302 - session_manager - INFO - Found recovery data for session: session_20250530_115259
+2025-05-30 13:00:24,303 - session_manager - INFO - Attempting session recovery...
+2025-05-30 13:00:24,305 - session_manager - INFO - Session recovered successfully: session_20250530_115259
+2025-05-30 13:00:24,305 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 13:00:24,308 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 13:00:24,309 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 13:00:24,405 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 13:00:24,596 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 13:00:26,079 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 13:00:26,080 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 13:00:26,335 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 13:00:26,336 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 13:00:26,339 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 13:00:29,342 - __main__ - INFO - Account balance: None
+2025-05-30 13:00:29,359 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 13:00:29,381 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 13:00:29,384 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 13:00:29,386 - __main__ - ERROR - Cannot start new session: Active session already exists: session_20250530_115259
+2025-05-30 13:00:29,386 - __main__ - ERROR - Failed to initialize session management. Exiting...
+2025-05-30 13:01:09,787 - session_manager - INFO - SessionManager initialized successfully
+2025-05-30 13:01:09,789 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-05-30 13:01:09,791 - __main__ - INFO - Initializing Telegram client...
+2025-05-30 13:01:09,906 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 13:01:10,096 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 13:01:11,394 - __main__ - INFO - Started Telegram client in user account mode
+2025-05-30 13:01:11,395 - __main__ - INFO - Already authenticated using existing session
+2025-05-30 13:01:11,592 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-05-30 13:01:11,594 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-05-30 13:01:11,599 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-05-30 13:01:13,601 - __main__ - INFO - Account balance: 109.5
+2025-05-30 13:01:13,609 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 13:01:13,664 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-05-30 13:01:13,665 - __main__ - INFO - JSON storage initialized successfully
+2025-05-30 13:01:13,684 - __main__ - ERROR - Cannot start new session: Daily session limit reached: 1/1
+2025-05-30 13:01:13,685 - __main__ - ERROR - Failed to initialize session management. Exiting...

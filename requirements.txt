@@ -12,6 +12,7 @@ tzlocal>=5.1
 websockets>=12.0
 pandas>=2.0.3
 colorama>=0.4.6
+python-socketio>=3.1.2
 
 # For EC2 deployment
 paramiko>=3.3.1

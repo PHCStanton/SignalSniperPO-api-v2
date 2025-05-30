@@ -1,2 +1,20 @@
 2025-05-29 20:48:22,759 - __main__ - INFO - Checking session: pocket_option_userbot
 2025-05-29 20:48:22,761 - __main__ - WARNING - Session file pocket_option_userbot.session does not exist
+2025-05-30 11:46:03,429 - __main__ - INFO - Checking session: pocket_option_userbot
+2025-05-30 11:46:03,429 - __main__ - WARNING - Session file pocket_option_userbot.session does not exist
+2025-05-30 11:46:21,076 - __main__ - INFO - Checking session: new_pocket_option_session
+2025-05-30 11:46:21,187 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:46:21,377 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:46:22,663 - __main__ - INFO - Session new_pocket_option_session is valid. Logged in as: Pieter Stanton (@piet43)
+2025-05-30 11:46:22,663 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-30 11:46:22,664 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:46:22,677 - __main__ - INFO - Checking access to channel: BINARY TRADING CLUB
+2025-05-30 11:46:22,683 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.92:443/TcpFull...
+2025-05-30 11:46:22,878 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.92:443/TcpFull complete!
+2025-05-30 11:46:24,326 - __main__ - INFO - Successfully accessed channel by ID: BINARY TRADING CLUB
+2025-05-30 11:46:24,327 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
+2025-05-30 11:46:24,328 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-05-30 13:34:26,983 - __main__ - INFO - Checking session: pocket_option_userbot
+2025-05-30 13:34:26,990 - __main__ - WARNING - Session file pocket_option_userbot.session does not exist
+2025-05-30 13:36:08,789 - __main__ - INFO - Checking session: HEADLESS-BOT-TEST
+2025-05-30 13:36:08,789 - __main__ - WARNING - Session file HEADLESS-BOT-TEST.session does not exist

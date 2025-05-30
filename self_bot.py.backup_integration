@@ -29,13 +29,6 @@ import dotenv
 from timestamp_recorder import TimestampRecorder
 from session_manager import SessionManager, SignalDeduplicator
 
-# Import trading client manager for optimized headless login support
-try:
-    from trading_client_manager import TradingClientManager, create_config_from_pocket_option_config
-    TRADING_CLIENT_MANAGER_AVAILABLE = True
-except ImportError:
-    TRADING_CLIENT_MANAGER_AVAILABLE = False
-
 # Import Telegram client
 try:
     from telethon import TelegramClient, events
@@ -280,8 +273,6 @@ class SelfBot:
         self.telegram_client = None
         self.pocket_option_client = None
         
-        self.trading_client_manager = None
-        
         # Signal tracking
         self.last_first_message = None
         self.last_first_message_time = None
@@ -390,7 +381,7 @@ class SelfBot:
             return False
     
     def initialize_pocket_option(self) -> bool:
-        """Initialize trading client with dual implementation support (PocketOptionAPI-v2 + Headless Optimized)."""
+        """Initialize the Pocket Option API client using PocketOptionAPI-v2."""
         try:
             # Get SSID from config
             ssid = self.pocket_option_config.get("ssid")

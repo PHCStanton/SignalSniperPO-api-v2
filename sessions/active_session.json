@@ -1,0 +1,42 @@
+{
+  "session_id": "HEADLESS-BOT-TEST",
+  "start_time": "2025-05-30T13:34:03.131422+02:00",
+  "status": "active",
+  "trades_count": 0,
+  "signals_count": 0,
+  "balance_start": 0.0,
+  "profit_loss": 0.0,
+  "wins": 0,
+  "losses": 0,
+  "draws": 0,
+  "errors": 0,
+  "created_by": "session_control",
+  "last_update": "2025-05-30T13:47:50.456150+02:00",
+  "telegram_status": {
+    "check_time": "2025-05-30T13:47:49.045961+02:00",
+    "session_status": {
+      "status": "connected",
+      "user_info": "Pieter Stanton (@piet43)",
+      "session_file": "new_pocket_option_session.session",
+      "check_time": "2025-05-30T13:47:49.045961+02:00"
+    },
+    "session_valid": true,
+    "user_info": "Pieter Stanton (@piet43)",
+    "config": {
+      "api_id": 28529262,
+      "session_name": "new_pocket_option_session",
+      "channel_name": "BINARY TRADING CLUB",
+      "channel_id": -1002412213735
+    },
+    "channel_status": {
+      "status": "accessible",
+      "channel_title": "BINARY TRADING CLUB",
+      "channel_id": -1002412213735,
+      "access_method": "by_id"
+    },
+    "channel_accessible": true,
+    "status": "fully_operational",
+    "message": "Telegram session and channel access verified"
+  },
+  "last_telegram_check": "2025-05-30T13:47:50.456150+02:00"
+}
