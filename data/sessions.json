@@ -1,0 +1,19 @@
+[
+  {
+    "session_id": "session_20250601_013504",
+    "start_time": "2025-06-01T01:35:04.778197+02:00",
+    "end_time": null,
+    "status": "active",
+    "trades_count": 0,
+    "signals_count": 0,
+    "balance_start": 84.02,
+    "balance_end": null,
+    "profit_loss": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "draws": 0,
+    "errors": 0,
+    "last_activity": "2025-06-01T01:35:04.778197+02:00",
+    "recovery_data": null
+  }
+]

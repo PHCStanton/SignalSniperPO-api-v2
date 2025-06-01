@@ -1,0 +1,124 @@
+?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-05-30 21:00:01,085 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-05-30 21:00:02,335 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-05-30 21:00:02,335 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-05-30 21:00:09,857 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD
+LOWER  ?
+Trade time: 1 MIN...
+2025-05-30 21:00:09,862 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-30 21:00:09,862 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-30T23:00:09.862085+02:00', 'id': 'signal_20250530_210009_001', 'session_id': 'session_20250530_224921'}
+2025-05-30 21:00:09,873 - __main__ - DEBUG - Saving signal with ID: signal_20250530_210009_001
+2025-05-30 21:00:09,873 - __main__ - DEBUG - Created backup: data\signals_history.json.backup
+2025-05-30 21:00:09,905 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-05-30 21:00:09,905 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250530_210009_001 (Delay: 43.8ms)
+2025-05-30 21:00:09,905 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-05-30 21:00:09,929 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210009_001
+2025-05-30 21:00:09,929 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:00:09,937 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 21:00:09,960 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $1.1 (expiry: 60s)
+2025-05-30 21:00:09,960 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-30 21:00:09.960599 :[DEBUG]: 42["openOrder", {"asset": "AUDUSD_otc", "amount": 1.1, "action": "put", "isDemo": 0, "requestId": "buy", "optionType": 100, "time": 60}]
+2025-05-30 21:00:10,068 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $1.1 - Trade ID: abb7b682-58ad-427f-8efd-a8ae71f91e4d
+2025-05-30 21:00:10,068 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210009_001
+2025-05-30 21:00:10,081 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:01:15,101 - __main__ - INFO - 🔍 Checking trade result for trade ID: abb7b682-58ad-427f-8efd-a8ae71f91e4d
+2025-05-30 21:01:18,901 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-05-30 21:01:44,245 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-05-30 21:01:44,276 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210009_001
+2025-05-30 21:01:44,276 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-05-30 21:01:44,292 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/NZD (OTC)**...
+2025-05-30 21:01:44,292 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-05-30 21:01:44,292 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/CAD
+LOWER  ?
+Trade time: 1 MIN...
+2025-05-30 21:01:44,292 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:01:44,292 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-30 21:01:44,292 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-30T23:01:44.292742+02:00', 'id': 'signal_20250530_210144_002', 'session_id': 'session_20250530_224921'}
+2025-05-30 21:01:44,324 - __main__ - DEBUG - Saving signal with ID: signal_20250530_210144_002
+2025-05-30 21:01:44,337 - __main__ - DEBUG - Created backup: data\signals_history.json.backup
+2025-05-30 21:01:44,356 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-05-30 21:01:44,356 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250530_210144_002 (Delay: 47.7ms)
+2025-05-30 21:01:44,356 - __main__ - INFO - 🎯 Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-05-30 21:01:44,372 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210144_002
+2025-05-30 21:01:44,372 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:01:44,388 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 21:01:44,404 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCAD_otc PUT $1.1 (expiry: 60s)
+2025-05-30 21:01:44,404 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-30 21:01:44.404713 :[DEBUG]: 42["openOrder", {"asset": "AUDCAD_otc", "amount": 1.1, "action": "put", "isDemo": 0, "requestId": "buy", "optionType": 100, "time": 60}]
+2025-05-30 21:01:44,513 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCAD_otc PUT $1.1 - Trade ID: 97a8ded0-deb9-4245-a49b-f680eed6e127
+2025-05-30 21:01:44,524 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210144_002
+2025-05-30 21:01:44,524 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:02:49,546 - __main__ - INFO - 🔍 Checking trade result for trade ID: 97a8ded0-deb9-4245-a49b-f680eed6e127
+2025-05-30 21:02:57,178 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-05-30 21:03:16,986 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-05-30 21:03:17,001 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-05-30 21:03:17,001 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CAD (OTC)**...
+2025-05-30 21:03:17,001 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-05-30 21:03:17,001 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210144_002
+2025-05-30 21:03:17,017 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:03:19,946 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CAD
+LOWER  ?
+Trade time: 1 MIN...
+2025-05-30 21:03:19,946 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'LOWER', 'expiry': 1}
+2025-05-30 21:03:19,946 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-05-30T23:03:19.946663+02:00', 'id': 'signal_20250530_210319_003', 'session_id': 'session_20250530_224921'}
+2025-05-30 21:03:19,979 - __main__ - DEBUG - Saving signal with ID: signal_20250530_210319_003
+2025-05-30 21:03:19,979 - __main__ - DEBUG - Created backup: data\signals_history.json.backup
+2025-05-30 21:03:19,994 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-05-30 21:03:19,994 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250530_210319_003 (Delay: 31.2ms)
+2025-05-30 21:03:19,994 - __main__ - INFO - 🎯 Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-05-30 21:03:20,010 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210319_003
+2025-05-30 21:03:20,010 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:03:20,041 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 21:03:20,041 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCAD_otc PUT $1.1 (expiry: 60s)
+2025-05-30 21:03:20,041 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-30 21:03:20.057336 :[DEBUG]: 42["openOrder", {"asset": "AUDCAD_otc", "amount": 1.1, "action": "put", "isDemo": 0, "requestId": "buy", "optionType": 100, "time": 60}]
+2025-05-30 21:03:20,161 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCAD_otc PUT $1.1 - Trade ID: d8a0ed45-c184-4f62-b722-4b8c62b49105
+2025-05-30 21:03:20,168 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210319_003
+2025-05-30 21:03:20,168 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:04:20,906 - telethon.client.updates - INFO - Got difference for account updates
+2025-05-30 21:04:25,196 - __main__ - INFO - 🔍 Checking trade result for trade ID: d8a0ed45-c184-4f62-b722-4b8c62b49105
+2025-05-30 21:04:25,196 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-05-30 21:04:25,196 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210319_003
+2025-05-30 21:04:25,196 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:04:52,472 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-05-30 21:05:04,481 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-05-30 21:05:13,862 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-05-30 21:05:13,862 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-05-30 21:05:23,465 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair EUR/USD
+HIGHER ?
+Trade time: 1 MIN...
+2025-05-30 21:05:23,465 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-05-30 21:05:23,465 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-05-30T23:05:23.465582+02:00', 'id': 'signal_20250530_210523_004', 'session_id': 'session_20250530_224921'}
+2025-05-30 21:05:23,497 - __main__ - DEBUG - Saving signal with ID: signal_20250530_210523_004
+2025-05-30 21:05:23,497 - __main__ - DEBUG - Created backup: data\signals_history.json.backup
+2025-05-30 21:05:23,512 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-05-30 21:05:23,512 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250530_210523_004 (Delay: 16.9ms)
+2025-05-30 21:05:23,512 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-05-30 21:05:23,528 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210523_004
+2025-05-30 21:05:23,528 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:05:23,560 - __main__ - DEBUG - Created backup: data\session_data.json.backup
+2025-05-30 21:05:23,560 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc CALL $1.1 (expiry: 60s)
+2025-05-30 21:05:23,560 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-05-30 21:05:23.560814 :[DEBUG]: 42["openOrder", {"asset": "EURUSD_otc", "amount": 1.1, "action": "call", "isDemo": 0, "requestId": "buy", "optionType": 100, "time": 60}]
+2025-05-30 21:05:23,677 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc CALL $1.1 - Trade ID: 5ab91d6c-7b92-405c-bf38-c769b72a980e
+2025-05-30 21:05:23,688 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210523_004
+2025-05-30 21:05:23,688 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:06:28,709 - __main__ - INFO - 🔍 Checking trade result for trade ID: 5ab91d6c-7b92-405c-bf38-c769b72a980e
+2025-05-30 21:06:28,709 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-05-30 21:06:28,723 - __main__ - DEBUG - Saving trade with ID: trade_20250530_210523_004
+2025-05-30 21:06:28,723 - __main__ - DEBUG - Created backup: data\trades_history.json.backup
+2025-05-30 21:06:32,987 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-05-30 21:06:42,090 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-05-30 21:09:41,704 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session!

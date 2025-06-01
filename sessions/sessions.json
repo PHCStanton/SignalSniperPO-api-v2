@@ -1,25 +1,19 @@
 [
   {
-    "session_id": "session_20250530_155715",
-    "start_time": "2025-05-30T15:57:15.043466+02:00",
-    "end_time": "2025-05-30T16:29:26.154072+02:00",
+    "session_id": "session_20250531_224321",
+    "start_time": "2025-05-31T22:43:21.400685+02:00",
+    "end_time": "2025-05-31T23:09:54.144282+02:00",
     "status": "completed",
     "trades_count": 0,
     "signals_count": 0,
-    "balance_start": 110.16,
+    "balance_start": 113.56,
     "balance_end": null,
     "profit_loss": 0.0,
     "wins": 0,
     "losses": 0,
     "draws": 0,
     "errors": 0,
-    "last_activity": "2025-05-30T15:57:15.043466+02:00",
+    "last_activity": "2025-05-31T22:43:21.400685+02:00",
     "recovery_data": null
-  },
-  {
-    "session_id": "16:00_session_20250530",
-    "status": "unknown",
-    "manual_entry": true,
-    "note": "Added for completeness; original session data missing"
   }
 ]

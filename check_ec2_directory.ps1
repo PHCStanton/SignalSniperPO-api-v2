@@ -1,3 +1,4 @@
+cd ..
 # check_ec2_directory.ps1
 # This script checks if the EC2 directory exists and creates it if needed
 

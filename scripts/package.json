@@ -1,0 +1,20 @@
+{
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "description": "PocketOption trading latency testing tools",
+    "dependencies": {
+        "socket.io-client": "^4.8.1"
+    },
+    "version": "1.0.0",
+    "author": "Trading Optimizer",
+    "name": "pocketoption-latency-testing",
+    "main": "index.js",
+    "license": "MIT",
+    "keywords": [
+        "trading",
+        "latency",
+        "pocketoption",
+        "socketio"
+    ]
+}

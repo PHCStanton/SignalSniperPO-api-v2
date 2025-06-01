@@ -215,25 +215,56 @@ class AmountCalculator:
         
         logger.info(f"💰 Current Balance: ${balance:.2f}")
         
+        # Ask user to choose between percentage or custom amount
         while True:
-            default_text = f"{self.default_percentage}%"
-            percentage_input = input(f"📊 Choose percentage to trade [{default_text}]: ").strip()
-            
-            if percentage_input == "":
-                percentage = self.default_percentage
+            choice = input("📊 Choose amount method:\n1. Percentage of balance\n2. Custom amount\nEnter choice (1 or 2): ").strip()
+            if choice in ['1', '2']:
                 break
-            
-            try:
-                percentage = float(percentage_input.replace('%', ''))
-                if self.min_percentage <= percentage <= self.max_percentage:
-                    break
-                else:
-                    logger.warning(f"Percentage must be between {self.min_percentage}% and {self.max_percentage}%")
-            except ValueError:
-                logger.warning("Invalid input. Please enter a valid percentage (e.g., 15 or 15%)")
+            logger.warning("Please enter '1' for percentage or '2' for custom amount")
         
-        amount = self.calculate_amount(balance, percentage)
-        logger.info(f"💵 Calculated Amount: ${amount:.2f}")
+        amount = None
+        
+        if choice == '1':
+            # Percentage-based calculation (existing logic)
+            while True:
+                default_text = f"{self.default_percentage}%"
+                percentage_input = input(f"📊 Choose percentage to trade [{default_text}]: ").strip()
+                
+                if percentage_input == "":
+                    percentage = self.default_percentage
+                    break
+                
+                try:
+                    percentage = float(percentage_input.replace('%', ''))
+                    if self.min_percentage <= percentage <= self.max_percentage:
+                        break
+                    else:
+                        logger.warning(f"Percentage must be between {self.min_percentage}% and {self.max_percentage}%")
+                except ValueError:
+                    logger.warning("Invalid input. Please enter a valid percentage (e.g., 15 or 15%)")
+            
+            amount = self.calculate_amount(balance, percentage)
+            logger.info(f"💵 Calculated Amount: ${amount:.2f}")
+        
+        elif choice == '2':
+            # Custom amount input
+            while True:
+                try:
+                    amount_input = input(f"💵 Enter custom amount (max: ${balance:.2f}): ").strip().replace('$', '')
+                    amount = float(amount_input)
+                    
+                    if amount <= 0:
+                        logger.warning("Amount must be greater than 0")
+                        continue
+                    elif amount > balance:
+                        logger.warning(f"Amount cannot exceed balance: ${balance:.2f}")
+                        continue
+                    else:
+                        break
+                except ValueError:
+                    logger.warning("Invalid input. Please enter a valid amount (e.g., 10.50)")
+            
+            logger.info(f"💵 Custom Amount: ${amount:.2f}")
         
         if self.require_confirmation:
             while True:
