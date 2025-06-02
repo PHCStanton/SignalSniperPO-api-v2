@@ -44,7 +44,11 @@ try {
 # Update the Python script with current parameters
 Write-Host "`n[SETUP] Configuring test parameters..." -ForegroundColor Yellow
 
-$pythonScript = Get-Content "test-pocketoption-python.py" -Raw
+$scriptDir = Split-Path -Parent $PSCommandPath
+$pythonScriptPath = Join-Path $scriptDir "test-pocketoption-python.py"
+$configuredPythonScriptPath = Join-Path $scriptDir "test-pocketoption-configured.py"
+
+$pythonScript = Get-Content $pythonScriptPath -Raw
 
 # Update session ID
 $pythonScript = $pythonScript -replace 'session_id\\";s:32:\\"[^"]*\\"', "session_id\\`";s:32:\\`"$SessionId\\`""
@@ -60,7 +64,7 @@ $pythonScript = $pythonScript -replace 'DEMO = (True|False)', "DEMO = $demoValue
 $pythonScript = $pythonScript -replace 'self\.test_duration = \d+', "self.test_duration = $TestDuration"
 
 # Save updated script
-$pythonScript | Out-File -Encoding UTF8 -FilePath "test-pocketoption-configured.py"
+$pythonScript | Out-File -Encoding UTF8 -FilePath $configuredPythonScriptPath
 
 Write-Host "[SUCCESS] Test configured successfully" -ForegroundColor Green
 
@@ -71,8 +75,16 @@ Write-Host "This will test real trading API calls with proper authentication" -F
 Write-Host "Press Ctrl+C to stop early`n" -ForegroundColor Gray
 
 try {
-    python "test-pocketoption-configured.py"
+    # Temporarily add the directory containing the pocketoptionapi package to PYTHONPATH
+    $oldPythonPath = $env:PYTHONPATH
+    $projectRoot = Join-Path $scriptDir ".." | Resolve-Path -Relative:$false
+    $pocketOptionApiV2Path = Join-Path $projectRoot "PocketOptionAPI-v2"
+    $env:PYTHONPATH = "$pocketOptionApiV2Path;$($env:PYTHONPATH)"
     
+    python $configuredPythonScriptPath
+    
+    $env:PYTHONPATH = $oldPythonPath # Restore original PYTHONPATH
+
     if ($LASTEXITCODE -eq 0) {
         Write-Host "`n[SUCCESS] Latency test completed successfully!" -ForegroundColor Green
     } else {
@@ -82,8 +94,8 @@ try {
     Write-Host "`n[ERROR] Failed to run Python test: $_" -ForegroundColor Red
 } finally {
     # Cleanup
-    if (Test-Path "test-pocketoption-configured.py") {
-        Remove-Item "test-pocketoption-configured.py" -Force
+    if (Test-Path $configuredPythonScriptPath) {
+        Remove-Item $configuredPythonScriptPath -Force
     }
 }
 

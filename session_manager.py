@@ -26,21 +26,23 @@ logger = logging.getLogger(__name__)
 @dataclass
 class SessionInfo:
     """Session information data class."""
+    # Fields without default values
     session_id: str
     start_time: str
-    end_time: Optional[str]
     status: str  # 'active', 'completed', 'terminated', 'error'
     trades_count: int
     signals_count: int
     balance_start: float
-    balance_end: Optional[float]
     profit_loss: float
     wins: int
     losses: int
     draws: int
     errors: int
     last_activity: str
-    recovery_data: Optional[Dict]
+    # Fields with default values
+    end_time: Optional[str] = None
+    balance_end: Optional[float] = None
+    recovery_data: Optional[Dict] = None
 
 class SessionManager:
     """
@@ -77,14 +79,17 @@ class SessionManager:
         self.current_session: Optional[SessionInfo] = None
         
         # Session limits
-        self.max_sessions_per_day = 1
+        self.max_sessions_per_day = 999  # Effectively unlimited
         self.session_timeout_hours = 24
         
         # Initialize storage
         self._initialize_storage()
         
-        # Recovery check
-        self._check_recovery()
+        # Attempt to load from active_session.json first (for externally started sessions)
+        loaded_externally = self._load_from_active_session_file()
+        if not loaded_externally:
+            # If not loaded from active_session.json, then try recovery file
+            self._check_recovery()
         
         self._initialized = True
         logger.info("SessionManager initialized successfully")
@@ -441,6 +446,76 @@ class SessionManager:
             return 0.0
         
         return (self.current_session.wins / total_trades) * 100
+
+    def _load_from_active_session_file(self) -> bool:
+        """
+        Attempts to load and set an active session from active_session.json.
+        This is primarily for sessions started by external tools like session_control.py.
+        Returns True if a session was successfully loaded and set, False otherwise.
+        """
+        try:
+            if not os.path.exists(self.active_session_file):
+                logger.debug(f"{self.active_session_file} not found. Cannot load external session.")
+                return False
+
+            with open(self.active_session_file, 'r') as f:
+                active_session_data = json.load(f)
+
+            if not active_session_data or not active_session_data.get('session_id'):
+                logger.debug(f"{self.active_session_file} is empty or has no session_id.")
+                # Consider clearing it if it's invalid structure for an active session
+                # self._clear_active_session() 
+                return False
+
+            session_id = active_session_data.get('session_id')
+            status = active_session_data.get('status')
+
+            if status != 'active':
+                logger.debug(f"Session '{session_id}' in {self.active_session_file} is not 'active' (status: {status}). Skipping load here.")
+                return False
+
+            logger.info(f"Found externally started active session in {self.active_session_file}: {session_id}")
+
+            now_iso = datetime.now(self.timezone).isoformat()
+            start_time = active_session_data.get('start_time', now_iso)
+            # TODO: Ensure start_time is timezone-aware if loaded from file.
+            # If datetime.fromisoformat(start_time).tzinfo is None, it needs localization.
+            # For now, assume it's compatible or SessionInfo handles it.
+
+            session_info = SessionInfo(
+                session_id=session_id,
+                start_time=start_time,
+                status='active',  # Ensure it's active
+                trades_count=active_session_data.get('trades_count', 0),
+                signals_count=active_session_data.get('signals_count', 0),
+                balance_start=active_session_data.get('balance_start', 0.0), # Bot will update this later
+                profit_loss=active_session_data.get('profit_loss', 0.0),
+                wins=active_session_data.get('wins', 0),
+                losses=active_session_data.get('losses', 0),
+                draws=active_session_data.get('draws', 0),
+                errors=active_session_data.get('errors', 0),
+                last_activity=now_iso,  # Update last_activity
+                end_time=active_session_data.get('end_time'), # Should be None for active
+                balance_end=active_session_data.get('balance_end'), # Should be None for active
+                recovery_data=active_session_data.get('recovery_data') # Might be None
+            )
+
+            self.current_session = session_info
+            # Re-save active session to ensure full structure and updated last_activity
+            self._save_active_session() 
+            # Create a recovery point as the bot is taking over this session
+            self._save_recovery_data() 
+            
+            logger.info(f"Successfully loaded and adopted active session from {self.active_session_file}: {session_info.session_id}")
+            return True
+
+        except json.JSONDecodeError:
+            logger.error(f"Error decoding JSON from {self.active_session_file}. File might be corrupt. Clearing it.")
+            self._clear_active_session()
+            return False
+        except Exception as e:
+            logger.error(f"Error loading from {self.active_session_file}: {str(e)}")
+            return False
 
 
 class SignalDeduplicator:

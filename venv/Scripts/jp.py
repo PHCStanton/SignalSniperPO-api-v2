@@ -1,4 +1,4 @@
-#!C:\www\TradingBot\venv\Scripts\python.exe
+#!C:\projects\SignalSniper\venv\Scripts\python.exe
 
 import sys
 import json

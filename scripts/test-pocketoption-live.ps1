@@ -218,7 +218,8 @@ process.on('SIGINT', () => {
 });
 "@
         
-        $tempPath = "pocketoption_live_test.js"
+        $scriptDir = Split-Path -Parent $PSCommandPath # Corrected way to get script path
+        $tempPath = Join-Path $scriptDir "pocketoption_live_test_inline.js"
         $liveTestScript | Out-File -Encoding UTF8 -FilePath $tempPath
         
         # Check for socket.io-client
@@ -233,12 +234,14 @@ try {
 }
 "@
         
-        $checkPath = "check_socketio.js"
+        $checkPath = Join-Path $scriptDir "check_socketio_inline.js"
         $packageCheck | Out-File -Encoding UTF8 -FilePath $checkPath
         
         try {
+            Push-Location $scriptDir
             node $checkPath
             if ($LASTEXITCODE -ne 0) {
+                Pop-Location
                 Write-Host "[ERROR] Please install socket.io-client first:" -ForegroundColor Red
                 Write-Host "npm install socket.io-client" -ForegroundColor Yellow
                 return
@@ -249,8 +252,10 @@ try {
             Write-Host "Press Ctrl+C to stop early`n" -ForegroundColor Gray
             
             node $tempPath
+            Pop-Location
             
         } catch {
+            Pop-Location # Ensure we pop location even on error
             Write-Host "Live test failed: $_" -ForegroundColor Red
         } finally {
             # Cleanup

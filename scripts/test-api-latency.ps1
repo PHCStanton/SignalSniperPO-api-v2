@@ -115,26 +115,31 @@ async function testWebSocket(url) {
 }
 
 // Test each endpoint
-for (const endpoint of endpoints) {
-    try {
-        await testWebSocket(endpoint);
-        break; // If successful, stop testing
-    } catch (error) {
-        console.log('Failed to connect to ' + endpoint + ': ' + error.message);
-    }
-}
+(async () => {
+  for (const endpoint of endpoints) {
+      try {
+          await testWebSocket(endpoint);
+          break; // If successful, stop testing
+      } catch (error) {
+          console.log('Failed to connect to ' + endpoint + ': ' + error.message);
+      }
+  }
+})();
 "@
         
-        $tempPath = "$env:TEMP\api_ws_test.js"
-        $wsTestScript | Out-File -Encoding UTF8 -FilePath $tempPath
+        $scriptDir = Split-Path -Parent $PSCommandPath # Corrected way to get script path
+        $wsTestJsPath = Join-Path $scriptDir "api_ws_test_inline.js" # Create in scripts dir
+        $wsTestScript | Out-File -Encoding UTF8 -FilePath $wsTestJsPath
         
         try {
-            node $tempPath
+            Push-Location $scriptDir
+            node $wsTestJsPath
+            Pop-Location
         } catch {
             Write-Host "WebSocket test failed: $_" -ForegroundColor Red
         } finally {
-            if (Test-Path $tempPath) {
-                Remove-Item $tempPath -Force
+            if (Test-Path $wsTestJsPath) {
+                Remove-Item $wsTestJsPath -Force
             }
         }
     } else {

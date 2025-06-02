@@ -321,27 +321,32 @@ class SelfBot:
         
         # JSON storage
         json_config = self.config.get("json_storage", {})
+        # Consistently use "sessions" directory for all data files managed by these components
+        # to align with session_control.py's migration behavior.
+        _data_dir_for_components = "sessions" 
+        logger.info(f"Using '{_data_dir_for_components}' for session-related data files.")
+
         self.storage = JSONStorageManager(
-            data_dir=data_dir,
+            data_dir=_data_dir_for_components,
             max_records=json_config.get("max_records", 1000),
             backup_enabled=json_config.get("backup_enabled", True)
         )
         
         # Timestamp recorder for robust timestamp recording
         self.timestamp_recorder = TimestampRecorder(
-            data_dir=data_dir,
+            data_dir=_data_dir_for_components,
             max_records=json_config.get("max_records", 1000)
         )
         
         # Session manager for singleton pattern and session recovery
         self.session_manager = SessionManager(
-            data_dir=data_dir,
+            data_dir=_data_dir_for_components,
             timezone=self.config.get("timezone", "Africa/Johannesburg")
         )
         
         # Signal deduplicator for preventing duplicate signal processing
         self.signal_deduplicator = SignalDeduplicator(
-            data_dir=data_dir,
+            data_dir=_data_dir_for_components,
             max_fingerprints=json_config.get("max_fingerprints", 1000)
         )
         
@@ -1089,49 +1094,87 @@ class SelfBot:
             logger.error(f"Error in monitoring loop: {str(e)}")
             return
 
-
     def initialize_session_management(self) -> bool:
-        """Initialize session management with singleton pattern and recovery."""
+        """Initialize session management. Uses existing session if loaded by SessionManager, otherwise starts a new one."""
         try:
-            # Check if we can start a new session
-            can_start, message = self.session_manager.can_start_new_session()
-            if not can_start:
-                logger.error(f"Cannot start new session: {message}")
-                return False
-            
-            # Get initial balance for session
-            initial_balance = 0.0
-            if self.pocket_option_client:
-                try:
-                    balance = self.pocket_option_client.get_balance()
-                    if balance is not None:
-                        initial_balance = float(balance)
-                except Exception as e:
-                    logger.warning(f"Could not get initial balance: {str(e)}")
-            
-            # Start new session
-            session_info = self.session_manager.start_new_session(initial_balance)
-            if session_info:
-                self.session_id = session_info.session_id
+            # SessionManager attempts to load from active_session.json or recover during its __init__
+            loaded_session = self.session_manager.get_current_session()
+
+            if loaded_session:
+                logger.info(f"Using already loaded session: {loaded_session.session_id}")
+                self.session_id = loaded_session.session_id
+                
+                # Update balance_start for the loaded session with current live balance
+                current_balance = 0.0
+                if self.pocket_option_client:
+                    try:
+                        balance_val = self.pocket_option_client.get_balance()
+                        if balance_val is not None:
+                            current_balance = float(balance_val)
+                            self.session_manager.update_session(balance_start=current_balance, last_activity=datetime.now(self.timezone).isoformat())
+                            logger.info(f"Updated balance_start for loaded session {self.session_id} to {current_balance}")
+                            loaded_session.balance_start = current_balance # Ensure local copy is also updated
+                        else:
+                            logger.warning(f"Could not get current balance for loaded session {self.session_id}; balance_start may be stale.")
+                            current_balance = loaded_session.balance_start # Use existing if live fails
+                    except Exception as e:
+                        logger.warning(f"Error getting/updating balance for loaded session {self.session_id}: {str(e)}. Using existing balance_start: {loaded_session.balance_start}")
+                        current_balance = loaded_session.balance_start # Use existing if live fails
+                else:
+                    logger.warning("Pocket Option client not available to update balance_start for loaded session.")
+                    current_balance = loaded_session.balance_start
+
                 self.session_data = {
-                    "session_id": session_info.session_id,
-                    "start_time": session_info.start_time,
-                    "balance_start": session_info.balance_start,
-                    "trades_count": session_info.trades_count,
-                    "wins": session_info.wins,
-                    "losses": session_info.losses,
-                    "draws": session_info.draws,
-                    "profit_loss": session_info.profit_loss
+                    "session_id": loaded_session.session_id,
+                    "start_time": loaded_session.start_time,
+                    "balance_start": current_balance, # Use the potentially updated balance
+                    "trades_count": loaded_session.trades_count,
+                    "wins": loaded_session.wins,
+                    "losses": loaded_session.losses,
+                    "draws": loaded_session.draws,
+                    "profit_loss": loaded_session.profit_loss
                 }
-                logger.info(f"✅ Session management initialized: {self.session_id}")
+                logger.info(f"✅ Session management initialized with existing session: {self.session_id}")
                 return True
             else:
-                logger.error("Failed to start new session")
-                return False
+                # No session loaded by SessionManager, try to start a new one
+                logger.info("No existing session found by SessionManager. Attempting to start a new session.")
+                can_start, message = self.session_manager.can_start_new_session()
+                if not can_start:
+                    logger.error(f"Cannot start new session: {message}")
+                    return False
+
+                initial_balance = 0.0
+                if self.pocket_option_client:
+                    try:
+                        balance_val = self.pocket_option_client.get_balance()
+                        if balance_val is not None:
+                            initial_balance = float(balance_val)
+                    except Exception as e:
+                        logger.warning(f"Could not get initial balance for new session: {str(e)}")
+
+                session_info = self.session_manager.start_new_session(initial_balance)
+                if session_info:
+                    self.session_id = session_info.session_id
+                    self.session_data = {
+                        "session_id": session_info.session_id,
+                        "start_time": session_info.start_time,
+                        "balance_start": session_info.balance_start,
+                        "trades_count": session_info.trades_count,
+                        "wins": session_info.wins,
+                        "losses": session_info.losses,
+                        "draws": session_info.draws,
+                        "profit_loss": session_info.profit_loss
+                    }
+                    logger.info(f"✅ Session management initialized with new session: {self.session_id}")
+                    return True
+                else:
+                    logger.error("Failed to start new session via SessionManager.")
+                    return False
         except Exception as e:
             logger.error(f"Error initializing session management: {str(e)}")
             return False
-    
+
     def update_session_stats(self, **kwargs) -> None:
         """Update session statistics."""
         try:

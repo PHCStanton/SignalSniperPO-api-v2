@@ -73,15 +73,19 @@ try {
 }
 "@
 
-$testPath = "$env:TEMP\test_socketio_install.js"
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$testPath = Join-Path $scriptDir "test_socketio_install_inline.js"
 $testScript | Out-File -Encoding UTF8 -FilePath $testPath
 
 try {
+    Push-Location $scriptDir
     node $testPath
     if ($LASTEXITCODE -eq 0) {
         Write-Host "[SUCCESS] Installation verified successfully!" -ForegroundColor Green
     }
+    Pop-Location
 } catch {
+    Pop-Location # Ensure we pop location even on error
     Write-Host "[ERROR] Installation verification failed" -ForegroundColor Red
 } finally {
     if (Test-Path $testPath) {

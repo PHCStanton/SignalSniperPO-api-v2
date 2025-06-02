@@ -40,17 +40,21 @@ ws.on('message', function message(data) {
   ws.close();
 });
 "@
-    $tempPath = "$env:TEMP\wstest.js"
-    $wsTestScript | Out-File -Encoding ASCII -FilePath $tempPath
+    $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+    $wsTestJsPath = Join-Path $scriptDir "wstest_inline.js" # Create in scripts dir
+    $wsTestScript | Out-File -Encoding ASCII -FilePath $wsTestJsPath
     Write-Host "`n[WEBSOCKET TEST] WebSocket latency test (Node.js + ws)..." -ForegroundColor Yellow
     try {
-        node $tempPath
+        # Execute node in the context of the scripts directory
+        Push-Location $scriptDir
+        node $wsTestJsPath
+        Pop-Location
     } catch {
         Write-Host "WebSocket test failed: $_" -ForegroundColor Red
     } finally {
         # Clean up temporary file
-        if (Test-Path $tempPath) {
-            Remove-Item $tempPath -Force
+        if (Test-Path $wsTestJsPath) {
+            Remove-Item $wsTestJsPath -Force
         }
     }
 } else {

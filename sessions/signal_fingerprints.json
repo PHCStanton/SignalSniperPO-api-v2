@@ -1,0 +1,30 @@
+[
+  {
+    "fingerprint": "209247860168b3cc",
+    "timestamp": "2025-06-01T21:00:13.791073",
+    "signal_id": "signal_20250601_210013_001",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "e2195013a2682226",
+    "timestamp": "2025-06-01T21:01:51.134416",
+    "signal_id": "signal_20250601_210151_002",
+    "pair": "AUD/NZD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "7342dbae03046a43",
+    "timestamp": "2025-06-01T21:03:23.898533",
+    "signal_id": "signal_20250601_210323_003",
+    "pair": "AUD/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "ee927b26a25353d7",
+    "timestamp": "2025-06-01T21:04:57.276315",
+    "signal_id": "signal_20250601_210457_004",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  }
+]

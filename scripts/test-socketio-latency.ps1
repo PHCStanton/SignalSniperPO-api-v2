@@ -163,7 +163,8 @@ process.on('SIGINT', () => {
 });
 "@
         
-        $tempPath = "$env:TEMP\socketio_test.js"
+        $scriptDir = Split-Path -Parent $PSCommandPath # Corrected way to get script path
+        $tempPath = Join-Path $scriptDir "socketio_test_inline.js"
         $socketTestScript | Out-File -Encoding UTF8 -FilePath $tempPath
         
         Write-Host "Installing socket.io-client if needed..." -ForegroundColor Gray
@@ -181,21 +182,26 @@ try {
 }
 "@
         
-        $checkPath = "$env:TEMP\check_socketio.js"
+        $checkPath = Join-Path $scriptDir "check_socketio_inline.js"
         $packageCheck | Out-File -Encoding UTF8 -FilePath $checkPath
         
         try {
-            $checkResult = node $checkPath 2>&1
+            Push-Location $scriptDir
+            $checkResult = node $checkPath 2>&1 # Store output in variable
             if ($LASTEXITCODE -ne 0) {
-                Write-Host "[ERROR] socket.io-client not installed" -ForegroundColor Red
-                Write-Host "Please run: npm install socket.io-client" -ForegroundColor Yellow
+                Pop-Location
+                Write-Host "[ERROR] socket.io-client not installed or check failed." -ForegroundColor Red
+                Write-Host "Output from check: $checkResult" -ForegroundColor Yellow
+                Write-Host "Please run: npm install socket.io-client (in the 'scripts' directory)" -ForegroundColor Yellow
                 return
             }
             
             Write-Host "Running Socket.io latency test..." -ForegroundColor Green
             node $tempPath
+            Pop-Location
             
         } catch {
+            Pop-Location # Ensure we pop location even on error
             Write-Host "Socket.io test failed: $_" -ForegroundColor Red
         } finally {
             # Cleanup
