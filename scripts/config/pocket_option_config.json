@@ -1,0 +1,21 @@
+{
+  "ssid": "42[\"auth\",{\"session\":\"a:4:{s:10:\\\"session_id\\\";s:32:\\\"8969ce0cbb1583cda9b44688ad0de8eb\\\";s:10:\\\"ip_address\\\";s:14:\\\"51.159.226.149\\\";s:10:\\\"user_agent\\\";s:111:\\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36\\\";s:13:\\\"last_activity\\\";i:1748870487;}3f2b16cd0e6d3a4a0120888cd0f194f8\",\"isDemo\":0,\"uid\":101002476,\"platform\":2,\"isFastHistory\":true}]",
+  "is_demo": false,
+  "min_payout": 80,
+  "preferred_assets": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY",
+    "AUDUSD",
+    "USDCAD",
+    "NZDUSD",
+    "USDCHF",
+    "EURJPY",
+    "GBPJPY",
+    "EURGBP"
+  ],
+  "otc_preferred": true,
+  "connection_timeout": 30,
+  "reconnect_attempts": 5,
+  "reconnect_delay": 5
+}

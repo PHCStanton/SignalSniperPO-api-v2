@@ -1,1 +1,13 @@
-{}
+{
+  "session_id": "session_20250603_124526",
+  "start_time": "2025-06-03T12:45:26.363693+02:00",
+  "trades_count": 0,
+  "signals_count": 0,
+  "balance_start": 110.91,
+  "profit_loss": 0.0,
+  "wins": 0,
+  "losses": 0,
+  "draws": 0,
+  "errors": 0,
+  "last_save": "2025-06-03T15:51:02.263959+02:00"
+}
