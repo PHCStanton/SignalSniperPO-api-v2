@@ -29,6 +29,18 @@ import dotenv
 from timestamp_recorder import TimestampRecorder
 from session_manager import SessionManager, SignalDeduplicator
 
+# High-precision timestamp function
+def get_high_precision_time():
+    """
+    Returns a high-precision, timezone-aware UTC datetime object.
+    Uses time.time_ns() for nanosecond precision, available in Python 3.7+.
+    """
+    # Get current time in nanoseconds since the Epoch
+    ns = time.time_ns()
+    # Convert nanoseconds to a datetime object
+    # The timestamp is divided by 1e9 to convert nanoseconds to seconds
+    return datetime.fromtimestamp(ns / 1e9, tz=pytz.utc)
+
 # Import trading client manager for optimized headless login support
 try:
     from trading_client_manager import TradingClientManager, create_config_from_pocket_option_config
@@ -341,7 +353,7 @@ class SelfBot:
         # Session manager for singleton pattern and session recovery
         self.session_manager = SessionManager(
             data_dir=_data_dir_for_components,
-            timezone=self.config.get("timezone", "Africa/Johannesburg")
+            timezone=self.config.get("timezone", "UTC")
         )
         
         # Signal deduplicator for preventing duplicate signal processing
@@ -359,7 +371,7 @@ class SelfBot:
         self.session_data = {}
         
         # Timezone
-        self.timezone = pytz.timezone(self.config.get("timezone", "Africa/Johannesburg"))
+        self.timezone = pytz.timezone(self.config.get("timezone", "UTC"))
         
         # Trading stats
         self.stats = {
@@ -370,7 +382,7 @@ class SelfBot:
             "losing_trades": 0,
             "error_trades": 0,
             "total_profit": 0.0,
-            "start_time": datetime.now(self.timezone),
+            "start_time": get_high_precision_time(),
         }
     
     def _load_config(self, config_file: str) -> Dict[str, Any]:
@@ -685,8 +697,8 @@ class SelfBot:
                     "timer": signal["timer"],
                     "direction": signal["direction"],
                     "expiry": signal["expiry"],
-                    "timestamp": datetime.now(self.timezone).isoformat(),
-                    "id": f"signal_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{len(self.pending_signals) + 1:03d}",
+                    "timestamp": get_high_precision_time().isoformat(),
+                    "id": f"signal_{get_high_precision_time().strftime('%Y%m%d_%H%M%S%f')}_{len(self.pending_signals) + 1:03d}",
                     "session_id": self.session_id
                 }
                 
@@ -733,14 +745,14 @@ class SelfBot:
             trading_pair = self.parse_first_message(message.text)
             if trading_pair:
                 self.last_first_message = trading_pair
-                self.last_first_message_time = datetime.now(self.timezone)
+                self.last_first_message_time = get_high_precision_time()
                 return
                 
             # Try to parse as second message
             if self.last_first_message and self.last_first_message_time:
                 # Check if the time between messages is within the allowed window
                 pair_match_window = self.telegram_config.get("pair_match_window", 60)
-                time_diff = (datetime.now(self.timezone) - self.last_first_message_time).total_seconds()
+                time_diff = (get_high_precision_time() - self.last_first_message_time).total_seconds()
                 
                 if time_diff <= pair_match_window:
                     signal = self.parse_second_message(message.text)
@@ -753,8 +765,8 @@ class SelfBot:
                                 "timer": signal["timer"],
                                 "direction": signal["direction"],
                                 "expiry": signal["expiry"],
-                                "timestamp": datetime.now(self.timezone).isoformat(),
-                                "id": f"signal_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{len(self.pending_signals) + 1:03d}",
+                                "timestamp": get_high_precision_time().isoformat(),
+                                "id": f"signal_{get_high_precision_time().strftime('%Y%m%d_%H%M%S%f')}_{len(self.pending_signals) + 1:03d}",
                                 "session_id": self.session_id
                             }
                             
@@ -836,7 +848,7 @@ class SelfBot:
                 # Log balance error for debugging
                 import json
                 error_data = {
-                    "timestamp": datetime.now().isoformat(),
+                    "timestamp": get_high_precision_time().isoformat(),
                     "balance_type": type(balance).__name__,
                     "balance_value": str(balance),
                     "operation": "balance_comparison",
@@ -874,7 +886,7 @@ class SelfBot:
             if timestamp_record:
                 timestamp_record = self.timestamp_recorder.record_execution_timestamp(
                     timestamp_record, 
-                    f"trade_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.session_data['trades_count'] + 1:03d}"
+                    f"trade_{get_high_precision_time().strftime('%Y%m%d_%H%M%S%f')}_{self.session_data['trades_count'] + 1:03d}"
                 )
             # Get trade parameters and handle OTC pairs
             raw_pair = signal["pair"].replace("/", "")  # Remove slash for Pocket Option format
@@ -897,13 +909,13 @@ class SelfBot:
             # Create trade record
             trade = {
                 "signal_id": signal.get("id"),
-                "timestamp": datetime.now(self.timezone).isoformat(),
+                "timestamp": get_high_precision_time().isoformat(),
                 "asset": asset,
                 "direction": direction,
                 "expiry": expiry,
                 "amount": amount,
                 "status": "executing",
-                "id": f"trade_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{self.session_data['trades_count'] + 1:03d}",
+                "id": f"trade_{get_high_precision_time().strftime('%Y%m%d_%H%M%S%f')}_{self.session_data['trades_count'] + 1:03d}",
                 "session_id": self.session_id,
                 "balance_before": self.pocket_option_client.get_balance() if self.pocket_option_client else 0.0
             }
@@ -924,7 +936,7 @@ class SelfBot:
                 
                 # Simulate trade execution
                 import random
-                trade_id = f"test_{int(datetime.now().timestamp())}"
+                trade_id = f"test_{int(get_high_precision_time().timestamp() * 1e6)}"
                 trade["trade_id"] = trade_id
                 trade["status"] = "executed"
                 
@@ -1111,7 +1123,7 @@ class SelfBot:
                         balance_val = self.pocket_option_client.get_balance()
                         if balance_val is not None:
                             current_balance = float(balance_val)
-                            self.session_manager.update_session(balance_start=current_balance, last_activity=datetime.now(self.timezone).isoformat())
+                            self.session_manager.update_session(balance_start=current_balance, last_activity=get_high_precision_time().isoformat())
                             logger.info(f"Updated balance_start for loaded session {self.session_id} to {current_balance}")
                             loaded_session.balance_start = current_balance # Ensure local copy is also updated
                         else:

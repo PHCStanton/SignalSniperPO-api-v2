@@ -56,7 +56,7 @@ async def simulate_signal():
         expiry = int(input("Enter the expiry time in minutes (e.g., 1): "))
         
         # Calculate timer (1 minute in the future)
-        timezone = pytz.timezone("Africa/Johannesburg")
+        timezone = pytz.utc
         now = datetime.now(timezone)
         timer_time = now + timedelta(minutes=1)
         timer = timer_time.strftime("%H:%M:%S")

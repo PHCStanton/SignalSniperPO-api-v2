@@ -3156,3 +3156,463 @@ R...
 2025-06-03 14:12:22,980 - __main__ - INFO - Shutting down Self Bot...
 2025-06-03 14:12:22,983 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.92:443/TcpFull...
 2025-06-03 14:12:22,983 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.92:443/TcpFull complete!
+2025-06-09 13:11:45,756 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:11:45,849 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:11:45,850 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:11:46,012 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:11:47,591 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:12:45,696 - __main__ - ERROR - Error initializing Telegram client: The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+2025-06-09 13:12:45,697 - __main__ - ERROR - Failed to initialize Telegram client. Exiting...
+2025-06-09 13:13:21,913 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:13:21,914 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:13:21,914 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:13:21,936 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:13:21,958 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:13:35,624 - __main__ - ERROR - Error initializing Telegram client: The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+2025-06-09 13:13:35,657 - __main__ - ERROR - Failed to initialize Telegram client. Exiting...
+2025-06-09 13:15:48,689 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 13:15:48,771 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250603_124526
+2025-06-09 13:15:48,772 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250603_124526
+2025-06-09 13:15:48,773 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:15:48,785 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:15:48,786 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:15:48,882 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:15:48,900 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:16:00,460 - __main__ - ERROR - Error initializing Telegram client: The used phone number has been banned from Telegram and cannot be used anymore. Maybe check https://www.telegram.org/faq_spam (caused by SendCodeRequest)
+2025-06-09 13:16:00,460 - __main__ - ERROR - Failed to initialize Telegram client. Exiting...
+2025-06-09 13:36:19,299 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 13:36:19,371 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE1-20250609
+2025-06-09 13:36:19,373 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE1-20250609
+2025-06-09 13:36:19,373 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:36:19,375 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:36:19,379 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:36:19,400 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:36:19,418 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:36:34,255 - telethon.client.users - INFO - Phone migrated to 4
+2025-06-09 13:36:34,294 - telethon.client.telegrambaseclient - INFO - Reconnecting to new data center 4
+2025-06-09 13:36:34,345 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-06-09 13:36:34,359 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:36:34,361 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 13:36:35,989 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:36:57,319 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 13:36:57,319 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 13:36:57,362 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 13:36:57,369 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-06-09 13:36:57,372 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 13:37:00,403 - __main__ - INFO - Account balance: None
+2025-06-09 13:37:00,423 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 13:37:00,425 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 13:37:00,427 - __main__ - INFO - Using already loaded session: SE1-20250609
+2025-06-09 13:37:00,450 - __main__ - WARNING - Could not get current balance for loaded session SE1-20250609; balance_start may be stale.
+2025-06-09 13:37:00,459 - __main__ - INFO - ✅ Session management initialized with existing session: SE1-20250609
+2025-06-09 13:37:03,460 - __main__ - ERROR - Failed to retrieve balance after multiple attempts
+2025-06-09 13:37:03,460 - __main__ - ERROR - Could not fetch balance, using default trade amount
+2025-06-09 13:37:03,460 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 13:37:03,460 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 13:37:03,460 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 13:37:03,460 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 13:37:03,506 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 13:37:03,514 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 13:37:03,514 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 13:37:35,271 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-09 13:38:35,272 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-09 13:38:45,246 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 13:38:45,246 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 13:38:45,247 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:38:57,548 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:38:57,549 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:38:57,552 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:38:57,618 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 13:38:57,634 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:38:57,882 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 13:38:57,882 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 13:38:57,905 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 13:38:57,934 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-06-09 13:38:57,980 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 13:39:00,988 - __main__ - INFO - Account balance: None
+2025-06-09 13:39:00,994 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 13:39:00,996 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 13:39:00,998 - session_manager - INFO - New session started: session_20250609_153900
+2025-06-09 13:39:00,999 - __main__ - INFO - ✅ Session management initialized: session_20250609_153900
+2025-06-09 13:39:04,003 - __main__ - ERROR - Failed to retrieve balance after multiple attempts
+2025-06-09 13:39:04,003 - __main__ - ERROR - Could not fetch balance, using default trade amount
+2025-06-09 13:39:04,003 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 13:39:04,003 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 13:39:04,003 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 13:39:04,003 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 13:39:04,046 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 13:39:04,064 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 13:39:04,068 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 13:39:35,292 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-09 13:39:44,259 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 13:39:44,260 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 13:39:44,260 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:43:11,517 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 13:43:11,588 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 13:43:11,589 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 13:43:11,591 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:43:11,593 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:43:11,595 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:43:11,769 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 13:43:11,791 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:43:12,239 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 13:43:12,415 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 13:43:12,449 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 13:43:12,664 - __main__ - INFO - Initializing Pocket Option client (Demo mode: False)
+2025-06-09 13:43:12,929 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 13:43:15,933 - __main__ - INFO - Account balance: None
+2025-06-09 13:43:15,981 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 13:43:15,982 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 13:43:15,982 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 13:43:15,983 - __main__ - WARNING - Could not get current balance for loaded session session_20250609_153900; balance_start may be stale.
+2025-06-09 13:43:15,983 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 13:43:18,985 - __main__ - ERROR - Failed to retrieve balance after multiple attempts
+2025-06-09 13:43:18,986 - __main__ - ERROR - Could not fetch balance, using default trade amount
+2025-06-09 13:43:18,986 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 13:43:18,986 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 13:43:18,986 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 13:43:18,987 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 13:43:19,073 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 13:43:19,112 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 13:43:19,112 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 13:45:50,726 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 13:45:50,792 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 13:45:50,794 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 13:45:50,794 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:45:50,795 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:45:50,795 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:45:50,842 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 13:45:50,884 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:45:51,080 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 13:45:51,080 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 13:45:51,105 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 13:45:51,106 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-09 13:45:51,164 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 13:45:52,536 - __main__ - INFO - Account balance: 51494.35
+2025-06-09 13:45:52,669 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 13:45:52,676 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 13:45:52,697 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 13:45:52,704 - __main__ - INFO - Updated balance_start for loaded session session_20250609_153900 to 51494.35
+2025-06-09 13:45:52,709 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 13:45:52,709 - __main__ - INFO - 💰 Current Balance: $51494.35
+2025-06-09 13:46:24,882 - __main__ - INFO - 💵 Custom Amount: $5.00
+2025-06-09 13:46:31,046 - __main__ - INFO - ✅ Trading amount set to $5.00 for this session
+2025-06-09 13:46:31,165 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 13:46:31,165 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 13:46:31,165 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 13:46:31,166 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 13:46:31,227 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 13:46:31,229 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 13:46:31,229 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 13:46:43,699 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 13:46:43,699 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 13:46:43,700 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:56:02,262 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 13:56:02,333 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 13:56:02,335 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 13:56:02,335 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 13:56:02,337 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 13:56:02,337 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 13:56:02,410 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 13:56:02,426 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 13:56:02,878 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 13:56:02,878 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 13:56:02,941 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 13:56:02,941 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-09 13:56:02,941 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 13:56:03,943 - __main__ - INFO - Account balance: 51494.35
+2025-06-09 13:56:03,949 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 13:56:03,949 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 13:56:03,949 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 13:56:03,976 - __main__ - INFO - Updated balance_start for loaded session session_20250609_153900 to 51494.35
+2025-06-09 13:56:03,976 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 13:56:03,978 - __main__ - INFO - 💰 Current Balance: $51494.35
+2025-06-09 13:56:14,255 - __main__ - INFO - 💵 Custom Amount: $5.00
+2025-06-09 13:56:31,632 - __main__ - INFO - ✅ Trading amount set to $5.00 for this session
+2025-06-09 13:56:31,636 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 13:56:31,638 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 13:56:31,638 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 13:56:31,638 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 13:56:31,659 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 13:56:31,659 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 13:56:31,659 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 14:00:01,135 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-09 14:00:03,300 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-09 14:00:03,301 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-09 14:00:04,698 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-09 14:00:04,698 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-09 14:00:04,700 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-09T16:00:04.698863+02:00', 'id': 'signal_20250609_140004_001', 'session_id': 'session_20250609_153900'}
+2025-06-09 14:00:04,736 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 14:00:04,736 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_140004_001 (Delay: 35.4ms)
+2025-06-09 14:00:04,738 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-09 14:00:04,791 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc CALL $5.0 (expiry: 60s)
+2025-06-09 14:00:04,791 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 14:00:04,894 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc CALL $5.0 - Trade ID: d2558957-8971-4c88-9177-a678ba934cff
+2025-06-09 14:01:09,917 - __main__ - INFO - 🔍 Checking trade result for trade ID: d2558957-8971-4c88-9177-a678ba934cff
+2025-06-09 14:01:09,917 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 14:01:14,857 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 14:01:24,802 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-09 14:01:27,892 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/NZD (OTC)**...
+2025-06-09 14:01:27,892 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-06-09 14:01:35,773 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/NZD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-09 14:01:35,773 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/NZD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-09 14:01:35,773 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/NZD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-09T16:01:35.773145+02:00', 'id': 'signal_20250609_140135_002', 'session_id': 'session_20250609_153900'}
+2025-06-09 14:01:35,815 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 14:01:35,815 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_140135_002 (Delay: 14.8ms)
+2025-06-09 14:01:35,817 - __main__ - INFO - 🎯 Using OTC pair: AUDNZD_otc for signal pair: AUD/NZD
+2025-06-09 14:01:35,852 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDNZD_otc CALL $5.0 (expiry: 60s)
+2025-06-09 14:01:35,852 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 14:01:35,954 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDNZD_otc CALL $5.0 - Trade ID: 3afeef51-f7e4-4593-9d46-9d899ae93c94
+2025-06-09 14:02:40,973 - __main__ - INFO - 🔍 Checking trade result for trade ID: 3afeef51-f7e4-4593-9d46-9d899ae93c94
+2025-06-09 14:02:40,973 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 14:03:00,733 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 14:03:08,912 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-09 14:03:11,882 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-09 14:03:11,882 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-09 14:03:17,913 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CHF 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-09 14:03:17,913 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-09 14:03:17,913 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-09T16:03:17.913780+02:00', 'id': 'signal_20250609_140317_003', 'session_id': 'session_20250609_153900'}
+2025-06-09 14:03:17,949 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 14:03:17,952 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_140317_003 (Delay: 17.0ms)
+2025-06-09 14:03:17,952 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-09 14:03:17,984 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc PUT $5.0 (expiry: 60s)
+2025-06-09 14:03:17,984 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 14:03:18,087 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc PUT $5.0 - Trade ID: fed72dfb-8f33-494a-b284-56144de2fc95
+2025-06-09 14:04:23,108 - __main__ - INFO - 🔍 Checking trade result for trade ID: fed72dfb-8f33-494a-b284-56144de2fc95
+2025-06-09 14:04:23,108 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 14:04:25,290 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-09 14:04:35,141 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-09 14:04:38,145 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CAD (OTC)**...
+2025-06-09 14:04:38,145 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-06-09 14:04:47,245 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair AUD/CAD  
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-09 14:04:47,245 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-09 14:04:47,245 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-09T16:04:47.245127+02:00', 'id': 'signal_20250609_140447_004', 'session_id': 'session_20250609_153900'}
+2025-06-09 14:04:47,272 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 14:04:47,274 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_140447_004 (Delay: 13.8ms)
+2025-06-09 14:04:47,274 - __main__ - INFO - 🎯 Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-06-09 14:04:47,307 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCAD_otc CALL $5.0 (expiry: 60s)
+2025-06-09 14:04:47,308 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 14:04:47,410 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCAD_otc CALL $5.0 - Trade ID: 889585f8-841f-4175-83fd-a94bac71dbd3
+2025-06-09 14:05:52,430 - __main__ - INFO - 🔍 Checking trade result for trade ID: 889585f8-841f-4175-83fd-a94bac71dbd3
+2025-06-09 14:05:52,430 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 14:05:54,342 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 14:06:04,132 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-09 14:07:57,647 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-09 14:10:13,265 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 14:10:13,265 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 14:10:13,265 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:36:00,312 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 20:36:00,314 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 20:36:00,316 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 20:36:00,316 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 20:36:00,317 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 20:36:00,317 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 20:36:00,421 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 20:36:00,438 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:36:00,955 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 20:36:00,998 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 20:36:01,032 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 20:36:01,165 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-09 20:36:01,983 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 20:36:03,053 - __main__ - INFO - Account balance: 51483.95
+2025-06-09 20:36:03,202 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 20:36:03,294 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 20:36:03,340 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 20:36:03,405 - __main__ - INFO - Updated balance_start for loaded session session_20250609_153900 to 51483.95
+2025-06-09 20:36:03,406 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 20:36:03,407 - __main__ - INFO - 💰 Current Balance: $51483.95
+2025-06-09 20:36:21,027 - __main__ - INFO - 💵 Custom Amount: $5.00
+2025-06-09 20:36:27,892 - __main__ - INFO - ✅ Trading amount set to $5.00 for this session
+2025-06-09 20:36:27,942 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 20:36:27,943 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 20:36:27,943 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 20:36:27,944 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 20:36:28,035 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 20:36:28,056 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 20:36:28,056 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 20:36:54,952 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 20:36:54,954 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 20:36:54,954 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:49:14,367 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 20:49:14,379 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 20:49:14,383 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 20:49:14,386 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 20:49:14,388 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 20:49:48,292 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 20:49:48,305 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 20:49:48,389 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 20:49:48,390 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 20:49:48,391 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 20:49:48,392 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 20:49:48,426 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 20:49:48,445 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:49:48,974 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 20:49:48,974 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 20:49:49,079 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 20:49:49,079 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-09 20:49:49,081 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 20:49:50,082 - __main__ - INFO - Account balance: 51483.95
+2025-06-09 20:49:50,104 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 20:49:50,108 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 20:49:50,108 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 20:49:50,319 - __main__ - INFO - Updated balance_start for loaded session session_20250609_153900 to 51483.95
+2025-06-09 20:49:50,325 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 20:49:50,390 - __main__ - INFO - 💰 Current Balance: $51483.95
+2025-06-09 20:50:08,110 - __main__ - INFO - 💵 Custom Amount: $5.00
+2025-06-09 20:50:11,701 - __main__ - INFO - ✅ Trading amount set to $5.00 for this session
+2025-06-09 20:50:11,707 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 20:50:11,726 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 20:50:11,751 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 20:50:11,752 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 20:50:11,802 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 20:50:11,828 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 20:50:11,828 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 20:50:16,341 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 20:50:16,342 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 20:50:16,342 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:54:00,847 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-09 20:54:00,849 - session_manager - INFO - Found externally started active session in sessions\active_session.json: session_20250609_153900
+2025-06-09 20:54:00,851 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: session_20250609_153900
+2025-06-09 20:54:00,851 - session_manager - INFO - SessionManager initialized successfully
+2025-06-09 20:54:00,851 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-09 20:54:00,851 - __main__ - INFO - Initializing Telegram client...
+2025-06-09 20:54:00,875 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-09 20:54:00,889 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-09 20:54:01,068 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-09 20:54:01,068 - __main__ - INFO - Already authenticated using existing session
+2025-06-09 20:54:01,088 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-09 20:54:01,089 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-09 20:54:01,090 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-09 20:54:02,093 - __main__ - INFO - Account balance: 51483.95
+2025-06-09 20:54:02,097 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-09 20:54:02,097 - __main__ - INFO - JSON storage initialized successfully
+2025-06-09 20:54:02,097 - __main__ - INFO - Using already loaded session: session_20250609_153900
+2025-06-09 20:54:02,098 - __main__ - INFO - Updated balance_start for loaded session session_20250609_153900 to 51483.95
+2025-06-09 20:54:02,098 - __main__ - INFO - ✅ Session management initialized with existing session: session_20250609_153900
+2025-06-09 20:54:02,098 - __main__ - INFO - 💰 Current Balance: $51483.95
+2025-06-09 20:54:10,202 - __main__ - INFO - 💵 Custom Amount: $5.00
+2025-06-09 20:54:13,370 - __main__ - INFO - ✅ Trading amount set to $5.00 for this session
+2025-06-09 20:54:13,374 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-09 20:54:13,376 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-09 20:54:13,376 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-09 20:54:13,376 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-09 20:54:13,394 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-09 20:54:13,394 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-09 20:54:13,394 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-09 21:00:06,873 - telethon.client.updates - INFO - Got difference for channel 2412213735 updates
+2025-06-09 21:00:06,877 - __main__ - INFO - 📨 Received message: ?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-06-09 21:00:06,877 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-09 21:00:08,452 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-09 21:00:08,452 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-09 21:00:47,518 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-09 21:00:47,519 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-09 21:00:47,519 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-09T21:00:47.519514+00:00', 'id': 'signal_20250609_210047519514_001', 'session_id': 'session_20250609_153900'}
+2025-06-09 21:00:47,526 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 21:00:47,526 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_210047526558_001 (Delay: 5.0ms)
+2025-06-09 21:00:47,526 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-09 21:00:47,534 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $5.0 (expiry: 60s)
+2025-06-09 21:00:47,536 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 21:00:47,637 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $5.0 - Trade ID: fffa62c5-6261-4016-9b96-5a44f95fbf08
+2025-06-09 21:01:52,645 - __main__ - INFO - 🔍 Checking trade result for trade ID: fffa62c5-6261-4016-9b96-5a44f95fbf08
+2025-06-09 21:01:52,645 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 21:01:59,722 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 21:02:07,874 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-09 21:02:17,321 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-09 21:02:17,321 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-09 21:03:03,717 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/CHF 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-09 21:03:03,719 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-09 21:03:03,719 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-09T21:03:03.719725+00:00', 'id': 'signal_20250609_210303719725_002', 'session_id': 'session_20250609_153900'}
+2025-06-09 21:03:03,725 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 21:03:03,726 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_210303726013_002 (Delay: 4.3ms)
+2025-06-09 21:03:03,726 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-09 21:03:03,733 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc CALL $5.0 (expiry: 60s)
+2025-06-09 21:03:03,733 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 21:03:03,835 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc CALL $5.0 - Trade ID: d1493645-a721-41f8-b317-d1ffa768b4cd
+2025-06-09 21:04:08,843 - __main__ - INFO - 🔍 Checking trade result for trade ID: d1493645-a721-41f8-b317-d1ffa768b4cd
+2025-06-09 21:04:08,843 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 21:04:22,312 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 21:04:37,551 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-09 21:05:22,489 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-09 21:05:22,489 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-09 21:06:58,334 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/USD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-09 21:06:58,335 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-09 21:06:58,335 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-09T21:06:58.335084+00:00', 'id': 'signal_20250609_210658335084_003', 'session_id': 'session_20250609_153900'}
+2025-06-09 21:06:58,341 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 21:06:58,342 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_210658342245_003 (Delay: 5.2ms)
+2025-06-09 21:06:58,342 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-09 21:06:58,348 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc CALL $5.0 (expiry: 60s)
+2025-06-09 21:06:58,348 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 21:06:58,451 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc CALL $5.0 - Trade ID: a75497be-fc20-4d32-a57b-eae9c6ee7f72
+2025-06-09 21:08:03,460 - __main__ - INFO - 🔍 Checking trade result for trade ID: a75497be-fc20-4d32-a57b-eae9c6ee7f72
+2025-06-09 21:08:03,460 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 21:08:05,680 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-09 21:08:13,910 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-09 21:08:33,865 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-06-09 21:08:33,865 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-06-09 21:09:46,053 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair EUR/USD  
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-09 21:09:46,053 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-09 21:09:46,053 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-09T21:09:46.053893+00:00', 'id': 'signal_20250609_210946053893_004', 'session_id': 'session_20250609_153900'}
+2025-06-09 21:09:46,060 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-09 21:09:46,060 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250609_210946060782_004 (Delay: 4.0ms)
+2025-06-09 21:09:46,060 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-09 21:09:46,068 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc PUT $5.0 (expiry: 60s)
+2025-06-09 21:09:46,068 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-09 21:09:46,170 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc PUT $5.0 - Trade ID: 6cba86ae-ffc5-48da-ad5e-b50ff63de94d
+2025-06-09 21:10:51,179 - __main__ - INFO - 🔍 Checking trade result for trade ID: 6cba86ae-ffc5-48da-ad5e-b50ff63de94d
+2025-06-09 21:10:51,179 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-09 21:10:53,605 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-09 21:11:10,904 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-09 21:12:37,861 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:13:34,722 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:13:38,246 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-09 21:13:47,979 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:13:54,142 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:14:01,098 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:14:26,174 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:15:10,690 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:15:53,351 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:17:00,123 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:17:13,849 - telethon.client.updates - INFO - Got difference for channel 2582428771 updates
+2025-06-09 21:17:15,295 - __main__ - INFO - Shutting down Self Bot...
+2025-06-09 21:17:15,297 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-09 21:17:15,297 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!

@@ -75,7 +75,7 @@ class SignalMonitor:
         self.detected_signals = []
         
         # Timezone
-        self.timezone = pytz.timezone("Africa/Johannesburg")
+        self.timezone = pytz.utc
         
         # Stats
         self.stats = {
@@ -341,7 +341,7 @@ class SignalMonitor:
         runtime_str = str(runtime).split('.')[0]  # Remove microseconds
         
         print("\n" + "="*50)
-        print(f"SIGNAL MONITORING STATISTICS - {datetime.now(self.timezone).strftime('%Y-%m-%d %H:%M:%S')} (SAST)")
+        print(f"SIGNAL MONITORING STATISTICS - {datetime.now(self.timezone).strftime('%Y-%m-%d %H:%M:%S')} (UTC)")
         print("="*50)
         print(f"Runtime: {runtime_str}")
         print(f"Total messages: {self.stats['total_messages']}")

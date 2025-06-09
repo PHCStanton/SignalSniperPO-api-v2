@@ -305,7 +305,7 @@ class SelfBot:
         # Session manager for singleton pattern and session recovery
         self.session_manager = SessionManager(
             data_dir=data_dir,
-            timezone=self.config.get("timezone", "Africa/Johannesburg")
+            timezone=self.config.get("timezone", "UTC")
         )
         
         # Signal deduplicator for preventing duplicate signal processing
@@ -323,7 +323,7 @@ class SelfBot:
         self.session_data = {}
         
         # Timezone
-        self.timezone = pytz.timezone(self.config.get("timezone", "Africa/Johannesburg"))
+        self.timezone = pytz.timezone(self.config.get("timezone", "UTC"))
         
         # Trading stats
         self.stats = {

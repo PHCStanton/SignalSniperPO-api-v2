@@ -1,5 +1,5 @@
 {
-    "timezone": "Africa/Johannesburg",
+    "timezone": "UTC",
     "trade_amount": 1,
     "max_daily_trades": 20,
     "max_daily_loss": 100,

@@ -9,7 +9,7 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
 - **Latency Reduction**: Optimize signal detection and trade execution to minimize delays (target: <2 seconds from signal to trade).
 - **Error Handling**: Implement comprehensive logging and recovery mechanisms to ensure reliability.
 
-## Current State (As of May 19, 2025, 02:30 AM SAST)
+## Current State (As of May 19, 2025, 02:30 AM UTC)
 - **Implementation**:
   - The bot uses Telethon with a user account (`telethon_setup.py`, `bot.py`) to monitor the "BINARY TRADING CLUB" channel.
   - Signal parsing for the two-message format (e.g., "Trading Pair: EUR/USD", "SET THE TIMER TO 14:30:00\nCurrency pair EUR/USD\nHIGHER\nTrade time: 1 MIN") is implemented.
@@ -123,12 +123,12 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
      - `TELEGRAM_SIGNAL_MONITORING.md`: Comprehensive documentation for the signal monitoring test suite
 
 5. **Synchronize Trade Timing**
-   - Ensure `schedule_trade_execution` in `bot.py` executes trades at the exact `timer` (e.g., 14:30:00 SAST).
+   - Ensure `schedule_trade_execution` in `bot.py` executes trades at the exact `timer` (e.g., 14:30:00 UTC).
    - Test timing with a simulated signal:
      ```python
      signal = {
          "pair": "EUR/USD",
-         "timer": (datetime.now(pytz.timezone("Africa/Johannesburg")) + timedelta(seconds=10)).strftime("%H:%M:%S"),
+         "timer": (datetime.now(pytz.utc) + timedelta(seconds=10)).strftime("%H:%M:%S"),
          "direction": "HIGHER",
          "expiry": 1
      }
@@ -328,7 +328,7 @@ This document outlines the development roadmap for the SelfBot/Notifier_Bot, a T
    - Generate daily CSV reports.
 
 4. **Validate Timing**
-   - Ensure trades execute at `signal.timer` in SAST.
+   - Ensure trades execute at `signal.timer` in UTC.
    - Log timing errors for debugging.
 
 **Estimated Effort**: 3 weeks.

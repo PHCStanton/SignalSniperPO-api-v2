@@ -147,14 +147,14 @@ Signal parsing is implemented but needs thorough testing to ensure reliability.
 Trade execution must occur at the exact `timer` (e.g., 14:30:00 SAST) in test mode, with one real trade validated.
 
 - **Your Task**:
-  - Ensure `schedule_trade_execution` in `bot.py` aligns with `timer` in SAST:
+  - Ensure `schedule_trade_execution` in `bot.py` aligns with `timer` in UTC:
     ```python
     async def schedule_trade_execution(self, signal):
         try:
             timer = datetime.strptime(signal["timer"], "%H:%M:%S").replace(
-                tzinfo=pytz.timezone("Africa/Johannesburg")
+                tzinfo=pytz.utc
             )
-            now = datetime.now(pytz.timezone("Africa/Johannesburg"))
+            now = datetime.now(pytz.utc)
             delay = (timer - now).total_seconds()
             if delay < 5:
                 logger.warning("Signal too late, skipping trade")
@@ -174,7 +174,7 @@ Trade execution must occur at the exact `timer` (e.g., 14:30:00 SAST) in test mo
     ```python
     signal = {
         "pair": "EUR/USD",
-        "timer": (datetime.now(pytz.timezone("Africa/Johannesburg")) + timedelta(seconds=10)).strftime("%H:%M:%S"),
+        "timer": (datetime.now(pytz.utc) + timedelta(seconds=10)).strftime("%H:%M:%S"),
         "direction": "HIGHER",
         "expiry": 1
     }

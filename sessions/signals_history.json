@@ -174,5 +174,93 @@
     "session_id": "session_20250603_124526",
     "is_valid": true,
     "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T16:00:04.698863+02:00",
+    "id": "signal_20250609_140004_001",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/NZD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T16:01:35.773145+02:00",
+    "id": "signal_20250609_140135_002",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/CHF",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T16:03:17.913780+02:00",
+    "id": "signal_20250609_140317_003",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/CAD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T16:04:47.245127+02:00",
+    "id": "signal_20250609_140447_004",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T21:00:47.519514+00:00",
+    "id": "signal_20250609_210047519514_001",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/CHF",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T21:03:03.719725+00:00",
+    "id": "signal_20250609_210303719725_002",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T21:06:58.335084+00:00",
+    "id": "signal_20250609_210658335084_003",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-06-09T21:09:46.053893+00:00",
+    "id": "signal_20250609_210946053893_004",
+    "session_id": "session_20250609_153900",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
   }
 ]

@@ -18,3 +18,21 @@
 2025-05-30 13:34:26,990 - __main__ - WARNING - Session file pocket_option_userbot.session does not exist
 2025-05-30 13:36:08,789 - __main__ - INFO - Checking session: HEADLESS-BOT-TEST
 2025-05-30 13:36:08,789 - __main__ - WARNING - Session file HEADLESS-BOT-TEST.session does not exist
+2025-06-09 13:16:44,627 - __main__ - INFO - Checking session: pocket_option_userbot
+2025-06-09 13:16:44,707 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:16:44,721 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:16:44,828 - __main__ - WARNING - Session pocket_option_userbot is not authorized
+2025-06-09 13:16:44,828 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-06-09 13:16:44,829 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:32:52,757 - __main__ - INFO - Checking session: pocket_option_userbot
+2025-06-09 13:32:52,780 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:32:52,819 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:32:52,928 - __main__ - WARNING - Session pocket_option_userbot is not authorized
+2025-06-09 13:32:52,929 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-06-09 13:32:52,929 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:35:22,058 - __main__ - INFO - Checking session: pocket_option_userbot
+2025-06-09 13:35:22,132 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-06-09 13:35:22,145 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-06-09 13:35:22,240 - __main__ - WARNING - Session pocket_option_userbot is not authorized
+2025-06-09 13:35:22,240 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-06-09 13:35:22,241 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!

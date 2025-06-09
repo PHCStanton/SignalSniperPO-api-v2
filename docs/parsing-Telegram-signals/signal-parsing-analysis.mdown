@@ -7,7 +7,7 @@ The signals are delivered in a two-message format, as seen in the screenshots:
 
 Additional context messages (e.g., "Get ready to earn! Starting soon!" or "The trading session has already started!") provide session details but are not directly part of the actionable signal. The key data points to parse are:
 - **Trading Pair**: e.g., "AUD/USD (OTC)" from the first message.
-- **Timer**: e.g., "00:01:00" from the second message, interpreted as a target time in SAST (South Africa Standard Time, given your EC2 location).
+- **Timer**: e.g., "00:01:00" from the second message, interpreted as a target time in UTC.
 - **Direction**: e.g., "HIGHER" from the second message.
 - **Trade Time (Expiry)**: e.g., "1 MIN" from the second message, indicating a 1-minute expiration.
 
@@ -101,11 +101,11 @@ class TradingBot:
         Execute a trade based on the parsed signal.
         """
         try:
-            # Convert timer to SAST datetime
-            sast = pytz.timezone("Africa/Johannesburg")
-            current_time = datetime.now(sast)
+            # Convert timer to UTC datetime
+            utc = pytz.utc
+            current_time = datetime.now(utc)
             target_time = datetime.strptime(signal["timer"], "%H:%M:%S").replace(
-                tzinfo=sast, year=current_time.year, month=current_time.month, day=current_time.day
+                tzinfo=utc, year=current_time.year, month=current_time.month, day=current_time.day
             )
             if target_time < current_time:
                 target_time += timedelta(days=1)  # Handle next day if timer is earlier
@@ -139,9 +139,9 @@ class TradingBot:
             "Trading Pair: AUD/USD (OTC)",
             "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN"
         ]
-        sast = pytz.timezone("Africa/Johannesburg")
+        utc = pytz.utc
         for msg in messages:
-            await self.process_message(msg, datetime.now(sast))
+            await self.process_message(msg, datetime.now(utc))
             await asyncio.sleep(1)  # Simulate message delay
 
 if __name__ == "__main__":
@@ -160,7 +160,7 @@ if __name__ == "__main__":
    - If valid, it constructs a `signal` dictionary and resets `first_message` to prepare for the next signal.
 
 3. **Trade Execution**:
-   - The `execute_trade` method converts the `timer` to a SAST datetime, accounting for day rollover if the target time is earlier than now (e.g., 00:01:00 on May 19, 2025, at 04:37 AM SAST).
+   - The `execute_trade` method converts the `timer` to a UTC datetime, accounting for day rollover if the target time is earlier than now (e.g., 00:01:00 on May 19, 2025, at 04:37 AM UTC).
    - It waits until the target time, then executes a trade using `PocketOption.buy`, mapping "HIGHER" to "call" and "LOWER" to "put" (Pocket Option’s convention).
    - The trade amount is set to $1 for testing, with a 1-minute expiry (60 seconds).
    - It checks the trade result with `check_win` and logs the outcome.
@@ -168,17 +168,17 @@ if __name__ == "__main__":
 4. **Simulation**:
    - The `run` method simulates processing the two messages sequentially. In a real implementation, this would integrate with Telethon’s message listener in `telethon_setup.py`.
 
-### Sample Output (Based on Current Time: 04:37 AM SAST, May 19, 2025)
+### Sample Output (Based on Current Time: 04:37 AM UTC, May 19, 2025)
 Assuming the signal is received now:
-- **First Message**: "Trading Pair: AUD/USD (OTC)" at 04:37:00 SAST.
-- **Second Message**: "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN" at 04:37:30 SAST.
+- **First Message**: "Trading Pair: AUD/USD (OTC)" at 04:37:00 UTC.
+- **Second Message**: "! SET THE TIMER TO 00:01:00 !\nFirst signal: Currency pair AUD/USD\nHIGHER ⬆️\nTrade time: 1 MIN" at 04:37:30 UTC.
 - **Parsing**:
-  - First message: `{"pair": "AUD/USD", "timestamp": 2025-05-19 04:37:00 SAST}`.
+  - First message: `{"pair": "AUD/USD", "timestamp": 2025-05-19 04:37:00 UTC}`.
   - Second message: `{"timer": "00:01:00", "pair": "AUD/USD", "direction": "HIGHER", "expiry": 60}`.
   - Time diff: 30s < 60s, so valid.
 - **Execution**:
   - Target time: 00:01:00 on May 20, 2025 (next day, ~19 hours 24 minutes from now).
-  - Bot waits until 00:01:00 SAST on May 20, then executes a $1 "call" trade on AUD/USD with a 60-second expiry.
+  - Bot waits until 00:01:00 UTC on May 20, then executes a $1 "call" trade on AUD/USD with a 60-second expiry.
   - Logs: "Trade executed: Pair=AUD/USD, Direction=HIGHER, Order ID=123" and "Trade result: Profit=0.8, Status=win" (example).
 
 ### Integration with Existing Code
