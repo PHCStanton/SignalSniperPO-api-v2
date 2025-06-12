@@ -1,0 +1,258 @@
+{
+  "monitoring_duration": 2,
+  "channel_name": "BINARY TRADING CLUB",
+  "channel_id": -1002412213735,
+  "total_messages": 24,
+  "total_signals": 0,
+  "measurements": [
+    {
+      "timestamp": "2025-06-11T20:35:46.864271",
+      "message_id": 7021,
+      "reception_latency": 51.80069999983061,
+      "parsing_latency": 0.6217999998625601,
+      "validation_latency": 0.0026000000161729986,
+      "total_latency": 52.425099999709346,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:35:46.864271",
+      "message_id": 7019,
+      "reception_latency": 51.80069999983061,
+      "parsing_latency": 0.040299999909620965,
+      "validation_latency": 0.001100000190490391,
+      "total_latency": 51.842099999930724,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:35:56.913656",
+      "message_id": 7021,
+      "reception_latency": 48.48289999995359,
+      "parsing_latency": 0.027600000066740904,
+      "validation_latency": 0.0012000000424450263,
+      "total_latency": 48.511700000062774,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:35:56.913656",
+      "message_id": 7019,
+      "reception_latency": 48.48289999995359,
+      "parsing_latency": 0.016799999912109342,
+      "validation_latency": 0.0005000001692678779,
+      "total_latency": 48.500200000034965,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:06.969281",
+      "message_id": 7021,
+      "reception_latency": 42.994200000066485,
+      "parsing_latency": 0.06259999986468756,
+      "validation_latency": 0.0016999999843392288,
+      "total_latency": 43.05849999991551,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:06.969281",
+      "message_id": 7019,
+      "reception_latency": 42.994200000066485,
+      "parsing_latency": 0.01730000008137722,
+      "validation_latency": 0.0007000001005508238,
+      "total_latency": 43.01220000024841,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:17.012509",
+      "message_id": 7021,
+      "reception_latency": 43.13270000011471,
+      "parsing_latency": 0.026400000024295878,
+      "validation_latency": 0.001300000121773337,
+      "total_latency": 43.16040000026078,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:17.012509",
+      "message_id": 7019,
+      "reception_latency": 43.13270000011471,
+      "parsing_latency": 0.017899999875226058,
+      "validation_latency": 0.0006999998731771484,
+      "total_latency": 43.15129999986311,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:27.162518",
+      "message_id": 7021,
+      "reception_latency": 140.78150000000278,
+      "parsing_latency": 0.025900000082401675,
+      "validation_latency": 0.0013999999737279722,
+      "total_latency": 140.8088000000589,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:27.162518",
+      "message_id": 7019,
+      "reception_latency": 140.78150000000278,
+      "parsing_latency": 0.015800000028320937,
+      "validation_latency": 0.00040000008993956726,
+      "total_latency": 140.79770000012104,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:37.199363",
+      "message_id": 7021,
+      "reception_latency": 39.52600000002349,
+      "parsing_latency": 0.024600000188002014,
+      "validation_latency": 0.001500000053056283,
+      "total_latency": 39.552100000264545,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:37.199363",
+      "message_id": 7019,
+      "reception_latency": 39.52600000002349,
+      "parsing_latency": 0.015699999948992627,
+      "validation_latency": 0.0003000000106112566,
+      "total_latency": 39.54199999998309,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:47.342936",
+      "message_id": 7021,
+      "reception_latency": 128.18799999990915,
+      "parsing_latency": 0.02470000003995665,
+      "validation_latency": 0.0012999998943996616,
+      "total_latency": 128.2139999998435,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:47.342936",
+      "message_id": 7019,
+      "reception_latency": 128.18799999990915,
+      "parsing_latency": 0.015999999959603883,
+      "validation_latency": 0.0003999998625658918,
+      "total_latency": 128.20439999973132,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:57.382560",
+      "message_id": 7021,
+      "reception_latency": 39.03579999996509,
+      "parsing_latency": 0.02470000003995665,
+      "validation_latency": 0.0012000000424450263,
+      "total_latency": 39.061700000047495,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:36:57.383331",
+      "message_id": 7019,
+      "reception_latency": 39.03579999996509,
+      "parsing_latency": 0.015599999869664316,
+      "validation_latency": 0.0003999998625658918,
+      "total_latency": 39.05179999969732,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:07.517822",
+      "message_id": 7021,
+      "reception_latency": 126.04269999997086,
+      "parsing_latency": 0.02380000000812288,
+      "validation_latency": 0.0013999999737279722,
+      "total_latency": 126.06789999995272,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:07.517822",
+      "message_id": 7019,
+      "reception_latency": 126.04269999997086,
+      "parsing_latency": 0.015800000028320937,
+      "validation_latency": 0.0003999998625658918,
+      "total_latency": 126.05889999986175,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:17.587967",
+      "message_id": 7021,
+      "reception_latency": 62.02809999990677,
+      "parsing_latency": 0.024399999801971717,
+      "validation_latency": 0.000999999883788405,
+      "total_latency": 62.05349999959253,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:17.589516",
+      "message_id": 7019,
+      "reception_latency": 62.02809999990677,
+      "parsing_latency": 0.018199999885837315,
+      "validation_latency": 0.0005000001692678779,
+      "total_latency": 62.04679999996188,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:27.719986",
+      "message_id": 7021,
+      "reception_latency": 127.65109999986635,
+      "parsing_latency": 0.025000000050567905,
+      "validation_latency": 0.0012000000424450263,
+      "total_latency": 127.67729999995936,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:27.719986",
+      "message_id": 7019,
+      "reception_latency": 127.65109999986635,
+      "parsing_latency": 0.016200000118260505,
+      "validation_latency": 0.0003999998625658918,
+      "total_latency": 127.66769999984717,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:37.764726",
+      "message_id": 7021,
+      "reception_latency": 41.588199999978315,
+      "parsing_latency": 0.024599999960628338,
+      "validation_latency": 0.001799999836293864,
+      "total_latency": 41.61459999977524,
+      "signal_detected": false,
+      "signal_valid": false
+    },
+    {
+      "timestamp": "2025-06-11T20:37:37.764726",
+      "message_id": 7019,
+      "reception_latency": 41.588199999978315,
+      "parsing_latency": 0.015699999948992627,
+      "validation_latency": 0.0003999998625658918,
+      "total_latency": 41.60429999978987,
+      "signal_detected": false,
+      "signal_valid": false
+    }
+  ],
+  "performance_stats": {
+    "avg_total_latency": 74.3202083332714,
+    "avg_reception_latency": 74.27099166663236,
+    "avg_parsing_latency": 0.04822499998150912,
+    "avg_validation_latency": 0.0009916666575312167,
+    "min_total_latency": 39.05179999969732,
+    "max_total_latency": 140.8088000000589,
+    "signal_detection_rate": 0.0
+  }
+}

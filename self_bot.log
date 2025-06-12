@@ -3616,3 +3616,555 @@ R...
 2025-06-09 21:17:15,295 - __main__ - INFO - Shutting down Self Bot...
 2025-06-09 21:17:15,297 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
 2025-06-09 21:17:15,297 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-10 13:53:13,963 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-10 13:53:13,965 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE1-20250610
+2025-06-10 13:53:13,967 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE1-20250610
+2025-06-10 13:53:13,967 - session_manager - INFO - SessionManager initialized successfully
+2025-06-10 13:53:13,967 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-10 13:53:13,967 - __main__ - INFO - Initializing Telegram client...
+2025-06-10 13:53:13,978 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-10 13:53:13,991 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-10 13:53:14,153 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-10 13:53:14,153 - __main__ - INFO - Already authenticated using existing session
+2025-06-10 13:53:14,178 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-10 13:53:14,180 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-10 13:53:14,180 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-10 13:53:15,182 - __main__ - INFO - Account balance: 51443.5
+2025-06-10 13:53:15,184 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-10 13:53:15,186 - __main__ - INFO - JSON storage initialized successfully
+2025-06-10 13:53:15,186 - __main__ - INFO - Using already loaded session: SE1-20250610
+2025-06-10 13:53:15,186 - __main__ - INFO - Updated balance_start for loaded session SE1-20250610 to 51443.5
+2025-06-10 13:53:15,186 - __main__ - INFO - ✅ Session management initialized with existing session: SE1-20250610
+2025-06-10 13:53:15,186 - __main__ - INFO - 💰 Current Balance: $51443.50
+2025-06-10 13:53:32,157 - __main__ - INFO - 💵 Custom Amount: $15.00
+2025-06-10 13:53:35,010 - __main__ - INFO - ✅ Trading amount set to $15.00 for this session
+2025-06-10 13:53:35,015 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-10 13:53:35,015 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-10 13:53:35,016 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-10 13:53:35,016 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-10 13:53:35,104 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-10 13:53:35,104 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-10 13:53:35,104 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-10 14:00:32,043 - telethon.client.updates - INFO - Got difference for channel 2412213735 updates
+2025-06-10 14:00:32,045 - __main__ - INFO - 📨 Received message: ?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-06-10 14:00:32,047 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-10 14:00:35,611 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-10 14:00:35,613 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-10 14:00:45,359 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 14:00:45,361 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 14:00:45,361 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T14:00:45.361455+00:00', 'id': 'signal_20250610_140045361455_001', 'session_id': 'SE1-20250610'}
+2025-06-10 14:00:45,367 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 14:00:45,367 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_140045367991_001 (Delay: 4.5ms)
+2025-06-10 14:00:45,367 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-10 14:00:45,376 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $15.0 (expiry: 60s)
+2025-06-10 14:00:45,377 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 14:00:45,478 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $15.0 - Trade ID: 812d8e7d-c308-4acb-8a97-85d8b5876d3c
+2025-06-10 14:01:50,486 - __main__ - INFO - 🔍 Checking trade result for trade ID: 812d8e7d-c308-4acb-8a97-85d8b5876d3c
+2025-06-10 14:01:50,486 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-10 14:01:53,146 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-10 14:02:03,092 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-10 14:02:06,586 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/NZD (OTC)**...
+2025-06-10 14:02:06,586 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-06-10 14:02:21,537 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/NZD 
+LOWER  ? 
+Trade time: 1 MIN...
+2025-06-10 14:02:21,537 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/NZD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 14:02:21,537 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/NZD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T14:02:21.537794+00:00', 'id': 'signal_20250610_140221537794_002', 'session_id': 'SE1-20250610'}
+2025-06-10 14:02:21,542 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 14:02:21,543 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_140221543821_002 (Delay: 4.0ms)
+2025-06-10 14:02:21,543 - __main__ - INFO - 🎯 Using OTC pair: AUDNZD_otc for signal pair: AUD/NZD
+2025-06-10 14:02:21,551 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDNZD_otc PUT $15.0 (expiry: 60s)
+2025-06-10 14:02:21,551 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 14:02:21,653 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDNZD_otc PUT $15.0 - Trade ID: ec240a2b-1d80-4ac9-b3ab-5272c5435f33
+2025-06-10 14:03:26,660 - __main__ - INFO - 🔍 Checking trade result for trade ID: ec240a2b-1d80-4ac9-b3ab-5272c5435f33
+2025-06-10 14:03:26,660 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-10 14:03:40,901 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 14:03:51,082 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-10 14:03:57,304 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-10 14:03:57,304 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-10 14:04:01,701 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CHF 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 14:04:01,701 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 14:04:01,701 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T14:04:01.701583+00:00', 'id': 'signal_20250610_140401701583_003', 'session_id': 'SE1-20250610'}
+2025-06-10 14:04:01,707 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 14:04:01,707 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_140401707609_003 (Delay: 4.0ms)
+2025-06-10 14:04:01,707 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-10 14:04:01,714 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc PUT $15.0 (expiry: 60s)
+2025-06-10 14:04:01,714 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 14:04:01,817 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc PUT $15.0 - Trade ID: e7334ee4-9979-4989-bda0-0436a2fd858b
+2025-06-10 14:05:06,825 - __main__ - INFO - 🔍 Checking trade result for trade ID: e7334ee4-9979-4989-bda0-0436a2fd858b
+2025-06-10 14:05:06,825 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-10 14:05:13,915 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-10 14:05:22,212 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-10 14:05:32,096 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/NZD (OTC)**...
+2025-06-10 14:05:32,096 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-06-10 14:05:42,271 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair AUD/NZD  
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 14:05:42,271 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/NZD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 14:05:42,271 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/NZD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T14:05:42.271609+00:00', 'id': 'signal_20250610_140542271609_004', 'session_id': 'SE1-20250610'}
+2025-06-10 14:05:42,276 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 14:05:42,277 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_140542277639_004 (Delay: 4.0ms)
+2025-06-10 14:05:42,277 - __main__ - INFO - 🎯 Using OTC pair: AUDNZD_otc for signal pair: AUD/NZD
+2025-06-10 14:05:42,284 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDNZD_otc PUT $15.0 (expiry: 60s)
+2025-06-10 14:05:42,284 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 14:05:42,386 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDNZD_otc PUT $15.0 - Trade ID: ace4d62b-3189-45a0-80e8-9506940e9acb
+2025-06-10 14:06:47,394 - __main__ - INFO - 🔍 Checking trade result for trade ID: ace4d62b-3189-45a0-80e8-9506940e9acb
+2025-06-10 14:06:47,394 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-10 14:06:55,038 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 14:07:04,164 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-10 14:07:08,158 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-10 14:07:15,790 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-10 14:07:15,790 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-10 14:07:25,423 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fifth signal: Currency pair AUD/USD
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 14:07:25,423 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 14:07:25,423 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T14:07:25.423879+00:00', 'id': 'signal_20250610_140725423879_005', 'session_id': 'SE1-20250610'}
+2025-06-10 14:07:25,429 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 14:07:25,429 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_140725429908_005 (Delay: 4.0ms)
+2025-06-10 14:07:25,429 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-10 14:07:25,437 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $15.0 (expiry: 60s)
+2025-06-10 14:07:25,437 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 14:07:25,539 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $15.0 - Trade ID: b1bc1405-b906-47e8-ba2d-95a13a02d6c0
+2025-06-10 14:08:30,547 - __main__ - INFO - 🔍 Checking trade result for trade ID: b1bc1405-b906-47e8-ba2d-95a13a02d6c0
+2025-06-10 14:08:30,547 - __main__ - ERROR - Error checking trade result: '>' not supported between instances of 'tuple' and 'int'
+2025-06-10 14:08:36,248 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 14:08:46,699 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-10 14:11:25,779 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-10 20:30:45,093 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-10 20:30:45,095 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE2-20250610
+2025-06-10 20:30:45,096 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE2-20250610
+2025-06-10 20:30:45,096 - session_manager - INFO - SessionManager initialized successfully
+2025-06-10 20:30:45,098 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-10 20:30:45,099 - __main__ - INFO - Initializing Telegram client...
+2025-06-10 20:30:45,110 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-10 20:30:45,123 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-10 20:30:45,449 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-10 20:30:45,476 - __main__ - INFO - Already authenticated using existing session
+2025-06-10 20:30:45,508 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-10 20:30:45,516 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-10 20:30:45,570 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-10 20:30:46,574 - __main__ - INFO - Account balance: 51404.26
+2025-06-10 20:30:46,598 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-10 20:30:46,599 - __main__ - INFO - JSON storage initialized successfully
+2025-06-10 20:30:46,600 - __main__ - INFO - Using already loaded session: SE2-20250610
+2025-06-10 20:30:46,602 - __main__ - INFO - Updated balance_start for loaded session SE2-20250610 to 51404.26
+2025-06-10 20:30:46,603 - __main__ - INFO - ✅ Session management initialized with existing session: SE2-20250610
+2025-06-10 20:30:46,603 - __main__ - INFO - 💰 Current Balance: $51404.26
+2025-06-10 20:31:24,354 - __main__ - INFO - 💵 Custom Amount: $5.14
+2025-06-10 20:32:01,036 - __main__ - INFO - ✅ Trading amount set to $5.14 for this session
+2025-06-10 20:32:01,040 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-10 20:32:01,041 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-10 20:32:01,041 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-10 20:32:01,041 - __main__ - INFO - Accessing channel: ðŸŽ¯Signal_Sniper_Test_ChannelðŸŽ¯
+2025-06-10 20:32:01,071 - __main__ - INFO - Accessed channel by ID: 🎯Signal_Sniper_Test_Channel🎯
+2025-06-10 20:32:01,097 - __main__ - INFO - Starting monitoring of channel: 🎯Signal_Sniper_Test_Channel🎯
+2025-06-10 20:32:01,097 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-10 20:32:25,128 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair EUR/USD 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 20:32:25,128 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 20:32:25,129 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T20:32:25.129119+00:00', 'id': 'signal_20250610_203225129119_001', 'session_id': 'SE2-20250610'}
+2025-06-10 20:32:25,137 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 20:32:25,184 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_203225184324_001 (Delay: 52.2ms)
+2025-06-10 20:32:25,185 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-10 20:32:25,185 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-10 20:32:25,197 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc PUT $5.14 (expiry: 59s)
+2025-06-10 20:32:25,197 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 20:32:25,301 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc PUT $5.14 - Trade ID: 4d2fbf90-0b72-4c75-8827-ac49b7ac3a58
+2025-06-10 20:33:07,060 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-10 20:33:29,372 - __main__ - INFO - 🔍 Checking trade result for trade ID: 4d2fbf90-0b72-4c75-8827-ac49b7ac3a58
+2025-06-10 20:33:29,372 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 4d2fbf90-0b72-4c75-8827-ac49b7ac3a58 - Result: (4.7288, 'win')
+2025-06-10 20:33:29,454 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 1
+2025-06-10 20:53:14,077 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-10 20:53:14,078 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE2-20250610
+2025-06-10 20:53:14,080 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE2-20250610
+2025-06-10 20:53:14,080 - session_manager - INFO - SessionManager initialized successfully
+2025-06-10 20:53:14,080 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-10 20:53:14,080 - __main__ - INFO - Initializing Telegram client...
+2025-06-10 20:53:14,088 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-10 20:53:14,102 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-10 20:53:14,691 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-10 20:53:14,691 - __main__ - INFO - Already authenticated using existing session
+2025-06-10 20:53:14,803 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-10 20:53:14,803 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-10 20:53:14,805 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-10 20:53:15,807 - __main__ - INFO - Account balance: 51408.99
+2025-06-10 20:53:15,810 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-10 20:53:15,811 - __main__ - INFO - JSON storage initialized successfully
+2025-06-10 20:53:15,812 - __main__ - INFO - Using already loaded session: SE2-20250610
+2025-06-10 20:53:15,814 - __main__ - INFO - Updated balance_start for loaded session SE2-20250610 to 51408.99
+2025-06-10 20:53:15,814 - __main__ - INFO - ✅ Session management initialized with existing session: SE2-20250610
+2025-06-10 20:53:15,814 - __main__ - INFO - 💰 Current Balance: $51408.99
+2025-06-10 20:53:33,250 - __main__ - INFO - 💵 Custom Amount: $10.00
+2025-06-10 20:53:36,915 - __main__ - INFO - ✅ Trading amount set to $10.00 for this session
+2025-06-10 20:53:36,917 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-10 20:53:36,917 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-10 20:53:36,919 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-10 20:53:36,919 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-10 20:53:36,939 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-10 20:53:36,939 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-10 20:53:36,939 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-10 21:01:18,656 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-10 21:01:28,347 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-06-10 21:01:28,347 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-06-10 21:01:47,522 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair EUR/USD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-10 21:01:47,523 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-10 21:01:47,523 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-10T21:01:47.523222+00:00', 'id': 'signal_20250610_210147523222_001', 'session_id': 'SE2-20250610'}
+2025-06-10 21:01:47,528 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 21:01:47,528 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_210147528743_001 (Delay: 4.3ms)
+2025-06-10 21:01:47,530 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-10 21:01:47,530 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-10 21:01:47,538 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc CALL $10.0 (expiry: 59s)
+2025-06-10 21:01:47,538 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 21:01:47,640 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc CALL $10.0 - Trade ID: 2a15224f-5070-4d01-af68-2e9d02939c47
+2025-06-10 21:02:51,647 - __main__ - INFO - 🔍 Checking trade result for trade ID: 2a15224f-5070-4d01-af68-2e9d02939c47
+2025-06-10 21:02:51,647 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 2a15224f-5070-4d01-af68-2e9d02939c47 - Result: (9.2, 'win')
+2025-06-10 21:02:51,661 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 1
+2025-06-10 21:02:55,536 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 21:03:04,696 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-10 21:03:10,642 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/CHF (OTC)**...
+2025-06-10 21:03:10,642 - __main__ - INFO - Parsed first message: Trading pair = EUR/CHF
+2025-06-10 21:03:23,900 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair EUR/CHF 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 21:03:23,901 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 21:03:23,901 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T21:03:23.901395+00:00', 'id': 'signal_20250610_210323901395_002', 'session_id': 'SE2-20250610'}
+2025-06-10 21:03:23,905 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 21:03:23,907 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_210323907420_002 (Delay: 4.0ms)
+2025-06-10 21:03:23,907 - __main__ - INFO - 🎯 Using OTC pair: EURCHF_otc for signal pair: EUR/CHF
+2025-06-10 21:03:23,907 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-10 21:03:23,915 - __main__ - INFO - 🚀 EXECUTING TRADE: EURCHF_otc PUT $10.0 (expiry: 59s)
+2025-06-10 21:03:23,915 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 21:03:24,117 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURCHF_otc PUT $10.0 - Trade ID: a7c37804-e0b4-496e-9283-58bb737cbf15
+2025-06-10 21:04:28,125 - __main__ - INFO - 🔍 Checking trade result for trade ID: a7c37804-e0b4-496e-9283-58bb737cbf15
+2025-06-10 21:04:28,125 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: a7c37804-e0b4-496e-9283-58bb737cbf15 - Result: (9.2, 'win')
+2025-06-10 21:04:28,134 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-10 21:04:35,120 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 21:04:47,671 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-10 21:04:57,573 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-10 21:04:57,575 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-10 21:05:05,957 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CHF 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-10 21:05:05,957 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 21:05:05,957 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T21:05:05.957893+00:00', 'id': 'signal_20250610_210505957893_003', 'session_id': 'SE2-20250610'}
+2025-06-10 21:05:05,964 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 21:05:05,967 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_210505967877_003 (Delay: 7.2ms)
+2025-06-10 21:05:05,968 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-10 21:05:05,968 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-10 21:05:05,975 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc PUT $10.0 (expiry: 59s)
+2025-06-10 21:05:05,977 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 21:05:06,078 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc PUT $10.0 - Trade ID: 043d0797-fde3-4af3-a0b3-3713c2b3ce92
+2025-06-10 21:06:10,086 - __main__ - INFO - 🔍 Checking trade result for trade ID: 043d0797-fde3-4af3-a0b3-3713c2b3ce92
+2025-06-10 21:06:10,086 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 043d0797-fde3-4af3-a0b3-3713c2b3ce92 - Result: (9.2, 'win')
+2025-06-10 21:06:10,096 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 3
+2025-06-10 21:06:13,854 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-10 21:06:29,152 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-10 21:06:42,277 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-06-10 21:06:42,277 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-06-10 21:06:57,639 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair EUR/USD  
+LOWER  ? 
+Trade time: 1 MIN...
+2025-06-10 21:06:57,640 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-10 21:06:57,640 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-10T21:06:57.640137+00:00', 'id': 'signal_20250610_210657640137_004', 'session_id': 'SE2-20250610'}
+2025-06-10 21:06:57,646 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-10 21:06:57,646 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250610_210657646162_004 (Delay: 4.0ms)
+2025-06-10 21:06:57,646 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-10 21:06:57,646 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-10 21:06:57,657 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc PUT $10.0 (expiry: 59s)
+2025-06-10 21:06:57,659 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-10 21:06:57,760 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc PUT $10.0 - Trade ID: 895b5b7d-af79-44a7-ac0e-7b1dc8a73c12
+2025-06-10 21:08:01,768 - __main__ - INFO - 🔍 Checking trade result for trade ID: 895b5b7d-af79-44a7-ac0e-7b1dc8a73c12
+2025-06-10 21:08:01,768 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 895b5b7d-af79-44a7-ac0e-7b1dc8a73c12 - Result: (-10, 'loose')
+2025-06-10 21:08:01,780 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 4
+2025-06-10 21:08:05,818 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-10 21:08:14,519 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-10 21:10:19,016 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-10 21:23:14,647 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-10 21:32:09,607 - __main__ - INFO - 📨 Received message: **?**** A letter to you from my future self** **?**
+
+? Hey there, it's you, but a couple months late...
+2025-06-10 21:33:00,828 - __main__ - INFO - 📨 Received message: **?**** Friends! The working day is coming to an end, and it's time to take stock! Today, together w...
+2025-06-10 21:33:21,911 - __main__ - INFO - 📨 Received message: **?**** Friends! The working day is coming to an end, and it's time to take stock! Today, together w...
+2025-06-10 21:38:14,680 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 13:48:49,076 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-11 13:48:49,078 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE1-20250611
+2025-06-11 13:48:49,079 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE1-20250611
+2025-06-11 13:48:49,079 - session_manager - INFO - SessionManager initialized successfully
+2025-06-11 13:48:49,080 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-11 13:48:49,080 - __main__ - INFO - Initializing Telegram client...
+2025-06-11 13:48:49,090 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-11 13:48:49,103 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-11 13:48:49,247 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-11 13:48:49,247 - __main__ - INFO - Already authenticated using existing session
+2025-06-11 13:48:49,267 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-11 13:48:49,269 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-11 13:48:49,269 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-11 13:48:50,271 - __main__ - INFO - Account balance: 51432.95
+2025-06-11 13:48:50,275 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-11 13:48:50,275 - __main__ - INFO - JSON storage initialized successfully
+2025-06-11 13:48:50,275 - __main__ - INFO - Using already loaded session: SE1-20250611
+2025-06-11 13:48:50,276 - __main__ - INFO - Updated balance_start for loaded session SE1-20250611 to 51432.95
+2025-06-11 13:48:50,276 - __main__ - INFO - ✅ Session management initialized with existing session: SE1-20250611
+2025-06-11 13:48:50,276 - __main__ - INFO - 💰 Current Balance: $51432.95
+2025-06-11 13:49:18,265 - __main__ - INFO - 💵 Custom Amount: $5.14
+2025-06-11 13:49:32,636 - __main__ - INFO - ✅ Trading amount set to $5.14 for this session
+2025-06-11 13:49:32,638 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-11 13:49:32,640 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-11 13:49:32,640 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-11 13:49:32,640 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-11 13:49:32,660 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-11 13:49:32,661 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-11 13:49:32,661 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-11 13:51:37,668 - __main__ - INFO - 📨 Received message: ?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**EUR/USD (OTC...
+2025-06-11 14:00:00,967 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-11 14:00:05,464 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/NZD (OTC)**...
+2025-06-11 14:00:05,464 - __main__ - INFO - Parsed first message: Trading pair = EUR/NZD
+2025-06-11 14:00:15,272 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair EUR/NZD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-11 14:00:15,273 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/NZD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-11 14:00:15,273 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/NZD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-11T14:00:15.273700+00:00', 'id': 'signal_20250611_140015273700_001', 'session_id': 'SE1-20250611'}
+2025-06-11 14:00:15,279 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 14:00:15,281 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_140015281734_001 (Delay: 6.0ms)
+2025-06-11 14:00:15,281 - __main__ - INFO - 🎯 Using OTC pair: EURNZD_otc for signal pair: EUR/NZD
+2025-06-11 14:00:15,281 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 14:00:15,294 - __main__ - INFO - 🚀 EXECUTING TRADE: EURNZD_otc CALL $5.14 (expiry: 59s)
+2025-06-11 14:00:15,294 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 14:00:15,396 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURNZD_otc CALL $5.14 - Trade ID: 46347d5f-a20d-4d77-9e55-8978df7ea064
+2025-06-11 14:01:19,404 - __main__ - INFO - 🔍 Checking trade result for trade ID: 46347d5f-a20d-4d77-9e55-8978df7ea064
+2025-06-11 14:01:19,404 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 46347d5f-a20d-4d77-9e55-8978df7ea064 - Result: (4.7288, 'win')
+2025-06-11 14:01:19,416 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 1
+2025-06-11 14:01:21,716 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 14:01:30,959 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-11 14:01:36,876 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/RUB (OTC)**...
+2025-06-11 14:01:36,876 - __main__ - INFO - Parsed first message: Trading pair = EUR/RUB
+2025-06-11 14:01:48,263 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair EUR/RUB 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-11 14:01:48,263 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/RUB', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-11 14:01:48,264 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/RUB', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-11T14:01:48.264328+00:00', 'id': 'signal_20250611_140148264328_002', 'session_id': 'SE1-20250611'}
+2025-06-11 14:01:48,268 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 14:01:48,270 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_140148268424_002 (Delay: 2.1ms)
+2025-06-11 14:01:48,270 - __main__ - INFO - 🎯 Using OTC pair: EURRUB_otc for signal pair: EUR/RUB
+2025-06-11 14:01:48,270 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 14:01:48,278 - __main__ - INFO - 🚀 EXECUTING TRADE: EURRUB_otc CALL $5.14 (expiry: 59s)
+2025-06-11 14:01:48,278 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 14:01:48,380 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURRUB_otc CALL $5.14 - Trade ID: 2db93c9f-0a8c-453b-810a-8fd1c7324a97
+2025-06-11 14:02:52,388 - __main__ - INFO - 🔍 Checking trade result for trade ID: 2db93c9f-0a8c-453b-810a-8fd1c7324a97
+2025-06-11 14:02:52,388 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 2db93c9f-0a8c-453b-810a-8fd1c7324a97 - Result: (4.7288, 'win')
+2025-06-11 14:02:52,399 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-11 14:02:54,693 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 14:03:03,382 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-11 14:03:09,830 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/TRY (OTC)**...
+2025-06-11 14:03:09,830 - __main__ - INFO - Parsed first message: Trading pair = EUR/TRY
+2025-06-11 14:03:21,502 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair EUR/TRY 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-11 14:03:21,502 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/TRY', 'direction': 'LOWER', 'expiry': 1}
+2025-06-11 14:03:21,504 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/TRY', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-11T14:03:21.502219+00:00', 'id': 'signal_20250611_140321502219_003', 'session_id': 'SE1-20250611'}
+2025-06-11 14:03:21,509 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 14:03:21,510 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_140321510087_003 (Delay: 3.8ms)
+2025-06-11 14:03:21,510 - __main__ - INFO - 🎯 Using OTC pair: EURTRY_otc for signal pair: EUR/TRY
+2025-06-11 14:03:21,510 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 14:03:21,518 - __main__ - INFO - 🚀 EXECUTING TRADE: EURTRY_otc PUT $5.14 (expiry: 59s)
+2025-06-11 14:03:21,518 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 14:03:21,620 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURTRY_otc PUT $5.14 - Trade ID: 164a176d-d6ce-49bf-aba4-1d995964b13d
+2025-06-11 14:04:25,628 - __main__ - INFO - 🔍 Checking trade result for trade ID: 164a176d-d6ce-49bf-aba4-1d995964b13d
+2025-06-11 14:04:25,628 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 164a176d-d6ce-49bf-aba4-1d995964b13d - Result: (4.7288, 'win')
+2025-06-11 14:04:25,638 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 3
+2025-06-11 14:04:27,931 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 14:04:37,278 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-11 14:04:44,971 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-06-11 14:04:44,971 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-06-11 14:04:56,636 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair EUR/USD  
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-11 14:04:56,636 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-11 14:04:56,636 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-11T14:04:56.636657+00:00', 'id': 'signal_20250611_140456636657_004', 'session_id': 'SE1-20250611'}
+2025-06-11 14:04:56,642 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 14:04:56,642 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_140456642691_004 (Delay: 4.0ms)
+2025-06-11 14:04:56,642 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-11 14:04:56,643 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 14:04:56,650 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc PUT $5.14 (expiry: 59s)
+2025-06-11 14:04:56,652 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 14:04:56,753 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc PUT $5.14 - Trade ID: ebb4fff2-b629-454c-90c1-18519db88195
+2025-06-11 14:06:00,759 - __main__ - INFO - 🔍 Checking trade result for trade ID: ebb4fff2-b629-454c-90c1-18519db88195
+2025-06-11 14:06:00,760 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: ebb4fff2-b629-454c-90c1-18519db88195 - Result: (-5.14, 'loose')
+2025-06-11 14:06:00,770 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 4
+2025-06-11 14:06:03,571 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 14:06:12,421 - __main__ - INFO - 📨 Received message: ?Incredible win...
+2025-06-11 14:08:30,963 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-11 14:33:49,327 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:00:46,905 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-11 21:00:46,908 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE2-20250611
+2025-06-11 21:00:46,908 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE2-20250611
+2025-06-11 21:00:46,909 - session_manager - INFO - SessionManager initialized successfully
+2025-06-11 21:00:46,910 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-11 21:00:46,910 - __main__ - INFO - Initializing Telegram client...
+2025-06-11 21:00:46,917 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-11 21:00:46,931 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-11 21:00:47,105 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-11 21:00:47,105 - __main__ - INFO - Already authenticated using existing session
+2025-06-11 21:00:47,135 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-11 21:00:47,135 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-11 21:00:47,136 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-11 21:00:48,136 - __main__ - INFO - Account balance: 51442
+2025-06-11 21:00:48,141 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-11 21:00:48,141 - __main__ - INFO - JSON storage initialized successfully
+2025-06-11 21:00:48,141 - __main__ - INFO - Using already loaded session: SE2-20250611
+2025-06-11 21:00:48,142 - __main__ - INFO - Updated balance_start for loaded session SE2-20250611 to 51442.0
+2025-06-11 21:00:48,142 - __main__ - INFO - ✅ Session management initialized with existing session: SE2-20250611
+2025-06-11 21:00:48,143 - __main__ - INFO - 💰 Current Balance: $51442.00
+2025-06-11 21:01:04,039 - __main__ - INFO - 💵 Custom Amount: $15.40
+2025-06-11 21:01:06,872 - __main__ - INFO - ✅ Trading amount set to $15.40 for this session
+2025-06-11 21:01:06,875 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-11 21:01:06,875 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-11 21:01:06,875 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-11 21:01:06,875 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-11 21:01:06,902 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-11 21:01:06,902 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-11 21:01:06,902 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-11 21:01:33,337 - telethon.client.updates - INFO - Got difference for channel 2412213735 updates
+2025-06-11 21:01:33,337 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-11 21:01:33,339 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-11 21:01:33,339 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-11T21:01:33.339812+00:00', 'id': 'signal_20250611_210133339812_001', 'session_id': 'SE2-20250611'}
+2025-06-11 21:01:33,345 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 21:01:33,345 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_210133345836_001 (Delay: 4.6ms)
+2025-06-11 21:01:33,345 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-11 21:01:33,345 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-11 21:01:33,345 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-11 21:01:33,345 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 21:01:33,357 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc CALL $15.4 (expiry: 59s)
+2025-06-11 21:01:33,357 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 21:01:33,458 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc CALL $15.4 - Trade ID: e5cef313-a128-4d28-9558-20045cc88c1b
+2025-06-11 21:01:40,162 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-11 21:01:40,162 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-11 21:01:50,265 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/CHF 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-11 21:01:50,266 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-11 21:01:50,266 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-11T21:01:50.266704+00:00', 'id': 'signal_20250611_210150266704_002', 'session_id': 'SE2-20250611'}
+2025-06-11 21:01:50,272 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 21:01:50,273 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_210150273084_002 (Delay: 3.8ms)
+2025-06-11 21:01:50,273 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-11 21:01:50,273 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 21:01:50,287 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc PUT $15.4 (expiry: 59s)
+2025-06-11 21:01:50,287 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 21:01:50,388 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc PUT $15.4 - Trade ID: 185dbc71-6534-44f4-8fee-01faef9fcfc6
+2025-06-11 21:02:37,472 - __main__ - INFO - 🔍 Checking trade result for trade ID: e5cef313-a128-4d28-9558-20045cc88c1b
+2025-06-11 21:02:37,472 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: e5cef313-a128-4d28-9558-20045cc88c1b - Result: (-15.4, 'loose')
+2025-06-11 21:02:37,482 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-11 21:02:54,397 - __main__ - INFO - 🔍 Checking trade result for trade ID: 185dbc71-6534-44f4-8fee-01faef9fcfc6
+2025-06-11 21:02:54,397 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 185dbc71-6534-44f4-8fee-01faef9fcfc6 - Result: (-15.4, 'loose')
+2025-06-11 21:02:54,409 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-11 21:03:09,977 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 21:03:26,001 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-11 21:03:29,204 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CAD (OTC)**...
+2025-06-11 21:03:29,204 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-06-11 21:03:39,852 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CAD 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-11 21:03:39,852 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-11 21:03:39,854 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-11T21:03:39.854708+00:00', 'id': 'signal_20250611_210339854708_003', 'session_id': 'SE2-20250611'}
+2025-06-11 21:03:39,860 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 21:03:39,860 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_210339860482_003 (Delay: 3.8ms)
+2025-06-11 21:03:39,860 - __main__ - INFO - 🎯 Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-06-11 21:03:39,860 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 21:03:39,872 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCAD_otc PUT $15.4 (expiry: 59s)
+2025-06-11 21:03:39,874 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 21:03:39,976 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCAD_otc PUT $15.4 - Trade ID: 0d5463ab-0b67-49b2-a5ba-efb993326ca2
+2025-06-11 21:04:43,985 - __main__ - INFO - 🔍 Checking trade result for trade ID: 0d5463ab-0b67-49b2-a5ba-efb993326ca2
+2025-06-11 21:04:43,985 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 0d5463ab-0b67-49b2-a5ba-efb993326ca2 - Result: (-15.4, 'loose')
+2025-06-11 21:04:43,999 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 3
+2025-06-11 21:05:05,737 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 21:05:15,355 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-11 21:05:24,155 - __main__ - INFO - 📨 Received message: **?Trading Pair: AED/CNY (OTC)**...
+2025-06-11 21:05:24,156 - __main__ - INFO - Parsed first message: Trading pair = AED/CNY
+2025-06-11 21:05:36,149 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair AED/CNY  
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-11 21:05:36,151 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AED/CNY', 'direction': 'LOWER', 'expiry': 1}
+2025-06-11 21:05:36,151 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AED/CNY', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-11T21:05:36.151078+00:00', 'id': 'signal_20250611_210536151078_004', 'session_id': 'SE2-20250611'}
+2025-06-11 21:05:36,156 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-11 21:05:36,156 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250611_210536156541_004 (Delay: 4.0ms)
+2025-06-11 21:05:36,156 - __main__ - INFO - 🎯 Using OTC pair: AEDCNY_otc for signal pair: AED/CNY
+2025-06-11 21:05:36,156 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-11 21:05:36,166 - __main__ - INFO - 🚀 EXECUTING TRADE: AEDCNY_otc PUT $15.4 (expiry: 59s)
+2025-06-11 21:05:36,166 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-11 21:05:36,369 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AEDCNY_otc PUT $15.4 - Trade ID: 88ba8124-67db-4c3e-89ab-c7f11e8dc59e
+2025-06-11 21:06:40,380 - __main__ - INFO - 🔍 Checking trade result for trade ID: 88ba8124-67db-4c3e-89ab-c7f11e8dc59e
+2025-06-11 21:06:40,380 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 88ba8124-67db-4c3e-89ab-c7f11e8dc59e - Result: (-15.4, 'loose')
+2025-06-11 21:06:40,390 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 4
+2025-06-11 21:06:53,800 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-11 21:07:02,852 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-11 21:09:31,902 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-11 21:12:43,132 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:15:31,981 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:17:15,072 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:18:07,308 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:18:41,913 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-11 21:22:01,690 - __main__ - INFO - Shutting down Self Bot...
+2025-06-11 21:22:01,690 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-11 21:22:01,690 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!

@@ -1,8 +1,8 @@
 {
     "timezone": "UTC",
     "trade_amount": 1,
-    "max_daily_trades": 20,
-    "max_daily_loss": 100,
+    "max_daily_trades": 50,
+    "max_daily_loss": 200,
     "min_seconds_before_timer": 5,
     "stats_interval": 1800,
     "test_mode": false,
@@ -11,7 +11,7 @@
         "strategy": "fixed",
         "risk_percentage": 2.0,
         "max_risk_percentage": 10.0,
-        "max_consecutive_losses": 3
+        "max_consecutive_losses": 5
     },
     "favorite_pairs": [
         "AUD/USD",
@@ -62,5 +62,10 @@
         "sync_on_startup": true,
         "sync_after_trades": false,
         "latency_check_interval": 3600
+    },
+    "trade_duration_optimization": {
+        "enabled": true,
+        "use_59_second_trades": true,
+        "description": "Reduces 1-minute trades to 59 seconds for better latency compensation"
     }
 }

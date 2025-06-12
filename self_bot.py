@@ -855,7 +855,17 @@ class SelfBot:
                 logger.info(f"🎯 Using regular pair: {asset} for signal pair: {signal['pair']}")
             
             direction = "call" if signal["direction"] == "HIGHER" else "put"
-            expiry = signal["expiry"] * 60  # Convert to seconds
+            
+            # Apply 59-second optimization if enabled
+            trade_duration_config = self.config.get("trade_duration_optimization", {})
+            if (trade_duration_config.get("enabled", False) and 
+                trade_duration_config.get("use_59_second_trades", False) and 
+                signal["expiry"] == 1):  # Only apply to 1-minute signals
+                expiry = 59  # Use 59 seconds instead of 60
+                logger.info(f"🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds")
+            else:
+                expiry = signal["expiry"] * 60  # Convert to seconds normally
+            
             amount = self.session_amount if self.session_amount is not None else self.config.get("trade_amount", 1)
             
             # Create trade record
@@ -981,30 +991,125 @@ class SelfBot:
                     trade["balance_after"] = balance_after if balance_after is not None else trade.get("balance_before", 0.0)
                     
                     if result is not None:
-                        if result > 0:
-                            # Winning trade
-                            logger.info(f"✅ WINNING TRADE: {trade_id} - Profit: ${result}")
+                        # Handle different result formats from PocketOption API
+                        profit_value = 0.0
+                        trade_result = "unknown"
+                        
+                        try:
+                            # Check if result is a dictionary with 'result' key
+                            if isinstance(result, dict):
+                                if 'result' in result:
+                                    trade_result = result['result']
+                                    profit_value = result.get('profit', 0.0)
+                                elif 'win' in result:
+                                    profit_value = result['win']
+                                    if profit_value > 0:
+                                        trade_result = "win"
+                                    elif profit_value < 0:
+                                        trade_result = "loss"
+                                    else:
+                                        trade_result = "draw"
+                                else:
+                                    # Try to extract numeric value from dict
+                                    for key, value in result.items():
+                                        try:
+                                            profit_value = float(value)
+                                            if profit_value > 0:
+                                                trade_result = "win"
+                                            elif profit_value < 0:
+                                                trade_result = "loss"
+                                            else:
+                                                trade_result = "draw"
+                                            break
+                                        except (ValueError, TypeError):
+                                            continue
+                            # Check if result is a tuple or list
+                            elif isinstance(result, (tuple, list)):
+                                if len(result) >= 2:
+                                    # Assume first element is success flag, second is profit
+                                    try:
+                                        profit_value = float(result[1]) if len(result) > 1 else 0.0
+                                        if profit_value > 0:
+                                            trade_result = "win"
+                                        elif profit_value < 0:
+                                            trade_result = "loss"
+                                        else:
+                                            trade_result = "draw"
+                                    except (ValueError, TypeError, IndexError):
+                                        profit_value = 0.0
+                                        trade_result = "unknown"
+                                else:
+                                    profit_value = 0.0
+                                    trade_result = "unknown"
+                            # Check if result is a numeric value
+                            elif isinstance(result, (int, float)):
+                                profit_value = float(result)
+                                if profit_value > 0:
+                                    trade_result = "win"
+                                elif profit_value < 0:
+                                    trade_result = "loss"
+                                else:
+                                    trade_result = "draw"
+                            # Check if result is a string
+                            elif isinstance(result, str):
+                                if result.lower() in ['win', 'winning']:
+                                    trade_result = "win"
+                                    profit_value = trade.get("amount", 0) * 0.8  # Estimate profit
+                                elif result.lower() in ['loss', 'losing', 'lose']:
+                                    trade_result = "loss"
+                                    profit_value = -trade.get("amount", 0)  # Loss is negative amount
+                                elif result.lower() in ['draw', 'tie']:
+                                    trade_result = "draw"
+                                    profit_value = 0.0
+                                else:
+                                    try:
+                                        profit_value = float(result)
+                                        if profit_value > 0:
+                                            trade_result = "win"
+                                        elif profit_value < 0:
+                                            trade_result = "loss"
+                                        else:
+                                            trade_result = "draw"
+                                    except ValueError:
+                                        trade_result = "unknown"
+                                        profit_value = 0.0
+                            else:
+                                logger.warning(f"⚠️ Unexpected result format: {type(result)} - {result}")
+                                trade_result = "unknown"
+                                profit_value = 0.0
+                        
+                        except Exception as e:
+                            logger.error(f"Error parsing trade result: {str(e)} - Result: {result}")
+                            trade_result = "error"
+                            profit_value = 0.0
+                        
+                        # Update trade based on parsed result
+                        if trade_result == "win":
+                            logger.info(f"✅ WINNING TRADE: {trade_id} - Profit: ${profit_value}")
                             trade["result"] = "win"
-                            trade["profit"] = result
+                            trade["profit"] = profit_value
                             self.stats["winning_trades"] += 1
-                            self.stats["total_profit"] += result
+                            self.stats["total_profit"] += profit_value
                             self.session_data["wins"] += 1
-                            self.session_data["profit_loss"] += result
-                        elif result < 0:
-                            # Losing trade
-                            logger.info(f"❌ LOSING TRADE: {trade_id} - Loss: ${result}")
+                            self.session_data["profit_loss"] += profit_value
+                        elif trade_result == "loss":
+                            logger.info(f"❌ LOSING TRADE: {trade_id} - Loss: ${profit_value}")
                             trade["result"] = "loss"
-                            trade["profit"] = result
+                            trade["profit"] = profit_value
                             self.stats["losing_trades"] += 1
-                            self.stats["total_profit"] += result
+                            self.stats["total_profit"] += profit_value
                             self.session_data["losses"] += 1
-                            self.session_data["profit_loss"] += result
-                        else:
-                            # Draw
+                            self.session_data["profit_loss"] += profit_value
+                        elif trade_result == "draw":
                             logger.info(f"⚖️ DRAW TRADE: {trade_id} - No profit/loss")
                             trade["result"] = "draw"
                             trade["profit"] = 0.0
                             self.session_data["draws"] += 1
+                        else:
+                            logger.warning(f"⚠️ UNKNOWN TRADE RESULT: {trade_id} - Result: {result}")
+                            trade["result"] = "unknown"
+                            trade["profit"] = 0.0
+                            trade["error_message"] = f"Unknown result format: {result}"
                         
                         # Update trade in JSON storage
                         self.storage.save_trade(trade)

@@ -166,5 +166,131 @@
     "signal_id": "signal_20250609_210946053893_004",
     "pair": "EUR/USD",
     "direction": "LOWER"
+  },
+  {
+    "fingerprint": "14c10588d09dc864",
+    "timestamp": "2025-06-10T14:00:45.361455",
+    "signal_id": "signal_20250610_140045361455_001",
+    "pair": "AUD/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "bf842101c99c8427",
+    "timestamp": "2025-06-10T14:02:21.537794",
+    "signal_id": "signal_20250610_140221537794_002",
+    "pair": "AUD/NZD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "c5f26d03455e684b",
+    "timestamp": "2025-06-10T14:04:01.703136",
+    "signal_id": "signal_20250610_140401701583_003",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "02d4e8a222887305",
+    "timestamp": "2025-06-10T14:05:42.271608",
+    "signal_id": "signal_20250610_140542271609_004",
+    "pair": "AUD/NZD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "0b736ef833d60179",
+    "timestamp": "2025-06-10T14:07:25.424676",
+    "signal_id": "signal_20250610_140725423879_005",
+    "pair": "AUD/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "4f8174ff38e539d4",
+    "timestamp": "2025-06-10T20:32:25.130135",
+    "signal_id": "signal_20250610_203225129119_001",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "4009bfe43b288743",
+    "timestamp": "2025-06-10T21:01:47.523222",
+    "signal_id": "signal_20250610_210147523222_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "2357a5b3e10f537d",
+    "timestamp": "2025-06-10T21:03:23.901394",
+    "signal_id": "signal_20250610_210323901395_002",
+    "pair": "EUR/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "5d69c853da62fe3e",
+    "timestamp": "2025-06-10T21:05:05.957892",
+    "signal_id": "signal_20250610_210505957893_003",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "ae4d64840d116570",
+    "timestamp": "2025-06-10T21:06:57.640137",
+    "signal_id": "signal_20250610_210657640137_004",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "cc1f789f234dea4a",
+    "timestamp": "2025-06-11T14:00:15.273700",
+    "signal_id": "signal_20250611_140015273700_001",
+    "pair": "EUR/NZD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "42224d425a47f5c3",
+    "timestamp": "2025-06-11T14:01:48.264328",
+    "signal_id": "signal_20250611_140148264328_002",
+    "pair": "EUR/RUB",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "b38db4344f56a647",
+    "timestamp": "2025-06-11T14:03:21.504229",
+    "signal_id": "signal_20250611_140321502219_003",
+    "pair": "EUR/TRY",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "758aa33a339d6a39",
+    "timestamp": "2025-06-11T14:04:56.637451",
+    "signal_id": "signal_20250611_140456636657_004",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "dc4d3035383c4832",
+    "timestamp": "2025-06-11T21:01:33.339811",
+    "signal_id": "signal_20250611_210133339812_001",
+    "pair": "AUD/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "7cf7d85119b6ae0c",
+    "timestamp": "2025-06-11T21:01:50.266704",
+    "signal_id": "signal_20250611_210150266704_002",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "825de187d831d238",
+    "timestamp": "2025-06-11T21:03:39.854708",
+    "signal_id": "signal_20250611_210339854708_003",
+    "pair": "AUD/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "37f39ff744b5879c",
+    "timestamp": "2025-06-11T21:05:36.151510",
+    "signal_id": "signal_20250611_210536151078_004",
+    "pair": "AED/CNY",
+    "direction": "LOWER"
   }
 ]
