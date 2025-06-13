@@ -4168,3 +4168,151 @@ R...
 2025-06-11 21:22:01,690 - __main__ - INFO - Shutting down Self Bot...
 2025-06-11 21:22:01,690 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
 2025-06-11 21:22:01,690 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-06-12 14:55:52,309 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-12 14:55:52,311 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE1-20250612
+2025-06-12 14:55:52,313 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE1-20250612
+2025-06-12 14:55:52,313 - session_manager - INFO - SessionManager initialized successfully
+2025-06-12 14:55:52,315 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-12 14:55:52,315 - __main__ - INFO - Initializing Telegram client...
+2025-06-12 14:55:52,322 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-12 14:55:52,335 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-12 14:55:53,012 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-12 14:55:53,012 - __main__ - INFO - Already authenticated using existing session
+2025-06-12 14:55:53,084 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-12 14:55:53,084 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-12 14:55:53,086 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-12 14:55:54,087 - __main__ - INFO - Account balance: 51306.99
+2025-06-12 14:55:54,090 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-12 14:55:54,090 - __main__ - INFO - JSON storage initialized successfully
+2025-06-12 14:55:54,090 - __main__ - INFO - Using already loaded session: SE1-20250612
+2025-06-12 14:55:54,091 - __main__ - INFO - Updated balance_start for loaded session SE1-20250612 to 51306.99
+2025-06-12 14:55:54,092 - __main__ - INFO - ✅ Session management initialized with existing session: SE1-20250612
+2025-06-12 14:55:54,092 - __main__ - INFO - 💰 Current Balance: $51306.99
+2025-06-12 14:59:52,581 - __main__ - INFO - Shutting down Self Bot...
+2025-06-12 20:50:23,258 - __main__ - INFO - Using 'sessions' for session-related data files.
+2025-06-12 20:50:23,260 - session_manager - INFO - Found externally started active session in sessions\active_session.json: SE2-20250612
+2025-06-12 20:50:23,262 - session_manager - INFO - Successfully loaded and adopted active session from sessions\active_session.json: SE2-20250612
+2025-06-12 20:50:23,262 - session_manager - INFO - SessionManager initialized successfully
+2025-06-12 20:50:23,262 - session_manager - INFO - SignalDeduplicator initialized successfully
+2025-06-12 20:50:23,262 - __main__ - INFO - Initializing Telegram client...
+2025-06-12 20:50:23,272 - telethon.network.mtprotosender - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-06-12 20:50:23,286 - telethon.network.mtprotosender - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-06-12 20:50:23,589 - __main__ - INFO - Started Telegram client in user account mode
+2025-06-12 20:50:23,589 - __main__ - INFO - Already authenticated using existing session
+2025-06-12 20:50:23,659 - __main__ - INFO - Logged in as: Pieter Stanton (@piet43)
+2025-06-12 20:50:23,659 - __main__ - INFO - Initializing Pocket Option client (Demo mode: True)
+2025-06-12 20:50:23,661 - __main__ - INFO - Successfully connected to Pocket Option API
+2025-06-12 20:50:24,662 - __main__ - INFO - Account balance: 51306.99
+2025-06-12 20:50:24,665 - __main__ - INFO - Subscription to favorite pairs is currently disabled due to API limitations.
+2025-06-12 20:50:24,665 - __main__ - INFO - JSON storage initialized successfully
+2025-06-12 20:50:24,665 - __main__ - INFO - Using already loaded session: SE2-20250612
+2025-06-12 20:50:24,667 - __main__ - INFO - Updated balance_start for loaded session SE2-20250612 to 51306.99
+2025-06-12 20:50:24,667 - __main__ - INFO - ✅ Session management initialized with existing session: SE2-20250612
+2025-06-12 20:50:24,667 - __main__ - INFO - 💰 Current Balance: $51306.99
+2025-06-12 20:50:42,616 - __main__ - INFO - 💵 Custom Amount: $10.00
+2025-06-12 20:50:45,087 - __main__ - INFO - ✅ Trading amount set to $10.00 for this session
+2025-06-12 20:50:45,091 - __main__ - INFO - ✅ Self Bot v1.5 initialized successfully
+2025-06-12 20:50:45,091 - __main__ - INFO - 💰 REAL TRADING MODE ENABLED
+2025-06-12 20:50:45,091 - __main__ - INFO - Bot is now monitoring for signals...
+2025-06-12 20:50:45,091 - __main__ - INFO - Accessing channel: BINARY TRADING CLUB
+2025-06-12 20:50:45,116 - __main__ - INFO - Accessed channel by ID: BINARY TRADING CLUB
+2025-06-12 20:50:45,116 - __main__ - INFO - Starting monitoring of channel: BINARY TRADING CLUB
+2025-06-12 20:50:45,116 - __main__ - INFO - Event handler registered. Waiting for signals...
+2025-06-12 21:00:01,472 - telethon.client.updates - INFO - Got difference for channel 2412213735 updates
+2025-06-12 21:00:01,474 - __main__ - INFO - 📨 Received message: ?Get ready to earn! Starting soon!
+
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-06-12 21:00:01,474 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-12 21:00:01,474 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-12 21:00:01,475 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-12 21:00:08,556 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD 
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-12 21:00:08,556 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-12 21:00:08,556 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-12T21:00:08.556968+00:00', 'id': 'signal_20250612_210008556968_001', 'session_id': 'SE2-20250612'}
+2025-06-12 21:00:08,565 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-12 21:00:08,569 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250612_210008569025_001 (Delay: 10.0ms)
+2025-06-12 21:00:08,569 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-12 21:00:08,569 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-12 21:00:08,578 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $10.0 (expiry: 59s)
+2025-06-12 21:00:08,580 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-12 21:00:08,782 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $10.0 - Trade ID: bd868317-b33a-4fa0-b7d1-20efd40184c0
+2025-06-12 21:01:12,792 - __main__ - INFO - 🔍 Checking trade result for trade ID: bd868317-b33a-4fa0-b7d1-20efd40184c0
+2025-06-12 21:01:12,792 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: bd868317-b33a-4fa0-b7d1-20efd40184c0 - Result: (9.2, 'win')
+2025-06-12 21:01:12,803 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 1
+2025-06-12 21:01:14,174 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-12 21:01:20,906 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-12 21:01:30,880 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/GBP (OTC)**...
+2025-06-12 21:01:30,880 - __main__ - INFO - Parsed first message: Trading pair = EUR/GBP
+2025-06-12 21:01:40,636 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair EUR/GBP 
+HIGHER ? 
+Trade time: 1 MIN...
+2025-06-12 21:01:40,637 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/GBP', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-12 21:01:40,637 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/GBP', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-12T21:01:40.637181+00:00', 'id': 'signal_20250612_210140637181_002', 'session_id': 'SE2-20250612'}
+2025-06-12 21:01:40,643 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-12 21:01:40,644 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250612_210140643210_002 (Delay: 4.0ms)
+2025-06-12 21:01:40,644 - __main__ - INFO - 🎯 Using OTC pair: EURGBP_otc for signal pair: EUR/GBP
+2025-06-12 21:01:40,644 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-12 21:01:40,654 - __main__ - INFO - 🚀 EXECUTING TRADE: EURGBP_otc CALL $10.0 (expiry: 59s)
+2025-06-12 21:01:40,654 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-12 21:01:40,755 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURGBP_otc CALL $10.0 - Trade ID: cc9f0fee-a2d9-453a-bd7d-72b4449c5eaa
+2025-06-12 21:02:44,764 - __main__ - INFO - 🔍 Checking trade result for trade ID: cc9f0fee-a2d9-453a-bd7d-72b4449c5eaa
+2025-06-12 21:02:44,764 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: cc9f0fee-a2d9-453a-bd7d-72b4449c5eaa - Result: (-10, 'loose')
+2025-06-12 21:02:44,774 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-12 21:02:47,417 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-12 21:02:56,255 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-12 21:02:59,614 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/RUB (OTC)**...
+2025-06-12 21:02:59,614 - __main__ - INFO - Parsed first message: Trading pair = EUR/RUB
+2025-06-12 21:03:13,969 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair EUR/RUB 
+HIGHER ?
+Trade time: 1 MIN...
+2025-06-12 21:03:13,970 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/RUB', 'direction': 'HIGHER', 'expiry': 1}
+2025-06-12 21:03:13,970 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/RUB', 'timer': '00:01:00', 'direction': 'HIGHER', 'expiry': 1, 'timestamp': '2025-06-12T21:03:13.970364+00:00', 'id': 'signal_20250612_210313970364_003', 'session_id': 'SE2-20250612'}
+2025-06-12 21:03:13,976 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-12 21:03:13,977 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250612_210313976388_003 (Delay: 4.0ms)
+2025-06-12 21:03:13,977 - __main__ - INFO - 🎯 Using OTC pair: EURRUB_otc for signal pair: EUR/RUB
+2025-06-12 21:03:13,977 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-12 21:03:13,985 - __main__ - INFO - 🚀 EXECUTING TRADE: EURRUB_otc CALL $10.0 (expiry: 59s)
+2025-06-12 21:03:13,987 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-12 21:03:14,188 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURRUB_otc CALL $10.0 - Trade ID: 9670ab70-2bcb-4f5e-9843-864e8bd35f51
+2025-06-12 21:04:18,198 - __main__ - INFO - 🔍 Checking trade result for trade ID: 9670ab70-2bcb-4f5e-9843-864e8bd35f51
+2025-06-12 21:04:18,198 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 9670ab70-2bcb-4f5e-9843-864e8bd35f51 - Result: (9.2, 'win')
+2025-06-12 21:04:18,209 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 3
+2025-06-12 21:04:18,909 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-12 21:04:26,177 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-12 21:04:29,283 - __main__ - INFO - 📨 Received message: **?Trading Pair: EUR/USD (OTC)**...
+2025-06-12 21:04:29,285 - __main__ - INFO - Parsed first message: Trading pair = EUR/USD
+2025-06-12 21:04:41,289 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair EUR/USD  
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-12 21:04:41,291 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'EUR/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-12 21:04:41,291 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'EUR/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-12T21:04:41.291448+00:00', 'id': 'signal_20250612_210441291448_004', 'session_id': 'SE2-20250612'}
+2025-06-12 21:04:41,296 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-12 21:04:41,296 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250612_210441296980_004 (Delay: 3.0ms)
+2025-06-12 21:04:41,296 - __main__ - INFO - 🎯 Using OTC pair: EURUSD_otc for signal pair: EUR/USD
+2025-06-12 21:04:41,296 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-12 21:04:41,307 - __main__ - INFO - 🚀 EXECUTING TRADE: EURUSD_otc PUT $10.0 (expiry: 59s)
+2025-06-12 21:04:41,307 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-12 21:04:41,409 - __main__ - INFO - ✅ REAL TRADE EXECUTED: EURUSD_otc PUT $10.0 - Trade ID: f9ddb08c-9f1a-4ba8-8df0-0f73865c17aa
+2025-06-12 21:05:45,418 - __main__ - INFO - 🔍 Checking trade result for trade ID: f9ddb08c-9f1a-4ba8-8df0-0f73865c17aa
+2025-06-12 21:05:45,418 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: f9ddb08c-9f1a-4ba8-8df0-0f73865c17aa - Result: (9.2, 'win')
+2025-06-12 21:05:45,428 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 4
+2025-06-12 21:05:47,052 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-12 21:05:56,436 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-12 21:07:31,223 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?  
+  
+R...
+2025-06-12 21:20:23,599 - telethon.client.updates - INFO - Got difference for account updates
+2025-06-12 21:35:55,810 - __main__ - INFO - Shutting down Self Bot...
+2025-06-12 21:35:55,812 - telethon.network.mtprotosender - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-06-12 21:35:55,812 - telethon.network.mtprotosender - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!

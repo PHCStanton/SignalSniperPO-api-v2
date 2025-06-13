@@ -292,5 +292,33 @@
     "signal_id": "signal_20250611_210536151078_004",
     "pair": "AED/CNY",
     "direction": "LOWER"
+  },
+  {
+    "fingerprint": "3386df53222dd7ed",
+    "timestamp": "2025-06-12T21:00:08.556968",
+    "signal_id": "signal_20250612_210008556968_001",
+    "pair": "AUD/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "a2e80cff7654cbb7",
+    "timestamp": "2025-06-12T21:01:40.637181",
+    "signal_id": "signal_20250612_210140637181_002",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "582c4382699e4548",
+    "timestamp": "2025-06-12T21:03:13.970364",
+    "signal_id": "signal_20250612_210313970364_003",
+    "pair": "EUR/RUB",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "4be99abc6b2aaec9",
+    "timestamp": "2025-06-12T21:04:41.291952",
+    "signal_id": "signal_20250612_210441291448_004",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
   }
 ]

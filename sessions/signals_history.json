@@ -460,5 +460,49 @@
     "session_id": "SE2-20250611",
     "is_valid": true,
     "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "AUD/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-06-12T21:00:08.556968+00:00",
+    "id": "signal_20250612_210008556968_001",
+    "session_id": "SE2-20250612",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/GBP",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-12T21:01:40.637181+00:00",
+    "id": "signal_20250612_210140637181_002",
+    "session_id": "SE2-20250612",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/RUB",
+    "timer": "00:01:00",
+    "direction": "HIGHER",
+    "expiry": 1,
+    "timestamp": "2025-06-12T21:03:13.970364+00:00",
+    "id": "signal_20250612_210313970364_003",
+    "session_id": "SE2-20250612",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
+  },
+  {
+    "pair": "EUR/USD",
+    "timer": "00:01:00",
+    "direction": "LOWER",
+    "expiry": 1,
+    "timestamp": "2025-06-12T21:04:41.291448+00:00",
+    "id": "signal_20250612_210441291448_004",
+    "session_id": "SE2-20250612",
+    "is_valid": true,
+    "validation_message": "Signal is valid"
   }
 ]
