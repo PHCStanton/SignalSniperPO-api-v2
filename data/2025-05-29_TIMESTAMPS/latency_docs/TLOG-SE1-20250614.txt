@@ -1,0 +1,90 @@
+...
+In this session we will use these trading pairs:
+
+**AUD/USD (OTC...
+2025-06-14 14:00:01,759 - __main__ - INFO - 📨 Received message: **? The trading session has already started! Let's go!**...
+2025-06-14 14:00:01,759 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/USD (OTC)**...
+2025-06-14 14:00:01,759 - __main__ - INFO - Parsed first message: Trading pair = AUD/USD
+2025-06-14 14:00:07,938 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+First signal: Currency pair AUD/USD
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-14 14:00:07,940 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/USD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-14 14:00:07,940 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/USD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-14T14:00:07.940324+00:00', 'id': 'signal_20250614_140007940324_001', 'session_id': 'SE-20250613'}
+2025-06-14 14:00:07,950 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-14 14:00:07,950 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250614_140007950881_001 (Delay: 8.5ms)
+2025-06-14 14:00:07,950 - __main__ - INFO - 🎯 Using OTC pair: AUDUSD_otc for signal pair: AUD/USD
+2025-06-14 14:00:07,950 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-14 14:00:07,963 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDUSD_otc PUT $5.0 (expiry: 59s)
+2025-06-14 14:00:07,963 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-14 14:00:08,064 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDUSD_otc PUT $5.0 - Trade ID: c22e18ea-2d5a-4227-982c-025bfae8477b
+2025-06-14 14:01:12,078 - __main__ - INFO - 🔍 Checking trade result for trade ID: c22e18ea-2d5a-4227-982c-025bfae8477b
+2025-06-14 14:01:12,079 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: c22e18ea-2d5a-4227-982c-025bfae8477b - Result: (-5, 'loose')
+2025-06-14 14:01:12,091 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 1
+2025-06-14 14:01:16,029 - __main__ - INFO - 📨 Received message: Signal result: +$0...
+2025-06-14 14:01:26,421 - __main__ - INFO - 📨 Received message: ?Bad luck...
+2025-06-14 14:01:31,511 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/NZD (OTC)**...
+2025-06-14 14:01:31,513 - __main__ - INFO - Parsed first message: Trading pair = AUD/NZD
+2025-06-14 14:01:43,670 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Second signal: Currency pair AUD/NZD
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-14 14:01:43,671 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/NZD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-14 14:01:43,671 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/NZD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-14T14:01:43.671644+00:00', 'id': 'signal_20250614_140143671644_002', 'session_id': 'SE-20250613'}
+2025-06-14 14:01:43,678 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-14 14:01:43,678 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250614_140143678141_002 (Delay: 4.0ms)
+2025-06-14 14:01:43,678 - __main__ - INFO - 🎯 Using OTC pair: AUDNZD_otc for signal pair: AUD/NZD
+2025-06-14 14:01:43,678 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-14 14:01:43,689 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDNZD_otc PUT $5.0 (expiry: 59s)
+2025-06-14 14:01:43,689 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-14 14:01:43,791 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDNZD_otc PUT $5.0 - Trade ID: d4245de5-acec-4581-87f4-c46944745d50
+2025-06-14 14:02:47,801 - __main__ - INFO - 🔍 Checking trade result for trade ID: d4245de5-acec-4581-87f4-c46944745d50
+2025-06-14 14:02:47,801 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: d4245de5-acec-4581-87f4-c46944745d50 - Result: (-5, 'loose')
+2025-06-14 14:02:47,812 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 2
+2025-06-14 14:02:58,051 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-14 14:03:07,793 - __main__ - INFO - 📨 Received message: ?Wonderful trade...
+2025-06-14 14:03:11,218 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CHF (OTC)**...
+2025-06-14 14:03:11,218 - __main__ - INFO - Parsed first message: Trading pair = AUD/CHF
+2025-06-14 14:03:19,243 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Third signal: Currency pair AUD/CHF
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-14 14:03:19,245 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CHF', 'direction': 'LOWER', 'expiry': 1}
+2025-06-14 14:03:19,245 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CHF', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-14T14:03:19.245440+00:00', 'id': 'signal_20250614_140319245440_003', 'session_id': 'SE-20250613'}
+2025-06-14 14:03:19,251 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-14 14:03:19,251 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250614_140319251469_003 (Delay: 4.0ms)
+2025-06-14 14:03:19,251 - __main__ - INFO - 🎯 Using OTC pair: AUDCHF_otc for signal pair: AUD/CHF
+2025-06-14 14:03:19,251 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-14 14:03:19,267 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCHF_otc PUT $5.0 (expiry: 59s)
+2025-06-14 14:03:19,267 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-14 14:03:19,369 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCHF_otc PUT $5.0 - Trade ID: b48b8ace-1463-47de-902c-9f22195ec9c8
+2025-06-14 14:04:23,379 - __main__ - INFO - 🔍 Checking trade result for trade ID: b48b8ace-1463-47de-902c-9f22195ec9c8
+2025-06-14 14:04:23,379 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: b48b8ace-1463-47de-902c-9f22195ec9c8 - Result: (-5, 'loose')
+2025-06-14 14:04:23,390 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 3
+2025-06-14 14:04:30,790 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-14 14:04:39,445 - __main__ - INFO - 📨 Received message: ?Excellent result!...
+2025-06-14 14:04:42,810 - __main__ - INFO - 📨 Received message: **?Trading Pair: AUD/CAD (OTC)**...
+2025-06-14 14:04:42,810 - __main__ - INFO - Parsed first message: Trading pair = AUD/CAD
+2025-06-14 14:04:52,587 - __main__ - INFO - 📨 Received message: ?SET THE TIMER TO 00:01:00?
+
+Fourth signal: Currency pair AUD/CAD
+LOWER  ?
+Trade time: 1 MIN...
+2025-06-14 14:04:52,587 - __main__ - INFO - ✅ PARSED SIGNAL: {'timer': '00:01:00', 'pair': 'AUD/CAD', 'direction': 'LOWER', 'expiry': 1}
+2025-06-14 14:04:52,587 - __main__ - INFO - 🎯 COMPLETE SIGNAL DETECTED: {'pair': 'AUD/CAD', 'timer': '00:01:00', 'direction': 'LOWER', 'expiry': 1, 'timestamp': '2025-06-14T14:04:52.587455+00:00', 'id': 'signal_20250614_140452587455_004', 'session_id': 'SE-20250613'}
+2025-06-14 14:04:52,595 - __main__ - INFO - 🚀 EXECUTING TRADE IMMEDIATELY
+2025-06-14 14:04:52,595 - timestamp_recorder - INFO - Trade execution timestamp recorded: trade_20250614_140452595491_004 (Delay: 4.0ms)
+2025-06-14 14:04:52,595 - __main__ - INFO - 🎯 Using OTC pair: AUDCAD_otc for signal pair: AUD/CAD
+2025-06-14 14:04:52,595 - __main__ - INFO - 🎯 LATENCY OPTIMIZATION: Using 59-second trade duration instead of 60 seconds
+2025-06-14 14:04:52,611 - __main__ - INFO - 🚀 EXECUTING TRADE: AUDCAD_otc PUT $5.0 (expiry: 59s)
+2025-06-14 14:04:52,611 - __main__ - INFO - 💰 REAL TRADING MODE: Executing actual trade on Pocket Option platform
+2025-06-14 14:04:52,812 - __main__ - INFO - ✅ REAL TRADE EXECUTED: AUDCAD_otc PUT $5.0 - Trade ID: 32dfcb9d-15be-4c27-8333-7df22821a1e4
+2025-06-14 14:05:56,826 - __main__ - INFO - 🔍 Checking trade result for trade ID: 32dfcb9d-15be-4c27-8333-7df22821a1e4
+2025-06-14 14:05:56,826 - __main__ - WARNING - ⚠️ UNKNOWN TRADE RESULT: 32dfcb9d-15be-4c27-8333-7df22821a1e4 - Result: (4.6, 'win')
+2025-06-14 14:05:56,838 - __main__ - INFO - 📊 TRADING STATS: Total Profit: $0.00 | Wins: 0 | Losses: 0 | Total Trades: 4
+2025-06-14 14:05:59,095 - __main__ - INFO - 📨 Received message: Signal result: +$644...
+2025-06-14 14:06:07,989 - __main__ - INFO - 📨 Received message: ?Stability, the key to success...
+2025-06-14 14:08:21,220 - __main__ - INFO - 📨 Received message: ? Congratulations to the Private Trading Club participants on a successful trading session! ?

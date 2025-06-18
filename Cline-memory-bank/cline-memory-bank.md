@@ -44,6 +44,27 @@ I have successfully completed Phase 1 of the BinaryOptionsToolsV2 migration, est
 
 ## Recent changes
 
+-   **Channel Switching Tool (June 17, 2025)**: Created `channel-switch.py` for easy channel configuration updates
+    -   Standalone script that modifies `config/telegram_config.json` without affecting running bot
+    -   Prompts for Channel Name and Channel ID with validation
+    -   Creates automatic backups with timestamps before making changes
+    -   Handles negative channel IDs properly (common for Telegram channels)
+    -   Requires confirmation before applying changes
+    -   Allows testing different channels during live bot runs without code modifications
+-   **Trade Result Parsing Fix (June 17, 2025)**: RESOLVED "UNKNOWN TRADE RESULT" warnings
+    -   Bot was unable to parse trade results in format `(0.92, 'win')` from PocketOption API
+    -   Root cause: API returns tuple with (profit_amount, 'win'/'loss') format
+    -   Solution: Enhanced trade result parsing to handle this specific tuple format
+    -   Created `TRADE_RESULT_PARSING_FIX_SUMMARY.md` documenting the fix
+    -   Created `test_trade_result_parsing.py` - all 14 test cases passed
+    -   Bot now correctly recognizes wins/losses and updates statistics properly
+-   **Datetime Timezone Fix V2 (June 17, 2025)**: RESOLVED critical "can't subtract offset-naive and offset-aware datetimes" error
+    -   Error occurred in `timestamp_recorder.py` during execution delay calculation
+    -   Root cause: `datetime.now()` in `record_execution_timestamp` returned timezone-naive datetime
+    -   Solution: Changed to `datetime.now(pytz.UTC)` to return timezone-aware UTC datetime
+    -   Created `DATETIME_TIMEZONE_FIX_V2_SUMMARY.md` documenting the complete fix
+    -   Created `test_datetime_timezone_fix_v2.py` with comprehensive test suite
+    -   All tests passed - bot can now execute trades without timezone errors
 -   **59-Second Optimization Implementation**: Added comprehensive latency compensation feature
     -   Updated `config/bot_config.json` with new `trade_duration_optimization` section
     -   Modified `self_bot_v3_integrated.py` and `self_bot.py` with smart logic for 1-minute signals

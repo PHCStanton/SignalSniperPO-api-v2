@@ -37,23 +37,37 @@ class TimestampRecorder:
                 json.dump([], f)
     
     def record_signal_timestamp(self, signal_id: str, currency_pair: str, session_id: str) -> Dict:
-        """Record when a signal is received and return timestamp record."""
-        signal_received_time = datetime.now()
+        """Record when a signal is received and return timestamp record with UTC timezone."""
+        import time
+        import pytz
+        
+        # Use high-precision UTC timestamp
+        ns = time.time_ns()
+        signal_received_time = datetime.fromtimestamp(ns / 1e9, tz=pytz.UTC)
+        
+        # Also get Paris time for debugging
+        paris_tz = pytz.timezone('Europe/Paris')
+        paris_time = signal_received_time.astimezone(paris_tz)
         
         timestamp_record = {
             "signal_id": signal_id,
             "currency_pair": currency_pair,
             "signal_received": signal_received_time.isoformat(),
+            "signal_received_paris": paris_time.isoformat(),
+            "nanoseconds": ns,
             "session_id": session_id,
             "status": "signal_received"
         }
         
-        logger.debug(f"Signal timestamp recorded: {signal_id}")
+        logger.debug(f"Signal timestamp recorded: {signal_id} - UTC: {signal_received_time.isoformat()} | Paris: {paris_time.isoformat()}")
         return timestamp_record
     
     def record_execution_timestamp(self, timestamp_record: Dict, trade_id: str) -> Dict:
         """Record when trade execution starts and calculate delay."""
-        execution_time = datetime.now()
+        import pytz
+        
+        # Use timezone-aware UTC datetime for execution time
+        execution_time = datetime.now(pytz.UTC)
         
         # Calculate execution delay
         signal_time = datetime.fromisoformat(timestamp_record["signal_received"])

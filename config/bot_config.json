@@ -65,7 +65,15 @@
     },
     "trade_duration_optimization": {
         "enabled": true,
-        "use_59_second_trades": true,
-        "description": "Reduces 1-minute trades to 59 seconds for better latency compensation"
+        "use_59_second_trades": false,
+        "description": "Reduces 1-minute trades to 59 seconds for better latency compensation (currently disabled)"
+    },
+    "timezone_settings": {
+        "force_utc_timestamps": true,
+        "enable_timezone_logging": true,
+        "ntp_sync_check": true,
+        "clock_drift_threshold_ms": 100,
+        "log_both_timezones": true,
+        "description": "Enhanced timezone handling to fix timing discrepancies"
     }
 }

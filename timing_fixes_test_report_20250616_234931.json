@@ -1,0 +1,121 @@
+{
+  "test_timestamp": "2025-06-16T21:49:31.413192+00:00",
+  "summary": {
+    "tests_passed": 4,
+    "total_tests": 5,
+    "success_rate": 80.0
+  },
+  "test_results": {
+    "utc_consistency": {
+      "passed": true,
+      "results": [
+        {
+          "iteration": 1,
+          "timestamp": "2025-06-16T21:49:30.533694+00:00",
+          "timezone": "UTC",
+          "is_utc": true,
+          "nanoseconds": 1750110570533694300
+        },
+        {
+          "iteration": 2,
+          "timestamp": "2025-06-16T21:49:30.635926+00:00",
+          "timezone": "UTC",
+          "is_utc": true,
+          "nanoseconds": 1750110570635926600
+        },
+        {
+          "iteration": 3,
+          "timestamp": "2025-06-16T21:49:30.736261+00:00",
+          "timezone": "UTC",
+          "is_utc": true,
+          "nanoseconds": 1750110570736260900
+        },
+        {
+          "iteration": 4,
+          "timestamp": "2025-06-16T21:49:30.891052+00:00",
+          "timezone": "UTC",
+          "is_utc": true,
+          "nanoseconds": 1750110570891051900
+        },
+        {
+          "iteration": 5,
+          "timestamp": "2025-06-16T21:49:30.991396+00:00",
+          "timezone": "UTC",
+          "is_utc": true,
+          "nanoseconds": 1750110570991395800
+        }
+      ]
+    },
+    "timezone_logging": {
+      "passed": true
+    },
+    "timestamp_recorder": {
+      "passed": true
+    },
+    "system_info": {
+      "utc_offset": 2.0,
+      "env_tz": "Not set",
+      "python_tz": "Romance Daylight Time",
+      "is_utc_system": false
+    },
+    "timing_precision": {
+      "passed": true,
+      "measurements": [
+        {
+          "iteration": 1,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.273953+00:00"
+        },
+        {
+          "iteration": 2,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.284549+00:00"
+        },
+        {
+          "iteration": 3,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.326862+00:00"
+        },
+        {
+          "iteration": 4,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.337399+00:00"
+        },
+        {
+          "iteration": 5,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.347916+00:00"
+        },
+        {
+          "iteration": 6,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.358564+00:00"
+        },
+        {
+          "iteration": 7,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.369425+00:00"
+        },
+        {
+          "iteration": 8,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.379934+00:00"
+        },
+        {
+          "iteration": 9,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.390141+00:00"
+        },
+        {
+          "iteration": 10,
+          "duration_microseconds": 0.0,
+          "timestamp": "2025-06-16T21:49:31.400651+00:00"
+        }
+      ]
+    }
+  },
+  "recommendations": [
+    "Set server timezone to UTC (currently offset by 2.0 hours)",
+    "Review failed tests and implement additional fixes"
+  ]
+}

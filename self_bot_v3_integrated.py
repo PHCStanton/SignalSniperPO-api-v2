@@ -34,12 +34,28 @@ def get_high_precision_time():
     """
     Returns a high-precision, timezone-aware UTC datetime object.
     Uses time.time_ns() for nanosecond precision, available in Python 3.7+.
+    FIXED: Always use explicit UTC timezone for consistency.
     """
     # Get current time in nanoseconds since the Epoch
     ns = time.time_ns()
-    # Convert nanoseconds to a datetime object
+    # Convert nanoseconds to a datetime object with explicit UTC timezone
     # The timestamp is divided by 1e9 to convert nanoseconds to seconds
-    return datetime.fromtimestamp(ns / 1e9, tz=pytz.utc)
+    utc_dt = datetime.fromtimestamp(ns / 1e9, tz=pytz.UTC)
+    return utc_dt
+
+def log_timing_event(event_type: str, timestamp: datetime = None):
+    """
+    Log timing events with both UTC and Paris timezone for debugging.
+    """
+    if timestamp is None:
+        timestamp = get_high_precision_time()
+    
+    # Convert to Paris timezone for local reference
+    paris_tz = pytz.timezone('Europe/Paris')
+    local_time = timestamp.astimezone(paris_tz)
+    
+    logger.info(f"{event_type} - UTC: {timestamp.isoformat()} | Paris: {local_time.isoformat()}")
+    return timestamp
 
 # Import trading client manager for optimized headless login support
 try:
@@ -752,7 +768,17 @@ class SelfBot:
             if self.last_first_message and self.last_first_message_time:
                 # Check if the time between messages is within the allowed window
                 pair_match_window = self.telegram_config.get("pair_match_window", 60)
-                time_diff = (get_high_precision_time() - self.last_first_message_time).total_seconds()
+                
+                # Ensure both datetime objects are timezone-aware for comparison
+                current_time = get_high_precision_time()
+                if self.last_first_message_time.tzinfo is None:
+                    # If last_first_message_time is naive, make it UTC-aware
+                    last_message_time_utc = pytz.UTC.localize(self.last_first_message_time)
+                else:
+                    # If it's already timezone-aware, convert to UTC
+                    last_message_time_utc = self.last_first_message_time.astimezone(pytz.UTC)
+                
+                time_diff = (current_time - last_message_time_utc).total_seconds()
                 
                 if time_diff <= pair_match_window:
                     signal = self.parse_second_message(message.text)
@@ -1074,18 +1100,35 @@ class SelfBot:
                             # Check if result is a tuple or list
                             elif isinstance(result, (tuple, list)):
                                 if len(result) >= 2:
-                                    # Assume first element is success flag, second is profit
-                                    try:
-                                        profit_value = float(result[1]) if len(result) > 1 else 0.0
-                                        if profit_value > 0:
-                                            trade_result = "win"
-                                        elif profit_value < 0:
-                                            trade_result = "loss"
-                                        else:
-                                            trade_result = "draw"
-                                    except (ValueError, TypeError, IndexError):
-                                        profit_value = 0.0
-                                        trade_result = "unknown"
+                                    # Check if it's (profit, 'win'/'loss') format
+                                    if len(result) == 2 and isinstance(result[1], str):
+                                        try:
+                                            profit_value = float(result[0])
+                                            result_str = str(result[1]).lower()
+                                            if result_str in ['win', 'winning']:
+                                                trade_result = "win"
+                                            elif result_str in ['loss', 'losing', 'lose']:
+                                                trade_result = "loss"
+                                            elif result_str in ['draw', 'tie']:
+                                                trade_result = "draw"
+                                            else:
+                                                trade_result = "unknown"
+                                        except (ValueError, TypeError):
+                                            profit_value = 0.0
+                                            trade_result = "unknown"
+                                    else:
+                                        # Assume first element is success flag, second is profit
+                                        try:
+                                            profit_value = float(result[1]) if len(result) > 1 else 0.0
+                                            if profit_value > 0:
+                                                trade_result = "win"
+                                            elif profit_value < 0:
+                                                trade_result = "loss"
+                                            else:
+                                                trade_result = "draw"
+                                        except (ValueError, TypeError, IndexError):
+                                            profit_value = 0.0
+                                            trade_result = "unknown"
                                 else:
                                     profit_value = 0.0
                                     trade_result = "unknown"
