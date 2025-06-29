@@ -9,7 +9,7 @@ with enhanced latency optimization features including:
 - Process priority elevation
 - Network optimization integration
 
-Based on self_bot_v3_integrated.py with latency optimization enhancements.
+Based on SignalSniper.py with latency optimization enhancements.
 """
 
 import os

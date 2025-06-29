@@ -698,5 +698,747 @@
     "signal_id": "signal_20250618_140608064135_003",
     "pair": "AUD/NZD",
     "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "4b4d14983766c8d7",
+    "timestamp": "2025-06-19T19:43:21.088065",
+    "signal_id": "signal_20250619_174321085017_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "c1f0ea2f64804167",
+    "timestamp": "2025-06-20T02:42:21.382016",
+    "signal_id": "signal_20250620_004221380001_001",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "2ff3b9e4e4e58deb",
+    "timestamp": "2025-06-20T02:42:50.989499",
+    "signal_id": "signal_20250620_004250988502_002",
+    "pair": "AUD/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "f76451debe27323a",
+    "timestamp": "2025-06-20T02:48:25.428571",
+    "signal_id": "signal_20250620_004825428571_001",
+    "pair": "AUD/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "19eaab929260ed10",
+    "timestamp": "2025-06-20T02:48:59.409874",
+    "signal_id": "signal_20250620_004859408874_002",
+    "pair": "AUD/CHF",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "062773a654d61212",
+    "timestamp": "2025-06-20T02:49:37.303737",
+    "signal_id": "signal_20250620_004937303737_003",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a1b4a089409c6c52",
+    "timestamp": "2025-06-20T02:49:37.391293",
+    "signal_id": "signal_20250620_004937391294_004",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "dc0ec468c74aadcc",
+    "timestamp": "2025-06-20T02:49:37.502554",
+    "signal_id": "signal_20250620_004937501558_005",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "1453ad62eccc3ee1",
+    "timestamp": "2025-06-20T02:49:37.623670",
+    "signal_id": "signal_20250620_004937623670_006",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "7f41fefe3ec0d7bb",
+    "timestamp": "2025-06-20T04:11:04.807466",
+    "signal_id": "signal_20250620_021104804886_001",
+    "pair": "AUD/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "10f9654d06d14616",
+    "timestamp": "2025-06-20T04:18:18.322584",
+    "signal_id": "signal_20250620_021818320557_002",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "2dc8db5fa2a357c7",
+    "timestamp": "2025-06-20T09:30:06.175370",
+    "signal_id": "signal_20250620_073006173370_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "ca01f66ce95665f1",
+    "timestamp": "2025-06-20T09:30:06.313150",
+    "signal_id": "signal_20250620_073006312144_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "92c16a4e2243a6fe",
+    "timestamp": "2025-06-20T09:30:06.416113",
+    "signal_id": "signal_20250620_073006415120_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "2c8e951fced08df5",
+    "timestamp": "2025-06-20T09:42:55.365324",
+    "signal_id": "signal_20250620_074255363321_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "15afcc38651038a3",
+    "timestamp": "2025-06-20T09:42:55.471479",
+    "signal_id": "signal_20250620_074255469479_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "13679e9a30c4c57f",
+    "timestamp": "2025-06-20T09:42:55.574186",
+    "signal_id": "signal_20250620_074255573175_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "abf95ed364c2d000",
+    "timestamp": "2025-06-20T10:09:40.879269",
+    "signal_id": "signal_20250620_080940877244_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "543d64c87c6744a4",
+    "timestamp": "2025-06-20T10:09:40.977762",
+    "signal_id": "signal_20250620_080940976733_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "b2affafe864d9438",
+    "timestamp": "2025-06-20T10:09:41.071457",
+    "signal_id": "signal_20250620_080941070565_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "9106d7125ad52894",
+    "timestamp": "2025-06-20T10:31:38.977759",
+    "signal_id": "signal_20250620_083138963198_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "e56673bb6c9b5963",
+    "timestamp": "2025-06-20T10:31:39.075732",
+    "signal_id": "signal_20250620_083139074707_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "f755fb0ddcb2d6ec",
+    "timestamp": "2025-06-20T10:31:39.170994",
+    "signal_id": "signal_20250620_083139167849_003",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a887d28d5b76b6f7",
+    "timestamp": "2025-06-20T10:40:40.898918",
+    "signal_id": "signal_20250620_084040898918_001",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "eb1073acbc232725",
+    "timestamp": "2025-06-20T10:40:41.002225",
+    "signal_id": "signal_20250620_084041001234_002",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "232ae009ec667929",
+    "timestamp": "2025-06-20T10:55:09.837804",
+    "signal_id": "signal_20250620_085509835797_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "026a13dc8cb232ad",
+    "timestamp": "2025-06-20T10:55:09.944377",
+    "signal_id": "signal_20250620_085509942872_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "776fc568b73b8a56",
+    "timestamp": "2025-06-20T10:55:10.058203",
+    "signal_id": "signal_20250620_085510057203_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "db5418b388969989",
+    "timestamp": "2025-06-20T10:55:10.161222",
+    "signal_id": "signal_20250620_085510159224_004",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "1378663c6390178c",
+    "timestamp": "2025-06-20T11:16:46.005752",
+    "signal_id": "signal_20250620_091646002753_001",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "39c561558b1603e6",
+    "timestamp": "2025-06-20T11:16:46.177883",
+    "signal_id": "signal_20250620_091646177355_002",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "d8a28f26f9e48d0c",
+    "timestamp": "2025-06-24T08:04:45.667821",
+    "signal_id": "signal_20250624_060445665673_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "dda390604bae118c",
+    "timestamp": "2025-06-24T08:04:45.785508",
+    "signal_id": "signal_20250624_060445784515_002",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "83ed58b15ef6f9aa",
+    "timestamp": "2025-06-24T08:04:45.907423",
+    "signal_id": "signal_20250624_060445907424_003",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "f8494acb81a57cf1",
+    "timestamp": "2025-06-24T12:29:51.279999",
+    "signal_id": "signal_20250624_102951257515_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "552a0f8c79c56927",
+    "timestamp": "2025-06-24T12:29:55.907056",
+    "signal_id": "signal_20250624_102955898744_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "7d49225de0c366ff",
+    "timestamp": "2025-06-24T12:30:00.617381",
+    "signal_id": "signal_20250624_103000614780_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "fb7477676779aff8",
+    "timestamp": "2025-06-24T12:30:05.590951",
+    "signal_id": "signal_20250624_103005578289_004",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "0459ed4f1b5977a1",
+    "timestamp": "2025-06-24T12:30:11.090091",
+    "signal_id": "signal_20250624_103011088084_005",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "13e397925a6d9d49",
+    "timestamp": "2025-06-24T12:46:00.622121",
+    "signal_id": "signal_20250624_104600607990_006",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a4b0d90834b11a6d",
+    "timestamp": "2025-06-24T12:46:00.775710",
+    "signal_id": "signal_20250624_104600771172_007",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a12acaf9381e83e1",
+    "timestamp": "2025-06-24T12:46:00.863887",
+    "signal_id": "signal_20250624_104600848647_008",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "8c33bea597b52eeb",
+    "timestamp": "2025-06-25T10:38:22.050942",
+    "signal_id": "signal_20250625_083822040945_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "d79eaf4d47f136b5",
+    "timestamp": "2025-06-25T10:38:22.126178",
+    "signal_id": "signal_20250625_083822124174_001",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "819ade8ad281f898",
+    "timestamp": "2025-06-25T10:38:22.205060",
+    "signal_id": "signal_20250625_083822203056_001",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "8f5ea85cee13baa7",
+    "timestamp": "2025-06-25T10:40:33.464422",
+    "signal_id": "signal_20250625_084033460280_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "db95c54bf11b5a52",
+    "timestamp": "2025-06-25T10:40:33.507249",
+    "signal_id": "signal_20250625_084033503945_001",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "9edb979435571f91",
+    "timestamp": "2025-06-25T10:40:33.570834",
+    "signal_id": "signal_20250625_084033568829_001",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "e54ba60c77c3d0c6",
+    "timestamp": "2025-06-25T10:54:42.755435",
+    "signal_id": "signal_20250625_085442753431_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "bf5946b875885874",
+    "timestamp": "2025-06-25T10:54:42.859244",
+    "signal_id": "signal_20250625_085442858247_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "4c3dde20a9b66f07",
+    "timestamp": "2025-06-25T10:54:42.950352",
+    "signal_id": "signal_20250625_085442949351_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "d1f18e3d86e74525",
+    "timestamp": "2025-06-25T10:57:15.727484",
+    "signal_id": "signal_20250625_085715725930_004",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "8b493f0bf0efbbbb",
+    "timestamp": "2025-06-25T10:57:15.770695",
+    "signal_id": "signal_20250625_085715769174_005",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "89c1f3de35fd0bc1",
+    "timestamp": "2025-06-26T12:46:25.772119",
+    "signal_id": "signal_20250626_104625766120_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "aa2294e7c1de5016",
+    "timestamp": "2025-06-26T12:46:33.121214",
+    "signal_id": "signal_20250626_104633115078_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "21510c5740c15ed2",
+    "timestamp": "2025-06-26T12:46:37.974331",
+    "signal_id": "signal_20250626_104637964466_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "e23a63a333e3bf82",
+    "timestamp": "2025-06-26T12:46:43.655182",
+    "signal_id": "signal_20250626_104643639275_004",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "2751b2416de8bcf3",
+    "timestamp": "2025-06-26T12:46:47.896621",
+    "signal_id": "signal_20250626_104647880759_005",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "4b367e3fcf0dc41b",
+    "timestamp": "2025-06-26T13:04:14.955665",
+    "signal_id": "signal_20250626_110414955665_006",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a2cc366ee624e0d6",
+    "timestamp": "2025-06-26T13:04:19.503266",
+    "signal_id": "signal_20250626_110419491251_007",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "8a1ee1eedb0baa85",
+    "timestamp": "2025-06-27T12:10:34.376034",
+    "signal_id": "signal_20250627_101034344170_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "ff3e0bc887ff0012",
+    "timestamp": "2025-06-27T12:10:38.745135",
+    "signal_id": "signal_20250627_101038732063_002",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "253e8e0f620848d3",
+    "timestamp": "2025-06-27T12:10:42.840704",
+    "signal_id": "signal_20250627_101042834705_003",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "c5af7ebde7897175",
+    "timestamp": "2025-06-27T12:10:47.228482",
+    "signal_id": "signal_20250627_101047222895_004",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "fdb28aaf6e82d760",
+    "timestamp": "2025-06-27T12:10:51.589281",
+    "signal_id": "signal_20250627_101051573493_005",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "0fcb069ebaaa8f40",
+    "timestamp": "2025-06-27T12:24:07.716866",
+    "signal_id": "signal_20250627_102407705782_006",
+    "pair": "USD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "1d61d0798d270a2d",
+    "timestamp": "2025-06-27T12:24:18.858955",
+    "signal_id": "signal_20250627_102418851207_007",
+    "pair": "GBP/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "48a26133e8fdde41",
+    "timestamp": "2025-06-27T16:01:53.946946",
+    "signal_id": "signal_20250627_140153945153_001",
+    "pair": "AUD/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "0c81da1f1e6a1135",
+    "timestamp": "2025-06-27T16:04:09.645381",
+    "signal_id": "signal_20250627_140409641346_002",
+    "pair": "AUD/NZD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "49779d62a48d3ef4",
+    "timestamp": "2025-06-27T16:05:50.423351",
+    "signal_id": "signal_20250627_140550423352_003",
+    "pair": "AUD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "da2eee40f173d6de",
+    "timestamp": "2025-06-27T16:07:44.033410",
+    "signal_id": "signal_20250627_140744029584_004",
+    "pair": "AUD/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "bb2915396c33d86e",
+    "timestamp": "2025-06-27T23:06:48.329641",
+    "signal_id": "signal_20250627_210648329642_001",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "c061ea16cb678483",
+    "timestamp": "2025-06-27T23:08:28.708263",
+    "signal_id": "signal_20250627_210828699320_002",
+    "pair": "EUR/NZD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "6f1bc3d95e261b4a",
+    "timestamp": "2025-06-27T23:10:06.211920",
+    "signal_id": "signal_20250627_211006211920_003",
+    "pair": "EUR/CHF",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "0c1c9d6c39341084",
+    "timestamp": "2025-06-27T23:11:47.051761",
+    "signal_id": "signal_20250627_211147047711_004",
+    "pair": "EUR/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "ec94867a69c8820c",
+    "timestamp": "2025-06-29T06:24:06.008994",
+    "signal_id": "signal_20250629_042406007995_001",
+    "pair": "USD/CHF",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "add9ee7886855ec8",
+    "timestamp": "2025-06-29T06:31:19.944871",
+    "signal_id": "signal_20250629_043119943872_002",
+    "pair": "EUR/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "5fecafafac6f4a59",
+    "timestamp": "2025-06-29T06:31:49.429927",
+    "signal_id": "signal_20250629_043149429928_003",
+    "pair": "GBP/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "cc14bbd2bbc6a05e",
+    "timestamp": "2025-06-29T06:32:08.657418",
+    "signal_id": "signal_20250629_043208655885_004",
+    "pair": "GBP/USD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "107566cf82223ac5",
+    "timestamp": "2025-06-29T06:35:19.299396",
+    "signal_id": "signal_20250629_043519299396_005",
+    "pair": "USD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "598188428f6d0b5b",
+    "timestamp": "2025-06-29T06:37:01.780535",
+    "signal_id": "signal_20250629_043701780536_006",
+    "pair": "AUD/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "ffd638c55f851a4b",
+    "timestamp": "2025-06-29T06:37:17.200467",
+    "signal_id": "signal_20250629_043717199456_007",
+    "pair": "USD/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "d25f6c7793f0e54d",
+    "timestamp": "2025-06-29T06:40:18.812193",
+    "signal_id": "signal_20250629_044018811165_008",
+    "pair": "GBP/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "c23c9e5c79f302b8",
+    "timestamp": "2025-06-29T06:41:01.969135",
+    "signal_id": "signal_20250629_044101969136_009",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "dd9448625fad4cb6",
+    "timestamp": "2025-06-29T06:41:19.289501",
+    "signal_id": "signal_20250629_044119288075_010",
+    "pair": "USD/JPY",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "e477dfa565ed26a8",
+    "timestamp": "2025-06-29T06:45:50.611212",
+    "signal_id": "signal_20250629_044550610784_011",
+    "pair": "EUR/GBP",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "31be437f0079c5d4",
+    "timestamp": "2025-06-29T06:51:12.048081",
+    "signal_id": "signal_20250629_045112041542_012",
+    "pair": "EUR/CHF",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "9f3172c2c3d99c3b",
+    "timestamp": "2025-06-29T06:56:27.395047",
+    "signal_id": "signal_20250629_045627393037_013",
+    "pair": "AUD/JPY",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "d1d2efd8eef468db",
+    "timestamp": "2025-06-29T07:00:36.751682",
+    "signal_id": "signal_20250629_050036750683_014",
+    "pair": "GBP/CAD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "d48a91eb9f709aa2",
+    "timestamp": "2025-06-29T07:03:11.665918",
+    "signal_id": "signal_20250629_050311665919_015",
+    "pair": "AUD/CHF",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "946819e50e62effa",
+    "timestamp": "2025-06-29T07:06:25.819810",
+    "signal_id": "signal_20250629_050625819811_016",
+    "pair": "GBP/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "a901377111838ea3",
+    "timestamp": "2025-06-29T07:07:35.221662",
+    "signal_id": "signal_20250629_050735220664_017",
+    "pair": "GBP/AUD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "f1dc4cc4d153f083",
+    "timestamp": "2025-06-29T07:08:19.118476",
+    "signal_id": "signal_20250629_050819118476_018",
+    "pair": "EUR/AUD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "186a287e4e22fdda",
+    "timestamp": "2025-06-29T07:09:18.355477",
+    "signal_id": "signal_20250629_050918355477_019",
+    "pair": "EUR/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "33077bf684b2c072",
+    "timestamp": "2025-06-29T07:13:30.391158",
+    "signal_id": "signal_20250629_051330390158_020",
+    "pair": "EUR/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "3b3c80e4ae6e25c2",
+    "timestamp": "2025-06-29T07:15:10.453012",
+    "signal_id": "signal_20250629_051510452015_021",
+    "pair": "AUD/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "949830055d8efc5f",
+    "timestamp": "2025-06-29T07:15:11.803489",
+    "signal_id": "signal_20250629_051511802491_022",
+    "pair": "AUD/JPY",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "4e6f0401cd167902",
+    "timestamp": "2025-06-29T07:19:06.295350",
+    "signal_id": "signal_20250629_051906293758_023",
+    "pair": "AUD/JPY",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "a09cb531c317e8bf",
+    "timestamp": "2025-06-29T07:19:22.289289",
+    "signal_id": "signal_20250629_051922289290_024",
+    "pair": "CAD/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "5a3951fdd6c56656",
+    "timestamp": "2025-06-29T07:19:23.060250",
+    "signal_id": "signal_20250629_051923060251_025",
+    "pair": "GBP/JPY",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "bea40c1d9693a456",
+    "timestamp": "2025-06-29T07:22:29.523703",
+    "signal_id": "signal_20250629_052229522702_026",
+    "pair": "EUR/AUD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "918bc7e8e7897a53",
+    "timestamp": "2025-06-29T07:23:07.055662",
+    "signal_id": "signal_20250629_052307055662_027",
+    "pair": "GBP/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "a64e9af9220e7aab",
+    "timestamp": "2025-06-29T07:23:58.325222",
+    "signal_id": "signal_20250629_052358321419_028",
+    "pair": "EUR/CHF",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "86c20a7e00bb6a3f",
+    "timestamp": "2025-06-29T07:27:07.626844",
+    "signal_id": "signal_20250629_052707626844_029",
+    "pair": "AUD/CAD",
+    "direction": "LOWER"
+  },
+  {
+    "fingerprint": "3223c8f3f8c4608b",
+    "timestamp": "2025-06-29T07:28:01.376342",
+    "signal_id": "signal_20250629_052801376342_030",
+    "pair": "EUR/USD",
+    "direction": "HIGHER"
+  },
+  {
+    "fingerprint": "0ad007fb67c794ca",
+    "timestamp": "2025-06-29T07:28:22.568966",
+    "signal_id": "signal_20250629_052822566967_031",
+    "pair": "USD/CAD",
+    "direction": "HIGHER"
   }
 ]

@@ -1,0 +1,48 @@
+{
+  "channel_name": "BINARY TRADING CLUB",
+  "parser_type": "binary_trading_club",
+  "enabled": true,
+  "parser_config": {
+    "message_patterns": {
+      "first_message_regex": "Trading Pair: (\\w+/\\w+)(?:\\s*\\(OTC\\))?",
+      "second_message_regex": {
+        "timer": "SET THE TIMER TO (\\d{2}:\\d{2}:\\d{2})",
+        "pair": "Currency pair (\\w+/\\w+)",
+        "direction": "(HIGHER|LOWER)",
+        "expiry": "Trade time: (\\d+) MIN"
+      }
+    },
+    "signal_validation": {
+      "required_fields": ["pair", "direction", "expiry_minutes"],
+      "valid_directions": ["HIGHER", "LOWER"],
+      "min_expiry_minutes": 1,
+      "max_expiry_minutes": 60,
+      "valid_pairs": [
+        "EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "USD/CAD",
+        "EUR/GBP", "EUR/JPY", "GBP/JPY", "AUD/JPY", "USD/CHF"
+      ]
+    },
+    "pair_formats": ["XXX/XXX"],
+    "preprocessing": {
+      "remove_emojis": true,
+      "normalize_whitespace": true,
+      "convert_to_uppercase": true
+    },
+    "parsing_logic": {
+      "multi_message_signal": true,
+      "pair_match_window": 60,
+      "log_all_messages": true,
+      "require_timer": true,
+      "require_direction": true,
+      "require_expiry": true
+    }
+  },
+  "metadata": {
+    "created_at": "2025-06-19T00:00:00Z",
+    "description": "Configuration for Binary Trading Club channel",
+    "version": "1.0",
+    "channel_type": "binary_options",
+    "signal_frequency": "high",
+    "reliability_score": 0.8
+  }
+}

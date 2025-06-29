@@ -75,5 +75,30 @@
         "clock_drift_threshold_ms": 100,
         "log_both_timezones": true,
         "description": "Enhanced timezone handling to fix timing discrepancies"
+    },
+    "time_offset": {
+        "enabled": true,
+        "default_offset": 3,
+        "channel_specific": {
+            "teebinary_premium": {
+                "enabled": true,
+                "offset_value": 5,
+                "apply_to_durations": [5],
+                "description": "5-second delay for 5-minute TeeBinary signals"
+            },
+            "binary_trading_club": {
+                "enabled": false,
+                "offset_value": 0,
+                "apply_to_durations": [],
+                "description": "No delay for Binary Trading Club signals"
+            },
+            "test_channel": {
+                "enabled": false,
+                "offset_value": 0,
+                "apply_to_durations": [],
+                "description": "No delay for test channel signals"
+            }
+        },
+        "description": "Configurable delay before executing trades (channel and duration specific)"
     }
 }

@@ -1,0 +1,100 @@
+{
+  "channel_name": "BinaryPulse Bot",
+  "channel_id": null,
+  "parser_type": "binarypulse_bot",
+  "source_type": "telegram_bot",
+  "enabled": true,
+  "parser_config": {
+    "message_patterns": {
+      "single_message_format": true,
+      "signal_pattern": "📢 SIGNAL TO ENTER\\s*✅ Couple: ([A-Z]{3}/[A-Z]{3})(?: OTC)?\\s*📉 Direction: (UP|DOWN)\\s*🕐 Time expiration: (\\d+) min"
+    },
+    "signal_validation": {
+      "required_fields": ["pair", "direction", "expiry"],
+      "valid_directions": ["HIGHER", "LOWER"],
+      "min_expiry_minutes": 1,
+      "max_expiry_minutes": 60,
+      "supports_traditional_forex": true,
+      "supports_otc_pairs": true,
+      "otc_preferred": true,
+      "valid_pairs": [
+        "EUR/USD", "GBP/USD", "USD/JPY", "USD/CHF", "AUD/USD", "USD/CAD",
+        "NZD/USD", "EUR/GBP", "EUR/JPY", "GBP/JPY", "CHF/JPY", "AUD/JPY",
+        "CAD/JPY", "NZD/JPY", "EUR/CHF", "GBP/CHF", "AUD/CHF", "CAD/CHF",
+        "NZD/CHF", "EUR/AUD", "GBP/AUD", "EUR/CAD", "GBP/CAD", "EUR/NZD",
+        "GBP/NZD", "AUD/CAD", "AUD/NZD", "CAD/CHF"
+      ],
+      "otc_pairs": [
+        "EURUSD_otc", "GBPUSD_otc", "USDJPY_otc", "USDCHF_otc", "AUDUSD_otc", 
+        "USDCAD_otc", "NZDUSD_otc", "EURGBP_otc", "EURJPY_otc", "GBPJPY_otc",
+        "CHFJPY_otc", "AUDJPY_otc", "CADJPY_otc", "NZDJPY_otc", "EURCHF_otc",
+        "GBPCHF_otc", "AUDCHF_otc", "CADCHF_otc", "NZDCHF_otc", "EURAUD_otc",
+        "GBPAUD_otc", "EURCAD_otc", "GBPCAD_otc", "EURNZD_otc", "GBPNZD_otc",
+        "AUDCAD_otc", "AUDNZD_otc"
+      ]
+    },
+    "ignore_patterns": [
+      "BE\\s+READY",
+      "^GO\\s*$",
+      "WAIT",
+      "PREPARE",
+      "GET\\s+READY",
+      "ATTENTION",
+      "ALERT",
+      "NOTICE",
+      "UPDATE",
+      "NEWS",
+      "MARKET\\s+CLOSED",
+      "TRADING\\s+CLOSED"
+    ],
+    "pair_formats": ["XXX/XXX", "XXX/XXX OTC"],
+    "preprocessing": {
+      "remove_emojis": false,
+      "normalize_whitespace": true,
+      "convert_to_uppercase": false
+    },
+    "execution_precision": "high",
+    "signal_frequency": "on_demand",
+    "bot_interaction": {
+      "command_trigger": "📢Get new Signal",
+      "response_time_minutes": 3,
+      "analysis_wait_time": true
+    }
+  },
+  "signal_characteristics": {
+    "typical_duration_minutes": [1, 3, 5],
+    "random_timeframes": true,
+    "otc_preferred": true,
+    "pair_type": "otc_currency",
+    "supported_timeframes": [1, 3, 5],
+    "execution_precision": "high",
+    "signal_frequency": "on_demand",
+    "requires_user_request": true,
+    "analysis_based": true
+  },
+  "timeframe_filtering": {
+    "enabled": true,
+    "use_global_config": true,
+    "filter_by_duration": true,
+    "skip_disabled_timeframes": true,
+    "log_filtered_signals": true
+  },
+  "bot_integration": {
+    "bot_handle": "@BinaryPulse_bot",
+    "access_method": "pocket_option_profile",
+    "profile_id": 105245326,
+    "signal_request_command": "📢Get new Signal",
+    "expected_response_time": "1-3 minutes",
+    "signal_format": "📢 SIGNAL TO ENTER format"
+  },
+  "metadata": {
+    "created_at": "2025-06-29T02:56:00Z",
+    "updated_at": "2025-06-29T02:56:00Z",
+    "description": "BinaryPulse Bot integration with timeframe filtering support",
+    "version": "1.0",
+    "channel_type": "telegram_bot",
+    "parser_class": "BinaryPulseBotParser",
+    "purpose": "Integration of @BinaryPulse_bot with timeframe toggle control for statistical analysis",
+    "integration_phase": "Phase 1 - Basic Integration"
+  }
+}

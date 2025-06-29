@@ -1,5 +1,5 @@
 {
-  "ssid": "42[\"auth\",{\"session\":\"osh1dem01a8bjfiqk3f0rs9er0\",\"isDemo\":1,\"uid\":102904626,\"platform\":2,\"isFastHistory\":true}]",
+  "ssid": "42[\"auth\",{\"session\":\"u000keanhl7icnv0a31plmgku3\",\"isDemo\":1,\"uid\":101002476,\"platform\":9,\"isFastHistory\":true}]",
   "is_demo": true,
   "min_payout": 80,
   "preferred_assets": [
@@ -14,7 +14,7 @@
     "GBPJPY",
     "EURGBP"
   ],
-  "otc_preferred": true,
+  "otc_preferred": false,
   "connection_timeout": 30,
   "reconnect_attempts": 5,
   "reconnect_delay": 5

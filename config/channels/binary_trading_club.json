@@ -1,0 +1,50 @@
+{
+  "channel_name": "BINARY TRADING CLUB",
+  "parser_type": "binary_trading_club",
+  "enabled": true,
+  "parser_config": {
+    "message_patterns": {
+      "multi_message_format": true,
+      "first_message_pattern": "Trading Pair:\\s*([A-Z]{3}/[A-Z]{3})",
+      "timer_pattern": "SET THE TIMER TO\\s*(\\d{2}:\\d{2}:\\d{2})",
+      "direction_pattern": "\\b(HIGHER|LOWER)\\b",
+      "expiry_pattern": "Trade time:\\s*(\\d+)\\s*MIN"
+    },
+    "signal_validation": {
+      "required_fields": ["pair", "direction", "expiry"],
+      "valid_directions": ["HIGHER", "LOWER"],
+      "min_expiry_minutes": 1,
+      "max_expiry_minutes": 5,
+      "btc_min_expiry_minutes": 1,
+      "btc_max_expiry_minutes": 5,
+      "valid_pairs": []
+    },
+    "pair_formats": ["XXX/XXX"],
+    "preprocessing": {
+      "remove_emojis": false,
+      "normalize_whitespace": true,
+      "convert_to_uppercase": false
+    },
+    "pair_match_window": 60,
+    "execution_precision": "high",
+    "signal_frequency": "high"
+  },
+  "signal_characteristics": {
+    "typical_duration_minutes": 1,
+    "execution_precision": "high",
+    "signal_frequency": "high",
+    "multi_message_format": true,
+    "timer_provided": true
+  },
+  "metadata": {
+    "created_at": "2025-06-19T10:03:35Z",
+    "description": "Binary Trading Club channel with 2-message format: Trading Pair + Direction/Timer/Expiry",
+    "version": "1.0",
+    "channel_type": "binary_options",
+    "parser_class": "BinaryTradingClubParser",
+    "typical_message_format": [
+      "Message 1: Trading Pair: EUR/USD",
+      "Message 2: HIGHER\\nSET THE TIMER TO 20:59:30\\nTrade time: 1 MIN"
+    ]
+  }
+}

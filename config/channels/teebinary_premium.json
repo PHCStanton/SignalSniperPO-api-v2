@@ -1,0 +1,79 @@
+{
+  "channel_name": "TeeBinary_Premium",
+  "channel_id": -1001222324493,
+  "parser_type": "teebinary_premium",
+  "enabled": true,
+  "parser_config": {
+    "message_patterns": {
+      "single_message_format": true,
+      "signal_pattern": "^([A-Z]{3}/[A-Z]{3})\\s+(CALL|PUT)\\s+5MIN\\s*$"
+    },
+    "signal_validation": {
+      "required_fields": ["pair", "direction", "expiry"],
+      "valid_directions": ["HIGHER", "LOWER"],
+      "min_expiry_minutes": 5,
+      "max_expiry_minutes": 5,
+      "supports_otc_pairs": false,
+      "valid_pairs": [
+        "EUR/USD", "GBP/USD", "USD/JPY", "USD/CHF", "AUD/USD", "USD/CAD",
+        "NZD/USD", "EUR/GBP", "EUR/JPY", "GBP/JPY", "CHF/JPY", "AUD/JPY",
+        "CAD/JPY", "NZD/JPY", "EUR/CHF", "GBP/CHF", "AUD/CHF", "CAD/CHF",
+        "NZD/CHF", "EUR/AUD", "GBP/AUD", "EUR/CAD", "GBP/CAD", "EUR/NZD",
+        "GBP/NZD", "AUD/CAD", "AUD/NZD", "CAD/CHF"
+      ],
+      "excluded_otc_pairs": [
+        "XAU/USD", "XAG/USD", "BTC/USD", "ETH/USD", "LTC/USD", "XRP/USD",
+        "ADA/USD", "DOT/USD", "LINK/USD", "BCH/USD", "EOS/USD", "TRX/USD"
+      ]
+    },
+    "ignore_patterns": [
+      "BE\\s+READY",
+      "^GO\\s*$",
+      "WAIT",
+      "PREPARE",
+      "GET\\s+READY",
+      "ATTENTION",
+      "ALERT",
+      "NOTICE",
+      "UPDATE",
+      "NEWS",
+      "MARKET\\s+CLOSED",
+      "TRADING\\s+CLOSED"
+    ],
+    "pair_formats": ["XXX/XXX"],
+    "preprocessing": {
+      "remove_emojis": false,
+      "normalize_whitespace": true,
+      "convert_to_uppercase": false
+    },
+    "execution_precision": "high",
+    "signal_frequency": "medium"
+  },
+  "signal_characteristics": {
+    "typical_duration_minutes": 5,
+    "execution_precision": "high",
+    "signal_frequency": "medium",
+    "single_message_format": true,
+    "timer_provided": false,
+    "pair_type": "traditional_forex",
+    "otc_preferred": false
+  },
+  "metadata": {
+    "created_at": "2025-06-19T11:51:00Z",
+    "description": "TeeBinary Premium channel with single-message format: PAIR CALL/PUT 5MIN",
+    "version": "1.0",
+    "channel_type": "binary_options",
+    "parser_class": "TeeBinaryPremiumParser",
+    "typical_message_format": [
+      "EUR/USD CALL 5MIN",
+      "GBP/USD PUT 5MIN",
+      "USD/JPY CALL 5MIN"
+    ],
+    "direction_mapping": {
+      "CALL": "HIGHER",
+      "PUT": "LOWER"
+    },
+    "fixed_duration": "5 minutes",
+    "supported_pairs_count": 30
+  }
+}

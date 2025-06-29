@@ -1,0 +1,89 @@
+{
+  "channel_name": "🎯Signal_Sniper_Test_Channel🎯",
+  "channel_id": -1002322984519,
+  "parser_type": "multi_parser",
+  "enabled": true,
+  "parser_config": {
+    "multi_parser_support": true,
+    "parser_priority": [
+      "teebinary_premium",
+      "binary_trading_club",
+      "generic"
+    ],
+    "message_patterns": {
+      "supports_multiple_formats": true,
+      "teebinary_premium_pattern": "^([A-Z]{3}/[A-Z]{3})\\s+(CALL|PUT)\\s+5MIN\\s*$",
+      "binary_trading_club_first_pattern": "Trading Pair:\\s*([A-Z]{3}/[A-Z]{3})",
+      "binary_trading_club_second_pattern": "\\b(HIGHER|LOWER)\\b.*SET THE TIMER TO\\s*(\\d{2}:\\d{2}:\\d{2}).*Trade time:\\s*(\\d+)\\s*MIN",
+      "generic_pattern": "🎯 ([A-Z]{3}/[A-Z]{3}) (CALL|PUT|HIGHER|LOWER) (\\d+)M"
+    },
+    "signal_validation": {
+      "required_fields": ["pair", "direction", "expiry"],
+      "valid_directions": ["HIGHER", "LOWER", "CALL", "PUT"],
+      "min_expiry_minutes": 1,
+      "max_expiry_minutes": 60,
+      "supports_traditional_forex": true,
+      "supports_otc_pairs": false,
+      "valid_pairs": [
+        "EUR/USD", "GBP/USD", "USD/JPY", "USD/CHF", "AUD/USD", "USD/CAD",
+        "NZD/USD", "EUR/GBP", "EUR/JPY", "GBP/JPY", "CHF/JPY", "AUD/JPY",
+        "CAD/JPY", "NZD/JPY", "EUR/CHF", "GBP/CHF", "AUD/CHF", "CAD/CHF",
+        "NZD/CHF", "EUR/AUD", "GBP/AUD", "EUR/CAD", "GBP/CAD", "EUR/NZD",
+        "GBP/NZD", "AUD/CAD", "AUD/NZD", "CAD/CHF", "XAU/USD", "XAG/USD",
+        "EUR/USD-OTC", "GBP/USD-OTC", "USD/JPY-OTC", "AUD/USD-OTC", "USD/CAD-OTC"
+      ]
+    },
+    "ignore_patterns": [
+      "BE\\s+READY",
+      "^GO\\s*$",
+      "WAIT",
+      "PREPARE",
+      "GET\\s+READY",
+      "ATTENTION",
+      "ALERT",
+      "NOTICE",
+      "UPDATE",
+      "NEWS",
+      "MARKET\\s+CLOSED",
+      "TRADING\\s+CLOSED"
+    ],
+    "pair_formats": ["XXX/XXX", "XXX/XXX-OTC"],
+    "preprocessing": {
+      "remove_emojis": false,
+      "normalize_whitespace": true,
+      "convert_to_uppercase": false
+    },
+    "execution_precision": "high",
+    "signal_frequency": "variable",
+    "forwarded_message_support": true
+  },
+  "signal_characteristics": {
+    "supports_multiple_formats": true,
+    "execution_precision": "high",
+    "signal_frequency": "variable",
+    "forwarded_message_testing": true,
+    "multi_parser_testing": true,
+    "supported_formats": [
+      "TeeBinary Premium: PAIR CALL/PUT 5MIN",
+      "Binary Trading Club: 2-message format",
+      "Generic: 🎯 PAIR DIRECTION DURATION"
+    ]
+  },
+  "testing_features": {
+    "real_demo_trading": true,
+    "forwarded_signals": true,
+    "multi_channel_simulation": true,
+    "parser_validation": true,
+    "signal_format_detection": true
+  },
+  "metadata": {
+    "created_at": "2025-06-19T11:52:00Z",
+    "updated_at": "2025-06-19T11:52:00Z",
+    "description": "Enhanced test channel supporting multiple parser formats for comprehensive testing",
+    "version": "2.0",
+    "channel_type": "testing",
+    "parser_class": "MultiParser",
+    "purpose": "Testing TeeBinary Premium and Binary Trading Club formats via forwarded messages",
+    "testing_methodology": "Forward signals from production channels to test channel for demo trading validation"
+  }
+}

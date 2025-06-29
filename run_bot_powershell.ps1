@@ -229,7 +229,7 @@ if ($Debug) {
 }
 
 # Check if main bot file exists
-$botFile = "self_bot_v3_integrated.py"
+$botFile = "SignalSniper.py"
 if (-not (Test-Path $botFile)) {
     Write-ColorOutput "[ERROR] Bot file not found: $botFile" "Red"
     exit 1

@@ -1,13 +1,13 @@
 {
-  "session_id": "SE1-=20250618",
-  "start_time": "2025-06-18T15:59:33.619436+02:00",
+  "session_id": "session_20250626_085840",
+  "start_time": "2025-06-26T08:58:40.270725+00:00",
   "trades_count": 0,
   "signals_count": 0,
-  "balance_start": 51269.71,
+  "balance_start": 49912.63,
   "profit_loss": 0.0,
   "wins": 0,
   "losses": 0,
   "draws": 0,
   "errors": 0,
-  "last_save": "2025-06-18T14:02:00.928071+00:00"
+  "last_save": "2025-06-29T04:20:17.681431+00:00"
 }
